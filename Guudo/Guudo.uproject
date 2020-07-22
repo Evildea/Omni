@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{F2258496-4220-2CFA-AD25-DFA90E538141}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "Guudo",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	]
+}
