@@ -108,8 +108,8 @@ void AGuudoCharater::Scroll(float axis)
 
 void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (OtherActor->ActorHasTag("Pickup"))
+	if (OtherComponent->ComponentHasTag("Pickup"))
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Pickup"));
+		UE_LOG(LogTemp, Warning, TEXT("Message Output"));
 	}
 }

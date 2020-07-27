@@ -18,7 +18,7 @@ APickupBase::APickupBase()
 	PickupRange = CreateDefaultSubobject<USphereComponent>(TEXT("Pickup Range"));
 	PickupRange->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
 	PickupRange->SetSphereRadius(120.0f);
-	PickupRange->SetCollisionProfileName(FName("Trigger"));
+	PickupRange->SetCollisionProfileName(FName("OverlapAllDynamic"));
 	PickupRange->ComponentTags.Add(FName("Pickup"));
 }
 
