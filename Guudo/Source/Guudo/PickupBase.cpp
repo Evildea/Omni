@@ -9,16 +9,16 @@ APickupBase::APickupBase()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
-	// Set this object as a Pickup
-	//RootComponent->ComponentTags.Add(FName("Pickup"));
-
+	
 	// Create the Required Components
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	RootComponent = Mesh;
 
+	// Create Pickup Component
 	PickupRange = CreateDefaultSubobject<USphereComponent>(TEXT("Pickup Range"));
 	PickupRange->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	PickupRange->SetSphereRadius(120.0f);
+	PickupRange->SetCollisionProfileName(FName("OverlapAllDynamic"));
 	PickupRange->ComponentTags.Add(FName("Pickup"));
 }
 
@@ -33,6 +33,4 @@ void APickupBase::BeginPlay()
 void APickupBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
-
