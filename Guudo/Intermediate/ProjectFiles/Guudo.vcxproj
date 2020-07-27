@@ -75,7 +75,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3ACD2CFF-5CED-451A-885D-11C30C50A052}</ProjectGuid>
+    <ProjectGuid>{4BDA452E-2A3B-4D2C-883E-786D0034DFC2}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>Guudo</RootNamespace>
     <PlatformToolset>v142</PlatformToolset>

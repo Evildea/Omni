@@ -41,14 +41,19 @@ AGuudoCharater::AGuudoCharater()
 	GetCharacterMovement()->RotationRate = FRotator(0.f, RotationSpeed, 0.f);
 	GetCharacterMovement()->JumpZVelocity = NormalJumpVelocity;
 	GetCharacterMovement()->AirControl = AirMovability;
-
 }
 
 // Called when the game starts or when spawned
 void AGuudoCharater::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	if (HudWidgetClassType) {
+		HudWidget = CreateWidget<UUserWidget>(Cast<APlayerController>(GetController()), HudWidgetClassType);
+		HudWidget->bIsFocusable = true;
+	}
+
+	// Set variables
+	isFrozen = false;
 }
 
 // Called every frame
@@ -77,6 +82,10 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 void AGuudoCharater::MoveForward(float axis)
 {
+	// Don't do anything if frozen
+	if (isFrozen)
+		return;
+
 	const FRotator Rotation = Controller->GetControlRotation();
 	const FRotator YawRotation(0, Rotation.Yaw, 0);
 
@@ -86,6 +95,10 @@ void AGuudoCharater::MoveForward(float axis)
 
 void AGuudoCharater::MoveRight(float axis)
 {
+	// Don't do anything if frozen
+	if (isFrozen)
+		return;
+
 	const FRotator Rotation = Controller->GetControlRotation();
 	const FRotator YawRotation(0, Rotation.Yaw, 0);
 
@@ -108,8 +121,15 @@ void AGuudoCharater::Scroll(float axis)
 
 void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (OtherComponent->ComponentHasTag("Pickup"))
+	if (OtherComponent->ComponentHasTag("Pickup") && !isFrozen)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Message Output"));
+
+		if (HudWidget)
+		{
+			isFrozen = true;
+			HudWidget->AddToViewport();
+			HudWidget->SetKeyboardFocus();
+		}
 	}
 }

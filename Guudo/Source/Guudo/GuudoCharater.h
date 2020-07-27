@@ -26,6 +26,9 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	// Freeze Keyboard Input
+	bool isFrozen;
+
 	// COMPONENTS ////////////////////////////////////////////////
 
 	// Camera
@@ -43,6 +46,12 @@ public:
 		float CapsuleRadius = 42.f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float CapsuleHeight = 45.f;
+
+	// Widgets
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		TSubclassOf<class UUserWidget> HudWidgetClassType;
+	UPROPERTY()
+		class UUserWidget* HudWidget;
 
 	// Movement Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -67,10 +76,11 @@ public:
 	void MoveRight(float axis);
 	void Scroll(float axis);
 
+	UFUNCTION(BlueprintCallable)
+		void Unfreeze() { isFrozen = false; }
+
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()
 		void OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-
-
 
 };
