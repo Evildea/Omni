@@ -119,6 +119,11 @@ void AGuudoCharater::Scroll(float axis)
 
 }
 
+void AGuudoCharater::DestroyTarget()
+{
+	Target->Destroy();
+}
+
 void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	if (OtherComponent->ComponentHasTag("Pickup") && !isFrozen)
@@ -127,6 +132,7 @@ void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AA
 
 		if (HudWidget)
 		{
+			Target = OtherActor;
 			isFrozen = true;
 			HudWidget->AddToViewport();
 			HudWidget->SetKeyboardFocus();

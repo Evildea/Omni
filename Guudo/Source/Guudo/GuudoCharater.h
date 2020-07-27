@@ -53,6 +53,10 @@ public:
 	UPROPERTY()
 		class UUserWidget* HudWidget;
 
+	// Other Actor
+	UPROPERTY()
+		AActor* Target;
+
 	// Movement Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float RotationSpeed = 540.0f;
@@ -76,8 +80,12 @@ public:
 	void MoveRight(float axis);
 	void Scroll(float axis);
 
+	// Unfreeze the Player's Movements
 	UFUNCTION(BlueprintCallable)
 		void Unfreeze() { isFrozen = false; }
+
+	UFUNCTION(BlueprintCallable)
+		void DestroyTarget();
 
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()

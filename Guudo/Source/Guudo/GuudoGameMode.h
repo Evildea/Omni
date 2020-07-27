@@ -19,7 +19,29 @@ class GUUDO_API AGuudoGameMode : public AGameMode
 	void BeginPlay();
 
 public:
+	// COMPONENTS ////////////////////////////////////////////////
 	UPROPERTY()
-	APlayerController* m_Controller;
+	APlayerController* Controller;
 
+	// Timer
+	float TimePassed;
+
+	// VARIABLES /////////////////////////////////////////////////
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		int Minutes;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		int Seconds;
+
+	// FUNCTIONS /////////////////////////////////////////////////
+	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintPure)
+		float GetSeconds() { return Seconds; }
+
+	UFUNCTION(BlueprintPure)
+		float GetMinutes() { return Minutes; }
+
+	UFUNCTION(BlueprintPure)
+		FString GetTimer();
 };

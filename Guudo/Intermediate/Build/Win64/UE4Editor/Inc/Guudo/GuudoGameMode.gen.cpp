@@ -17,10 +17,116 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameMode() {}
 	GUUDO_API UClass* Z_Construct_UClass_AGuudoGameMode();
 	ENGINE_API UClass* Z_Construct_UClass_AGameMode();
 	UPackage* Z_Construct_UPackage__Script_Guudo();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoGameMode_GetMinutes();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoGameMode_GetSeconds();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoGameMode_GetTimer();
 	ENGINE_API UClass* Z_Construct_UClass_APlayerController_NoRegister();
 // End Cross Module References
 	void AGuudoGameMode::StaticRegisterNativesAGuudoGameMode()
 	{
+		UClass* Class = AGuudoGameMode::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "GetMinutes", &AGuudoGameMode::execGetMinutes },
+			{ "GetSeconds", &AGuudoGameMode::execGetSeconds },
+			{ "GetTimer", &AGuudoGameMode::execGetTimer },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AGuudoGameMode_GetMinutes_Statics
+	{
+		struct GuudoGameMode_eventGetMinutes_Parms
+		{
+			float ReturnValue;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AGuudoGameMode_GetMinutes_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoGameMode_eventGetMinutes_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGuudoGameMode_GetMinutes_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoGameMode_GetMinutes_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoGameMode_GetMinutes_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GuudoGameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoGameMode_GetMinutes_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoGameMode, nullptr, "GetMinutes", nullptr, nullptr, sizeof(GuudoGameMode_eventGetMinutes_Parms), Z_Construct_UFunction_AGuudoGameMode_GetMinutes_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AGuudoGameMode_GetMinutes_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoGameMode_GetMinutes_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoGameMode_GetMinutes_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoGameMode_GetMinutes()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoGameMode_GetMinutes_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGuudoGameMode_GetSeconds_Statics
+	{
+		struct GuudoGameMode_eventGetSeconds_Parms
+		{
+			float ReturnValue;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AGuudoGameMode_GetSeconds_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoGameMode_eventGetSeconds_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGuudoGameMode_GetSeconds_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoGameMode_GetSeconds_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoGameMode_GetSeconds_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GuudoGameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoGameMode_GetSeconds_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoGameMode, nullptr, "GetSeconds", nullptr, nullptr, sizeof(GuudoGameMode_eventGetSeconds_Parms), Z_Construct_UFunction_AGuudoGameMode_GetSeconds_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AGuudoGameMode_GetSeconds_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoGameMode_GetSeconds_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoGameMode_GetSeconds_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoGameMode_GetSeconds()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoGameMode_GetSeconds_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGuudoGameMode_GetTimer_Statics
+	{
+		struct GuudoGameMode_eventGetTimer_Parms
+		{
+			FString ReturnValue;
+		};
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_AGuudoGameMode_GetTimer_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoGameMode_eventGetTimer_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGuudoGameMode_GetTimer_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoGameMode_GetTimer_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoGameMode_GetTimer_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GuudoGameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoGameMode_GetTimer_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoGameMode, nullptr, "GetTimer", nullptr, nullptr, sizeof(GuudoGameMode_eventGetTimer_Parms), Z_Construct_UFunction_AGuudoGameMode_GetTimer_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AGuudoGameMode_GetTimer_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoGameMode_GetTimer_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoGameMode_GetTimer_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoGameMode_GetTimer()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoGameMode_GetTimer_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_AGuudoGameMode_NoRegister()
 	{
@@ -29,13 +135,22 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameMode() {}
 	struct Z_Construct_UClass_AGuudoGameMode_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_Controller_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Seconds_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_m_Controller;
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_Seconds;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Minutes_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_Minutes;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Controller_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Controller;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -43,6 +158,11 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameMode() {}
 	UObject* (*const Z_Construct_UClass_AGuudoGameMode_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_AGameMode,
 		(UObject* (*)())Z_Construct_UPackage__Script_Guudo,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_AGuudoGameMode_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AGuudoGameMode_GetMinutes, "GetMinutes" }, // 3256403498
+		{ &Z_Construct_UFunction_AGuudoGameMode_GetSeconds, "GetSeconds" }, // 4185744718
+		{ &Z_Construct_UFunction_AGuudoGameMode_GetTimer, "GetTimer" }, // 2560034415
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoGameMode_Statics::Class_MetaDataParams[] = {
@@ -54,13 +174,33 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameMode() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_m_Controller_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Seconds_MetaData[] = {
+		{ "Category", "Designer" },
 		{ "ModuleRelativePath", "GuudoGameMode.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_m_Controller = { "m_Controller", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoGameMode, m_Controller), Z_Construct_UClass_APlayerController_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_m_Controller_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_m_Controller_MetaData)) };
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Seconds = { "Seconds", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoGameMode, Seconds), METADATA_PARAMS(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Seconds_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Seconds_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Minutes_MetaData[] = {
+		{ "Category", "Designer" },
+		{ "Comment", "// VARIABLES /////////////////////////////////////////////////\n" },
+		{ "ModuleRelativePath", "GuudoGameMode.h" },
+		{ "ToolTip", "VARIABLES /" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Minutes = { "Minutes", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoGameMode, Minutes), METADATA_PARAMS(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Minutes_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Minutes_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Controller_MetaData[] = {
+		{ "Comment", "// COMPONENTS ////////////////////////////////////////////////\n" },
+		{ "ModuleRelativePath", "GuudoGameMode.h" },
+		{ "ToolTip", "COMPONENTS" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Controller = { "Controller", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoGameMode, Controller), Z_Construct_UClass_APlayerController_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Controller_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Controller_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGuudoGameMode_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_m_Controller,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Seconds,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Minutes,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Controller,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGuudoGameMode_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AGuudoGameMode>::IsAbstract,
@@ -70,11 +210,11 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameMode() {}
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_AGuudoGameMode_Statics::PropPointers,
 		nullptr,
 		ARRAY_COUNT(DependentSingletons),
-		0,
+		ARRAY_COUNT(FuncInfo),
 		ARRAY_COUNT(Z_Construct_UClass_AGuudoGameMode_Statics::PropPointers),
 		0,
 		0x009002ACu,
@@ -89,7 +229,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGuudoGameMode, 915548848);
+	IMPLEMENT_CLASS(AGuudoGameMode, 958298289);
 	template<> GUUDO_API UClass* StaticClass<AGuudoGameMode>()
 	{
 		return AGuudoGameMode::StaticClass();

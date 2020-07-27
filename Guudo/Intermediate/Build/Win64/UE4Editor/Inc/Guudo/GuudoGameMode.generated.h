@@ -13,8 +13,60 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define GUUDO_GuudoGameMode_generated_h
 
-#define Guudo_Source_Guudo_GuudoGameMode_h_15_RPC_WRAPPERS
-#define Guudo_Source_Guudo_GuudoGameMode_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define Guudo_Source_Guudo_GuudoGameMode_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetTimer) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(FString*)Z_Param__Result=P_THIS->GetTimer(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetMinutes) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(float*)Z_Param__Result=P_THIS->GetMinutes(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetSeconds) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(float*)Z_Param__Result=P_THIS->GetSeconds(); \
+		P_NATIVE_END; \
+	}
+
+
+#define Guudo_Source_Guudo_GuudoGameMode_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetTimer) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(FString*)Z_Param__Result=P_THIS->GetTimer(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetMinutes) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(float*)Z_Param__Result=P_THIS->GetMinutes(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetSeconds) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(float*)Z_Param__Result=P_THIS->GetSeconds(); \
+		P_NATIVE_END; \
+	}
+
+
 #define Guudo_Source_Guudo_GuudoGameMode_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGuudoGameMode(); \

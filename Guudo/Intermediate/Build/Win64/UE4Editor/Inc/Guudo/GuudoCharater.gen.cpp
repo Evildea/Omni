@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	GUUDO_API UClass* Z_Construct_UClass_AGuudoCharater();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_Guudo();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_DestroyTarget();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
@@ -31,10 +32,33 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	{
 		UClass* Class = AGuudoCharater::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "DestroyTarget", &AGuudoCharater::execDestroyTarget },
 			{ "OnOverlapBegin", &AGuudoCharater::execOnOverlapBegin },
 			{ "Unfreeze", &AGuudoCharater::execUnfreeze },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "DestroyTarget", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoCharater_DestroyTarget()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics
 	{
@@ -128,7 +152,9 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_Unfreeze_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Unfreeze the Player's Movements\n" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
+		{ "ToolTip", "Unfreeze the Player's Movements" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_Unfreeze_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "Unfreeze", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_Unfreeze_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_Unfreeze_Statics::Function_MetaDataParams)) };
@@ -186,6 +212,10 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_RotationSpeed;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Target_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Target;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HudWidget_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_HudWidget;
@@ -222,8 +252,9 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Guudo,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AGuudoCharater_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AGuudoCharater_DestroyTarget, "DestroyTarget" }, // 367289105
 		{ &Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin, "OnOverlapBegin" }, // 1174075323
-		{ &Z_Construct_UFunction_AGuudoCharater_Unfreeze, "Unfreeze" }, // 1465403974
+		{ &Z_Construct_UFunction_AGuudoCharater_Unfreeze, "Unfreeze" }, // 398040362
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::Class_MetaDataParams[] = {
@@ -295,6 +326,14 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed = { "RotationSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, RotationSpeed), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target_MetaData[] = {
+		{ "Comment", "// Other Actor\n" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+		{ "ToolTip", "Other Actor" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target = { "Target", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, Target), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidget_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
@@ -362,6 +401,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidget,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidgetClassType,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleHeight,
@@ -397,7 +437,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGuudoCharater, 3012638409);
+	IMPLEMENT_CLASS(AGuudoCharater, 3493339758);
 	template<> GUUDO_API UClass* StaticClass<AGuudoCharater>()
 	{
 		return AGuudoCharater::StaticClass();
