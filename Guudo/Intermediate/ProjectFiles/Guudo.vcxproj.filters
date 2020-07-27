@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Guudo.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{BE0FB2A0-BA74-4C63-A302-592BC0AC7229}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Guudo.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\GuudoEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{1102ECFB-0E29-4940-B083-ED7A70F441DC}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Guudo">
+      <UniqueIdentifier>{BEB3D026-D0C0-4DFC-85C2-138E3D8FD9F8}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Guudo\Guudo.Build.cs">
+      <Filter>Source\Guudo</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Guudo\Guudo.cpp">
+      <Filter>Source\Guudo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Guudo\Guudo.h">
+      <Filter>Source\Guudo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Guudo\GuudoCharater.cpp">
+      <Filter>Source\Guudo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Guudo\GuudoCharater.h">
+      <Filter>Source\Guudo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Guudo\GuudoGameMode.cpp">
+      <Filter>Source\Guudo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Guudo\GuudoGameMode.h">
+      <Filter>Source\Guudo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Guudo\GuudoGameModeBase.cpp">
+      <Filter>Source\Guudo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Guudo\GuudoGameModeBase.h">
+      <Filter>Source\Guudo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Guudo\PickupBase.cpp">
+      <Filter>Source\Guudo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Guudo\PickupBase.h">
+      <Filter>Source\Guudo</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

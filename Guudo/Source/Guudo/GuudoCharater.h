@@ -42,7 +42,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float CapsuleRadius = 42.f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		float CapsuleHeight = 96.f;
+		float CapsuleHeight = 45.f;
 
 	// Movement Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -53,9 +53,24 @@ public:
 		float PoweredJumpVelocity = 1200.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float AirMovability = 0.2f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float MaxZoomOut = 600.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float MaxZoomIn = 100.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float ZoomSpeed = 3.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		bool isReverseZoom = true;
 
 	// FUNCTIONS /////////////////////////////////////////////////
 	void MoveForward(float axis);
 	void MoveRight(float axis);
+	void Scroll(float axis);
+
+	// COLLISION HANDLING ////////////////////////////////////////
+	UFUNCTION()
+		void OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+
 
 };

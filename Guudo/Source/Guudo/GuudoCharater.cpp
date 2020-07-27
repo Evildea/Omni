@@ -10,6 +10,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "Blueprint/UserWidget.h"
+#include "Engine.h" // Debug
 
 // Sets default values
 AGuudoCharater::AGuudoCharater()
@@ -30,6 +31,7 @@ AGuudoCharater::AGuudoCharater()
 
 	// Capsule Component
 	GetCapsuleComponent()->InitCapsuleSize(CapsuleRadius, CapsuleHeight);
+	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AGuudoCharater::OnOverlapBegin);
 
 	// Controller
 	bUseControllerRotationPitch = false;
@@ -69,6 +71,8 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &AGuudoCharater::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AGuudoCharater::MoveRight);
+
+	PlayerInputComponent->BindAxis("Scroll", this, &AGuudoCharater::Scroll);
 }
 
 void AGuudoCharater::MoveForward(float axis)
@@ -89,3 +93,23 @@ void AGuudoCharater::MoveRight(float axis)
 	AddMovementInput(Direction, axis);
 }
 
+void AGuudoCharater::Scroll(float axis)
+{
+	// Update Camera Arm
+	CameraArm->TargetArmLength = CameraArm->TargetArmLength + ((isReverseZoom ? -axis : axis) * ZoomSpeed);
+
+	// Clamp Camera Arm
+	if (CameraArm->TargetArmLength < MaxZoomIn)
+		CameraArm->TargetArmLength = MaxZoomIn;
+	else if (CameraArm->TargetArmLength > MaxZoomOut)
+		CameraArm->TargetArmLength = MaxZoomOut;
+
+}
+
+void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (OtherActor->ActorHasTag("Pickup"))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Pickup"));
+	}
+}
