@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Guudo",
+			"Path": "D:\\AIE\\AIELineup\\AIELineup\\Omni\\Guudo\\Source\\Guudo.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "GuudoEditor",
+			"Path": "D:\\AIE\\AIELineup\\AIELineup\\Omni\\Guudo\\Source\\GuudoEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
