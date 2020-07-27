@@ -1,4 +1,4 @@
-// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+// Copyright Epic Games, Inc. All Rights Reserved.
 /*===========================================================================
 	Generated code exported from UnrealHeaderTool.
 	DO NOT modify this manually! Edit the corresponding .h files instead!
@@ -17,17 +17,41 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	GUUDO_API UClass* Z_Construct_UClass_AGuudoCharater();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_Guudo();
-	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_DestroyTarget();
-	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
-	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_Unfreeze();
 	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AGuudoCharater::execOnOverlapBegin)
+	{
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverLappedComponent);
+		P_GET_OBJECT(AActor,Z_Param_OtherActor);
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComponent);
+		P_GET_PROPERTY(FIntProperty,Z_Param_OtherBodyIndex);
+		P_GET_UBOOL(Z_Param_bFromSweep);
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnOverlapBegin(Z_Param_OverLappedComponent,Z_Param_OtherActor,Z_Param_OtherComponent,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AGuudoCharater::execDestroyTarget)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->DestroyTarget();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AGuudoCharater::execUnfreeze)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Unfreeze();
+		P_NATIVE_END;
+	}
 	void AGuudoCharater::StaticRegisterNativesAGuudoCharater()
 	{
 		UClass* Class = AGuudoCharater::StaticClass();
@@ -36,7 +60,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 			{ "OnOverlapBegin", &AGuudoCharater::execOnOverlapBegin },
 			{ "Unfreeze", &AGuudoCharater::execUnfreeze },
 		};
-		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
 	struct Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics
 	{
@@ -50,7 +74,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ "ModuleRelativePath", "GuudoCharater.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "DestroyTarget", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "DestroyTarget", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_DestroyTarget_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_AGuudoCharater_DestroyTarget()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -98,7 +122,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ "NativeConst", "" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_SweepResult = { "SweepResult", nullptr, (EPropertyFlags)0x0010008008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventOnOverlapBegin_Parms, SweepResult), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_SweepResult_MetaData, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_SweepResult_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_SweepResult = { "SweepResult", nullptr, (EPropertyFlags)0x0010008008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventOnOverlapBegin_Parms, SweepResult), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_SweepResult_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_SweepResult_MetaData)) };
 	void Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_bFromSweep_SetBit(void* Obj)
 	{
 		((GuudoCharater_eventOnOverlapBegin_Parms*)Obj)->bFromSweep = 1;
@@ -110,14 +134,14 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ "EditInline", "true" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OtherComponent = { "OtherComponent", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventOnOverlapBegin_Parms, OtherComponent), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OtherComponent_MetaData, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OtherComponent_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OtherComponent = { "OtherComponent", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventOnOverlapBegin_Parms, OtherComponent), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OtherComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OtherComponent_MetaData)) };
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OtherActor = { "OtherActor", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventOnOverlapBegin_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OverLappedComponent_MetaData[] = {
 		{ "EditInline", "true" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OverLappedComponent = { "OverLappedComponent", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventOnOverlapBegin_Parms, OverLappedComponent), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OverLappedComponent_MetaData, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OverLappedComponent_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OverLappedComponent = { "OverLappedComponent", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventOnOverlapBegin_Parms, OverLappedComponent), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OverLappedComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_OverLappedComponent_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_SweepResult,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::NewProp_bFromSweep,
@@ -133,7 +157,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ "ToolTip", "COLLISION HANDLING /" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "OnOverlapBegin", nullptr, nullptr, sizeof(GuudoCharater_eventOnOverlapBegin_Parms), Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "OnOverlapBegin", nullptr, nullptr, sizeof(GuudoCharater_eventOnOverlapBegin_Parms), Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -157,7 +181,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ "ToolTip", "Unfreeze the Player's Movements" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_Unfreeze_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "Unfreeze", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_Unfreeze_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_Unfreeze_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_Unfreeze_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "Unfreeze", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_Unfreeze_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_Unfreeze_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_AGuudoCharater_Unfreeze()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -252,9 +276,9 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Guudo,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AGuudoCharater_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AGuudoCharater_DestroyTarget, "DestroyTarget" }, // 367289105
-		{ &Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin, "OnOverlapBegin" }, // 1174075323
-		{ &Z_Construct_UFunction_AGuudoCharater_Unfreeze, "Unfreeze" }, // 398040362
+		{ &Z_Construct_UFunction_AGuudoCharater_DestroyTarget, "DestroyTarget" }, // 4270710479
+		{ &Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin, "OnOverlapBegin" }, // 3095696698
+		{ &Z_Construct_UFunction_AGuudoCharater_Unfreeze, "Unfreeze" }, // 1262204547
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::Class_MetaDataParams[] = {
@@ -273,49 +297,49 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	{
 		((AGuudoCharater*)Obj)->isReverseZoom = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isReverseZoom = { "isReverseZoom", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AGuudoCharater), &Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isReverseZoom_SetBit, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isReverseZoom_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isReverseZoom_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isReverseZoom = { "isReverseZoom", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AGuudoCharater), &Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isReverseZoom_SetBit, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isReverseZoom_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isReverseZoom_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_ZoomSpeed_MetaData[] = {
 		{ "Category", "Designer" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_ZoomSpeed = { "ZoomSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, ZoomSpeed), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_ZoomSpeed_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_ZoomSpeed_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_ZoomSpeed = { "ZoomSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, ZoomSpeed), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_ZoomSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_ZoomSpeed_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomIn_MetaData[] = {
 		{ "Category", "Designer" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomIn = { "MaxZoomIn", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, MaxZoomIn), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomIn_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomIn_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomIn = { "MaxZoomIn", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, MaxZoomIn), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomIn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomIn_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomOut_MetaData[] = {
 		{ "Category", "Designer" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomOut = { "MaxZoomOut", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, MaxZoomOut), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomOut_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomOut_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomOut = { "MaxZoomOut", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, MaxZoomOut), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomOut_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomOut_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_AirMovability_MetaData[] = {
 		{ "Category", "Designer" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_AirMovability = { "AirMovability", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, AirMovability), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_AirMovability_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_AirMovability_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_AirMovability = { "AirMovability", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, AirMovability), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_AirMovability_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_AirMovability_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity_MetaData[] = {
 		{ "Category", "Designer" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity = { "PoweredJumpVelocity", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, PoweredJumpVelocity), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity = { "PoweredJumpVelocity", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, PoweredJumpVelocity), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity_MetaData[] = {
 		{ "Category", "Designer" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity = { "NormalJumpVelocity", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, NormalJumpVelocity), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity = { "NormalJumpVelocity", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, NormalJumpVelocity), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed_MetaData[] = {
 		{ "Category", "Designer" },
@@ -324,7 +348,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ "ToolTip", "Movement Settings" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed = { "RotationSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, RotationSpeed), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed = { "RotationSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, RotationSpeed), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target_MetaData[] = {
 		{ "Comment", "// Other Actor\n" },
@@ -332,14 +356,14 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ "ToolTip", "Other Actor" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target = { "Target", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, Target), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target = { "Target", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, Target), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidget_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidget = { "HudWidget", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, HudWidget), Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidget_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidget_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidget = { "HudWidget", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, HudWidget), Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidget_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidget_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidgetClassType_MetaData[] = {
 		{ "Category", "Designer" },
@@ -348,14 +372,14 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ "ToolTip", "Widgets" },
 	};
 #endif
-	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidgetClassType = { "HudWidgetClassType", nullptr, (EPropertyFlags)0x0014000000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, HudWidgetClassType), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidgetClassType_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidgetClassType_MetaData)) };
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidgetClassType = { "HudWidgetClassType", nullptr, (EPropertyFlags)0x0014000000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, HudWidgetClassType), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidgetClassType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudWidgetClassType_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleHeight_MetaData[] = {
 		{ "Category", "Designer" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleHeight = { "CapsuleHeight", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, CapsuleHeight), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleHeight_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleHeight_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleHeight = { "CapsuleHeight", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, CapsuleHeight), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleHeight_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleHeight_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleRadius_MetaData[] = {
 		{ "Category", "Designer" },
@@ -364,14 +388,14 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ "ToolTip", "Capsule Settings" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleRadius = { "CapsuleRadius", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, CapsuleRadius), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleRadius_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleRadius_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleRadius = { "CapsuleRadius", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, CapsuleRadius), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CapsuleRadius_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraTrailDistance_MetaData[] = {
 		{ "Category", "Designer" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraTrailDistance = { "CameraTrailDistance", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, CameraTrailDistance), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraTrailDistance_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraTrailDistance_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraTrailDistance = { "CameraTrailDistance", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, CameraTrailDistance), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraTrailDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraTrailDistance_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraArm_MetaData[] = {
 		{ "Category", "Camera" },
@@ -381,7 +405,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ "ToolTip", "Camera Arm" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraArm = { "CameraArm", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, CameraArm), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraArm_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraArm_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraArm = { "CameraArm", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, CameraArm), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraArm_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_CameraArm_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Camera_MetaData[] = {
 		{ "Category", "Camera" },
@@ -391,7 +415,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ "ToolTip", "Camera" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Camera_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Camera_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Camera_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Camera_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGuudoCharater_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isReverseZoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_ZoomSpeed,
@@ -415,18 +439,18 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	};
 	const UE4CodeGen_Private::FClassParams Z_Construct_UClass_AGuudoCharater_Statics::ClassParams = {
 		&AGuudoCharater::StaticClass,
-		nullptr,
+		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		FuncInfo,
 		Z_Construct_UClass_AGuudoCharater_Statics::PropPointers,
 		nullptr,
-		ARRAY_COUNT(DependentSingletons),
-		ARRAY_COUNT(FuncInfo),
-		ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::PropPointers),
+		UE_ARRAY_COUNT(DependentSingletons),
+		UE_ARRAY_COUNT(FuncInfo),
+		UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::PropPointers),
 		0,
-		0x009000A0u,
-		METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::Class_MetaDataParams, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::Class_MetaDataParams))
+		0x009000A4u,
+		METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_AGuudoCharater()
 	{
@@ -437,7 +461,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGuudoCharater, 3493339758);
+	IMPLEMENT_CLASS(AGuudoCharater, 2799940210);
 	template<> GUUDO_API UClass* StaticClass<AGuudoCharater>()
 	{
 		return AGuudoCharater::StaticClass();

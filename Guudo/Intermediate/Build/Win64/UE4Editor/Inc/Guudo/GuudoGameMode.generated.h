@@ -1,4 +1,4 @@
-// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+// Copyright Epic Games, Inc. All Rights Reserved.
 /*===========================================================================
 	Generated code exported from UnrealHeaderTool.
 	DO NOT modify this manually! Edit the corresponding .h files instead!
@@ -13,58 +13,19 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define GUUDO_GuudoGameMode_generated_h
 
+#define Guudo_Source_Guudo_GuudoGameMode_h_15_SPARSE_DATA
 #define Guudo_Source_Guudo_GuudoGameMode_h_15_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execGetTimer) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(FString*)Z_Param__Result=P_THIS->GetTimer(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetMinutes) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(float*)Z_Param__Result=P_THIS->GetMinutes(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetSeconds) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(float*)Z_Param__Result=P_THIS->GetSeconds(); \
-		P_NATIVE_END; \
-	}
+	DECLARE_FUNCTION(execGetTimer); \
+	DECLARE_FUNCTION(execGetMinutes); \
+	DECLARE_FUNCTION(execGetSeconds);
 
 
 #define Guudo_Source_Guudo_GuudoGameMode_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execGetTimer) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(FString*)Z_Param__Result=P_THIS->GetTimer(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetMinutes) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(float*)Z_Param__Result=P_THIS->GetMinutes(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetSeconds) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(float*)Z_Param__Result=P_THIS->GetSeconds(); \
-		P_NATIVE_END; \
-	}
+	DECLARE_FUNCTION(execGetTimer); \
+	DECLARE_FUNCTION(execGetMinutes); \
+	DECLARE_FUNCTION(execGetSeconds);
 
 
 #define Guudo_Source_Guudo_GuudoGameMode_h_15_INCLASS_NO_PURE_DECLS \
@@ -115,6 +76,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGuudoGameMode); \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Guudo_Source_Guudo_GuudoGameMode_h_15_PRIVATE_PROPERTY_OFFSET \
+	Guudo_Source_Guudo_GuudoGameMode_h_15_SPARSE_DATA \
 	Guudo_Source_Guudo_GuudoGameMode_h_15_RPC_WRAPPERS \
 	Guudo_Source_Guudo_GuudoGameMode_h_15_INCLASS \
 	Guudo_Source_Guudo_GuudoGameMode_h_15_STANDARD_CONSTRUCTORS \
@@ -126,6 +88,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Guudo_Source_Guudo_GuudoGameMode_h_15_PRIVATE_PROPERTY_OFFSET \
+	Guudo_Source_Guudo_GuudoGameMode_h_15_SPARSE_DATA \
 	Guudo_Source_Guudo_GuudoGameMode_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	Guudo_Source_Guudo_GuudoGameMode_h_15_INCLASS_NO_PURE_DECLS \
 	Guudo_Source_Guudo_GuudoGameMode_h_15_ENHANCED_CONSTRUCTORS \

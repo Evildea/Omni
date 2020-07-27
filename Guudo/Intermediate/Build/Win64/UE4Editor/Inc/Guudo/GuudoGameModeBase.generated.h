@@ -1,4 +1,4 @@
-// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+// Copyright Epic Games, Inc. All Rights Reserved.
 /*===========================================================================
 	Generated code exported from UnrealHeaderTool.
 	DO NOT modify this manually! Edit the corresponding .h files instead!
@@ -13,6 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define GUUDO_GuudoGameModeBase_generated_h
 
+#define Guudo_Source_Guudo_GuudoGameModeBase_h_15_SPARSE_DATA
 #define Guudo_Source_Guudo_GuudoGameModeBase_h_15_RPC_WRAPPERS
 #define Guudo_Source_Guudo_GuudoGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
 #define Guudo_Source_Guudo_GuudoGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
@@ -20,7 +21,7 @@ private: \
 	static void StaticRegisterNativesAGuudoGameModeBase(); \
 	friend struct Z_Construct_UClass_AGuudoGameModeBase_Statics; \
 public: \
-	DECLARE_CLASS(AGuudoGameModeBase, AGameModeBase, COMPILED_IN_FLAGS(0 | CLASS_Transient), CASTCLASS_None, TEXT("/Script/Guudo"), NO_API) \
+	DECLARE_CLASS(AGuudoGameModeBase, AGameModeBase, COMPILED_IN_FLAGS(0 | CLASS_Transient | CLASS_Config), CASTCLASS_None, TEXT("/Script/Guudo"), NO_API) \
 	DECLARE_SERIALIZER(AGuudoGameModeBase)
 
 
@@ -29,7 +30,7 @@ private: \
 	static void StaticRegisterNativesAGuudoGameModeBase(); \
 	friend struct Z_Construct_UClass_AGuudoGameModeBase_Statics; \
 public: \
-	DECLARE_CLASS(AGuudoGameModeBase, AGameModeBase, COMPILED_IN_FLAGS(0 | CLASS_Transient), CASTCLASS_None, TEXT("/Script/Guudo"), NO_API) \
+	DECLARE_CLASS(AGuudoGameModeBase, AGameModeBase, COMPILED_IN_FLAGS(0 | CLASS_Transient | CLASS_Config), CASTCLASS_None, TEXT("/Script/Guudo"), NO_API) \
 	DECLARE_SERIALIZER(AGuudoGameModeBase)
 
 
@@ -65,6 +66,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGuudoGameModeBase); \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Guudo_Source_Guudo_GuudoGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
+	Guudo_Source_Guudo_GuudoGameModeBase_h_15_SPARSE_DATA \
 	Guudo_Source_Guudo_GuudoGameModeBase_h_15_RPC_WRAPPERS \
 	Guudo_Source_Guudo_GuudoGameModeBase_h_15_INCLASS \
 	Guudo_Source_Guudo_GuudoGameModeBase_h_15_STANDARD_CONSTRUCTORS \
@@ -76,6 +78,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Guudo_Source_Guudo_GuudoGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
+	Guudo_Source_Guudo_GuudoGameModeBase_h_15_SPARSE_DATA \
 	Guudo_Source_Guudo_GuudoGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	Guudo_Source_Guudo_GuudoGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
 	Guudo_Source_Guudo_GuudoGameModeBase_h_15_ENHANCED_CONSTRUCTORS \

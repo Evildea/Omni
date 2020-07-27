@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\AIE\\AIELineup\\AIELineup\\Omni\\Guudo\\Source\\Guudo\\Guudo.Build.cs",
+		"D:\\AIE\\AIELineup\\AIELineup\\Omni\\Guudo\\Source\\Guudo.Target.cs",
+		"D:\\AIE\\AIELineup\\AIELineup\\Omni\\Guudo\\Source\\GuudoEditor.Target.cs"
+	],
+	"EngineVersion": "4.25.1"
+}
