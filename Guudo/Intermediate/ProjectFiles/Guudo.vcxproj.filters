@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Guudo.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{486998D5-F886-4CDA-9FF8-1D78908E73D1}</UniqueIdentifier>
+      <UniqueIdentifier>{AC2543E7-074D-461D-B4CA-CAE8453D235A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Guudo.Target.cs">
       <Filter>Source</Filter>
@@ -12,8 +12,11 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{47490BCE-8D3D-4B86-BE89-C608FBD2BEEB}</UniqueIdentifier>
+      <UniqueIdentifier>{D3AB9164-B5CF-4A40-8CD0-B0A73B82B357}</UniqueIdentifier>
     </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
     <None Include="..\..\Config\DefaultEngine.ini">
       <Filter>Config</Filter>
     </None>
@@ -21,7 +24,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Guudo">
-      <UniqueIdentifier>{28097127-75B4-44FD-99B7-3A73371ED669}</UniqueIdentifier>
+      <UniqueIdentifier>{EAABF322-E00C-4021-A2F9-AE13ECBD673F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Guudo\Guudo.Build.cs">
       <Filter>Source\Guudo</Filter>
@@ -55,6 +58,15 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Guudo\PickupBase.h">
       <Filter>Source\Guudo</Filter>
+    </ClInclude>
+    <Filter Include="Source\Guudo\CharacterBuilder">
+      <UniqueIdentifier>{5FCFC011-5986-4523-B58D-FA720C253D39}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Guudo\CharacterBuilder\InventoryComponent.cpp">
+      <Filter>Source\Guudo\CharacterBuilder</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Guudo\CharacterBuilder\InventoryComponent.h">
+      <Filter>Source\Guudo\CharacterBuilder</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
