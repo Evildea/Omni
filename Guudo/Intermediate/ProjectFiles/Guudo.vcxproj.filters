@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Guudo.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{68D33683-DFF0-498A-A342-928AA76B1903}</UniqueIdentifier>
+      <UniqueIdentifier>{486998D5-F886-4CDA-9FF8-1D78908E73D1}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Guudo.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{E0B7C27B-D07A-4D24-9DFE-899F9D6A92D1}</UniqueIdentifier>
+      <UniqueIdentifier>{47490BCE-8D3D-4B86-BE89-C608FBD2BEEB}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEngine.ini">
       <Filter>Config</Filter>
@@ -21,7 +21,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Guudo">
-      <UniqueIdentifier>{319B443C-934A-4B7C-9D45-7370B6642B91}</UniqueIdentifier>
+      <UniqueIdentifier>{28097127-75B4-44FD-99B7-3A73371ED669}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Guudo\Guudo.Build.cs">
       <Filter>Source\Guudo</Filter>

@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 /*===========================================================================
 	Generated code exported from UnrealHeaderTool.
 	DO NOT modify this manually! Edit the corresponding .h files instead!
@@ -52,18 +52,18 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameModeBase() {}
 	};
 	const UE4CodeGen_Private::FClassParams Z_Construct_UClass_AGuudoGameModeBase_Statics::ClassParams = {
 		&AGuudoGameModeBase::StaticClass,
-		"Game",
+		nullptr,
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
 		nullptr,
 		nullptr,
-		UE_ARRAY_COUNT(DependentSingletons),
+		ARRAY_COUNT(DependentSingletons),
 		0,
 		0,
 		0,
-		0x009002ACu,
-		METADATA_PARAMS(Z_Construct_UClass_AGuudoGameModeBase_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AGuudoGameModeBase_Statics::Class_MetaDataParams))
+		0x009002A8u,
+		METADATA_PARAMS(Z_Construct_UClass_AGuudoGameModeBase_Statics::Class_MetaDataParams, ARRAY_COUNT(Z_Construct_UClass_AGuudoGameModeBase_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_AGuudoGameModeBase()
 	{
@@ -74,7 +74,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGuudoGameModeBase, 1445353336);
+	IMPLEMENT_CLASS(AGuudoGameModeBase, 404880766);
 	template<> GUUDO_API UClass* StaticClass<AGuudoGameModeBase>()
 	{
 		return AGuudoGameModeBase::StaticClass();

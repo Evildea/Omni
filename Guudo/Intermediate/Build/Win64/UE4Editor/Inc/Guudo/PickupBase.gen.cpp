@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 /*===========================================================================
 	Generated code exported from UnrealHeaderTool.
 	DO NOT modify this manually! Edit the corresponding .h files instead!
@@ -62,7 +62,7 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 		{ "ModuleRelativePath", "PickupBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickupBase_Statics::NewProp_PickupRange = { "PickupRange", nullptr, (EPropertyFlags)0x001000000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickupBase, PickupRange), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickupBase_Statics::NewProp_PickupRange_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::NewProp_PickupRange_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickupBase_Statics::NewProp_PickupRange = { "PickupRange", nullptr, (EPropertyFlags)0x001000000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickupBase, PickupRange), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickupBase_Statics::NewProp_PickupRange_MetaData, ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::NewProp_PickupRange_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh_MetaData[] = {
 		{ "Category", "PickupBase" },
@@ -70,7 +70,7 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 		{ "ModuleRelativePath", "PickupBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x001000000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickupBase, Mesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x001000000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickupBase, Mesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh_MetaData, ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APickupBase_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupBase_Statics::NewProp_PickupRange,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh,
@@ -80,18 +80,18 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 	};
 	const UE4CodeGen_Private::FClassParams Z_Construct_UClass_APickupBase_Statics::ClassParams = {
 		&APickupBase::StaticClass,
-		"Engine",
+		nullptr,
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
 		Z_Construct_UClass_APickupBase_Statics::PropPointers,
 		nullptr,
-		UE_ARRAY_COUNT(DependentSingletons),
+		ARRAY_COUNT(DependentSingletons),
 		0,
-		UE_ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::PropPointers),
+		ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::PropPointers),
 		0,
-		0x009000A4u,
-		METADATA_PARAMS(Z_Construct_UClass_APickupBase_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::Class_MetaDataParams))
+		0x009000A0u,
+		METADATA_PARAMS(Z_Construct_UClass_APickupBase_Statics::Class_MetaDataParams, ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_APickupBase()
 	{
@@ -102,7 +102,7 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APickupBase, 2819316981);
+	IMPLEMENT_CLASS(APickupBase, 3812239861);
 	template<> GUUDO_API UClass* StaticClass<APickupBase>()
 	{
 		return APickupBase::StaticClass();
