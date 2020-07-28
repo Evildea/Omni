@@ -74,6 +74,8 @@ public:
 		float ZoomSpeed = 3.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		bool isReverseZoom = true;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		int MaxEnergy = 4;
 
 	// FUNCTIONS /////////////////////////////////////////////////
 	void MoveForward(float axis);
