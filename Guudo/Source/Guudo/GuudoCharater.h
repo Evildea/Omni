@@ -6,6 +6,14 @@
 #include "GameFramework/Character.h"
 #include "GuudoCharater.generated.h"
 
+UENUM(BlueprintType)
+enum class EAction : uint8
+{
+	Consume     UMETA(DisplayName = "Consume"),
+	Hold		UMETA(DisplayName = "Hold"),
+	Drop		UMETA(DisplayName = "Drop"),
+};
+
 UCLASS()
 class GUUDO_API AGuudoCharater : public ACharacter
 {
@@ -28,6 +36,8 @@ public:
 
 	// Freeze Keyboard Input
 	bool isFrozen;
+	bool isPickupPossible;
+	int currentEnergy;
 
 	// COMPONENTS ////////////////////////////////////////////////
 
@@ -49,9 +59,13 @@ public:
 
 	// Widgets
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		TSubclassOf<class UUserWidget> HudWidgetClassType;
+		TSubclassOf<class UUserWidget> HudCompletePickupWidgetClass;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		TSubclassOf<class UUserWidget> HudPartialPickupWidgetClass;
 	UPROPERTY()
-		class UUserWidget* HudWidget;
+		class UUserWidget* HudCompletePickupWidget;
+	UPROPERTY()
+		class UUserWidget* HudPartialPickupWidget;
 
 	// Other Actor
 	UPROPERTY()
@@ -81,16 +95,24 @@ public:
 	void MoveForward(float axis);
 	void MoveRight(float axis);
 	void Scroll(float axis);
+	void Pickup();
 
-	// Unfreeze the Player's Movements
+	// Perform an Action on the Pickup Object
 	UFUNCTION(BlueprintCallable)
-		void Unfreeze() { isFrozen = false; }
+		void PerformAction(TEnumAsByte<EAction> ActionToPerform);
 
-	UFUNCTION(BlueprintCallable)
-		void DestroyTarget();
+	// Get how much energy the player has
+	UFUNCTION(BlueprintPure)
+		FString GetEnergy();
+
+	// Get if your player is energy full
+	UFUNCTION(BlueprintPure)
+		bool GetIfEnergyFull() { return currentEnergy == 4 ? true : false; }
 
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()
 		void OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
+	UFUNCTION()
+		void OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 };

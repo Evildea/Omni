@@ -31,7 +31,9 @@ AGuudoCharater::AGuudoCharater()
 
 	// Capsule Component
 	GetCapsuleComponent()->InitCapsuleSize(CapsuleRadius, CapsuleHeight);
+	GetCapsuleComponent()->SetGenerateOverlapEvents(true);
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AGuudoCharater::OnOverlapBegin);
+	GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AGuudoCharater::OnOverlapEnd);
 
 	// Controller
 	bUseControllerRotationPitch = false;
@@ -47,13 +49,20 @@ AGuudoCharater::AGuudoCharater()
 void AGuudoCharater::BeginPlay()
 {
 	Super::BeginPlay();
-	if (HudWidgetClassType) {
-		HudWidget = CreateWidget<UUserWidget>(Cast<APlayerController>(GetController()), HudWidgetClassType);
-		HudWidget->bIsFocusable = true;
+	if (HudCompletePickupWidgetClass) {
+		HudCompletePickupWidget = CreateWidget<UUserWidget>(Cast<APlayerController>(GetController()), HudCompletePickupWidgetClass);
+		HudCompletePickupWidget->bIsFocusable = true;
+	}
+
+	if (HudPartialPickupWidgetClass) {
+		HudPartialPickupWidget = CreateWidget<UUserWidget>(Cast<APlayerController>(GetController()), HudPartialPickupWidgetClass);
+		HudPartialPickupWidget->bIsFocusable = true;
 	}
 
 	// Set variables
 	isFrozen = false;
+	isPickupPossible = false;
+	currentEnergy = 0;
 }
 
 // Called every frame
@@ -73,6 +82,7 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+	PlayerInputComponent->BindAction("Pickup", IE_Pressed, this, &AGuudoCharater::Pickup);
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &AGuudoCharater::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AGuudoCharater::MoveRight);
@@ -119,23 +129,65 @@ void AGuudoCharater::Scroll(float axis)
 
 }
 
-void AGuudoCharater::DestroyTarget()
+void AGuudoCharater::Pickup()
 {
-	Target->Destroy();
+	// If Pickup is permited then pickup the Object
+	if (isPickupPossible && HudCompletePickupWidgetClass && HudPartialPickupWidgetClass)
+	{
+		isFrozen = true;
+		isPickupPossible = false;
+		if (GetIfEnergyFull())
+		{
+			HudPartialPickupWidget->AddToViewport();
+			HudPartialPickupWidget->SetKeyboardFocus();
+		}
+		else
+		{
+			HudCompletePickupWidget->AddToViewport();
+			HudCompletePickupWidget->SetKeyboardFocus();
+		}
+	}
+}
+
+void AGuudoCharater::PerformAction(TEnumAsByte<EAction> ActionToPerform)
+{
+	isFrozen = false;
+
+	if (ActionToPerform == EAction::Consume)
+	{
+		currentEnergy++;
+		Target->Destroy();
+		isPickupPossible = false;
+	}
+	if (ActionToPerform == EAction::Hold)
+	{
+		Target->Destroy();
+		isPickupPossible = false;
+	}
+	if (ActionToPerform == EAction::Drop)
+	{
+		isPickupPossible = true;
+	}
+}
+
+FString AGuudoCharater::GetEnergy()
+{
+	return FString::Printf(TEXT("Energy: %i / %i"), currentEnergy, MaxEnergy);
 }
 
 void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (OtherComponent->ComponentHasTag("Pickup") && !isFrozen)
+	// If within range of Pickup permit pickup possibilities
+	if (OtherComponent->ComponentHasTag("Pickup"))
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Message Output"));
-
-		if (HudWidget)
-		{
-			Target = OtherActor;
-			isFrozen = true;
-			HudWidget->AddToViewport();
-			HudWidget->SetKeyboardFocus();
-		}
+		isPickupPossible = true;
+		Target = OtherActor;
 	}
+	UE_LOG(LogTemp, Warning, TEXT("Enter Range"));
+}
+
+void AGuudoCharater::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	UE_LOG(LogTemp, Warning, TEXT("Exit Range"));
+	isPickupPossible = false;
 }
