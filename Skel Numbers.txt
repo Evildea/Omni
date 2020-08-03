@@ -1,0 +1,10 @@
+Head = 4
+Torso = 1
+Arm = 3
+Forearm = 1
+Hand = 3
+Foreleg = 3
+Leg = 2
+Foot = 2
+
+
