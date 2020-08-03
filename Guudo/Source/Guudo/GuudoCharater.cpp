@@ -10,6 +10,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "Blueprint/UserWidget.h"
+#include "Kismet/GameplayStatics.h"
 #include "Engine.h" // Debug
 
 // Sets default values
@@ -136,6 +137,7 @@ void AGuudoCharater::Pickup()
 	{
 		isFrozen = true;
 		isPickupPossible = false;
+		UGameplayStatics::SpawnSoundAttached(ConsumeSound, this->GetRootComponent());
 		if (GetIfEnergyFull())
 		{
 			HudPartialPickupWidget->AddToViewport();
@@ -158,15 +160,18 @@ void AGuudoCharater::PerformAction(TEnumAsByte<EAction> ActionToPerform)
 		currentEnergy++;
 		Target->Destroy();
 		isPickupPossible = false;
+		UE_LOG(LogTemp, Warning, TEXT("Consume"));
 	}
 	if (ActionToPerform == EAction::Hold)
 	{
 		Target->Destroy();
 		isPickupPossible = false;
+		UE_LOG(LogTemp, Warning, TEXT("Hold"));
 	}
 	if (ActionToPerform == EAction::Drop)
 	{
 		isPickupPossible = true;
+		UE_LOG(LogTemp, Warning, TEXT("Drop"));
 	}
 }
 

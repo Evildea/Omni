@@ -90,6 +90,8 @@ public:
 		bool isReverseZoom = true;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		int MaxEnergy = 4;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* ConsumeSound;
 
 	// FUNCTIONS /////////////////////////////////////////////////
 	void MoveForward(float axis);
