@@ -140,6 +140,10 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameMode() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CustomisationLevelName_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FNamePropertyParams NewProp_CustomisationLevelName;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Seconds_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_Seconds;
@@ -174,6 +178,13 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameMode() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_CustomisationLevelName_MetaData[] = {
+		{ "Category", "Designer" },
+		{ "ModuleRelativePath", "GuudoGameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FNamePropertyParams Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_CustomisationLevelName = { "CustomisationLevelName", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoGameMode, CustomisationLevelName), METADATA_PARAMS(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_CustomisationLevelName_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_CustomisationLevelName_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Seconds_MetaData[] = {
 		{ "Category", "Designer" },
 		{ "ModuleRelativePath", "GuudoGameMode.h" },
@@ -198,6 +209,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameMode() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Controller = { "Controller", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoGameMode, Controller), Z_Construct_UClass_APlayerController_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Controller_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Controller_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGuudoGameMode_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_CustomisationLevelName,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Seconds,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Minutes,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoGameMode_Statics::NewProp_Controller,
@@ -229,7 +241,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGuudoGameMode, 958298289);
+	IMPLEMENT_CLASS(AGuudoGameMode, 4249720806);
 	template<> GUUDO_API UClass* StaticClass<AGuudoGameMode>()
 	{
 		return AGuudoGameMode::StaticClass();

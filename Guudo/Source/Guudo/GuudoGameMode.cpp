@@ -5,6 +5,7 @@
 #include "Engine/World.h"
 #include "GameFramework/PlayerController.h"
 #include "GuudoCharater.h"
+#include "Kismet/GameplayStatics.h"
 
 AGuudoGameMode::AGuudoGameMode()
 {
@@ -54,6 +55,13 @@ void AGuudoGameMode::Tick(float DeltaTime)
 			}
 		}
 
+	}
+
+	// Go to the next level
+	if (Seconds == 0 && Minutes == 0)
+	{
+		FLatentActionInfo LatentInfo;
+		UGameplayStatics::LoadStreamLevel(this, CustomisationLevelName, true, true, LatentInfo);
 	}
 }
 

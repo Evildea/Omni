@@ -33,6 +33,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		int Seconds;
 
+	UPROPERTY(EditAnywhere, Category = "Designer")
+	FName CustomisationLevelName;
+
 	// FUNCTIONS /////////////////////////////////////////////////
 	virtual void Tick(float DeltaTime) override;
 
