@@ -60,8 +60,8 @@ void AGuudoGameMode::Tick(float DeltaTime)
 	// Go to the next level
 	if (Seconds == 0 && Minutes == 0)
 	{
-		FLatentActionInfo LatentInfo;
-		UGameplayStatics::LoadStreamLevel(this, CustomisationLevelName, true, true, LatentInfo);
+		UE_LOG(LogTemp, Warning, TEXT("Level Change"));
+		UGameplayStatics::OpenLevel(GetWorld(), CustomisationLevelName);
 	}
 }
 
