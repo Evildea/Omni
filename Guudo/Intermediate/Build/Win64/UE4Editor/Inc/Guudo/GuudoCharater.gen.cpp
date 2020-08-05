@@ -46,7 +46,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		return EAction_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EAction(EAction_StaticEnum, TEXT("/Script/Guudo"), TEXT("EAction"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_Guudo_EAction_Hash() { return 809065985U; }
+	uint32 Get_Z_Construct_UEnum_Guudo_EAction_Hash() { return 3673428927U; }
 	UEnum* Z_Construct_UEnum_Guudo_EAction()
 	{
 #if WITH_HOT_RELOAD
@@ -65,6 +65,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 #if WITH_METADATA
 			const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 				{ "BlueprintType", "true" },
+				{ "Comment", "// Enumeration called by Blueprint Widget\n" },
 				{ "Consume.DisplayName", "Consume" },
 				{ "Consume.Name", "EAction::Consume" },
 				{ "Drop.DisplayName", "Drop" },
@@ -72,6 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 				{ "Hold.DisplayName", "Hold" },
 				{ "Hold.Name", "EAction::Hold" },
 				{ "ModuleRelativePath", "GuudoCharater.h" },
+				{ "ToolTip", "Enumeration called by Blueprint Widget" },
 			};
 #endif
 			static const UE4CodeGen_Private::FEnumParams EnumParams = {
