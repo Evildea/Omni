@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "GuudoCharater.generated.h"
 
+// Enumeration called by Blueprint Widget
 UENUM(BlueprintType)
 enum class EAction : uint8
 {
