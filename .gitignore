@@ -45,6 +45,8 @@ Guudo/.vs/
 Guudo/SourceArt/**/*.png
 Guudo/SourceArt/**/*.tga
 
+Guudo/Intermediate/CachedAssetRegistry.bin
+
 # Binary Files
 Guudo/Binaries/*
 Guudo/Plugins/*/Binaries/*
