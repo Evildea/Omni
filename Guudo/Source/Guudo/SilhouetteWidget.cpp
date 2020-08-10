@@ -11,6 +11,4 @@ USilhouetteWidget::USilhouetteWidget(const FObjectInitializer& ObjectInitializer
 void USilhouetteWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
-
-	HeadSilouette->SetBrush()
 }
