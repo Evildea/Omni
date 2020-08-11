@@ -99,6 +99,8 @@ public:
 	void MoveRight(float axis);
 	void Scroll(float axis);
 	void Pickup();
+	void Shrink();
+	void Grow();
 
 	// Perform an Action on the Pickup Object
 	UFUNCTION(BlueprintCallable)
@@ -111,6 +113,13 @@ public:
 	// Get if your player is energy full
 	UFUNCTION(BlueprintPure)
 		bool GetIfEnergyFull() { return currentEnergy == 4 ? true : false; }
+
+	// BLUEPRINT EVENTS ///////////////////////////////////////////
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnShrink();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnGrow();
 
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()

@@ -85,6 +85,9 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	PlayerInputComponent->BindAction("Pickup", IE_Pressed, this, &AGuudoCharater::Pickup);
 
+	PlayerInputComponent->BindAction("Shrink", IE_Pressed, this, &AGuudoCharater::Shrink);
+	PlayerInputComponent->BindAction("Grow", IE_Pressed, this, &AGuudoCharater::Grow);
+
 	PlayerInputComponent->BindAxis("MoveForward", this, &AGuudoCharater::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AGuudoCharater::MoveRight);
 
@@ -149,6 +152,16 @@ void AGuudoCharater::Pickup()
 			HudCompletePickupWidget->SetKeyboardFocus();
 		}
 	}
+}
+
+void AGuudoCharater::Shrink()
+{
+	OnShrink();
+}
+
+void AGuudoCharater::Grow()
+{
+	OnGrow();
 }
 
 void AGuudoCharater::PerformAction(TEnumAsByte<EAction> ActionToPerform)

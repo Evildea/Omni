@@ -20,11 +20,13 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_GetEnergy();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_GetIfEnergyFull();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnGrow();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnOverlapEnd();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnShrink();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_PerformAction();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
@@ -91,6 +93,16 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 			UE4CodeGen_Private::ConstructUEnum(ReturnEnum, EnumParams);
 		}
 		return ReturnEnum;
+	}
+	static FName NAME_AGuudoCharater_OnGrow = FName(TEXT("OnGrow"));
+	void AGuudoCharater::OnGrow()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AGuudoCharater_OnGrow),NULL);
+	}
+	static FName NAME_AGuudoCharater_OnShrink = FName(TEXT("OnShrink"));
+	void AGuudoCharater::OnShrink()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AGuudoCharater_OnShrink),NULL);
 	}
 	void AGuudoCharater::StaticRegisterNativesAGuudoCharater()
 	{
@@ -174,6 +186,28 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_GetIfEnergyFull_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGuudoCharater_OnGrow_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_OnGrow_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_OnGrow_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "OnGrow", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnGrow_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnGrow_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoCharater_OnGrow()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_OnGrow_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -320,6 +354,30 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AGuudoCharater_OnShrink_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_OnShrink_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// BLUEPRINT EVENTS ///////////////////////////////////////////\n" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+		{ "ToolTip", "BLUEPRINT EVENTS /" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_OnShrink_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "OnShrink", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnShrink_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnShrink_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoCharater_OnShrink()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_OnShrink_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_AGuudoCharater_PerformAction_Statics
 	{
 		struct GuudoCharater_eventPerformAction_Parms
@@ -460,8 +518,10 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AGuudoCharater_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AGuudoCharater_GetEnergy, "GetEnergy" }, // 2715685276
 		{ &Z_Construct_UFunction_AGuudoCharater_GetIfEnergyFull, "GetIfEnergyFull" }, // 176640048
+		{ &Z_Construct_UFunction_AGuudoCharater_OnGrow, "OnGrow" }, // 3490104494
 		{ &Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin, "OnOverlapBegin" }, // 1174075323
 		{ &Z_Construct_UFunction_AGuudoCharater_OnOverlapEnd, "OnOverlapEnd" }, // 3339357733
+		{ &Z_Construct_UFunction_AGuudoCharater_OnShrink, "OnShrink" }, // 1826877418
 		{ &Z_Construct_UFunction_AGuudoCharater_PerformAction, "PerformAction" }, // 1700194123
 	};
 #if WITH_METADATA
@@ -677,7 +737,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGuudoCharater, 2726342666);
+	IMPLEMENT_CLASS(AGuudoCharater, 2804171039);
 	template<> GUUDO_API UClass* StaticClass<AGuudoCharater>()
 	{
 		return AGuudoCharater::StaticClass();

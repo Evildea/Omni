@@ -125,6 +125,8 @@ enum class EAction : uint8;
 	}
 
 
+#define Guudo_Source_Guudo_GuudoCharater_h_21_EVENT_PARMS
+#define Guudo_Source_Guudo_GuudoCharater_h_21_CALLBACK_WRAPPERS
 #define Guudo_Source_Guudo_GuudoCharater_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGuudoCharater(); \
@@ -168,12 +170,16 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGuudoCharater); \
 
 
 #define Guudo_Source_Guudo_GuudoCharater_h_21_PRIVATE_PROPERTY_OFFSET
-#define Guudo_Source_Guudo_GuudoCharater_h_18_PROLOG
+#define Guudo_Source_Guudo_GuudoCharater_h_18_PROLOG \
+	Guudo_Source_Guudo_GuudoCharater_h_21_EVENT_PARMS
+
+
 #define Guudo_Source_Guudo_GuudoCharater_h_21_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Guudo_Source_Guudo_GuudoCharater_h_21_PRIVATE_PROPERTY_OFFSET \
 	Guudo_Source_Guudo_GuudoCharater_h_21_RPC_WRAPPERS \
+	Guudo_Source_Guudo_GuudoCharater_h_21_CALLBACK_WRAPPERS \
 	Guudo_Source_Guudo_GuudoCharater_h_21_INCLASS \
 	Guudo_Source_Guudo_GuudoCharater_h_21_STANDARD_CONSTRUCTORS \
 public: \
@@ -185,6 +191,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Guudo_Source_Guudo_GuudoCharater_h_21_PRIVATE_PROPERTY_OFFSET \
 	Guudo_Source_Guudo_GuudoCharater_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	Guudo_Source_Guudo_GuudoCharater_h_21_CALLBACK_WRAPPERS \
 	Guudo_Source_Guudo_GuudoCharater_h_21_INCLASS_NO_PURE_DECLS \
 	Guudo_Source_Guudo_GuudoCharater_h_21_ENHANCED_CONSTRUCTORS \
 private: \
