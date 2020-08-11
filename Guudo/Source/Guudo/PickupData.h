@@ -12,16 +12,6 @@
  */
 
 UENUM(BlueprintType)
-enum class EBodyPosition : uint8
-{
-    Head  UMETA(DisplayName = "Head"),
-    Arms  UMETA(DisplayName = "Arms"),
-    Chest UMETA(DisplayName = "Chest"),
-    Legs  UMETA(DisplayName = "Legs"),
-    Empty  UMETA(DisplayName = "Empty"),
-};
-
-UENUM(BlueprintType)
 enum class EShape : uint8
 {
     Sphere      UMETA(DisplayName = "Sphere"),
@@ -47,16 +37,16 @@ struct FPickupData
 
     // This object can be connected to any of these body positions:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        TEnumAsByte<EBodyPosition> AcceptablePosition1;
+        bool isHead;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        TEnumAsByte<EBodyPosition> AcceptablePosition2;
+        bool isChest;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        TEnumAsByte<EBodyPosition> AcceptablePosition3;
+        bool isArms;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        TEnumAsByte<EBodyPosition> AcceptablePosition4;
+        bool isLegs;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         float PercentagePointsScoredForNonprimaryButAcceptableSolution;

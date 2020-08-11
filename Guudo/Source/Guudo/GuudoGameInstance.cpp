@@ -21,31 +21,19 @@ FSilhouetteData UGuudoGameInstance::GenerateSilhouette()
 	for (int32 Index = 0; Index != ListOfPickups.Num(); ++Index)
 	{
 		// Check Head Positions
-		if (ListOfPickups[Index].AcceptablePosition1 == EBodyPosition::Head ||
-			ListOfPickups[Index].AcceptablePosition2 == EBodyPosition::Head ||
-			ListOfPickups[Index].AcceptablePosition3 == EBodyPosition::Head || 
-			ListOfPickups[Index].AcceptablePosition4 == EBodyPosition::Head)
+		if (ListOfPickups[Index].isHead)
 			ListOfHeadMats.Add(ListOfPickups[Index].Silhouette);
 
 		// Check Chest Positions
-		if (ListOfPickups[Index].AcceptablePosition1 == EBodyPosition::Chest ||
-			ListOfPickups[Index].AcceptablePosition2 == EBodyPosition::Chest ||
-			ListOfPickups[Index].AcceptablePosition3 == EBodyPosition::Chest ||
-			ListOfPickups[Index].AcceptablePosition4 == EBodyPosition::Chest)
+		if (ListOfPickups[Index].isChest)
 			ListOfChestMats.Add(ListOfPickups[Index].Silhouette);
 
 		// Check Arm Positions
-		if (ListOfPickups[Index].AcceptablePosition1 == EBodyPosition::Arms ||
-			ListOfPickups[Index].AcceptablePosition2 == EBodyPosition::Arms ||
-			ListOfPickups[Index].AcceptablePosition3 == EBodyPosition::Arms ||
-			ListOfPickups[Index].AcceptablePosition4 == EBodyPosition::Arms)
+		if (ListOfPickups[Index].isArms)
 			ListOfArmMats.Add(ListOfPickups[Index].Silhouette);
 
 		// Check Leg Positions
-		if (ListOfPickups[Index].AcceptablePosition1 == EBodyPosition::Legs ||
-			ListOfPickups[Index].AcceptablePosition2 == EBodyPosition::Legs ||
-			ListOfPickups[Index].AcceptablePosition3 == EBodyPosition::Legs ||
-			ListOfPickups[Index].AcceptablePosition4 == EBodyPosition::Legs)
+		if (ListOfPickups[Index].isLegs)
 			ListOfLegMats.Add(ListOfPickups[Index].Silhouette);
 	}
 
