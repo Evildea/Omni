@@ -39,7 +39,7 @@ struct FPickupData
         FName Name;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        TWeakObjectPtr<UImage> Silhouette;
+        UMaterial* Silhouette;
 
     // This object has this general shape:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)

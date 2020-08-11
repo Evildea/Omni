@@ -22,6 +22,9 @@ public:
 
 	virtual void NativeConstruct() override;
 
+	UPROPERTY()
+		class UGuudoGameInstance* gameInstance;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UImage* HeadSilouette;
 
@@ -39,5 +42,18 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UImage* RightLegSilouette;
+
+
+	UFUNCTION(BlueprintCallable)
+		class UMaterial* GetHead();
+
+	UFUNCTION(BlueprintCallable)
+		class UMaterial* GetChest();
+
+	UFUNCTION(BlueprintCallable)
+		class UMaterial* GetArms();
+
+	UFUNCTION(BlueprintCallable)
+		class UMaterial* GetLegs();
 
 };
