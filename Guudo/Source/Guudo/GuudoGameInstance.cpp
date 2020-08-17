@@ -7,6 +7,7 @@
 void UGuudoGameInstance::Init()
 {
 	Super::Init();
+	GenerateSilhouette();
 }
 
 FSilhouetteData UGuudoGameInstance::GenerateSilhouette()
@@ -41,52 +42,67 @@ FSilhouetteData UGuudoGameInstance::GenerateSilhouette()
 	if (ListOfHeadMats.Num() != 0)
 	{
 		int32 random = FMath::RandRange(0, ListOfHeadMats.Num() - 1);
-		Data.HeadSilouette = ListOfHeadMats[random];
+		m_Silhouette.HeadSilouette = ListOfHeadMats[random];
 	}
 
 	// Pick a Chest
 	if (ListOfChestMats.Num() != 0)
 	{
 		int32 random = FMath::RandRange(0, ListOfChestMats.Num() - 1);
-		Data.ChestSilouette = ListOfChestMats[random];
+		m_Silhouette.ChestSilouette = ListOfChestMats[random];
 	}
 
 	// Pick a Arms
 	if (ListOfArmMats.Num() != 0)
 	{
 		int32 random = FMath::RandRange(0, ListOfArmMats.Num() - 1);
-		Data.ArmsSilouette = ListOfArmMats[random];
+		m_Silhouette.ArmsSilouette = ListOfArmMats[random];
 	}
 
 	// Pick a Legs
 	if (ListOfLegMats.Num() != 0)
 	{
 		int32 random = FMath::RandRange(0, ListOfLegMats.Num() - 1);
-		Data.LegsSilouette = ListOfLegMats[random];
+		m_Silhouette.LegsSilouette = ListOfLegMats[random];
 	}
 
 	// Debug
 	UE_LOG(LogTemp, Warning, TEXT("Silhouette Generated"));
 
-	return Data;
+	return m_Silhouette;
 }
 
 UMaterial* UGuudoGameInstance::GetHead()
 {
-	return Data.HeadSilouette;
+	return m_Silhouette.HeadSilouette;
 }
 
 UMaterial* UGuudoGameInstance::GetChest()
 {
-	return Data.ChestSilouette;
+	return m_Silhouette.ChestSilouette;
 }
 
 UMaterial* UGuudoGameInstance::GetArms()
 {
-	return Data.ArmsSilouette;
+	return m_Silhouette.ArmsSilouette;
 }
 
 UMaterial* UGuudoGameInstance::GetLegs()
 {
-	return Data.LegsSilouette;
+	return m_Silhouette.LegsSilouette;
+}
+
+FPickupData* UGuudoGameInstance::GetPickupDataFor(FName Name)
+{
+	for (auto& Pickup : ListOfPickups)
+	{
+		if (Pickup.Name == Name)
+			return &Pickup;
+	}
+	return nullptr;
+}
+
+void UGuudoGameInstance::PickupItem(FPickupData* Item)
+{
+	m_Inventory.Add(*Item);
 }

@@ -3,6 +3,8 @@
 #include "PickupBase.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SphereComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "GuudoGameInstance.h"
 
 // Sets default values
 APickupBase::APickupBase()
@@ -27,4 +29,12 @@ void APickupBase::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	// Set Pickup Data
+	UGuudoGameInstance* gameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+	if (gameInstance)
+		m_PickupData = gameInstance->GetPickupDataFor(PickupNameMustMatchGameInstance);
+
+	// Destroy the Pickup if it isn't linked to an item in the Game Instance.
+	if (m_PickupData == nullptr)
+		Destroy();
 }

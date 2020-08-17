@@ -51,6 +51,8 @@ struct FPickupData
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         float PercentagePointsScoredForNonprimaryButAcceptableSolution;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        class USoundBase* VoiceOver;
 
 
 

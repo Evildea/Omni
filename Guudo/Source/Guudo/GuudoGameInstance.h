@@ -34,17 +34,21 @@ class GUUDO_API UGuudoGameInstance : public UGameInstance
 	GENERATED_BODY()
 
 private:
-
+	// Random Silhouette that has been generated
 	UPROPERTY()
-		FSilhouetteData Data;
+		FSilhouetteData m_Silhouette;
+
+	// Player's Inventory
+	TArray<FPickupData> m_Inventory;
 	
 public:
 	virtual void Init() override;
 
+	// List of Pickups as specified by the Designer
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TArray<FPickupData> ListOfPickups;
 
-		FSilhouetteData GenerateSilhouette();
+	FSilhouetteData GenerateSilhouette();
 
 	UFUNCTION(BlueprintPure)
 		UMaterial* GetHead();
@@ -57,4 +61,10 @@ public:
 
 	UFUNCTION(BlueprintPure)
 		UMaterial* GetLegs();
+
+	// Return the Pickup Data for a Pickup with this Name
+	FPickupData* GetPickupDataFor(FName Name);
+
+	// Add item to the Players Inventory
+	void PickupItem(FPickupData* Item);
 };
