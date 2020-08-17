@@ -59,6 +59,9 @@ private:
 	// Reset the Timer to Show can't grow
 	inline void ResetIsAbleToGrowError() { isAbleToGrow = true; }
 
+	// Custom Jump for the Character
+	void CustomJump();
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -102,10 +105,6 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float RotationSpeed = 540.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		float NormalJumpVelocity = 600.0f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float PoweredJumpVelocity = 1200.0f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
 		float AirMovability = 0.2f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float MaxZoomOut = 600.0f;
@@ -119,6 +118,20 @@ public:
 		int MaxEnergy = 4;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		class USoundBase* ConsumeSound;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float NormalRunSpeed = 600.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float SmallRunSpeed = 300.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float LargeRunSpeed = 1200.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float NormalJumpHeight = 600.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float SmallJumpHeight = 300.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float LargeJumpHeight = 1200.0f;
 
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")

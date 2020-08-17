@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudo_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xA669E6DA,
+				0x14A8D5B8,
 				0xE6B7CE89,
 				METADATA_PARAMS(nullptr, 0)
 			};
