@@ -13,25 +13,145 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 // Cross Module References
-	GUUDO_API UEnum* Z_Construct_UEnum_Guudo_EAction();
+	GUUDO_API UEnum* Z_Construct_UEnum_Guudo_EGrowth();
 	UPackage* Z_Construct_UPackage__Script_Guudo();
+	GUUDO_API UEnum* Z_Construct_UEnum_Guudo_EScale();
+	GUUDO_API UEnum* Z_Construct_UEnum_Guudo_EAction();
 	GUUDO_API UClass* Z_Construct_UClass_AGuudoCharater_NoRegister();
 	GUUDO_API UClass* Z_Construct_UClass_AGuudoCharater();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_GetEnergy();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_GetIfEnergyFull();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnLargeToNormal();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnNormalToLarge();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnNormalToSmall();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnOverlapEnd();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnSmallToNormal();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_PerformAction();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_SetGrowthState();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 // End Cross Module References
+	static UEnum* EGrowth_StaticEnum()
+	{
+		static UEnum* Singleton = nullptr;
+		if (!Singleton)
+		{
+			Singleton = GetStaticEnum(Z_Construct_UEnum_Guudo_EGrowth, Z_Construct_UPackage__Script_Guudo(), TEXT("EGrowth"));
+		}
+		return Singleton;
+	}
+	template<> GUUDO_API UEnum* StaticEnum<EGrowth>()
+	{
+		return EGrowth_StaticEnum();
+	}
+	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EGrowth(EGrowth_StaticEnum, TEXT("/Script/Guudo"), TEXT("EGrowth"), false, nullptr, nullptr);
+	uint32 Get_Z_Construct_UEnum_Guudo_EGrowth_Hash() { return 1171540725U; }
+	UEnum* Z_Construct_UEnum_Guudo_EGrowth()
+	{
+#if WITH_HOT_RELOAD
+		UPackage* Outer = Z_Construct_UPackage__Script_Guudo();
+		static UEnum* ReturnEnum = FindExistingEnumIfHotReloadOrDynamic(Outer, TEXT("EGrowth"), 0, Get_Z_Construct_UEnum_Guudo_EGrowth_Hash(), false);
+#else
+		static UEnum* ReturnEnum = nullptr;
+#endif // WITH_HOT_RELOAD
+		if (!ReturnEnum)
+		{
+			static const UE4CodeGen_Private::FEnumeratorParam Enumerators[] = {
+				{ "EGrowth::Unchanging", (int64)EGrowth::Unchanging },
+				{ "EGrowth::Changing", (int64)EGrowth::Changing },
+			};
+#if WITH_METADATA
+			const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+				{ "BlueprintType", "true" },
+				{ "Changing.DisplayName", "Changing" },
+				{ "Changing.Name", "EGrowth::Changing" },
+				{ "ModuleRelativePath", "GuudoCharater.h" },
+				{ "Unchanging.DisplayName", "Unchanging" },
+				{ "Unchanging.Name", "EGrowth::Unchanging" },
+			};
+#endif
+			static const UE4CodeGen_Private::FEnumParams EnumParams = {
+				(UObject*(*)())Z_Construct_UPackage__Script_Guudo,
+				nullptr,
+				"EGrowth",
+				"EGrowth",
+				Enumerators,
+				ARRAY_COUNT(Enumerators),
+				RF_Public|RF_Transient|RF_MarkAsNative,
+				UE4CodeGen_Private::EDynamicType::NotDynamic,
+				(uint8)UEnum::ECppForm::EnumClass,
+				METADATA_PARAMS(Enum_MetaDataParams, ARRAY_COUNT(Enum_MetaDataParams))
+			};
+			UE4CodeGen_Private::ConstructUEnum(ReturnEnum, EnumParams);
+		}
+		return ReturnEnum;
+	}
+	static UEnum* EScale_StaticEnum()
+	{
+		static UEnum* Singleton = nullptr;
+		if (!Singleton)
+		{
+			Singleton = GetStaticEnum(Z_Construct_UEnum_Guudo_EScale, Z_Construct_UPackage__Script_Guudo(), TEXT("EScale"));
+		}
+		return Singleton;
+	}
+	template<> GUUDO_API UEnum* StaticEnum<EScale>()
+	{
+		return EScale_StaticEnum();
+	}
+	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EScale(EScale_StaticEnum, TEXT("/Script/Guudo"), TEXT("EScale"), false, nullptr, nullptr);
+	uint32 Get_Z_Construct_UEnum_Guudo_EScale_Hash() { return 417953895U; }
+	UEnum* Z_Construct_UEnum_Guudo_EScale()
+	{
+#if WITH_HOT_RELOAD
+		UPackage* Outer = Z_Construct_UPackage__Script_Guudo();
+		static UEnum* ReturnEnum = FindExistingEnumIfHotReloadOrDynamic(Outer, TEXT("EScale"), 0, Get_Z_Construct_UEnum_Guudo_EScale_Hash(), false);
+#else
+		static UEnum* ReturnEnum = nullptr;
+#endif // WITH_HOT_RELOAD
+		if (!ReturnEnum)
+		{
+			static const UE4CodeGen_Private::FEnumeratorParam Enumerators[] = {
+				{ "EScale::Small", (int64)EScale::Small },
+				{ "EScale::Normal", (int64)EScale::Normal },
+				{ "EScale::Large", (int64)EScale::Large },
+			};
+#if WITH_METADATA
+			const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+				{ "BlueprintType", "true" },
+				{ "Large.DisplayName", "Large" },
+				{ "Large.Name", "EScale::Large" },
+				{ "ModuleRelativePath", "GuudoCharater.h" },
+				{ "Normal.DisplayName", "Normal" },
+				{ "Normal.Name", "EScale::Normal" },
+				{ "Small.DisplayName", "Small" },
+				{ "Small.Name", "EScale::Small" },
+			};
+#endif
+			static const UE4CodeGen_Private::FEnumParams EnumParams = {
+				(UObject*(*)())Z_Construct_UPackage__Script_Guudo,
+				nullptr,
+				"EScale",
+				"EScale",
+				Enumerators,
+				ARRAY_COUNT(Enumerators),
+				RF_Public|RF_Transient|RF_MarkAsNative,
+				UE4CodeGen_Private::EDynamicType::NotDynamic,
+				(uint8)UEnum::ECppForm::EnumClass,
+				METADATA_PARAMS(Enum_MetaDataParams, ARRAY_COUNT(Enum_MetaDataParams))
+			};
+			UE4CodeGen_Private::ConstructUEnum(ReturnEnum, EnumParams);
+		}
+		return ReturnEnum;
+	}
 	static UEnum* EAction_StaticEnum()
 	{
 		static UEnum* Singleton = nullptr;
@@ -92,6 +212,26 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		}
 		return ReturnEnum;
 	}
+	static FName NAME_AGuudoCharater_OnLargeToNormal = FName(TEXT("OnLargeToNormal"));
+	void AGuudoCharater::OnLargeToNormal()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AGuudoCharater_OnLargeToNormal),NULL);
+	}
+	static FName NAME_AGuudoCharater_OnNormalToLarge = FName(TEXT("OnNormalToLarge"));
+	void AGuudoCharater::OnNormalToLarge()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AGuudoCharater_OnNormalToLarge),NULL);
+	}
+	static FName NAME_AGuudoCharater_OnNormalToSmall = FName(TEXT("OnNormalToSmall"));
+	void AGuudoCharater::OnNormalToSmall()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AGuudoCharater_OnNormalToSmall),NULL);
+	}
+	static FName NAME_AGuudoCharater_OnSmallToNormal = FName(TEXT("OnSmallToNormal"));
+	void AGuudoCharater::OnSmallToNormal()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AGuudoCharater_OnSmallToNormal),NULL);
+	}
 	void AGuudoCharater::StaticRegisterNativesAGuudoCharater()
 	{
 		UClass* Class = AGuudoCharater::StaticClass();
@@ -101,6 +241,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 			{ "OnOverlapBegin", &AGuudoCharater::execOnOverlapBegin },
 			{ "OnOverlapEnd", &AGuudoCharater::execOnOverlapEnd },
 			{ "PerformAction", &AGuudoCharater::execPerformAction },
+			{ "SetGrowthState", &AGuudoCharater::execSetGrowthState },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
 	}
@@ -174,6 +315,74 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_GetIfEnergyFull_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGuudoCharater_OnLargeToNormal_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_OnLargeToNormal_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// BLUEPRINT EVENTS ///////////////////////////////////////////\n" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+		{ "ToolTip", "BLUEPRINT EVENTS /" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_OnLargeToNormal_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "OnLargeToNormal", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnLargeToNormal_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnLargeToNormal_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoCharater_OnLargeToNormal()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_OnLargeToNormal_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGuudoCharater_OnNormalToLarge_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_OnNormalToLarge_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_OnNormalToLarge_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "OnNormalToLarge", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnNormalToLarge_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnNormalToLarge_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoCharater_OnNormalToLarge()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_OnNormalToLarge_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGuudoCharater_OnNormalToSmall_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_OnNormalToSmall_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_OnNormalToSmall_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "OnNormalToSmall", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnNormalToSmall_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnNormalToSmall_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoCharater_OnNormalToSmall()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_OnNormalToSmall_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -320,6 +529,28 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AGuudoCharater_OnSmallToNormal_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_OnSmallToNormal_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_OnSmallToNormal_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "OnSmallToNormal", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_OnSmallToNormal_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_OnSmallToNormal_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoCharater_OnSmallToNormal()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_OnSmallToNormal_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_AGuudoCharater_PerformAction_Statics
 	{
 		struct GuudoCharater_eventPerformAction_Parms
@@ -354,6 +585,51 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_PerformAction_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics
+	{
+		struct GuudoCharater_eventSetGrowthState_Parms
+		{
+			EGrowth GrowthState;
+			float TimelineGrowthAmount;
+			float BaseHeight;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseHeight;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_TimelineGrowthAmount;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_GrowthState;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_GrowthState_Underlying;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_BaseHeight = { "BaseHeight", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventSetGrowthState_Parms, BaseHeight), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_TimelineGrowthAmount = { "TimelineGrowthAmount", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventSetGrowthState_Parms, TimelineGrowthAmount), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_GrowthState = { "GrowthState", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventSetGrowthState_Parms, GrowthState), Z_Construct_UEnum_Guudo_EGrowth, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_GrowthState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_BaseHeight,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_TimelineGrowthAmount,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_GrowthState,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_GrowthState_Underlying,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Perform an Action on the Pickup Object\n" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+		{ "ToolTip", "Perform an Action on the Pickup Object" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "SetGrowthState", nullptr, nullptr, sizeof(GuudoCharater_eventSetGrowthState_Parms), Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoCharater_SetGrowthState()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -460,9 +736,14 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AGuudoCharater_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AGuudoCharater_GetEnergy, "GetEnergy" }, // 2715685276
 		{ &Z_Construct_UFunction_AGuudoCharater_GetIfEnergyFull, "GetIfEnergyFull" }, // 176640048
+		{ &Z_Construct_UFunction_AGuudoCharater_OnLargeToNormal, "OnLargeToNormal" }, // 2690248948
+		{ &Z_Construct_UFunction_AGuudoCharater_OnNormalToLarge, "OnNormalToLarge" }, // 3517585511
+		{ &Z_Construct_UFunction_AGuudoCharater_OnNormalToSmall, "OnNormalToSmall" }, // 2373747103
 		{ &Z_Construct_UFunction_AGuudoCharater_OnOverlapBegin, "OnOverlapBegin" }, // 1174075323
 		{ &Z_Construct_UFunction_AGuudoCharater_OnOverlapEnd, "OnOverlapEnd" }, // 3339357733
+		{ &Z_Construct_UFunction_AGuudoCharater_OnSmallToNormal, "OnSmallToNormal" }, // 2594840863
 		{ &Z_Construct_UFunction_AGuudoCharater_PerformAction, "PerformAction" }, // 1700194123
+		{ &Z_Construct_UFunction_AGuudoCharater_SetGrowthState, "SetGrowthState" }, // 246132175
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::Class_MetaDataParams[] = {
@@ -677,7 +958,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGuudoCharater, 2726342666);
+	IMPLEMENT_CLASS(AGuudoCharater, 3850606251);
 	template<> GUUDO_API UClass* StaticClass<AGuudoCharater>()
 	{
 		return AGuudoCharater::StaticClass();

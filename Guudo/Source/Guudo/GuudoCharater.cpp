@@ -64,6 +64,8 @@ void AGuudoCharater::BeginPlay()
 	isFrozen = false;
 	isPickupPossible = false;
 	currentEnergy = 0;
+	m_ScaleState = EScale::Normal;
+	m_GrowthState = EGrowth::Unchanging;
 }
 
 // Called every frame
@@ -84,6 +86,9 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	PlayerInputComponent->BindAction("Pickup", IE_Pressed, this, &AGuudoCharater::Pickup);
+
+	PlayerInputComponent->BindAction("Shrink", IE_Pressed, this, &AGuudoCharater::Shrink);
+	PlayerInputComponent->BindAction("Grow", IE_Pressed, this, &AGuudoCharater::Grow);
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &AGuudoCharater::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AGuudoCharater::MoveRight);
@@ -151,6 +156,53 @@ void AGuudoCharater::Pickup()
 	}
 }
 
+void AGuudoCharater::Shrink()
+{
+	// Don't attempt to shrink if already growing or shrinking
+	if (m_GrowthState != EGrowth::Unchanging)
+		return;
+
+	// Set the new Scale
+	if (m_ScaleState == EScale::Large)
+	{
+		m_GrowthState = EGrowth::Changing;
+		m_ScaleState = EScale::Normal;
+		OnLargeToNormal();
+		return;
+	}
+	if (m_ScaleState == EScale::Normal)
+	{
+		m_GrowthState = EGrowth::Changing;
+		m_ScaleState = EScale::Small;
+		OnNormalToSmall();
+		return;
+	}
+}
+
+void AGuudoCharater::Grow()
+{
+	// Don't attempt to grow if already growing or shrinking
+	if (m_GrowthState != EGrowth::Unchanging)
+		return;
+
+	// Set the new Scale
+	if (m_ScaleState == EScale::Normal)
+	{
+		m_GrowthState = EGrowth::Changing;
+		m_ScaleState = EScale::Large;
+		OnNormalToLarge();
+		return;
+	}
+	if (m_ScaleState == EScale::Small)
+	{
+		m_GrowthState = EGrowth::Changing;
+		m_ScaleState = EScale::Normal;
+		OnSmallToNormal();
+		return;
+	}
+
+}
+
 void AGuudoCharater::PerformAction(TEnumAsByte<EAction> ActionToPerform)
 {
 	isFrozen = false;
@@ -178,6 +230,12 @@ void AGuudoCharater::PerformAction(TEnumAsByte<EAction> ActionToPerform)
 FString AGuudoCharater::GetEnergy()
 {
 	return FString::Printf(TEXT("Energy: %i / %i"), currentEnergy, MaxEnergy);
+}
+
+void AGuudoCharater::SetGrowthState(TEnumAsByte<EGrowth> GrowthState, float TimelineGrowthAmount, float BaseHeight)
+{
+	m_GrowthState = EGrowth::Unchanging;
+	GetCapsuleComponent()->SetWorldScale3D(FVector(BaseHeight + TimelineGrowthAmount));
 }
 
 void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
