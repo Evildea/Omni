@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "PickupData.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "PickupBase.generated.h"
@@ -19,6 +20,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	// Data about this Pickup
+	FPickupData* m_PickupData;
+
 public:	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -27,4 +31,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class USphereComponent* PickupRange;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Designer")
+		FName PickupNameMustMatchGameInstance;
 };

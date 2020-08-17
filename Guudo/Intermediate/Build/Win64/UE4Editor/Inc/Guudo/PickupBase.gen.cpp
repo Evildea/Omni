@@ -34,6 +34,10 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PickupNameMustMatchGameInstance_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FNamePropertyParams NewProp_PickupNameMustMatchGameInstance;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PickupRange_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_PickupRange;
@@ -56,6 +60,13 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickupBase_Statics::NewProp_PickupNameMustMatchGameInstance_MetaData[] = {
+		{ "Category", "Designer" },
+		{ "ModuleRelativePath", "PickupBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FNamePropertyParams Z_Construct_UClass_APickupBase_Statics::NewProp_PickupNameMustMatchGameInstance = { "PickupNameMustMatchGameInstance", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickupBase, PickupNameMustMatchGameInstance), METADATA_PARAMS(Z_Construct_UClass_APickupBase_Statics::NewProp_PickupNameMustMatchGameInstance_MetaData, ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::NewProp_PickupNameMustMatchGameInstance_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickupBase_Statics::NewProp_PickupRange_MetaData[] = {
 		{ "Category", "PickupBase" },
 		{ "EditInline", "true" },
@@ -72,6 +83,7 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x001000000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickupBase, Mesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh_MetaData, ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APickupBase_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupBase_Statics::NewProp_PickupNameMustMatchGameInstance,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupBase_Statics::NewProp_PickupRange,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupBase_Statics::NewProp_Mesh,
 	};
@@ -102,7 +114,7 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APickupBase, 3812239861);
+	IMPLEMENT_CLASS(APickupBase, 2939843952);
 	template<> GUUDO_API UClass* StaticClass<APickupBase>()
 	{
 		return APickupBase::StaticClass();
