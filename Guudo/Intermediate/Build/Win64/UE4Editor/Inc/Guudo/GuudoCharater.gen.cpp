@@ -22,6 +22,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_GetEnergy();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_GetIfEnergyFull();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnLargeToNormal();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnNormalToLarge();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnNormalToSmall();
@@ -33,6 +34,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_OnSmallToNormal();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_PerformAction();
 	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_SetGrowthState();
+	GUUDO_API UFunction* Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
@@ -238,10 +240,12 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "GetEnergy", &AGuudoCharater::execGetEnergy },
 			{ "GetIfEnergyFull", &AGuudoCharater::execGetIfEnergyFull },
+			{ "GetIsAbleToGrow", &AGuudoCharater::execGetIsAbleToGrow },
 			{ "OnOverlapBegin", &AGuudoCharater::execOnOverlapBegin },
 			{ "OnOverlapEnd", &AGuudoCharater::execOnOverlapEnd },
 			{ "PerformAction", &AGuudoCharater::execPerformAction },
 			{ "SetGrowthState", &AGuudoCharater::execSetGrowthState },
+			{ "UpdateGrowthState", &AGuudoCharater::execUpdateGrowthState },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
 	}
@@ -315,6 +319,45 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_GetIfEnergyFull_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics
+	{
+		struct GuudoCharater_eventGetIsAbleToGrow_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((GuudoCharater_eventGetIsAbleToGrow_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(GuudoCharater_eventGetIsAbleToGrow_Parms), &Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Get id the Character can grow here (used by Widget)\n" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+		{ "ToolTip", "Get id the Character can grow here (used by Widget)" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "GetIsAbleToGrow", nullptr, nullptr, sizeof(GuudoCharater_eventGetIsAbleToGrow_Parms), Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -593,11 +636,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		struct GuudoCharater_eventSetGrowthState_Parms
 		{
 			EGrowth GrowthState;
-			float TimelineGrowthAmount;
-			float BaseHeight;
 		};
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseHeight;
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_TimelineGrowthAmount;
 		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_GrowthState;
 		static const UE4CodeGen_Private::FBytePropertyParams NewProp_GrowthState_Underlying;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -606,21 +645,17 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_BaseHeight = { "BaseHeight", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventSetGrowthState_Parms, BaseHeight), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_TimelineGrowthAmount = { "TimelineGrowthAmount", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventSetGrowthState_Parms, TimelineGrowthAmount), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_GrowthState = { "GrowthState", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventSetGrowthState_Parms, GrowthState), Z_Construct_UEnum_Guudo_EGrowth, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_GrowthState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_BaseHeight,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_TimelineGrowthAmount,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_GrowthState,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::NewProp_GrowthState_Underlying,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "// Perform an Action on the Pickup Object\n" },
+		{ "Comment", "// Set the Growth State (Growing or not?)\n" },
 		{ "ModuleRelativePath", "GuudoCharater.h" },
-		{ "ToolTip", "Perform an Action on the Pickup Object" },
+		{ "ToolTip", "Set the Growth State (Growing or not?)" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "SetGrowthState", nullptr, nullptr, sizeof(GuudoCharater_eventSetGrowthState_Parms), Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::Function_MetaDataParams)) };
@@ -630,6 +665,44 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_SetGrowthState_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics
+	{
+		struct GuudoCharater_eventUpdateGrowthState_Parms
+		{
+			float TimelineGrowthAmount;
+			float BaseHeight;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseHeight;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_TimelineGrowthAmount;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::NewProp_BaseHeight = { "BaseHeight", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventUpdateGrowthState_Parms, BaseHeight), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::NewProp_TimelineGrowthAmount = { "TimelineGrowthAmount", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GuudoCharater_eventUpdateGrowthState_Parms, TimelineGrowthAmount), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::NewProp_BaseHeight,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::NewProp_TimelineGrowthAmount,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Update the Growth State (Size of growth)\n" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+		{ "ToolTip", "Update the Growth State (Size of growth)" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGuudoCharater, nullptr, "UpdateGrowthState", nullptr, nullptr, sizeof(GuudoCharater_eventUpdateGrowthState_Parms), Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -649,6 +722,30 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 #endif
 		static void NewProp_isDebug_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_isDebug;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LargeJumpHeight_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_LargeJumpHeight;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SmallJumpHeight_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SmallJumpHeight;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NormalJumpHeight_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_NormalJumpHeight;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LargeRunSpeed_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_LargeRunSpeed;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SmallRunSpeed_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SmallRunSpeed;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NormalRunSpeed_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_NormalRunSpeed;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ConsumeSound_MetaData[];
 #endif
@@ -678,14 +775,6 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AirMovability_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_AirMovability;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PoweredJumpVelocity_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_PoweredJumpVelocity;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NormalJumpVelocity_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_NormalJumpVelocity;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RotationSpeed_MetaData[];
 #endif
@@ -741,6 +830,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AGuudoCharater_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AGuudoCharater_GetEnergy, "GetEnergy" }, // 2715685276
 		{ &Z_Construct_UFunction_AGuudoCharater_GetIfEnergyFull, "GetIfEnergyFull" }, // 176640048
+		{ &Z_Construct_UFunction_AGuudoCharater_GetIsAbleToGrow, "GetIsAbleToGrow" }, // 2466232839
 		{ &Z_Construct_UFunction_AGuudoCharater_OnLargeToNormal, "OnLargeToNormal" }, // 2690248948
 		{ &Z_Construct_UFunction_AGuudoCharater_OnNormalToLarge, "OnNormalToLarge" }, // 3517585511
 		{ &Z_Construct_UFunction_AGuudoCharater_OnNormalToSmall, "OnNormalToSmall" }, // 2373747103
@@ -748,7 +838,8 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		{ &Z_Construct_UFunction_AGuudoCharater_OnOverlapEnd, "OnOverlapEnd" }, // 3339357733
 		{ &Z_Construct_UFunction_AGuudoCharater_OnSmallToNormal, "OnSmallToNormal" }, // 2594840863
 		{ &Z_Construct_UFunction_AGuudoCharater_PerformAction, "PerformAction" }, // 1700194123
-		{ &Z_Construct_UFunction_AGuudoCharater_SetGrowthState, "SetGrowthState" }, // 246132175
+		{ &Z_Construct_UFunction_AGuudoCharater_SetGrowthState, "SetGrowthState" }, // 108675262
+		{ &Z_Construct_UFunction_AGuudoCharater_UpdateGrowthState, "UpdateGrowthState" }, // 3767524656
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::Class_MetaDataParams[] = {
@@ -770,6 +861,48 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		((AGuudoCharater*)Obj)->isDebug = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isDebug = { "isDebug", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AGuudoCharater), &Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isDebug_SetBit, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isDebug_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isDebug_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_LargeJumpHeight_MetaData[] = {
+		{ "Category", "Designer" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_LargeJumpHeight = { "LargeJumpHeight", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, LargeJumpHeight), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_LargeJumpHeight_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_LargeJumpHeight_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_SmallJumpHeight_MetaData[] = {
+		{ "Category", "Designer" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_SmallJumpHeight = { "SmallJumpHeight", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, SmallJumpHeight), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_SmallJumpHeight_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_SmallJumpHeight_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpHeight_MetaData[] = {
+		{ "Category", "Designer" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpHeight = { "NormalJumpHeight", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, NormalJumpHeight), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpHeight_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpHeight_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_LargeRunSpeed_MetaData[] = {
+		{ "Category", "Designer" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_LargeRunSpeed = { "LargeRunSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, LargeRunSpeed), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_LargeRunSpeed_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_LargeRunSpeed_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_SmallRunSpeed_MetaData[] = {
+		{ "Category", "Designer" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_SmallRunSpeed = { "SmallRunSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, SmallRunSpeed), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_SmallRunSpeed_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_SmallRunSpeed_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalRunSpeed_MetaData[] = {
+		{ "Category", "Designer" },
+		{ "ModuleRelativePath", "GuudoCharater.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalRunSpeed = { "NormalRunSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, NormalRunSpeed), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalRunSpeed_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalRunSpeed_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_ConsumeSound_MetaData[] = {
 		{ "Category", "Designer" },
@@ -823,20 +956,6 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_AirMovability = { "AirMovability", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, AirMovability), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_AirMovability_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_AirMovability_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity_MetaData[] = {
-		{ "Category", "Designer" },
-		{ "ModuleRelativePath", "GuudoCharater.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity = { "PoweredJumpVelocity", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, PoweredJumpVelocity), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity_MetaData[] = {
-		{ "Category", "Designer" },
-		{ "ModuleRelativePath", "GuudoCharater.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity = { "NormalJumpVelocity", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, NormalJumpVelocity), METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed_MetaData[] = {
 		{ "Category", "Designer" },
@@ -929,6 +1048,12 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGuudoCharater, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Camera_MetaData, ARRAY_COUNT(Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Camera_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGuudoCharater_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isDebug,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_LargeJumpHeight,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_SmallJumpHeight,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpHeight,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_LargeRunSpeed,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_SmallRunSpeed,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalRunSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_ConsumeSound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxEnergy,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_isReverseZoom,
@@ -936,8 +1061,6 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomIn,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_MaxZoomOut,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_AirMovability,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_PoweredJumpVelocity,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_NormalJumpVelocity,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_RotationSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_Target,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGuudoCharater_Statics::NewProp_HudPartialPickupWidget,
@@ -977,7 +1100,7 @@ void EmptyLinkFunctionForGeneratedCodeGuudoCharater() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGuudoCharater, 3448208017);
+	IMPLEMENT_CLASS(AGuudoCharater, 2635182425);
 	template<> GUUDO_API UClass* StaticClass<AGuudoCharater>()
 	{
 		return AGuudoCharater::StaticClass();

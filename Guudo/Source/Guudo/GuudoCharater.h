@@ -44,17 +44,23 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-	// Freeze Keyboard Input
-	bool isFrozen;
-	bool isPickupPossible;
-	int currentEnergy;
+	bool isFrozen;			// Can't move because Keyboard input is frozen
+	bool isPickupPossible;	// Can't pickup because already picking up
+	bool isAbleToGrow;		// Can the player Grow here.
+	int currentEnergy;		// Current Energy level.
 
 	// Scaling
 	EScale m_ScaleState;
 	EGrowth m_GrowthState;
 
-	// Perform Collision Chech Above
+	// Perform Collision check above
 	bool IsCollisionAbove(float Height, float xOffset, float yOffset);
+
+	// Reset the Timer to Show can't grow
+	inline void ResetIsAbleToGrowError() { isAbleToGrow = true; }
+
+	// Custom Jump for the Character
+	void CustomJump();
 
 public:	
 	// Called every frame
@@ -99,10 +105,6 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float RotationSpeed = 540.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		float NormalJumpVelocity = 600.0f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float PoweredJumpVelocity = 1200.0f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
 		float AirMovability = 0.2f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float MaxZoomOut = 600.0f;
@@ -116,6 +118,20 @@ public:
 		int MaxEnergy = 4;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		class USoundBase* ConsumeSound;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float NormalRunSpeed = 600.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float SmallRunSpeed = 300.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float LargeRunSpeed = 1200.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float NormalJumpHeight = 600.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float SmallJumpHeight = 300.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float LargeJumpHeight = 1200.0f;
 
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -141,9 +157,17 @@ public:
 	UFUNCTION(BlueprintPure)
 		bool GetIfEnergyFull() { return currentEnergy == 4 ? true : false; }
 
-	// Perform an Action on the Pickup Object
+	// Set the Growth State (Growing or not?)
 	UFUNCTION(BlueprintCallable)
-		void SetGrowthState(TEnumAsByte<EGrowth> GrowthState, float TimelineGrowthAmount, float BaseHeight);
+		void SetGrowthState(TEnumAsByte<EGrowth> GrowthState);
+
+	// Update the Growth State (Size of growth)
+	UFUNCTION(BlueprintCallable)
+		void UpdateGrowthState(float TimelineGrowthAmount, float BaseHeight);
+
+	// Get id the Character can grow here (used by Widget)
+	UFUNCTION(BlueprintPure)
+		inline bool GetIsAbleToGrow() { return isAbleToGrow; }	
 
 	// BLUEPRINT EVENTS ///////////////////////////////////////////
 	UFUNCTION(BlueprintImplementableEvent)
