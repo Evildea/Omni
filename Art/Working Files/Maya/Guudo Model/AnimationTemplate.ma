@@ -1,12 +1,15 @@
 //Maya ASCII 2019 scene
 //Name: AnimationTemplate.ma
-//Last modified: Mon, Aug 17, 2020 11:44:12 AM
+//Last modified: Mon, Aug 17, 2020 12:28:16 PM
 //Codeset: 1252
-file -rdi 1 -ns "RigandBind" -rfn "RigandBindRN" -op "v=0;" -typ "mayaAscii"
-		 "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/RigandBind.ma";
-file -rdi 2 -ns "Mesh1" -rfn "RigandBind:MeshRN" -op "v=0;" -typ "mayaAscii"
-		 "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/Mesh.ma";
-file -r -ns "RigandBind" -dr 1 -rfn "RigandBindRN" -op "v=0;" -typ "mayaAscii" "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/RigandBind.ma";
+file -rdi 1 -ns "AnimationTemplate" -rfn "AnimationTemplateRN" -op "v=0;p=17;f=0"
+		 -typ "mayaAscii" "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/AnimationTemplate.ma";
+file -rdi 2 -ns "RigandBind" -rfn "AnimationTemplate:RigandBindRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/RigandBind.ma";
+file -rdi 3 -ns "Mesh1" -rfn "AnimationTemplate:RigandBind:MeshRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/Mesh.ma";
+file -r -ns "AnimationTemplate" -dr 1 -rfn "AnimationTemplateRN" -op "v=0;p=17;f=0"
+		 -typ "mayaAscii" "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/AnimationTemplate.ma";
 requires maya "2019";
 requires "mtoa" "3.1.2";
 requires "stereoCamera" "10.0";
@@ -18,25 +21,29 @@ fileInfo "version" "2019";
 fileInfo "cutIdentifier" "201812112215-434d8d9c04";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
 fileInfo "license" "education";
-createNode reference -n "RigandBindRN";
-	rename -uid "FB395704-4C34-58D1-9391-33A0CDBACCA0";
+createNode reference -n "AnimationTemplateRN";
+	rename -uid "ED1E9D95-4CCD-CBB9-95AD-779FA531EFA0";
 	setAttr ".ed" -type "dataReferenceEdits" 
-		"RigandBindRN"
-		"RigandBindRN" 0
-		"RigandBind:MeshRN" 0
-		"RigandBindRN" 1
-		2 "|RigandBind:Core_ctrl|RigandBind:Core_ctrl|RigandBind:Waist_ctrl|RigandBind:Waist_ctrl|RigandBind:Abdomen_ctrl|RigandBind:Abdomen_ctrl|RigandBind:Chest_ctrl|RigandBind:Chest_ctrl|RigandBind:Neck_ctrl|RigandBind:Neck_ctrl|RigandBind:InnerHead_ctrl|RigandBind:InnerHead_ctrl|RigandBind:L_TopEyelid_ctrl|RigandBind:L_TopEyelid_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		"RigandBind:MeshRN" 4
-		0 "|MeshRNfosterParent1|fosterParent4" "|RigandBind:Mesh1:Body" "-s -r "
-		0 "|MeshRNfosterParent1|fosterParent3" "|RigandBind:Mesh1:Head" "-s -r "
-		0 "|MeshRNfosterParent1|fosterParent2" "|RigandBind:Mesh1:Eye_R" "-s -r "
+		"AnimationTemplateRN"
+		"AnimationTemplate:RigandBindRN" 0
+		"AnimationTemplateRN" 0
+		"AnimationTemplate:RigandBind:MeshRN" 0
+		"AnimationTemplate:RigandBind:MeshRN" 6
+		0 "|MeshRNfosterParent1|fosterParent4" "|AnimationTemplate:RigandBind:Mesh1:Body" 
+		"-s -r "
+		0 "|MeshRNfosterParent1|fosterParent3" "|AnimationTemplate:RigandBind:Mesh1:Head" 
+		"-s -r "
+		0 "|MeshRNfosterParent1|fosterParent2" "|AnimationTemplate:RigandBind:Mesh1:Eye_R" 
+		"-s -r "
+		0 "|MeshRNfosterParent1|fosterParent1" "|AnimationTemplate:RigandBind:Mesh1:Eye_L" 
+		"-s -r "
+		2 "AnimationTemplate:RigandBind:Mesh1:file1" "fileTextureName" " -type \"string\" \"C:/Users/s171971/Documents/Omni/Art/Export/T/Guudo/Guudo_A.tga\""
 		
-		0 "|MeshRNfosterParent1|fosterParent1" "|RigandBind:Mesh1:Eye_L" "-s -r ";
+		2 "AnimationTemplate:RigandBind:Mesh1:file1" "colorSpace" " -type \"string\" \"sRGB\"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "AE529FBF-44C1-3B2C-EFF3-82932D349C1F";
+	rename -uid "755527FF-4886-1361-22F6-5AAD6891AC7E";
 	setAttr -s 4 ".lnk";
 	setAttr -s 4 ".slnk";
 select -ne :time1;
