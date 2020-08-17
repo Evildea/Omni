@@ -63,6 +63,7 @@ void AGuudoCharater::BeginPlay()
 	// Set variables
 	isFrozen = false;
 	isPickupPossible = false;
+	isAbleToGrow = true;
 	currentEnergy = 0;
 	m_ScaleState = EScale::Normal;
 	m_GrowthState = EGrowth::Unchanging;
@@ -233,10 +234,11 @@ void AGuudoCharater::Grow()
 			return;
 		}
 	}
-	else if (isDebug)
+	else
 	{
-		// Draw a Debug Line
-		// DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor(255, 0, 0), true);
+		FTimerHandle Countdown;
+		GetWorldTimerManager().SetTimer(Countdown, this, &AGuudoCharater::ResetIsAbleToGrowError, 1.f, false);
+		isAbleToGrow = false;
 	}
 }
 
@@ -269,9 +271,13 @@ FString AGuudoCharater::GetEnergy()
 	return FString::Printf(TEXT("Energy: %i / %i"), currentEnergy, MaxEnergy);
 }
 
-void AGuudoCharater::SetGrowthState(TEnumAsByte<EGrowth> GrowthState, float TimelineGrowthAmount, float BaseHeight)
+void AGuudoCharater::SetGrowthState(TEnumAsByte<EGrowth> GrowthState)
 {
 	m_GrowthState = EGrowth::Unchanging;
+}
+
+void AGuudoCharater::UpdateGrowthState(float TimelineGrowthAmount, float BaseHeight)
+{
 	GetCapsuleComponent()->SetWorldScale3D(FVector(BaseHeight + TimelineGrowthAmount));
 }
 
