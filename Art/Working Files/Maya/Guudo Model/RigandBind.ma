@@ -1,10 +1,12 @@
 //Maya ASCII 2019 scene
 //Name: RigandBind.ma
-//Last modified: Mon, Aug 17, 2020 11:42:47 AM
+//Last modified: Mon, Aug 17, 2020 03:02:48 PM
 //Codeset: 1252
 file -rdi 1 -ns "Mesh1" -rfn "MeshRN" -op "v=0;" -typ "mayaAscii" "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/Mesh.ma";
 file -r -ns "Mesh1" -dr 1 -rfn "MeshRN" -op "v=0;" -typ "mayaAscii" "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/Mesh.ma";
 requires maya "2019";
+requires "mtoa" "3.1.2";
+requires "stereoCamera" "10.0";
 requires "mtoa" "3.1.2";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
@@ -484,7 +486,7 @@ createNode nurbsCurve -n "R_TopEyelid_ctrlShape" -p "|Core_ctrl|Core_ctrl|Waist_
 		3 8 2 no 3
 		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
 		11
-		0.7836116248912588 4.798237340988528e-17 -1.2294226333831335
+		0.7836116248912588 4.7982373409885286e-17 -1.2294226333831335
 		-2.9483608015341235e-14 6.7857323231108925e-17 -1.8478440436998078
 		-0.78361162489116198 4.7982373409884306e-17 -1.2294226333831171
 		-1.1081941875544274 -3.3048957845684967e-31 0.25640320460005539
@@ -492,7 +494,7 @@ createNode nurbsCurve -n "R_TopEyelid_ctrlShape" -p "|Core_ctrl|Core_ctrl|Waist_
 		-1.9158038251048433e-14 -6.7857323231109713e-17 -0.36807879467610438
 		0.78361162489124581 -4.7982373409883795e-17 0.20380981498289197
 		1.1081941875543648 -1.4598548978455248e-30 0.25640320460007027
-		0.7836116248912588 4.798237340988528e-17 -1.2294226333831335
+		0.7836116248912588 4.7982373409885286e-17 -1.2294226333831335
 		-2.9483608015341235e-14 6.7857323231108925e-17 -1.8478440436998078
 		-0.78361162489116198 4.7982373409884306e-17 -1.2294226333831171
 		;
@@ -682,6 +684,7 @@ createNode joint -n "Hip_L_jnt" -p "Waist_jnt1";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
+	setAttr ".r" -type "double3" 8.5377364625159377e-07 -5.2348299178141012e-20 -7.4280357129906236e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 0 180 ;
@@ -695,7 +698,7 @@ createNode joint -n "Knee_L_jnt" -p "Hip_L_jnt";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
 	setAttr ".t" -type "double3" 2.3000000000000003 8.8817841970012523e-16 0 ;
-	setAttr ".r" -type "double3" -4.7743139809822729e-14 1.183223892035525e-06 -1.8757056805400719e-12 ;
+	setAttr ".r" -type "double3" -4.7743139809800634e-14 1.1832653075568714e-06 -1.8757056751641875e-12 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".pa" -type "double3" 0 90 0 ;
@@ -937,7 +940,6 @@ createNode joint -n "Abdomen_jnt" -p "Waist_jnt1";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
-	setAttr ".t" -type "double3" 2.8827647737901341 -4.1827857480277375e-16 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 0 1.590277340731757e-15 ;
@@ -950,7 +952,6 @@ createNode joint -n "Chest_jnt" -p "Abdomen_jnt";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
-	setAttr ".t" -type "double3" 5.0770134401595701 -7.0457715219956649e-16 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".bps" -type "matrix" -2.2204460492503131e-16 1 0 0 -1 -2.2204460492503131e-16 0 0
@@ -961,7 +962,6 @@ createNode joint -n "Neck_jnt" -p "Chest_jnt";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
-	setAttr ".t" -type "double3" 3.483569306924883 -7.7350777048510077e-16 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -89.999999999999972 -10.635880598932347 8.0903797537088897e-16 ;
@@ -1102,7 +1102,7 @@ createNode orientConstraint -n "Eyelid_Top01_L_jnt_orientConstraint1" -p "Eyelid
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 90.000000000000185 53.315530205266015 2.6619627960147692e-14 ;
+	setAttr ".lr" -type "double3" 90.000000000000185 53.315530205265993 1.0647851184059075e-14 ;
 	setAttr ".o" -type "double3" -90.000000000000099 0 53.315530205266008 ;
 	setAttr ".rsrr" -type "double3" 1.5902773407317661e-15 -6.3611093629270312e-15 -1.3994440598439473e-13 ;
 	setAttr -k on ".w0";
@@ -1197,9 +1197,9 @@ createNode orientConstraint -n "Eyelid_Top01_R_jnt_orientConstraint1" -p "Eyelid
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -89.999999999999858 53.316 -2.6619920957225238e-14 ;
+	setAttr ".lr" -type "double3" -89.999999999999815 53.315999999999981 -4.7915857723005396e-14 ;
 	setAttr ".o" -type "double3" 89.999999999999929 0 -53.315999999999988 ;
-	setAttr ".rsrr" -type "double3" -4.7708320221952846e-15 9.5416640443905456e-15 -1.0813885916975958e-13 ;
+	setAttr ".rsrr" -type "double3" -4.7708320221952854e-15 9.5416640443905456e-15 -1.0813885916975958e-13 ;
 	setAttr -k on ".w0";
 createNode joint -n "Eyelid_Bottom01_R_jnt" -p "InnerHead_jnt";
 	rename -uid "5F1324E0-41D8-C7CB-D749-A9B0CBA145EE";
@@ -1414,6 +1414,24 @@ createNode joint -n "Front_jelly_jnt" -p "Jelly_jnt";
 		 -7.6173733381335146e-16 1.0000000000000002 -2.2204460492503111e-16 0 3.2287605711861154e-16 5.551115123125779e-17 1 0
 		 5.2382093433156349e-15 31.457732242053645 16.223591770978949 1;
 	setAttr ".radi" 0.5;
+createNode pointConstraint -n "Neck_jnt_pointConstraint1" -p "Neck_jnt";
+	rename -uid "B4EAD285-4EFA-458D-93E8-FCB7DDC3FE49";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Neck_ctrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".o" -type "double3" 0.046084216516621979 -1.0232772788172924e-17 4.0695849428578751e-15 ;
+	setAttr ".rst" -type "double3" 3.483569306924883 -7.7350777048510077e-16 0 ;
+	setAttr -k on ".w0";
 createNode orientConstraint -n "Chest_jnt_orientConstraint1" -p "Chest_jnt";
 	rename -uid "22B5A0FC-4F83-2901-1357-15B37803DC81";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Chest_ctrlW0" -dv 1 -min 0 -at "double";
@@ -1432,6 +1450,24 @@ createNode orientConstraint -n "Chest_jnt_orientConstraint1" -p "Chest_jnt";
 	setAttr ".lr" -type "double3" 0 0 -90.000000000000014 ;
 	setAttr ".o" -type "double3" 0 0 90.000000000000014 ;
 	setAttr -k on ".w0";
+createNode pointConstraint -n "Chest_jnt_pointConstraint1" -p "Chest_jnt";
+	rename -uid "5AF20F35-474E-7B08-AD6C-08A68C2AE767";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Chest_ctrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".o" -type "double3" 0.022393120670678002 -4.9722927708192436e-18 2.8312930238248613e-15 ;
+	setAttr ".rst" -type "double3" 5.0770134401595701 -7.0457715219956649e-16 0 ;
+	setAttr -k on ".w0";
 createNode orientConstraint -n "Abdomen_jnt_orientConstraint1" -p "Abdomen_jnt";
 	rename -uid "93FB06E9-43B0-9647-5F54-7385ED138F83";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Abdomen_ctrlW0" -dv 1 -min 0 -at "double";
@@ -1449,6 +1485,24 @@ createNode orientConstraint -n "Abdomen_jnt_orientConstraint1" -p "Abdomen_jnt";
 	setAttr ".erp" yes;
 	setAttr ".lr" -type "double3" 0 0 -90.000000000000014 ;
 	setAttr ".o" -type "double3" 0 0 90.000000000000014 ;
+	setAttr -k on ".w0";
+createNode pointConstraint -n "Abdomen_jnt_pointConstraint1" -p "Abdomen_jnt";
+	rename -uid "ACC7B4E7-45C7-3A10-8539-068220A6DD77";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Abdomen_ctrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".o" -type "double3" 8.7522056269051518e-08 -2.2972140544687221e-23 0 ;
+	setAttr ".rst" -type "double3" 2.8827647737901341 -4.1827857480277375e-16 0 ;
 	setAttr -k on ".w0";
 createNode pointConstraint -n "Waist_jnt1_pointConstraint1" -p "Waist_jnt1";
 	rename -uid "6B825269-4590-7B76-24DE-9A9E87E45AE4";
@@ -1563,7 +1617,7 @@ createNode pointConstraint -n "Hip_R_IK_pointConstraint1" -p "Hip_R_IK";
 	setAttr ".rst" -type "double3" -4.6107799999999974 1.0165799999999998 0 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "MeshRNfosterParent1";
-	rename -uid "C37797AA-4A4E-07F7-CF11-318C1981350A";
+	rename -uid "F3ABD872-4B53-4C62-3B96-1CB742FD5859";
 createNode mesh -n "Eye_LShapeDeformed" -p "MeshRNfosterParent1";
 	rename -uid "79D9D961-4210-AD90-98DA-B9B2A1D80BF9";
 	setAttr -k off ".v";
@@ -1695,10 +1749,6 @@ createNode reference -n "MeshRN";
 		8 "|Mesh1:Eye_L" "scaleZ";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
-createNode reference -n "sharedReferenceNode";
-	rename -uid "EF0D6D08-4642-CAA6-9774-3DA7666E31D2";
-	setAttr ".ed" -type "dataReferenceEdits" 
-		"sharedReferenceNode";
 createNode groupId -n "skinCluster4GroupId";
 	rename -uid "C01242F7-40FE-2C56-F28D-C3B29460BE1F";
 	setAttr ".ihi" 0;
@@ -3953,25 +4003,29 @@ createNode groupParts -n "groupParts2";
 	setAttr ".ic" -type "componentList" 1 "vtx[*]";
 createNode ikRPsolver -n "ikRPsolver";
 	rename -uid "EF24C122-470A-3B53-E697-3E8FBEF58C07";
-createNode makeNurbCircle -n "makeNurbCircle3";
-	rename -uid "3BA59285-4A88-E1BD-6BED-50AA1872670E";
-	setAttr ".nr" -type "double3" 0 1 0 ;
-createNode makeNurbCircle -n "makeNurbCircle1";
-	rename -uid "849D6BE9-4ECA-42C7-4CCB-BCB6B364618C";
-	setAttr ".nr" -type "double3" 0 1 0 ;
-createNode makeNurbCircle -n "makeNurbCircle5";
-	rename -uid "7FB0DF1E-43DD-B1C5-A811-77BA6017C786";
+createNode makeNurbCircle -n "makeNurbCircle2";
+	rename -uid "793D782B-4FA9-3612-AF68-9699C47F1EE1";
 	setAttr ".nr" -type "double3" 0 1 0 ;
 createNode makeNurbCircle -n "makeNurbCircle4";
 	rename -uid "BEDAA572-4D82-2CEC-B75A-0FB02D936A85";
 	setAttr ".nr" -type "double3" 0 1 0 ;
-createNode makeNurbCircle -n "makeNurbCircle2";
-	rename -uid "793D782B-4FA9-3612-AF68-9699C47F1EE1";
+createNode makeNurbCircle -n "makeNurbCircle5";
+	rename -uid "7FB0DF1E-43DD-B1C5-A811-77BA6017C786";
 	setAttr ".nr" -type "double3" 0 1 0 ;
+createNode makeNurbCircle -n "makeNurbCircle1";
+	rename -uid "849D6BE9-4ECA-42C7-4CCB-BCB6B364618C";
+	setAttr ".nr" -type "double3" 0 1 0 ;
+createNode makeNurbCircle -n "makeNurbCircle3";
+	rename -uid "3BA59285-4A88-E1BD-6BED-50AA1872670E";
+	setAttr ".nr" -type "double3" 0 1 0 ;
+createNode reference -n "sharedReferenceNode";
+	rename -uid "EF0D6D08-4642-CAA6-9774-3DA7666E31D2";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"sharedReferenceNode";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "D1A5A485-49F8-91E5-2715-B4A739BD1074";
-	setAttr -s 9 ".lnk";
-	setAttr -s 9 ".slnk";
+	rename -uid "E02F7887-4DC8-CA8B-8947-BD8842893C36";
+	setAttr -s 6 ".lnk";
+	setAttr -s 6 ".slnk";
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -3981,10 +4035,10 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 7 ".st";
+	setAttr -s 4 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 9 ".s";
+	setAttr -s 6 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
@@ -4133,14 +4187,23 @@ connectAttr "Waist_jnt1.s" "Abdomen_jnt.is";
 connectAttr "Abdomen_jnt_orientConstraint1.crx" "Abdomen_jnt.rx";
 connectAttr "Abdomen_jnt_orientConstraint1.cry" "Abdomen_jnt.ry";
 connectAttr "Abdomen_jnt_orientConstraint1.crz" "Abdomen_jnt.rz";
+connectAttr "Abdomen_jnt_pointConstraint1.ctx" "Abdomen_jnt.tx";
+connectAttr "Abdomen_jnt_pointConstraint1.cty" "Abdomen_jnt.ty";
+connectAttr "Abdomen_jnt_pointConstraint1.ctz" "Abdomen_jnt.tz";
 connectAttr "Abdomen_jnt.s" "Chest_jnt.is";
 connectAttr "Chest_jnt_orientConstraint1.crx" "Chest_jnt.rx";
 connectAttr "Chest_jnt_orientConstraint1.cry" "Chest_jnt.ry";
 connectAttr "Chest_jnt_orientConstraint1.crz" "Chest_jnt.rz";
+connectAttr "Chest_jnt_pointConstraint1.ctx" "Chest_jnt.tx";
+connectAttr "Chest_jnt_pointConstraint1.cty" "Chest_jnt.ty";
+connectAttr "Chest_jnt_pointConstraint1.ctz" "Chest_jnt.tz";
 connectAttr "Chest_jnt.s" "Neck_jnt.is";
 connectAttr "Neck_jnt_orientConstraint1.crx" "Neck_jnt.rx";
 connectAttr "Neck_jnt_orientConstraint1.cry" "Neck_jnt.ry";
 connectAttr "Neck_jnt_orientConstraint1.crz" "Neck_jnt.rz";
+connectAttr "Neck_jnt_pointConstraint1.ctx" "Neck_jnt.tx";
+connectAttr "Neck_jnt_pointConstraint1.cty" "Neck_jnt.ty";
+connectAttr "Neck_jnt_pointConstraint1.ctz" "Neck_jnt.tz";
 connectAttr "Neck_jnt.s" "InnerHead_jnt.is";
 connectAttr "InnerHead_jnt_orientConstraint1.crx" "InnerHead_jnt.rx";
 connectAttr "InnerHead_jnt_orientConstraint1.cry" "InnerHead_jnt.ry";
@@ -4293,6 +4356,18 @@ connectAttr "Jelly_jnt.s" "L_jelly_jnt.is";
 connectAttr "Jelly_jnt.s" "Top_jelly_jnt.is";
 connectAttr "Jelly_jnt.s" "Back_jelly_jnt.is";
 connectAttr "Jelly_jnt.s" "Front_jelly_jnt.is";
+connectAttr "Neck_jnt.pim" "Neck_jnt_pointConstraint1.cpim";
+connectAttr "Neck_jnt.rp" "Neck_jnt_pointConstraint1.crp";
+connectAttr "Neck_jnt.rpt" "Neck_jnt_pointConstraint1.crt";
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl|Chest_ctrl|Chest_ctrl|Neck_ctrl|Neck_ctrl.t" "Neck_jnt_pointConstraint1.tg[0].tt"
+		;
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl|Chest_ctrl|Chest_ctrl|Neck_ctrl|Neck_ctrl.rp" "Neck_jnt_pointConstraint1.tg[0].trp"
+		;
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl|Chest_ctrl|Chest_ctrl|Neck_ctrl|Neck_ctrl.rpt" "Neck_jnt_pointConstraint1.tg[0].trt"
+		;
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl|Chest_ctrl|Chest_ctrl|Neck_ctrl|Neck_ctrl.pm" "Neck_jnt_pointConstraint1.tg[0].tpm"
+		;
+connectAttr "Neck_jnt_pointConstraint1.w0" "Neck_jnt_pointConstraint1.tg[0].tw";
 connectAttr "Chest_jnt.ro" "Chest_jnt_orientConstraint1.cro";
 connectAttr "Chest_jnt.pim" "Chest_jnt_orientConstraint1.cpim";
 connectAttr "Chest_jnt.jo" "Chest_jnt_orientConstraint1.cjo";
@@ -4305,6 +4380,19 @@ connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctr
 		;
 connectAttr "Chest_jnt_orientConstraint1.w0" "Chest_jnt_orientConstraint1.tg[0].tw"
 		;
+connectAttr "Chest_jnt.pim" "Chest_jnt_pointConstraint1.cpim";
+connectAttr "Chest_jnt.rp" "Chest_jnt_pointConstraint1.crp";
+connectAttr "Chest_jnt.rpt" "Chest_jnt_pointConstraint1.crt";
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl|Chest_ctrl|Chest_ctrl.t" "Chest_jnt_pointConstraint1.tg[0].tt"
+		;
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl|Chest_ctrl|Chest_ctrl.rp" "Chest_jnt_pointConstraint1.tg[0].trp"
+		;
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl|Chest_ctrl|Chest_ctrl.rpt" "Chest_jnt_pointConstraint1.tg[0].trt"
+		;
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl|Chest_ctrl|Chest_ctrl.pm" "Chest_jnt_pointConstraint1.tg[0].tpm"
+		;
+connectAttr "Chest_jnt_pointConstraint1.w0" "Chest_jnt_pointConstraint1.tg[0].tw"
+		;
 connectAttr "Abdomen_jnt.ro" "Abdomen_jnt_orientConstraint1.cro";
 connectAttr "Abdomen_jnt.pim" "Abdomen_jnt_orientConstraint1.cpim";
 connectAttr "Abdomen_jnt.jo" "Abdomen_jnt_orientConstraint1.cjo";
@@ -4316,6 +4404,19 @@ connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctr
 connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl.pm" "Abdomen_jnt_orientConstraint1.tg[0].tpm"
 		;
 connectAttr "Abdomen_jnt_orientConstraint1.w0" "Abdomen_jnt_orientConstraint1.tg[0].tw"
+		;
+connectAttr "Abdomen_jnt.pim" "Abdomen_jnt_pointConstraint1.cpim";
+connectAttr "Abdomen_jnt.rp" "Abdomen_jnt_pointConstraint1.crp";
+connectAttr "Abdomen_jnt.rpt" "Abdomen_jnt_pointConstraint1.crt";
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl.t" "Abdomen_jnt_pointConstraint1.tg[0].tt"
+		;
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl.rp" "Abdomen_jnt_pointConstraint1.tg[0].trp"
+		;
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl.rpt" "Abdomen_jnt_pointConstraint1.tg[0].trt"
+		;
+connectAttr "|Core_ctrl|Core_ctrl|Waist_ctrl|Waist_ctrl|Abdomen_ctrl|Abdomen_ctrl.pm" "Abdomen_jnt_pointConstraint1.tg[0].tpm"
+		;
+connectAttr "Abdomen_jnt_pointConstraint1.w0" "Abdomen_jnt_pointConstraint1.tg[0].tw"
 		;
 connectAttr "Waist_jnt1.pim" "Waist_jnt1_pointConstraint1.cpim";
 connectAttr "Waist_jnt1.rp" "Waist_jnt1_pointConstraint1.crp";
