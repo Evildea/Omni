@@ -53,6 +53,9 @@ private:
 	EScale m_ScaleState;
 	EGrowth m_GrowthState;
 
+	// Perform Collision Chech Above
+	bool IsCollisionAbove(float Height, float xOffset, float yOffset);
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -113,6 +116,10 @@ public:
 		int MaxEnergy = 4;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		class USoundBase* ConsumeSound;
+
+	// Debug Settings
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		bool isDebug = false;
 
 	// FUNCTIONS /////////////////////////////////////////////////
 	void MoveForward(float axis);

@@ -68,6 +68,30 @@ void AGuudoCharater::BeginPlay()
 	m_GrowthState = EGrowth::Unchanging;
 }
 
+bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset)
+{
+	// Setup Parameters
+	FHitResult HitResult;
+	FVector StartTrace = GetCapsuleComponent()->GetComponentLocation();
+	FVector UpVector = FVector(xOffset, yOffset, Height);
+	FVector EndTrace = StartTrace + UpVector;
+
+	// Ignore the Actor
+	FCollisionQueryParams TraceParams;
+	TraceParams.AddIgnoredActor(this);
+
+	// Only enabling growing if there is nothing in the way
+	bool result = GetWorld()->LineTraceSingleByChannel(HitResult, StartTrace, EndTrace, ECC_Visibility, TraceParams);
+	if (result && isDebug)
+	{
+		// Draw a Debug Line
+		DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor(255, 0, 0), true);
+	}
+
+	// Return result
+	return result;
+}
+
 // Called every frame
 void AGuudoCharater::Tick(float DeltaTime)
 {
@@ -185,22 +209,35 @@ void AGuudoCharater::Grow()
 	if (m_GrowthState != EGrowth::Unchanging)
 		return;
 
-	// Set the new Scale
-	if (m_ScaleState == EScale::Normal)
+	// Only allow Growing if there is space to grow
+	float Height = m_ScaleState == EScale::Small ? 160.0f : 260.0f;
+	if (!IsCollisionAbove(Height, 0.0f, 0.0f) &&
+		!IsCollisionAbove(Height, 80.0f, 0.0f) &&
+		!IsCollisionAbove(Height, -80.0f, 0.0f) &&
+		!IsCollisionAbove(Height, 0.0f, 80.0f) &&
+		!IsCollisionAbove(Height, 0.0f, -80.0f))
 	{
-		m_GrowthState = EGrowth::Changing;
-		m_ScaleState = EScale::Large;
-		OnNormalToLarge();
-		return;
+		// Set the new Scale
+		if (m_ScaleState == EScale::Normal)
+		{
+			m_GrowthState = EGrowth::Changing;
+			m_ScaleState = EScale::Large;
+			OnNormalToLarge();
+			return;
+		}
+		if (m_ScaleState == EScale::Small)
+		{
+			m_GrowthState = EGrowth::Changing;
+			m_ScaleState = EScale::Normal;
+			OnSmallToNormal();
+			return;
+		}
 	}
-	if (m_ScaleState == EScale::Small)
+	else if (isDebug)
 	{
-		m_GrowthState = EGrowth::Changing;
-		m_ScaleState = EScale::Normal;
-		OnSmallToNormal();
-		return;
+		// Draw a Debug Line
+		// DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor(255, 0, 0), true);
 	}
-
 }
 
 void AGuudoCharater::PerformAction(TEnumAsByte<EAction> ActionToPerform)
