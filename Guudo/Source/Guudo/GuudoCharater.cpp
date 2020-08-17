@@ -42,7 +42,7 @@ AGuudoCharater::AGuudoCharater()
 	bUseControllerRotationRoll = false;
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.f, RotationSpeed, 0.f);
-	GetCharacterMovement()->JumpZVelocity = NormalJumpVelocity;
+	GetCharacterMovement()->JumpZVelocity = NormalJumpHeight;
 	GetCharacterMovement()->AirControl = AirMovability;
 }
 
@@ -93,6 +93,23 @@ bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset
 	return result;
 }
 
+void AGuudoCharater::CustomJump()
+{
+	switch (m_ScaleState)
+	{
+	case EScale::Small:
+		GetCharacterMovement()->JumpZVelocity = SmallJumpHeight;
+		break;
+	case EScale::Normal:
+		GetCharacterMovement()->JumpZVelocity = NormalJumpHeight;
+		break;
+	case EScale::Large:
+		GetCharacterMovement()->JumpZVelocity = LargeJumpHeight;
+		break;
+	}
+	Jump();
+}
+
 // Called every frame
 void AGuudoCharater::Tick(float DeltaTime)
 {
@@ -108,7 +125,7 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AGuudoCharater::CustomJump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	PlayerInputComponent->BindAction("Pickup", IE_Pressed, this, &AGuudoCharater::Pickup);
 
@@ -127,6 +144,21 @@ void AGuudoCharater::MoveForward(float axis)
 	if (isFrozen)
 		return;
 
+	// Set movement speed
+	switch (m_ScaleState)
+	{
+	case EScale::Small:
+		GetCharacterMovement()->MaxWalkSpeed = SmallRunSpeed;
+		break;
+	case EScale::Normal:
+		GetCharacterMovement()->MaxWalkSpeed = NormalRunSpeed;
+		break;
+	case EScale::Large:
+		GetCharacterMovement()->MaxWalkSpeed = LargeRunSpeed;
+		break;
+	}
+
+
 	const FRotator Rotation = Controller->GetControlRotation();
 	const FRotator YawRotation(0, Rotation.Yaw, 0);
 
@@ -139,6 +171,20 @@ void AGuudoCharater::MoveRight(float axis)
 	// Don't do anything if frozen
 	if (isFrozen)
 		return;
+
+	// Set movement speed
+	switch (m_ScaleState)
+	{
+	case EScale::Small:
+		GetCharacterMovement()->MaxWalkSpeed = SmallRunSpeed;
+		break;
+	case EScale::Normal:
+		GetCharacterMovement()->MaxWalkSpeed = NormalRunSpeed;
+		break;
+	case EScale::Large:
+		GetCharacterMovement()->MaxWalkSpeed = LargeRunSpeed;
+		break;
+	}
 
 	const FRotator Rotation = Controller->GetControlRotation();
 	const FRotator YawRotation(0, Rotation.Yaw, 0);
