@@ -15,6 +15,21 @@ enum class EAction : uint8
 	Drop		UMETA(DisplayName = "Drop"),
 };
 
+UENUM(BlueprintType)
+enum class EScale : uint8
+{
+	Small	    UMETA(DisplayName = "Small"),
+	Normal		UMETA(DisplayName = "Normal"),
+	Large		UMETA(DisplayName = "Large"),
+};
+
+UENUM(BlueprintType)
+enum class EGrowth : uint8
+{
+	Unchanging	UMETA(DisplayName = "Unchanging"),
+	Changing	UMETA(DisplayName = "Changing"),
+};
+
 UCLASS()
 class GUUDO_API AGuudoCharater : public ACharacter
 {
@@ -28,17 +43,22 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+private:
+	// Freeze Keyboard Input
+	bool isFrozen;
+	bool isPickupPossible;
+	int currentEnergy;
+
+	// Scaling
+	EScale m_ScaleState;
+	EGrowth m_GrowthState;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	// Freeze Keyboard Input
-	bool isFrozen;
-	bool isPickupPossible;
-	int currentEnergy;
 
 	// COMPONENTS ////////////////////////////////////////////////
 
@@ -114,12 +134,22 @@ public:
 	UFUNCTION(BlueprintPure)
 		bool GetIfEnergyFull() { return currentEnergy == 4 ? true : false; }
 
+	// Perform an Action on the Pickup Object
+	UFUNCTION(BlueprintCallable)
+		void SetGrowthState(TEnumAsByte<EGrowth> GrowthState, float TimelineGrowthAmount, float BaseHeight);
+
 	// BLUEPRINT EVENTS ///////////////////////////////////////////
 	UFUNCTION(BlueprintImplementableEvent)
-		void OnShrink();
+		void OnLargeToNormal();
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void OnGrow();
+		void OnNormalToLarge();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnNormalToSmall();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnSmallToNormal();
 
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()
