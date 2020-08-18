@@ -67,4 +67,7 @@ public:
 
 	// Add item to the Players Inventory
 	void PickupItem(FPickupData* Item);
+
+	// Get number of items in the Players Inventory
+	int GetSizeOfInventory() { return m_Inventory.Num(); }
 };
