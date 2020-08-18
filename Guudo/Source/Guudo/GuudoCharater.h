@@ -68,8 +68,12 @@ public:
 	// Camera Arm
 	UPROPERTY(VisibleAnywhere, Category = Camera)
 		class USpringArmComponent* CameraArm;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float CameraTrailDistance = 300.0f;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Designer")
+		float CameraNormalTrailDistance = 200.0f;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Designer")
+		float CameraSmallTrailDistance = 220.0f;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Designer")
+		float CameraLargeTrailDistance = 300.0f;
 
 	// Capsule Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -131,9 +135,13 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void UpdateGrowthState(float TimelineGrowthAmount, float BaseHeight);
 
-	// Get id the Character can grow here (used by Widget)
+	// Get if the Character can grow here (used by Widget)
 	UFUNCTION(BlueprintPure)
-		inline bool GetIsAbleToGrow() { return isAbleToGrow; }	
+		inline bool GetIsAbleToGrow() { return isAbleToGrow; }
+
+	// Set if the Camera Trail Distance
+	UFUNCTION(BlueprintCallable)
+		void SetCameraTrailDistance(float StartDistance, float EndDistance, float Transition, bool isLargerThanNormal);
 
 	// BLUEPRINT EVENTS ///////////////////////////////////////////
 	UFUNCTION(BlueprintImplementableEvent)

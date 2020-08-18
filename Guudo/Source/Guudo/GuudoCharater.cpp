@@ -22,7 +22,7 @@ AGuudoCharater::AGuudoCharater()
 	// Create the Camera Arm
 	CameraArm = CreateDefaultSubobject<USpringArmComponent>("Camera Arm");
 	CameraArm->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
-	CameraArm->TargetArmLength = CameraTrailDistance;
+	CameraArm->TargetArmLength = CameraNormalTrailDistance;
 	CameraArm->bUsePawnControlRotation = true;
 
 	// Create the Camera
@@ -177,15 +177,10 @@ void AGuudoCharater::MoveRight(float axis)
 
 void AGuudoCharater::Scroll(float axis)
 {
-	// Update Camera Arm
-	CameraArm->TargetArmLength = CameraArm->TargetArmLength + ((isReverseZoom ? -axis : axis) * ZoomSpeed);
-
-	// Clamp Camera Arm
-	if (CameraArm->TargetArmLength < MaxZoomIn)
-		CameraArm->TargetArmLength = MaxZoomIn;
-	else if (CameraArm->TargetArmLength > MaxZoomOut)
-		CameraArm->TargetArmLength = MaxZoomOut;
-
+	if (axis > 0.f)
+		Grow();
+	else if (axis < 0.f)
+		Shrink();
 }
 
 void AGuudoCharater::Pickup()
@@ -268,6 +263,21 @@ void AGuudoCharater::SetGrowthState(TEnumAsByte<EGrowth> GrowthState)
 void AGuudoCharater::UpdateGrowthState(float TimelineGrowthAmount, float BaseHeight)
 {
 	GetCapsuleComponent()->SetWorldScale3D(FVector(BaseHeight + TimelineGrowthAmount));
+}
+
+void AGuudoCharater::SetCameraTrailDistance(float StartDistance, float EndDistance, float Transition, bool isLargerThanNormal)
+{
+	if (isLargerThanNormal)
+	{
+		float Difference = EndDistance - StartDistance;
+		CameraArm->TargetArmLength = StartDistance + (Difference * Transition);
+	}
+	else
+	{
+		float ModifiedTransition = (Transition - 0.5f) * 2.0f;
+		float Difference = StartDistance - EndDistance;
+		CameraArm->TargetArmLength = EndDistance + (Difference * ModifiedTransition);
+	}
 }
 
 void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
