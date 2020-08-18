@@ -52,6 +52,9 @@ private:
 	// Custom Jump for the Character
 	void CustomJump();
 
+	// Set Push Force
+	void SetPushForce(float Amount);
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -91,29 +94,28 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float AirMovability = 0.2f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		float MaxZoomOut = 600.0f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float MaxZoomIn = 100.0f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float ZoomSpeed = 3.0f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		bool isReverseZoom = true;
-	UPROPERTY(EditAnywhere, Category = "Designer")
 		class USoundBase* ConsumeSound;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		float NormalRunSpeed = 600.0f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
 		float SmallRunSpeed = 1200.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float NormalRunSpeed = 600.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float LargeRunSpeed = 300.0f;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		float NormalJumpHeight = 600.0f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
 		float SmallJumpHeight = 300.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
+		float NormalJumpHeight = 600.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
 		float LargeJumpHeight = 300.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float SmallPushForce = 100.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float NormalPushForce = 500.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float LargePushForce = 1500.0f;
 
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -155,6 +157,9 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnSmallToNormal();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnPickup(int CurrentNumberOfItems);
 
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()

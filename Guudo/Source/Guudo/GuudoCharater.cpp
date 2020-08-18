@@ -11,6 +11,8 @@
 #include "GameFramework/Controller.h"
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
+#include "GuudoGameInstance.h"
+#include "PickupBase.h"
 #include "Engine.h" // Debug
 
 // Sets default values
@@ -73,10 +75,15 @@ bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset
 
 	// Only enabling growing if there is nothing in the way
 	bool result = GetWorld()->LineTraceSingleByChannel(HitResult, StartTrace, EndTrace, ECC_Visibility, TraceParams);
-	if (result && isDebug)
+	if (result && HitResult.GetActor())
 	{
+		// Allow growing next to Pushable objects
+		if (HitResult.GetActor()->ActorHasTag(FName("Pushable")))
+			result = false;
+
 		// Draw a Debug Line
-		DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor(255, 0, 0), true);
+		if (isDebug)
+			DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor(255, 0, 0), true);
 	}
 
 	// Return result
@@ -98,6 +105,12 @@ void AGuudoCharater::CustomJump()
 		break;
 	}
 	Jump();
+}
+
+void AGuudoCharater::SetPushForce(float Amount)
+{
+	GetCharacterMovement()->InitialPushForceFactor = Amount;
+	GetCharacterMovement()->PushForceFactor = Amount * 1500.0f;
 }
 
 // Called every frame
@@ -144,7 +157,6 @@ void AGuudoCharater::MoveForward(float axis)
 		break;
 	}
 
-
 	const FRotator Rotation = Controller->GetControlRotation();
 	const FRotator YawRotation(0, Rotation.Yaw, 0);
 
@@ -188,9 +200,22 @@ void AGuudoCharater::Pickup()
 	// If Pickup is permited then pickup the Object
 	if (isPickupPossible)
 	{
+		// Play consume sound
+		UGameplayStatics::SpawnSoundAttached(ConsumeSound, this->GetRootComponent());
+
+		// Update Game Instance
+		UGuudoGameInstance* gameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+		APickupBase* Pickup = Cast<APickupBase>(Target);
+		if (gameInstance && Pickup)
+		{
+			gameInstance->PickupItem(Pickup->GetPickupData());
+			OnPickup(gameInstance->GetSizeOfInventory());
+		}
+
+		// Destroy Object
 		isPickupPossible = false;
 		Target->Destroy();
-		UGameplayStatics::SpawnSoundAttached(ConsumeSound, this->GetRootComponent());
+
 	}
 }
 
@@ -203,6 +228,7 @@ void AGuudoCharater::Shrink()
 	// Set the new Scale
 	if (m_ScaleState == EScale::Large)
 	{
+		SetPushForce(NormalPushForce);
 		m_GrowthState = EGrowth::Changing;
 		m_ScaleState = EScale::Normal;
 		OnLargeToNormal();
@@ -210,6 +236,7 @@ void AGuudoCharater::Shrink()
 	}
 	if (m_ScaleState == EScale::Normal)
 	{
+		SetPushForce(SmallPushForce);
 		m_GrowthState = EGrowth::Changing;
 		m_ScaleState = EScale::Small;
 		OnNormalToSmall();
@@ -234,6 +261,7 @@ void AGuudoCharater::Grow()
 		// Set the new Scale
 		if (m_ScaleState == EScale::Normal)
 		{
+			SetPushForce(LargePushForce);
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Large;
 			OnNormalToLarge();
@@ -241,6 +269,7 @@ void AGuudoCharater::Grow()
 		}
 		if (m_ScaleState == EScale::Small)
 		{
+			SetPushForce(NormalPushForce);
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Normal;
 			OnSmallToNormal();
