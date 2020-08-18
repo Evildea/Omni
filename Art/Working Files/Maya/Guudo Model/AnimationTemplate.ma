@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: AnimationTemplate.ma
-//Last modified: Mon, Aug 17, 2020 03:03:37 PM
+//Last modified: Tue, Aug 18, 2020 10:42:28 AM
 //Codeset: 1252
 file -rdi 1 -ns "RigandBind" -rfn "RigandBindRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/RigandBind.ma";
@@ -8,6 +8,8 @@ file -rdi 2 -ns "Mesh1" -rfn "RigandBind:MeshRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/Mesh.ma";
 file -r -ns "RigandBind" -dr 1 -rfn "RigandBindRN" -op "v=0;" -typ "mayaAscii" "C:/Users/s171971/Documents/Omni/Art/Working Files/Maya/Guudo Model/RigandBind.ma";
 requires maya "2019";
+requires "mtoa" "3.1.2";
+requires "stereoCamera" "10.0";
 requires "mtoa" "3.1.2";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
@@ -22,7 +24,13 @@ createNode reference -n "RigandBindRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"RigandBindRN"
 		"RigandBindRN" 0
-		"RigandBind:MeshRN" 0
+		"RigandBind:MeshRN" 4
+		0 "|MeshRNfosterParent1|fosterParent4" "|RigandBind:Mesh1:Body" "-s -r "
+		0 "|MeshRNfosterParent1|fosterParent3" "|RigandBind:Mesh1:Head" "-s -r "
+		0 "|MeshRNfosterParent1|fosterParent2" "|RigandBind:Mesh1:Eye_R" "-s -r "
+		
+		0 "|MeshRNfosterParent1|fosterParent1" "|RigandBind:Mesh1:Eye_L" "-s -r "
+		
 		"RigandBindRN" 3
 		2 "|RigandBind:Core_ctrl|RigandBind:Core_ctrl|RigandBind:Waist_ctrl|RigandBind:Waist_ctrl|RigandBind:Abdomen_ctrl|RigandBind:Abdomen_ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
@@ -47,9 +55,9 @@ createNode reference -n "sharedReferenceNode";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"sharedReferenceNode";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "DAB46882-4F48-6BB8-46BF-A9A5B1FE00BA";
-	setAttr -s 10 ".lnk";
-	setAttr -s 10 ".slnk";
+	rename -uid "3847CC43-46DA-09AF-5D40-F4BBE7DFDD85";
+	setAttr -s 8 ".lnk";
+	setAttr -s 8 ".slnk";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -81,6 +89,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "sharedReferenceNode.sr" "RigandBindRN.sr";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
