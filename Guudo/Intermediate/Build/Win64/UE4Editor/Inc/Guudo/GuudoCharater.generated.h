@@ -12,13 +12,12 @@ class UPrimitiveComponent;
 class AActor;
 struct FHitResult;
 enum class EGrowth : uint8;
-enum class EAction : uint8;
 #ifdef GUUDO_GuudoCharater_generated_h
 #error "GuudoCharater.generated.h already included, missing '#pragma once' in GuudoCharater.h"
 #endif
 #define GUUDO_GuudoCharater_generated_h
 
-#define Guudo_Source_Guudo_GuudoCharater_h_36_RPC_WRAPPERS \
+#define Guudo_Source_Guudo_GuudoCharater_h_27_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execOnOverlapEnd) \
 	{ \
@@ -71,35 +70,10 @@ enum class EAction : uint8;
 		P_NATIVE_BEGIN; \
 		P_THIS->SetGrowthState(EGrowth(Z_Param_GrowthState)); \
 		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetIfEnergyFull) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(bool*)Z_Param__Result=P_THIS->GetIfEnergyFull(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetEnergy) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(FString*)Z_Param__Result=P_THIS->GetEnergy(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execPerformAction) \
-	{ \
-		P_GET_ENUM(EAction,Z_Param_ActionToPerform); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->PerformAction(EAction(Z_Param_ActionToPerform)); \
-		P_NATIVE_END; \
 	}
 
 
-#define Guudo_Source_Guudo_GuudoCharater_h_36_RPC_WRAPPERS_NO_PURE_DECLS \
+#define Guudo_Source_Guudo_GuudoCharater_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execOnOverlapEnd) \
 	{ \
@@ -152,37 +126,12 @@ enum class EAction : uint8;
 		P_NATIVE_BEGIN; \
 		P_THIS->SetGrowthState(EGrowth(Z_Param_GrowthState)); \
 		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetIfEnergyFull) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(bool*)Z_Param__Result=P_THIS->GetIfEnergyFull(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetEnergy) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(FString*)Z_Param__Result=P_THIS->GetEnergy(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execPerformAction) \
-	{ \
-		P_GET_ENUM(EAction,Z_Param_ActionToPerform); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->PerformAction(EAction(Z_Param_ActionToPerform)); \
-		P_NATIVE_END; \
 	}
 
 
-#define Guudo_Source_Guudo_GuudoCharater_h_36_EVENT_PARMS
-#define Guudo_Source_Guudo_GuudoCharater_h_36_CALLBACK_WRAPPERS
-#define Guudo_Source_Guudo_GuudoCharater_h_36_INCLASS_NO_PURE_DECLS \
+#define Guudo_Source_Guudo_GuudoCharater_h_27_EVENT_PARMS
+#define Guudo_Source_Guudo_GuudoCharater_h_27_CALLBACK_WRAPPERS
+#define Guudo_Source_Guudo_GuudoCharater_h_27_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGuudoCharater(); \
 	friend struct Z_Construct_UClass_AGuudoCharater_Statics; \
@@ -191,7 +140,7 @@ public: \
 	DECLARE_SERIALIZER(AGuudoCharater)
 
 
-#define Guudo_Source_Guudo_GuudoCharater_h_36_INCLASS \
+#define Guudo_Source_Guudo_GuudoCharater_h_27_INCLASS \
 private: \
 	static void StaticRegisterNativesAGuudoCharater(); \
 	friend struct Z_Construct_UClass_AGuudoCharater_Statics; \
@@ -200,7 +149,7 @@ public: \
 	DECLARE_SERIALIZER(AGuudoCharater)
 
 
-#define Guudo_Source_Guudo_GuudoCharater_h_36_STANDARD_CONSTRUCTORS \
+#define Guudo_Source_Guudo_GuudoCharater_h_27_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AGuudoCharater(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AGuudoCharater) \
@@ -213,7 +162,7 @@ private: \
 public:
 
 
-#define Guudo_Source_Guudo_GuudoCharater_h_36_ENHANCED_CONSTRUCTORS \
+#define Guudo_Source_Guudo_GuudoCharater_h_27_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AGuudoCharater(AGuudoCharater&&); \
@@ -224,31 +173,31 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGuudoCharater); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGuudoCharater)
 
 
-#define Guudo_Source_Guudo_GuudoCharater_h_36_PRIVATE_PROPERTY_OFFSET
-#define Guudo_Source_Guudo_GuudoCharater_h_33_PROLOG \
-	Guudo_Source_Guudo_GuudoCharater_h_36_EVENT_PARMS
+#define Guudo_Source_Guudo_GuudoCharater_h_27_PRIVATE_PROPERTY_OFFSET
+#define Guudo_Source_Guudo_GuudoCharater_h_24_PROLOG \
+	Guudo_Source_Guudo_GuudoCharater_h_27_EVENT_PARMS
 
 
-#define Guudo_Source_Guudo_GuudoCharater_h_36_GENERATED_BODY_LEGACY \
+#define Guudo_Source_Guudo_GuudoCharater_h_27_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Guudo_Source_Guudo_GuudoCharater_h_36_PRIVATE_PROPERTY_OFFSET \
-	Guudo_Source_Guudo_GuudoCharater_h_36_RPC_WRAPPERS \
-	Guudo_Source_Guudo_GuudoCharater_h_36_CALLBACK_WRAPPERS \
-	Guudo_Source_Guudo_GuudoCharater_h_36_INCLASS \
-	Guudo_Source_Guudo_GuudoCharater_h_36_STANDARD_CONSTRUCTORS \
+	Guudo_Source_Guudo_GuudoCharater_h_27_PRIVATE_PROPERTY_OFFSET \
+	Guudo_Source_Guudo_GuudoCharater_h_27_RPC_WRAPPERS \
+	Guudo_Source_Guudo_GuudoCharater_h_27_CALLBACK_WRAPPERS \
+	Guudo_Source_Guudo_GuudoCharater_h_27_INCLASS \
+	Guudo_Source_Guudo_GuudoCharater_h_27_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Guudo_Source_Guudo_GuudoCharater_h_36_GENERATED_BODY \
+#define Guudo_Source_Guudo_GuudoCharater_h_27_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Guudo_Source_Guudo_GuudoCharater_h_36_PRIVATE_PROPERTY_OFFSET \
-	Guudo_Source_Guudo_GuudoCharater_h_36_RPC_WRAPPERS_NO_PURE_DECLS \
-	Guudo_Source_Guudo_GuudoCharater_h_36_CALLBACK_WRAPPERS \
-	Guudo_Source_Guudo_GuudoCharater_h_36_INCLASS_NO_PURE_DECLS \
-	Guudo_Source_Guudo_GuudoCharater_h_36_ENHANCED_CONSTRUCTORS \
+	Guudo_Source_Guudo_GuudoCharater_h_27_PRIVATE_PROPERTY_OFFSET \
+	Guudo_Source_Guudo_GuudoCharater_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
+	Guudo_Source_Guudo_GuudoCharater_h_27_CALLBACK_WRAPPERS \
+	Guudo_Source_Guudo_GuudoCharater_h_27_INCLASS_NO_PURE_DECLS \
+	Guudo_Source_Guudo_GuudoCharater_h_27_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -273,13 +222,5 @@ template<> GUUDO_API UEnum* StaticEnum<EGrowth>();
 
 enum class EScale : uint8;
 template<> GUUDO_API UEnum* StaticEnum<EScale>();
-
-#define FOREACH_ENUM_EACTION(op) \
-	op(EAction::Consume) \
-	op(EAction::Hold) \
-	op(EAction::Drop) 
-
-enum class EAction : uint8;
-template<> GUUDO_API UEnum* StaticEnum<EAction>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

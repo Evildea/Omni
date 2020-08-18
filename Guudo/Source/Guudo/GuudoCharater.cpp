@@ -50,18 +50,8 @@ AGuudoCharater::AGuudoCharater()
 void AGuudoCharater::BeginPlay()
 {
 	Super::BeginPlay();
-	if (HudCompletePickupWidgetClass) {
-		HudCompletePickupWidget = CreateWidget<UUserWidget>(Cast<APlayerController>(GetController()), HudCompletePickupWidgetClass);
-		HudCompletePickupWidget->bIsFocusable = true;
-	}
-
-	if (HudPartialPickupWidgetClass) {
-		HudPartialPickupWidget = CreateWidget<UUserWidget>(Cast<APlayerController>(GetController()), HudPartialPickupWidgetClass);
-		HudPartialPickupWidget->bIsFocusable = true;
-	}
 
 	// Set variables
-	isFrozen = false;
 	isPickupPossible = false;
 	isAbleToGrow = true;
 	currentEnergy = 0;
@@ -140,10 +130,6 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 void AGuudoCharater::MoveForward(float axis)
 {
-	// Don't do anything if frozen
-	if (isFrozen)
-		return;
-
 	// Set movement speed
 	switch (m_ScaleState)
 	{
@@ -168,10 +154,6 @@ void AGuudoCharater::MoveForward(float axis)
 
 void AGuudoCharater::MoveRight(float axis)
 {
-	// Don't do anything if frozen
-	if (isFrozen)
-		return;
-
 	// Set movement speed
 	switch (m_ScaleState)
 	{
@@ -209,21 +191,11 @@ void AGuudoCharater::Scroll(float axis)
 void AGuudoCharater::Pickup()
 {
 	// If Pickup is permited then pickup the Object
-	if (isPickupPossible && HudCompletePickupWidgetClass && HudPartialPickupWidgetClass)
+	if (isPickupPossible)
 	{
-		isFrozen = true;
 		isPickupPossible = false;
+		Target->Destroy();
 		UGameplayStatics::SpawnSoundAttached(ConsumeSound, this->GetRootComponent());
-		if (GetIfEnergyFull())
-		{
-			HudPartialPickupWidget->AddToViewport();
-			HudPartialPickupWidget->SetKeyboardFocus();
-		}
-		else
-		{
-			HudCompletePickupWidget->AddToViewport();
-			HudCompletePickupWidget->SetKeyboardFocus();
-		}
 	}
 }
 
@@ -286,35 +258,6 @@ void AGuudoCharater::Grow()
 		GetWorldTimerManager().SetTimer(Countdown, this, &AGuudoCharater::ResetIsAbleToGrowError, 1.f, false);
 		isAbleToGrow = false;
 	}
-}
-
-void AGuudoCharater::PerformAction(TEnumAsByte<EAction> ActionToPerform)
-{
-	isFrozen = false;
-
-	if (ActionToPerform == EAction::Consume)
-	{
-		currentEnergy++;
-		Target->Destroy();
-		isPickupPossible = false;
-		UE_LOG(LogTemp, Warning, TEXT("Consume"));
-	}
-	if (ActionToPerform == EAction::Hold)
-	{
-		Target->Destroy();
-		isPickupPossible = false;
-		UE_LOG(LogTemp, Warning, TEXT("Hold"));
-	}
-	if (ActionToPerform == EAction::Drop)
-	{
-		isPickupPossible = true;
-		UE_LOG(LogTemp, Warning, TEXT("Drop"));
-	}
-}
-
-FString AGuudoCharater::GetEnergy()
-{
-	return FString::Printf(TEXT("Energy: %i / %i"), currentEnergy, MaxEnergy);
 }
 
 void AGuudoCharater::SetGrowthState(TEnumAsByte<EGrowth> GrowthState)
