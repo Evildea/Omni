@@ -73,10 +73,15 @@ bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset
 
 	// Only enabling growing if there is nothing in the way
 	bool result = GetWorld()->LineTraceSingleByChannel(HitResult, StartTrace, EndTrace, ECC_Visibility, TraceParams);
-	if (result && isDebug)
+	if (result && HitResult.GetActor())
 	{
+		// Allow growing next to Pushable objects
+		if (HitResult.GetActor()->ActorHasTag(FName("Pushable")))
+			result = false;
+
 		// Draw a Debug Line
-		DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor(255, 0, 0), true);
+		if (isDebug)
+			DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor(255, 0, 0), true);
 	}
 
 	// Return result
@@ -143,7 +148,6 @@ void AGuudoCharater::MoveForward(float axis)
 		GetCharacterMovement()->MaxWalkSpeed = LargeRunSpeed;
 		break;
 	}
-
 
 	const FRotator Rotation = Controller->GetControlRotation();
 	const FRotator YawRotation(0, Rotation.Yaw, 0);
