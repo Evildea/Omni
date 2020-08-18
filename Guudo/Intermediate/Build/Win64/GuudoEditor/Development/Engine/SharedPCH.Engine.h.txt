@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 C:/Users/s181674/Desktop/Omni/Guudo/Intermediate/Build/Win64/GuudoEditor/Development/Engine/SharedPCH.Engine.h
+=======
+C:/Users/s171971/Documents/Omni/Guudo/Intermediate/Build/Win64/GuudoEditor/Development/Engine/SharedPCH.Engine.h
+>>>>>>> Stashed changes
 C:/Program Files/Epic Games/UE_4.23/Engine/Source/Runtime/Engine/Public/EngineSharedPCH.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Core\Public\Containers/ContainersFwd.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Core\Public\CoreTypes.h
