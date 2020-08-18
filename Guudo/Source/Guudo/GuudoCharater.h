@@ -141,6 +141,10 @@ public:
 	UFUNCTION(BlueprintPure)
 		inline bool GetIsAbleToGrow() { return isAbleToGrow; }
 
+	// Get the current Size of the Character
+	UFUNCTION(BlueprintPure)
+		inline EScale GetCurrentGrowth() { return m_ScaleState; }
+
 	// Set if the Camera Trail Distance
 	UFUNCTION(BlueprintCallable)
 		void SetCameraTrailDistance(float StartDistance, float EndDistance, float Transition, bool isLargerThanNormal);
