@@ -107,6 +107,12 @@ void AGuudoCharater::CustomJump()
 	Jump();
 }
 
+void AGuudoCharater::SetPushForce(float Amount)
+{
+	GetCharacterMovement()->InitialPushForceFactor = Amount;
+	GetCharacterMovement()->PushForceFactor = Amount * 1500.0f;
+}
+
 // Called every frame
 void AGuudoCharater::Tick(float DeltaTime)
 {
@@ -222,6 +228,7 @@ void AGuudoCharater::Shrink()
 	// Set the new Scale
 	if (m_ScaleState == EScale::Large)
 	{
+		SetPushForce(NormalPushForce);
 		m_GrowthState = EGrowth::Changing;
 		m_ScaleState = EScale::Normal;
 		OnLargeToNormal();
@@ -229,6 +236,7 @@ void AGuudoCharater::Shrink()
 	}
 	if (m_ScaleState == EScale::Normal)
 	{
+		SetPushForce(SmallPushForce);
 		m_GrowthState = EGrowth::Changing;
 		m_ScaleState = EScale::Small;
 		OnNormalToSmall();
@@ -253,6 +261,7 @@ void AGuudoCharater::Grow()
 		// Set the new Scale
 		if (m_ScaleState == EScale::Normal)
 		{
+			SetPushForce(LargePushForce);
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Large;
 			OnNormalToLarge();
@@ -260,6 +269,7 @@ void AGuudoCharater::Grow()
 		}
 		if (m_ScaleState == EScale::Small)
 		{
+			SetPushForce(NormalPushForce);
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Normal;
 			OnSmallToNormal();
