@@ -6,15 +6,6 @@
 #include "GameFramework/Character.h"
 #include "GuudoCharater.generated.h"
 
-// Enumeration called by Blueprint Widget
-UENUM(BlueprintType)
-enum class EAction : uint8
-{
-	Consume     UMETA(DisplayName = "Consume"),
-	Hold		UMETA(DisplayName = "Hold"),
-	Drop		UMETA(DisplayName = "Drop"),
-};
-
 UENUM(BlueprintType)
 enum class EScale : uint8
 {
@@ -44,7 +35,6 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-	bool isFrozen;			// Can't move because Keyboard input is frozen
 	bool isPickupPossible;	// Can't pickup because already picking up
 	bool isAbleToGrow;		// Can the player Grow here.
 	int currentEnergy;		// Current Energy level.
@@ -79,23 +69,13 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = Camera)
 		class USpringArmComponent* CameraArm;
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		float CameraTrailDistance = 600.0f;
+		float CameraTrailDistance = 300.0f;
 
 	// Capsule Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float CapsuleRadius = 42.f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float CapsuleHeight = 45.f;
-
-	// Widgets
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		TSubclassOf<class UUserWidget> HudCompletePickupWidgetClass;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		TSubclassOf<class UUserWidget> HudPartialPickupWidgetClass;
-	UPROPERTY()
-		class UUserWidget* HudCompletePickupWidget;
-	UPROPERTY()
-		class UUserWidget* HudPartialPickupWidget;
 
 	// Other Actor
 	UPROPERTY()
@@ -115,23 +95,21 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		bool isReverseZoom = true;
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		int MaxEnergy = 4;
-	UPROPERTY(EditAnywhere, Category = "Designer")
 		class USoundBase* ConsumeSound;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float NormalRunSpeed = 600.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		float SmallRunSpeed = 300.0f;
+		float SmallRunSpeed = 1200.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		float LargeRunSpeed = 1200.0f;
+		float LargeRunSpeed = 300.0f;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float NormalJumpHeight = 600.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float SmallJumpHeight = 300.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		float LargeJumpHeight = 1200.0f;
+		float LargeJumpHeight = 300.0f;
 
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -144,18 +122,6 @@ public:
 	void Pickup();
 	void Shrink();
 	void Grow();
-
-	// Perform an Action on the Pickup Object
-	UFUNCTION(BlueprintCallable)
-		void PerformAction(TEnumAsByte<EAction> ActionToPerform);
-
-	// Get how much energy the player has
-	UFUNCTION(BlueprintPure)
-		FString GetEnergy();
-
-	// Get if your player is energy full
-	UFUNCTION(BlueprintPure)
-		bool GetIfEnergyFull() { return currentEnergy == 4 ? true : false; }
 
 	// Set the Growth State (Growing or not?)
 	UFUNCTION(BlueprintCallable)
