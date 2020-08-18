@@ -24,7 +24,6 @@ protected:
 	FPickupData* m_PickupData;
 
 public:	
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* Mesh;
 
@@ -33,4 +32,6 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Designer")
 		FName PickupNameMustMatchGameInstance;
+
+		FPickupData* GetPickupData() { return m_PickupData; }
 };

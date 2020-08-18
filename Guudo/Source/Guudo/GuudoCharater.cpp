@@ -11,6 +11,8 @@
 #include "GameFramework/Controller.h"
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
+#include "GuudoGameInstance.h"
+#include "PickupBase.h"
 #include "Engine.h" // Debug
 
 // Sets default values
@@ -192,9 +194,22 @@ void AGuudoCharater::Pickup()
 	// If Pickup is permited then pickup the Object
 	if (isPickupPossible)
 	{
+		// Play consume sound
+		UGameplayStatics::SpawnSoundAttached(ConsumeSound, this->GetRootComponent());
+
+		// Update Game Instance
+		UGuudoGameInstance* gameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+		APickupBase* Pickup = Cast<APickupBase>(Target);
+		if (gameInstance && Pickup)
+		{
+			gameInstance->PickupItem(Pickup->GetPickupData());
+			OnPickup(gameInstance->GetSizeOfInventory());
+		}
+
+		// Destroy Object
 		isPickupPossible = false;
 		Target->Destroy();
-		UGameplayStatics::SpawnSoundAttached(ConsumeSound, this->GetRootComponent());
+
 	}
 }
 

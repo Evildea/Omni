@@ -156,6 +156,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnSmallToNormal();
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnPickup(int CurrentNumberOfItems);
+
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()
 		void OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
