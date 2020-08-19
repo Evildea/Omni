@@ -14,12 +14,16 @@ APickupBase::APickupBase()
 	
 	// Create the Required Components
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	Mesh->SetGenerateOverlapEvents(true);
+	Mesh->SetSimulatePhysics(true);
+	Mesh->ComponentTags.Add(FName("Shakeable"));
 	RootComponent = Mesh;
 
 	// Create Pickup Component
 	PickupRange = CreateDefaultSubobject<USphereComponent>(TEXT("Pickup Range"));
 	PickupRange->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
 	PickupRange->SetSphereRadius(120.0f);
+	PickupRange->SetGenerateOverlapEvents(true);
 	PickupRange->SetCollisionProfileName(FName("OverlapAllDynamic"));
 	PickupRange->ComponentTags.Add(FName("Pickup"));
 }
