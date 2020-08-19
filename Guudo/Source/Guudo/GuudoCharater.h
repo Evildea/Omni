@@ -21,6 +21,13 @@ enum class EGrowth : uint8
 	Changing	UMETA(DisplayName = "Changing"),
 };
 
+UENUM(BlueprintType)
+enum class EWalking : uint8
+{
+	Walking		UMETA(DisplayName = "Walking"),
+	Stationary	UMETA(DisplayName = "Stationary"),
+};
+
 UCLASS()
 class GUUDO_API AGuudoCharater : public ACharacter
 {
@@ -43,11 +50,15 @@ private:
 	EScale m_ScaleState;
 	EGrowth m_GrowthState;
 
+	// Shaking
+	EWalking m_WalkState;
+
 	// Perform Collision check above
 	bool IsCollisionAbove(float Height, float xOffset, float yOffset);
 
-	// Reset the Timer to Show can't grow
+	// Timers
 	inline void ResetIsAbleToGrowError() { isAbleToGrow = true; }
+	inline void ResetWalkingState() { m_WalkState = EWalking::Stationary; }
 
 	// Custom Jump for the Character
 	void CustomJump();
@@ -78,11 +89,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Designer")
 		float CameraLargeTrailDistance = 300.0f;
 
-	// Capsule Settings
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float CapsuleRadius = 42.f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float CapsuleHeight = 45.f;
+	// Sphere Shake Collider
+	UPROPERTY(VisibleAnywhere, Category = Camera)
+		class USphereComponent* ShakeCollider;
 
 	// Other Actor
 	UPROPERTY()
@@ -171,4 +180,11 @@ public:
 
 	UFUNCTION()
 		void OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+	UFUNCTION()
+		void OnShakeOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+		void OnShakeOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
 };

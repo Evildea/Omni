@@ -7,6 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/InputComponent.h"
+#include "Components/SphereComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "Blueprint/UserWidget.h"
@@ -33,10 +34,19 @@ AGuudoCharater::AGuudoCharater()
 	Camera->bUsePawnControlRotation = false;
 
 	// Capsule Component
-	GetCapsuleComponent()->InitCapsuleSize(CapsuleRadius, CapsuleHeight);
+	GetCapsuleComponent()->InitCapsuleSize(25.f, 45.f);
 	GetCapsuleComponent()->SetGenerateOverlapEvents(true);
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AGuudoCharater::OnOverlapBegin);
 	GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AGuudoCharater::OnOverlapEnd);
+
+	// Shake Collider Component
+	ShakeCollider = CreateDefaultSubobject<USphereComponent>("ObjectNearbyCollider");
+	ShakeCollider->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	ShakeCollider->SetSphereRadius(300.0f);
+	ShakeCollider->SetGenerateOverlapEvents(true);
+	ShakeCollider->CanCharacterStepUpOn = ECanBeCharacterBase::ECB_No;
+	ShakeCollider->OnComponentBeginOverlap.AddDynamic(this, &AGuudoCharater::OnShakeOverlapBegin);
+	ShakeCollider->OnComponentEndOverlap.AddDynamic(this, &AGuudoCharater::OnShakeOverlapEnd);
 
 	// Controller
 	bUseControllerRotationPitch = false;
@@ -59,6 +69,7 @@ void AGuudoCharater::BeginPlay()
 	currentEnergy = 0;
 	m_ScaleState = EScale::Normal;
 	m_GrowthState = EGrowth::Unchanging;
+	m_WalkState = EWalking::Stationary;
 }
 
 bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset)
@@ -143,6 +154,10 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 void AGuudoCharater::MoveForward(float axis)
 {
+	// Don't computer if there is no movement
+	if (axis == 0.f)
+		return;
+
 	// Set movement speed
 	switch (m_ScaleState)
 	{
@@ -157,15 +172,24 @@ void AGuudoCharater::MoveForward(float axis)
 		break;
 	}
 
+	// Set walking state
+	m_WalkState = EWalking::Walking;
+	FTimerHandle Countdown;
+	GetWorldTimerManager().SetTimer(Countdown, this, &AGuudoCharater::ResetWalkingState, 0.5f, false);
+
+	// Move Character
 	const FRotator Rotation = Controller->GetControlRotation();
 	const FRotator YawRotation(0, Rotation.Yaw, 0);
-
 	const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 	AddMovementInput(Direction, axis);
 }
 
 void AGuudoCharater::MoveRight(float axis)
 {
+	// Don't computer if there is no movement
+	if (axis == 0.f)
+		return;
+
 	// Set movement speed
 	switch (m_ScaleState)
 	{
@@ -180,9 +204,14 @@ void AGuudoCharater::MoveRight(float axis)
 		break;
 	}
 
+	// Set walking state
+	m_WalkState = EWalking::Walking;
+	FTimerHandle Countdown;
+	GetWorldTimerManager().SetTimer(Countdown, this, &AGuudoCharater::ResetWalkingState, 0.5f, false);
+
+	// Move Character
 	const FRotator Rotation = Controller->GetControlRotation();
 	const FRotator YawRotation(0, Rotation.Yaw, 0);
-
 	const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 	AddMovementInput(Direction, axis);
 }
@@ -324,4 +353,23 @@ void AGuudoCharater::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* O
 {
 	UE_LOG(LogTemp, Warning, TEXT("Exit Range"));
 	isPickupPossible = false;
+}
+
+void AGuudoCharater::OnShakeOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	//m_ShakeList.Add(OtherActor);
+	UE_LOG(LogTemp, Warning, TEXT("Added %s"), *OtherActor->GetName());
+}
+
+void AGuudoCharater::OnShakeOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	//for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
+	//{
+	//	if (m_ShakeList[Index] == OtherActor)
+	//	{
+	//		m_ShakeList.RemoveAt(Index, 1, true);
+			UE_LOG(LogTemp, Warning, TEXT("Removed %s"), *OtherActor->GetName());
+	//		break;
+	//	}
+	//}
 }
