@@ -21,6 +21,13 @@ enum class EGrowth : uint8
 	Changing	UMETA(DisplayName = "Changing"),
 };
 
+UENUM(BlueprintType)
+enum class EWalking : uint8
+{
+	Walking		UMETA(DisplayName = "Walking"),
+	Stationary	UMETA(DisplayName = "Stationary"),
+};
+
 UCLASS()
 class GUUDO_API AGuudoCharater : public ACharacter
 {
@@ -38,16 +45,22 @@ private:
 	bool isPickupPossible;	// Can't pickup because already picking up
 	bool isAbleToGrow;		// Can the player Grow here.
 	int currentEnergy;		// Current Energy level.
+	float currentShakeFrequency;
 
 	// Scaling
 	EScale m_ScaleState;
 	EGrowth m_GrowthState;
 
+	// Shaking
+	EWalking m_WalkState;
+	TArray<UPrimitiveComponent*> m_ShakeList;
+
 	// Perform Collision check above
 	bool IsCollisionAbove(float Height, float xOffset, float yOffset);
 
-	// Reset the Timer to Show can't grow
+	// Timers
 	inline void ResetIsAbleToGrowError() { isAbleToGrow = true; }
+	inline void ResetWalkingState() { m_WalkState = EWalking::Stationary; }
 
 	// Custom Jump for the Character
 	void CustomJump();
@@ -78,11 +91,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Designer")
 		float CameraLargeTrailDistance = 300.0f;
 
-	// Capsule Settings
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float CapsuleRadius = 42.f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float CapsuleHeight = 45.f;
+	// Sphere Shake Collider
+	UPROPERTY(VisibleAnywhere, Category = Camera)
+		class USphereComponent* ShakeCollider;
 
 	// Other Actor
 	UPROPERTY()
@@ -116,6 +127,11 @@ public:
 		float NormalPushForce = 500.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float LargePushForce = 1500.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float ShakeFrequency = 0.25f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float ShakeStrength = 4000.0f;
 
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -171,4 +187,11 @@ public:
 
 	UFUNCTION()
 		void OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+	UFUNCTION()
+		void OnShakeOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+		void OnShakeOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
 };
