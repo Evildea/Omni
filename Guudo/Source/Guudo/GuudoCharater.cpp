@@ -67,6 +67,7 @@ void AGuudoCharater::BeginPlay()
 	isPickupPossible = false;
 	isAbleToGrow = true;
 	currentEnergy = 0;
+	currentShakeFrequency = 0;
 	m_ScaleState = EScale::Normal;
 	m_GrowthState = EGrowth::Unchanging;
 	m_WalkState = EWalking::Stationary;
@@ -129,6 +130,31 @@ void AGuudoCharater::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	// Shake the ground if the Character is Large and Walking
+	if (m_WalkState == EWalking::Walking && m_ScaleState == EScale::Large)
+	{
+		currentShakeFrequency += DeltaTime;
+		if (currentShakeFrequency > ShakeFrequency)
+		{
+			currentShakeFrequency -= ShakeFrequency;
+
+			// Iterate through Shake list and give everything a shake
+			for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
+			{
+				// Get Distance
+				FVector RelativePosition = GetActorLocation() - m_ShakeList[Index]->GetComponentLocation();
+				float RelativeDistance = RelativePosition.Size();
+				float Strength = ShakeStrength - ((ShakeStrength / 600.0f) * RelativeDistance);
+
+				// Generate Bounce
+				float randomOffset1 = FMath::FRandRange(-Strength * .5f, Strength * .5f);
+				float randomOffset2 = FMath::FRandRange(-Strength * .5f, Strength * .5f);
+				float randomOffset3 = FMath::FRandRange(0.1f, Strength * .1f);
+				m_ShakeList[Index]->AddImpulse(FVector(randomOffset1, randomOffset2, Strength + randomOffset3));
+			}
+
+		}
+	}
 }
 
 // Called to bind functionality to input
@@ -357,19 +383,43 @@ void AGuudoCharater::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* O
 
 void AGuudoCharater::OnShakeOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	//m_ShakeList.Add(OtherActor);
-	UE_LOG(LogTemp, Warning, TEXT("Added %s"), *OtherActor->GetName());
+	// Ignore self
+	if (OtherActor == this)
+		return;
+
+	// Check whether the Actor is already on the Shake list
+	bool Found = false;
+	for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
+	{
+		if (m_ShakeList[Index] == OtherComponent)
+		{
+			Found = true;
+			break;
+		}
+	}
+
+	// If the Actor isn't on the Shake list, then add it to the Shake list.
+	if (!Found && OtherComponent->ComponentHasTag(FName("Shakeable")))
+	{
+		m_ShakeList.Add(OtherComponent);
+		UE_LOG(LogTemp, Warning, TEXT("Shake list size: %d"), m_ShakeList.Num());
+	}
+
 }
 
 void AGuudoCharater::OnShakeOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	//for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
-	//{
-	//	if (m_ShakeList[Index] == OtherActor)
-	//	{
-	//		m_ShakeList.RemoveAt(Index, 1, true);
-			UE_LOG(LogTemp, Warning, TEXT("Removed %s"), *OtherActor->GetName());
-	//		break;
-	//	}
-	//}
+	// Check whether the Actor is already on the Shake list.
+	for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
+	{
+		// Remove the Actor from the Shake list if it's on the Shake list.
+		if (m_ShakeList[Index] == OtherComp)
+		{
+			m_ShakeList.RemoveAt(Index, 1, true);
+			UE_LOG(LogTemp, Warning, TEXT("Shake list size: %d"), m_ShakeList.Num());
+			break;
+		}
+	}
+
+
 }

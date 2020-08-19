@@ -45,6 +45,7 @@ private:
 	bool isPickupPossible;	// Can't pickup because already picking up
 	bool isAbleToGrow;		// Can the player Grow here.
 	int currentEnergy;		// Current Energy level.
+	float currentShakeFrequency;
 
 	// Scaling
 	EScale m_ScaleState;
@@ -52,6 +53,7 @@ private:
 
 	// Shaking
 	EWalking m_WalkState;
+	TArray<UPrimitiveComponent*> m_ShakeList;
 
 	// Perform Collision check above
 	bool IsCollisionAbove(float Height, float xOffset, float yOffset);
@@ -125,6 +127,11 @@ public:
 		float NormalPushForce = 500.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float LargePushForce = 1500.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float ShakeFrequency = 0.25f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float ShakeStrength = 4000.0f;
 
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
