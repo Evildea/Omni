@@ -8,6 +8,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Components/InputComponent.h"
 #include "Components/SphereComponent.h"
+#include "Materials/MaterialInstanceDynamic.h" 
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "Blueprint/UserWidget.h"
@@ -71,6 +72,10 @@ void AGuudoCharater::BeginPlay()
 	m_ScaleState = EScale::Normal;
 	m_GrowthState = EGrowth::Unchanging;
 	m_WalkState = EWalking::Stationary;
+
+	// Set Material References
+	Material01 = Cast<UMaterialInstance>(GetMesh()->GetMaterial(0));
+	Material02 = Cast<UMaterialInstance>(GetMesh()->GetMaterial(1));
 }
 
 bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset)
@@ -153,6 +158,21 @@ void AGuudoCharater::Tick(float DeltaTime)
 				m_ShakeList[Index]->AddImpulse(FVector(randomOffset1, randomOffset2, Strength + randomOffset3));
 			}
 
+		}
+	}
+
+	// Set Transparency
+	if (Material01 && Material02)
+	{
+		FVector RelativePosition = GetActorLocation() - Camera->GetComponentLocation();
+		float RelativeDistance = RelativePosition.Size();
+
+		if (RelativeDistance < 100.0f)
+		{
+			float FadeOut = (2.0f / 100.0f) * RelativeDistance;
+			GetMesh()->SetScalarParameterValueOnMaterials("Opacity", FadeOut);
+
+			UE_LOG(LogTemp, Warning, TEXT("Camera: %f"), FadeOut);
 		}
 	}
 }
