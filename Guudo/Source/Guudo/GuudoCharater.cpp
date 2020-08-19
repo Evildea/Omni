@@ -265,6 +265,7 @@ void AGuudoCharater::Pickup()
 		{
 			gameInstance->PickupItem(Pickup->GetPickupData());
 			OnPickup(gameInstance->GetSizeOfInventory());
+			UE_LOG(LogTemp, Warning, TEXT("Size of inventory: %d"), gameInstance->GetSizeOfInventory());
 		}
 
 		// Destroy Object
