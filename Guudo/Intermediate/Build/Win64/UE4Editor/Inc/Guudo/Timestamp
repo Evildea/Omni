@@ -1,17 +1,7 @@
-<<<<<<< HEAD
-D:\AIE\AIELineup\AIELineup\Omni\Guudo\Source\Guudo\GuudoCharater.h
-D:\AIE\AIELineup\AIELineup\Omni\Guudo\Source\Guudo\PickupBase.h
-D:\AIE\AIELineup\AIELineup\Omni\Guudo\Source\Guudo\PickupData.h
-D:\AIE\AIELineup\AIELineup\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
-D:\AIE\AIELineup\AIELineup\Omni\Guudo\Source\Guudo\Silhouette\SilhouetteWidget.h
-D:\AIE\AIELineup\AIELineup\Omni\Guudo\Source\Guudo\GuudoGameInstance.h
-D:\AIE\AIELineup\AIELineup\Omni\Guudo\Source\Guudo\GuudoGameMode.h
-=======
-C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Silhouette\SilhouetteWidget.h
-C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\GuudoCharater.h
-C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\GuudoGameInstance.h
-C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\GuudoGameMode.h
-C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
-C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\PickupData.h
-C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\PickupBase.h
->>>>>>> master
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\Silhouette\SilhouetteWidget.h
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\GuudoGameInstance.h
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\GuudoCharater.h
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\PickupBase.h
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\PickupData.h
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\GuudoGameMode.h

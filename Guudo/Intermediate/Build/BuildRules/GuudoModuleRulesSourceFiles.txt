@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-D:\AIE\AIELineup\AIELineup\Omni\Guudo\Source\Guudo\Guudo.Build.cs
-D:\AIE\AIELineup\AIELineup\Omni\Guudo\Source\Guudo.Target.cs
-D:\AIE\AIELineup\AIELineup\Omni\Guudo\Source\GuudoEditor.Target.cs
-=======
-C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Guudo.Build.cs
-C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo.Target.cs
-C:\Users\Joshu\Desktop\Omni\Guudo\Source\GuudoEditor.Target.cs
->>>>>>> master
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\Guudo.Build.cs
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo.Target.cs
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\GuudoEditor.Target.cs
