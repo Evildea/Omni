@@ -4,6 +4,10 @@
 #include "Door.h"
 #include "PressurePlate.h"
 #include "Switch.h"
+#include "Camera/CameraComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Components/StaticMeshComponent.h"
+#include "Components/SceneComponent.h"
 
 // Sets default values
 ADoor::ADoor()
@@ -11,12 +15,22 @@ ADoor::ADoor()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	// Set up the Scene Root
+	Root = CreateDefaultSubobject<USceneComponent>("Root");
+	RootComponent = Root;
+
 	// Set up the Mesh
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
-	RootComponent = Mesh;
+	Mesh->AttachToComponent(Root, FAttachmentTransformRules::KeepRelativeTransform);
+
+	// Set up the Camera
+	Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
+	Camera->AttachToComponent(Root, FAttachmentTransformRules::KeepRelativeTransform);
 
 	// Set Variables
 	m_isActivated = false;
+	isSwitchRequired = true;
+	isPressurePlateRequired = true;
 	DoorHeight = 150.0f;
 
 }
@@ -25,7 +39,8 @@ ADoor::ADoor()
 void ADoor::BeginPlay()
 {
 	Super::BeginPlay();
-	m_StartLocation = GetActorLocation();
+
+	m_StartLocation = Mesh->RelativeLocation;
 }
 
 // Called every frame
@@ -38,18 +53,32 @@ void ADoor::Tick(float DeltaTime)
 		return;
 
 	// Check if the Pressure Plate is active and the Switch is turned on.
-	if (PressurePlate->IsTurnedOn() && Switch->IsTurnedOn())
+	if (isPressurePlateRequired)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Door Activated"));
-		m_isActivated = true;
-		OnOpen();
+		if (!PressurePlate->IsTurnedOn())
+			return;
 	}
+
+	if (isSwitchRequired)
+	{
+		if (!Switch->IsTurnedOn())
+			return;
+	}
+
+	// Set the new View Target
+	APlayerController* Character = UGameplayStatics::GetPlayerController(this, 0);
+	FViewTargetTransitionParams Params;
+	Character->SetViewTarget(this, Params);
+
+	UE_LOG(LogTemp, Warning, TEXT("Door Activated"));
+	m_isActivated = true;
+	OnOpen();
 }
 
 void ADoor::SetDoorHeight(float value)
 {
 	float newZ = DoorHeight - (value * DoorHeight);
-	SetActorLocation(FVector(m_StartLocation.X, m_StartLocation.Y, m_StartLocation.Z - newZ));
+	Mesh->SetRelativeLocation(FVector(m_StartLocation.X, m_StartLocation.Y, m_StartLocation.Z - newZ));
 
 }
 

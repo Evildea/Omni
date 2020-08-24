@@ -23,17 +23,29 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Mesh for the Ball
+	// Scene Root
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class USceneComponent* Root;
+
+	// Mesh Component
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* Mesh;
+
+	// Camera Component
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class UCameraComponent* Camera;
 
 	// The PressurePlate
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		class APressurePlate* PressurePlate;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		bool isPressurePlateRequired;
 
 	// The Switch
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		class ASwitch* Switch;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		bool isSwitchRequired;
 
 	// Door Variables
 	UPROPERTY(EditAnywhere, Category = "Designer")
