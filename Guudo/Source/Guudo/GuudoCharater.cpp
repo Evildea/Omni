@@ -14,7 +14,8 @@
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
 #include "GuudoGameInstance.h"
-#include "PickupBase.h"
+#include "Interactables/PickupBase.h"
+#include "Interactables/Switch.h"
 #include "Engine.h" // Debug
 
 // Sets default values
@@ -65,6 +66,7 @@ void AGuudoCharater::BeginPlay()
 	Super::BeginPlay();
 
 	// Set variables
+	m_TargetSwitch = nullptr;
 	isPickupPossible = false;
 	isAbleToGrow = true;
 	currentEnergy = 0;
@@ -161,14 +163,33 @@ void AGuudoCharater::Tick(float DeltaTime)
 	FVector RelativePosition = GetActorLocation() - Camera->GetComponentLocation();
 	float RelativeDistance = RelativePosition.Size();
 
-	if (RelativeDistance < 150.0f)
+	// Select check distance
+	float MinimumDistance;
+	float MaxDistance;
+
+	switch (m_ScaleState)
 	{
-		float FadeOut = (0.01f * RelativeDistance) - 0.39f;
+	case EScale::Small:
+		MaxDistance = 100.0f;
+		MinimumDistance = 50.0f;
+		break;
+	case EScale::Normal:
+		MaxDistance = 150.0f;
+		MinimumDistance = 100.0f;
+		break;
+	case EScale::Large:
+		MaxDistance = 250.0f;
+		MinimumDistance = 200.0f;
+		break;
+	}
+
+	// Perform Calculation
+	if (RelativeDistance < MaxDistance)
+	{
+		float FadeOut = ((1.0f / MinimumDistance) * RelativeDistance) - 0.39f;
 		if (FadeOut > 1.f) { FadeOut = 1.f; }
 		else if (FadeOut < 0.f) { FadeOut = 0.f; }
 		GetMesh()->SetScalarParameterValueOnMaterials("Dither", FadeOut);
-
-		UE_LOG(LogTemp, Warning, TEXT("Camera: %f"), FadeOut);
 	}
 	else
 		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
@@ -188,6 +209,8 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 	PlayerInputComponent->BindAction("Shrink", IE_Pressed, this, &AGuudoCharater::Shrink);
 	PlayerInputComponent->BindAction("Grow", IE_Pressed, this, &AGuudoCharater::Grow);
+
+	PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &AGuudoCharater::Interact);
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &AGuudoCharater::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AGuudoCharater::MoveRight);
@@ -357,6 +380,13 @@ void AGuudoCharater::Grow()
 	}
 }
 
+void AGuudoCharater::Interact()
+{
+	// Interact with a switch
+	if (m_TargetSwitch)
+		m_TargetSwitch->FlickSwitch();
+}
+
 void AGuudoCharater::SetGrowthState(TEnumAsByte<EGrowth> GrowthState)
 {
 	m_GrowthState = EGrowth::Unchanging;
@@ -384,19 +414,29 @@ void AGuudoCharater::SetCameraTrailDistance(float StartDistance, float EndDistan
 
 void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	// If within range of Pickup permit pickup possibilities
+	// If within range of "Pickup" to permit pickup possibilities
 	if (OtherComponent->ComponentHasTag("Pickup"))
 	{
 		isPickupPossible = true;
 		Target = OtherActor;
 	}
-	UE_LOG(LogTemp, Warning, TEXT("Enter Range"));
+
+	// If within range of "Switch" to permit button pressing
+	if (OtherComponent->ComponentHasTag("Switch"))
+		m_TargetSwitch = Cast<ASwitch>(OtherActor);
+
+	UE_LOG(LogTemp, Warning, TEXT("Enter Zone"));
 }
 
 void AGuudoCharater::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Exit Range"));
 	isPickupPossible = false;
+
+	// If exiting switch zone
+	if (Cast<ASwitch>(OtherActor))
+		m_TargetSwitch = nullptr;
+
+	UE_LOG(LogTemp, Warning, TEXT("Exit Zone"));
 }
 
 void AGuudoCharater::OnShakeOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)

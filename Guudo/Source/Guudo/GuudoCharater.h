@@ -47,6 +47,9 @@ private:
 	int currentEnergy;		// Current Energy level.
 	float currentShakeFrequency;
 
+	// Interacting
+	class ASwitch* m_TargetSwitch;
+
 	// Scaling
 	EScale m_ScaleState;
 	EGrowth m_GrowthState;
@@ -85,9 +88,9 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = Camera)
 		class USpringArmComponent* CameraArm;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Designer")
-		float CameraNormalTrailDistance = 200.0f;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Designer")
 		float CameraSmallTrailDistance = 220.0f;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Designer")
+		float CameraNormalTrailDistance = 200.0f;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Designer")
 		float CameraLargeTrailDistance = 300.0f;
 
@@ -144,6 +147,7 @@ public:
 	void Pickup();
 	void Shrink();
 	void Grow();
+	void Interact();
 
 	// Set the Growth State (Growing or not?)
 	UFUNCTION(BlueprintCallable)
