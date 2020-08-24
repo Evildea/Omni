@@ -8,6 +8,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SceneComponent.h"
+#include "../GuudoCharater.h"
 
 // Sets default values
 ADoor::ADoor()
@@ -79,6 +80,18 @@ void ADoor::SetDoorHeight(float value)
 {
 	float newZ = DoorHeight - (value * DoorHeight);
 	Mesh->SetRelativeLocation(FVector(m_StartLocation.X, m_StartLocation.Y, m_StartLocation.Z - newZ));
+}
 
+void ADoor::OnFinishOpening()
+{
+	TArray<AActor*> Character;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AGuudoCharater::StaticClass(), Character);
+
+	if (Character.Num() > 0)
+	{
+		APlayerController* Controller = UGameplayStatics::GetPlayerController(this, 0);
+		FViewTargetTransitionParams Params;
+		Controller->SetViewTarget(Character[0], Params);
+	}
 }
 
