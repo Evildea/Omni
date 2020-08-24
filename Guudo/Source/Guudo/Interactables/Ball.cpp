@@ -11,6 +11,9 @@ ABall::ABall()
 	Mesh->SetSimulatePhysics(true);
 	Mesh->ComponentTags.Add(FName("Ball"));
 	RootComponent = Mesh;
+	
+	// Give the Actor the Pushable Tag
+	Tags.Add(FName("Pushable"));
 }
 
 // Called when the game starts or when spawned
