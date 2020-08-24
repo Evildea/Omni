@@ -55,10 +55,6 @@ private:
 	EWalking m_WalkState;
 	TArray<UPrimitiveComponent*> m_ShakeList;
 
-	// Material References
-	UMaterialInstance* Material01;
-	UMaterialInstance* Material02;
-
 	// Perform Collision check above
 	bool IsCollisionAbove(float Height, float xOffset, float yOffset);
 

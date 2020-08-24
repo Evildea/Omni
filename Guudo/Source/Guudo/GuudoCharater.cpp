@@ -72,10 +72,6 @@ void AGuudoCharater::BeginPlay()
 	m_ScaleState = EScale::Normal;
 	m_GrowthState = EGrowth::Unchanging;
 	m_WalkState = EWalking::Stationary;
-
-	// Set Material References
-	Material01 = Cast<UMaterialInstance>(GetMesh()->GetMaterial(0));
-	Material02 = Cast<UMaterialInstance>(GetMesh()->GetMaterial(1));
 }
 
 bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset)
@@ -162,19 +158,20 @@ void AGuudoCharater::Tick(float DeltaTime)
 	}
 
 	// Set Transparency
-	if (Material01 && Material02)
+	FVector RelativePosition = GetActorLocation() - Camera->GetComponentLocation();
+	float RelativeDistance = RelativePosition.Size();
+
+	if (RelativeDistance < 150.0f)
 	{
-		FVector RelativePosition = GetActorLocation() - Camera->GetComponentLocation();
-		float RelativeDistance = RelativePosition.Size();
+		float FadeOut = (0.01f * RelativeDistance) - 0.39f;
+		if (FadeOut > 1.f) { FadeOut = 1.f; }
+		else if (FadeOut < 0.f) { FadeOut = 0.f; }
+		GetMesh()->SetScalarParameterValueOnMaterials("Dither", FadeOut);
 
-		if (RelativeDistance < 100.0f)
-		{
-			float FadeOut = (2.0f / 100.0f) * RelativeDistance;
-			GetMesh()->SetScalarParameterValueOnMaterials("Opacity", FadeOut);
-
-			UE_LOG(LogTemp, Warning, TEXT("Camera: %f"), FadeOut);
-		}
+		UE_LOG(LogTemp, Warning, TEXT("Camera: %f"), FadeOut);
 	}
+	else
+		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
 }
 
 // Called to bind functionality to input
