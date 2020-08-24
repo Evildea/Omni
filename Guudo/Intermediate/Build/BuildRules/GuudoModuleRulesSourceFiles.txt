@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Guudo.Build.cs
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo.Target.cs
-C:\Users\s191215\Desktop\Omni\Guudo\Source\GuudoEditor.Target.cs
-=======
-C:\Users\s191237\Desktop\Omni\Guudo\Source\Guudo\Guudo.Build.cs
-C:\Users\s191237\Desktop\Omni\Guudo\Source\Guudo.Target.cs
-C:\Users\s191237\Desktop\Omni\Guudo\Source\GuudoEditor.Target.cs
->>>>>>> master
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\Guudo.Build.cs
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo.Target.cs
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\GuudoEditor.Target.cs

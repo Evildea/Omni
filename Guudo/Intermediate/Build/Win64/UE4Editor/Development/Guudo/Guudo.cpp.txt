@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-C:\Users\s191215\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Guudo.h
-=======
-C:\Users\s191237\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
-C:\Users\s191237\Desktop\Omni\Guudo\Source\Guudo\Guudo.h
->>>>>>> master
+C:\Users\Daniel\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
+C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\Guudo.h
