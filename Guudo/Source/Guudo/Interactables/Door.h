@@ -59,6 +59,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void SetDoorHeight(float value);
 
+	// This function completes the doors transition
+	UFUNCTION(BlueprintCallable)
+		void OnFinishOpening();
+
 private:
 	bool m_isActivated;
 	FVector m_StartLocation;
