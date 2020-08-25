@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: PirateShip.ma
-//Last modified: Tue, Aug 25, 2020 05:02:05 PM
+//Last modified: Tue, Aug 25, 2020 04:57:04 PM
 //Codeset: 1252
 requires maya "2019";
 requires "mtoa" "3.1.2";
@@ -15,8 +15,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "A4F05EDB-483F-E27E-5A16-99AC8BDA1E14";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 16032.494649229204 4024.6103497838203 18956.657292476637 ;
-	setAttr ".r" -type "double3" 2158.4616445550332 12635.799999997129 0 ;
+	setAttr ".t" -type "double3" 14095.524774431702 10520.430175166104 18926.621572748212 ;
+	setAttr ".r" -type "double3" 2142.2616445550298 12631.799999997385 9.3557536957867211e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6DF1D33D-4494-7CA7-7B6D-69BEC830A50D";
 	setAttr -k off ".v" no;
