@@ -92,29 +92,6 @@ void UCustomisationWidget::RightButtonClick()
 	OnUpdateListOfItems();
 }
 
-//TArray<FPickupData> UCustomisationWidget::GetListOfItems()
-//{
-//	ESelection BodySelection = m_BodyPartSelectionTool->GetBodySelection();
-//	switch (BodySelection)
-//	{
-//	case ESelection::Head:
-//		return m_ListOfHeadItems;
-//		break;
-//	case ESelection::Arms:
-//		return m_ListOfArmItems;
-//		break;
-//	case ESelection::Chest:
-//		return m_ListOfChestItems;
-//		break;
-//	case ESelection::Legs:
-//		return m_ListOfLegItems;
-//		break;
-//	default:
-//		return m_ListOfHeadItems;
-//		break;
-//	}
-//}
-
 ESelection UCustomisationWidget::GetCurrentBodySelection()
 {
 	return m_BodyPartSelectionTool->GetBodySelection();

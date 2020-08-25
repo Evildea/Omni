@@ -20,7 +20,6 @@ public:
 
 	virtual void NativeConstruct() override;
 	virtual bool Initialize() override;
-	//virtual void NativeTick(const FGeometry& MyGeometry, float InDeltaTime) override;
 
 	/// PROPERTIES ////////////////////////////////////////////////////////////
 
