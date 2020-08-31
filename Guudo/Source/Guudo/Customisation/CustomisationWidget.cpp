@@ -97,6 +97,10 @@ ESelection UCustomisationWidget::GetCurrentBodySelection()
 	return m_BodyPartSelectionTool->GetBodySelection();
 }
 
+void UCustomisationWidget::PressDone()
+{
+}
+
 void UCustomisationWidget::UpdateBodySelectionText()
 {
 	ESelection BodySelection = m_BodyPartSelectionTool->GetBodySelection();
