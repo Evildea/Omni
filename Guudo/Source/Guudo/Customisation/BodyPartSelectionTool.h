@@ -6,6 +6,15 @@
 #include "GameFramework/Actor.h"
 #include "BodyPartSelectionTool.generated.h"
 
+UENUM(BlueprintType)
+enum class ESelection : uint8
+{
+	Head  UMETA(DisplayName = "Head"),
+	Arms  UMETA(DisplayName = "Arms"),
+	Chest UMETA(DisplayName = "Chest"),
+	Legs  UMETA(DisplayName = "Legs"),
+};
+
 UCLASS()
 class GUUDO_API ABodyPartSelectionTool : public AActor
 {
@@ -21,7 +30,9 @@ protected:
 
 public:	
 	// Called every frame
-	// virtual void Tick(float DeltaTime) override;
+	virtual void Tick(float DeltaTime) override;
+
+	/// PROPERTIES ////////////////////////////////////////////////////////////
 
 	// Scene Root
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -43,5 +54,25 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* LegsMesh;
 
+	// Rotation Speed
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float RotationSpeed;
+
+	/// FUNCTIONS ////////////////////////////////////////////////////////////
+
+	// Spin the Selection to the Left
+	void RotateLeft();
+
+	// Spin the Selection to the Right
+	void RotateRight();
+
+	// Get the Currently Selected Body Part
+	UFUNCTION()
+		ESelection GetBodySelection() { return m_BodySelection; }
+
+private:
+	float		m_RotationZ;
+	float		m_TargetRotationZ;
+	ESelection	m_BodySelection;
 
 };
