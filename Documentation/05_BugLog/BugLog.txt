@@ -1,0 +1,12 @@
+01- Stuck in the ground
+________________________________________________________
+
+When shrinking under an object tagged 'Pushable', & Collision set to 'use simple collision as complex'
+Player is stuck in the ground in all size forms.
+
+-When the ground is thin, the player falls through the ground
+-When the ground is thick, the player is stuck until they jump, the player is then pushed in the direction of movement when jumping 
+
+Risk to break game- Normal
+Repeatable- 5/5 
+______________________________________________________________
