@@ -30,6 +30,9 @@ public:
 		class UButton* Rightbutton;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UButton* ComputeButton;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UVerticalBox* ItemBox;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
@@ -65,6 +68,10 @@ public:
 	// Get the Current Body Selection.
 	UFUNCTION(BlueprintPure)
 		ESelection GetCurrentBodySelection();
+
+	// Player presses the "Done" Button.
+	UFUNCTION(BlueprintCallable)
+		void PressDone();
 
 	// Event called when all lists have been generated.
 	UFUNCTION(BlueprintImplementableEvent)
