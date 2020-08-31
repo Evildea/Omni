@@ -2,10 +2,6 @@
 	"BuildId": "8386587",
 	"Modules": 
 	{
-<<<<<<< HEAD
-		"Guudo": "UE4Editor-Guudo-0587.dll"
-=======
-		"Guudo": "UE4Editor-Guudo-3707.dll"
->>>>>>> master
+		"Guudo": "UE4Editor-Guudo.dll"
 	}
 }
