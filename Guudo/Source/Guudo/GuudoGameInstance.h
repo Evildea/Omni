@@ -37,17 +37,17 @@ private:
 	// Random Silhouette that has been generated
 	UPROPERTY()
 		FSilhouetteData m_Silhouette;
-	
+
 public:
 	virtual void Init() override;
-
-	// List of Pickups as specified by the Designer
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TArray<FPickupData> ListOfPickups;
 
 	// Player's Inventory
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TArray<FPickupData> Inventory;
+
+	// Silhouette Created for Winning the Game
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<FPickupData> ListOfSilhouetteItems;
 
 	FSilhouetteData GenerateSilhouette();
 
