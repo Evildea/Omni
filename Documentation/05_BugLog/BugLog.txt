@@ -1,0 +1,43 @@
+01- Stuck in the ground
+________________________________________________________
+Problem:
+
+	When shrinking under an object tagged 'Pushable', & Collision set to 'use simple collision as complex'
+	Player is stuck in the ground in all size forms.
+
+	-When the ground is thin, the player falls through the ground
+	-When the ground is thick, the player is stuck until they jump, the player is then pushed in the direction of movement when jumping 
+__________________________________________________________________
+Risk to break game: 
+	Normal
+Will stop from development?:
+	Low
+Repeatable:
+	5/5
+Process to repeat:
+	1. Walk towards any object with 'Pushable' tag
+	2. Shrink besides object
+	3. Grow underneath it
+	4. Player is stuck in ground 
+
+
+______________________________________________________________
+
+02- Pushing objects in any form
+______________________________________________________________________
+Problem:
+
+	When pushing an object that has 'Pushable' tag attached object can be pushed in any form
+
+Risk to break game:
+	Low
+Will stop from development?:
+	Low
+Repeatable:
+	3/3
+Process to repeat:
+	1. Walk towards any object with 'Pushable' tag + Collision set to 'use simple collision as complex'
+	2. Walk into object in small form
+	3. Walk into object in normal form 
+	4. Walk into object in large form 
+	5. Player can push object in all forms.
