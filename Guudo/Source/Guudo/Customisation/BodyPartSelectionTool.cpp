@@ -9,9 +9,9 @@
 ABodyPartSelectionTool::ABodyPartSelectionTool()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	 PrimaryActorTick.bCanEverTick = false;
+	 PrimaryActorTick.bCanEverTick = true;
 
-		// Set up the Scene Root
+	// Set up the Scene Root
 	Root = CreateDefaultSubobject<USceneComponent>("Root");
 	RootComponent = Root;
 
@@ -35,19 +35,78 @@ ABodyPartSelectionTool::ABodyPartSelectionTool()
 	ArmsMesh->SetRelativeScale3D(FVector(.5f));
 	ArmsMesh->SetRelativeLocation(FVector(0.f, -100.0f, 0.f));
 	ArmsMesh->AttachToComponent(Root, FAttachmentTransformRules::KeepRelativeTransform);
+
+	// Set Variables
+	RotationSpeed = 250.f;
+	m_BodySelection = ESelection::Head;
 }
 
 // Called when the game starts or when spawned
 void ABodyPartSelectionTool::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
-// Called every frame
-//void ABodyPartSelectionTool::Tick(float DeltaTime)
-//{
-//	Super::Tick(DeltaTime);
-//
-//}
+void ABodyPartSelectionTool::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	
+	// If the Rotation and Target Rotation don't match then Lerp
+	if (m_RotationZ != m_TargetRotationZ)
+	{
+		m_RotationZ = FMath::FixedTurn(m_RotationZ, m_TargetRotationZ, DeltaTime * RotationSpeed);
+		Root->SetWorldRotation(FRotator(0.f, m_RotationZ, 0.f).Quaternion());
+	}
+}
 
+void ABodyPartSelectionTool::RotateLeft()
+{
+	// Rotate the Body Selection Actors
+	m_TargetRotationZ = m_TargetRotationZ + 90.0f;
+	if (m_TargetRotationZ > 360.0f) { m_TargetRotationZ -= 360.f; }
+	
+	// Update the Body Selection
+	switch (m_BodySelection)
+	{
+	case ESelection::Head:
+		m_BodySelection = ESelection::Chest;
+		break;
+	case ESelection::Arms:
+		m_BodySelection = ESelection::Head;
+		break;
+	case ESelection::Chest:
+		m_BodySelection = ESelection::Legs;
+		break;
+	case ESelection::Legs:
+		m_BodySelection = ESelection::Arms;
+		break;
+	}
+
+	UE_LOG(LogTemp, Warning, TEXT("Target Rotation: %f"), m_TargetRotationZ);
+}
+
+void ABodyPartSelectionTool::RotateRight()
+{
+	// Rotate the Body Selection Actors
+	m_TargetRotationZ = m_TargetRotationZ - 90.0f;
+	if (m_TargetRotationZ < 0.0f) { m_TargetRotationZ += 360.f; }
+
+	// Update the Body Selection
+	switch (m_BodySelection)
+	{
+	case ESelection::Head:
+		m_BodySelection = ESelection::Arms;
+		break;
+	case ESelection::Arms:
+		m_BodySelection = ESelection::Legs;
+		break;
+	case ESelection::Chest:
+		m_BodySelection = ESelection::Head;
+		break;
+	case ESelection::Legs:
+		m_BodySelection = ESelection::Chest;
+		break;
+	}
+
+	UE_LOG(LogTemp, Warning, TEXT("Target Rotation: %f"), m_TargetRotationZ);
+}

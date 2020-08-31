@@ -104,5 +104,5 @@ FPickupData* UGuudoGameInstance::GetPickupDataFor(FName Name)
 
 void UGuudoGameInstance::PickupItem(FPickupData* Item)
 {
-	m_Inventory.Add(*Item);
+	Inventory.Add(*Item);
 }

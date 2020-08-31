@@ -37,9 +37,6 @@ private:
 	// Random Silhouette that has been generated
 	UPROPERTY()
 		FSilhouetteData m_Silhouette;
-
-	// Player's Inventory
-	TArray<FPickupData> m_Inventory;
 	
 public:
 	virtual void Init() override;
@@ -47,6 +44,10 @@ public:
 	// List of Pickups as specified by the Designer
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TArray<FPickupData> ListOfPickups;
+
+	// Player's Inventory
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<FPickupData> Inventory;
 
 	FSilhouetteData GenerateSilhouette();
 
@@ -69,5 +70,5 @@ public:
 	void PickupItem(FPickupData* Item);
 
 	// Get number of items in the Players Inventory
-	int GetSizeOfInventory() { return m_Inventory.Num(); }
+	int GetSizeOfInventory() { return Inventory.Num(); }
 };

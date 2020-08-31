@@ -2,7 +2,6 @@
 
 #pragma once
 
-//#include "CoreMinimal.h"
 #include "Runtime/UMG/Public/UMG.h"
 #include "UObject/WeakObjectPtrTemplates.h"
 #include "PickupData.generated.h"
@@ -54,7 +53,8 @@ struct FPickupData
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         class USoundBase* VoiceOver;
 
-
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        class USkeletalMesh* Mesh;
 
 };
 

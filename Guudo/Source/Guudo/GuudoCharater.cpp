@@ -14,8 +14,8 @@
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
 #include "GuudoGameInstance.h"
-#include "Interactables/PickupBase.h"
 #include "Interactables/Switch.h"
+#include "Interactables/Pickup.h"
 #include "Engine.h" // Debug
 
 // Sets default values
@@ -300,10 +300,11 @@ void AGuudoCharater::Pickup()
 
 		// Update Game Instance
 		UGuudoGameInstance* gameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-		APickupBase* Pickup = Cast<APickupBase>(Target);
+		UPickup* Pickup = Target->FindComponentByClass<UPickup>();
+
 		if (gameInstance && Pickup)
 		{
-			gameInstance->PickupItem(Pickup->GetPickupData());
+			gameInstance->PickupItem(&Pickup->PickupData);
 			OnPickup(gameInstance->GetSizeOfInventory());
 			UE_LOG(LogTemp, Warning, TEXT("Size of inventory: %d"), gameInstance->GetSizeOfInventory());
 		}
