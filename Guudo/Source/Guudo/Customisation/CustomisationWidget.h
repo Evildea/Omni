@@ -82,16 +82,9 @@ private:
 	class ABodyPartSelectionTool*	m_BodyPartSelectionTool;
 	class UGuudoGameInstance*		m_GameInstance;
 
-	//UFUNCTION()
 	TArray<FPickupData> m_ListOfHeadItems;
-
-	//UFUNCTION()
 	TArray<FPickupData> m_ListOfChestItems;
-
-	//UFUNCTION()
 	TArray<FPickupData> m_ListOfArmItems;
-
-	//UFUNCTION()
 	TArray<FPickupData> m_ListOfLegItems;
 
 };

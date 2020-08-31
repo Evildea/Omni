@@ -50,17 +50,17 @@ bool UCustomisationWidget::Initialize()
 	if (!m_GameInstance)
 		return false;
 
-	// Generate Lists of Items based on type ((((--CHANGE TO INVENTORY LIST ONCE TESTING COMPLETE--))))
-	for (int32 Index = 0; Index != m_GameInstance->ListOfPickups.Num(); ++Index)
+	// Generate Lists of Items based on the Inventory
+	for (int32 Index = 0; Index != m_GameInstance->Inventory.Num(); ++Index)
 	{
-		if (m_GameInstance->ListOfPickups[Index].isHead)
-			m_ListOfHeadItems.Add(m_GameInstance->ListOfPickups[Index]);
-		if (m_GameInstance->ListOfPickups[Index].isChest)
-			m_ListOfChestItems.Add(m_GameInstance->ListOfPickups[Index]);
-		if (m_GameInstance->ListOfPickups[Index].isArms)
-			m_ListOfArmItems.Add(m_GameInstance->ListOfPickups[Index]);
-		if (m_GameInstance->ListOfPickups[Index].isLegs)
-			m_ListOfLegItems.Add(m_GameInstance->ListOfPickups[Index]);
+		if (m_GameInstance->Inventory[Index].isHead)
+			m_ListOfHeadItems.Add(m_GameInstance->Inventory[Index]);
+		if (m_GameInstance->Inventory[Index].isChest)
+			m_ListOfChestItems.Add(m_GameInstance->Inventory[Index]);
+		if (m_GameInstance->Inventory[Index].isArms)
+			m_ListOfArmItems.Add(m_GameInstance->Inventory[Index]);
+		if (m_GameInstance->Inventory[Index].isLegs)
+			m_ListOfLegItems.Add(m_GameInstance->Inventory[Index]);
 	}
 	UpdateBodySelectionText();
 	OnListsCreated();
@@ -115,4 +115,5 @@ void UCustomisationWidget::UpdateBodySelectionText()
 		BodySelectionText->SetText(FText::FromString("Legs"));
 		break;
 	}
+
 }
