@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "../PickupData.h"
+#include "ItemImageWidget.h"
 #include "CustomisationWidget.generated.h"
 
 /**
@@ -51,22 +52,6 @@ public:
 	UFUNCTION()
 		void RightButtonClick();
 
-	// Return a List of Items based on the current selection.
-	UFUNCTION(BlueprintCallable)
-		TArray<FPickupData> GetListOfHeads() { return m_ListOfHeadItems; }
-
-	// Return a List of Items based on the current selection.
-	UFUNCTION(BlueprintCallable)
-		TArray<FPickupData> GetListOfChests() { return m_ListOfChestItems; }
-
-	// Return a List of Items based on the current selection.
-	UFUNCTION(BlueprintCallable)
-		TArray<FPickupData> GetListOfLegs() { return m_ListOfLegItems; }
-
-	// Return a List of Items based on the current selection.
-	UFUNCTION(BlueprintCallable)
-		TArray<FPickupData> GetListOfArms() { return m_ListOfArmItems; }
-
 	// Get the Current Body Selection.
 	UFUNCTION(BlueprintPure)
 		ESelection GetCurrentBodySelection();
@@ -74,14 +59,6 @@ public:
 	// Player presses the "Done" Button.
 	UFUNCTION(BlueprintCallable)
 		void PressDone();
-
-	// Event called when all lists have been generated.
-	UFUNCTION(BlueprintImplementableEvent)
-		void OnListsCreated();
-	
-	// Event called when List of Items is updated.
-	UFUNCTION(BlueprintImplementableEvent)
-		void OnUpdateListOfItems();
 
 private:
 
@@ -96,4 +73,23 @@ private:
 	TArray<FPickupData>				m_ListOfArmItems;			// List of Arm Items that the Player can apply.
 	TArray<FPickupData>				m_ListOfLegItems;			// List of Leg Items that the Player can apply.
 
+	///////////////////////////////////////////////////////////////////////
+public:
+	
+	TArray<UItemImageWidget*> ListOfHeadWidgets;
+	TArray<UItemImageWidget*> ListOfChestWidgets;
+	TArray<UItemImageWidget*> ListOfArmWidgets;
+	TArray<UItemImageWidget*> ListOfLegWidgets;
+
+	void CreateBodyPartWidgetLists();
+	void UpdateBodyPartWidgetsToShow();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnFinaliseInitialisationInBlueprints();
+
+	// The Item Widget to Spawn that will represent all the items
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<UItemImageWidget> ItemWidget;
+
+	///////////////////////////////////////////////////////////////////////
 };

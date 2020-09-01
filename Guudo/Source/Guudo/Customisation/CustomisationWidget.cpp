@@ -62,13 +62,15 @@ bool UCustomisationWidget::Initialize()
 		if (m_GameInstance->Inventory[Index].isLegs)
 			m_ListOfLegItems.Add(m_GameInstance->Inventory[Index]);
 	}
-	OnListsCreated();			// Call Blueprints to generate all the Lists of Items that can exist (Head list, Body list etc...).
-	OnUpdateListOfItems();		// Call Blueprints to update which List of Items to show.
+
+	OnFinaliseInitialisationInBlueprints(); // Go to Blueprints and set the ItemWidget. 
+	CreateBodyPartWidgetLists();			// Generate the ItemWidgets for Each Bodypart.
+	UpdateBodyPartWidgetsToShow();
 	UpdateBodySelectionText();	// Update the Text that says "Body, Arms, Legs etc..."
 
 	// Print to debugger number of items generated
 	UE_LOG(LogTemp, Warning, TEXT("There are heads(%i), chests(%i), arms(%i) and legs(%i)"),
-		m_ListOfHeadItems.Num(), 
+		m_ListOfHeadItems.Num(),
 		m_ListOfChestItems.Num(),
 		m_ListOfArmItems.Num(),
 		m_ListOfLegItems.Num());
@@ -81,7 +83,7 @@ void UCustomisationWidget::LeftButtonClick()
 	UE_LOG(LogTemp, Warning, TEXT("You have clicked on the Left Button."));
 	m_BodyPartSelectionTool->RotateLeft();
 	UpdateBodySelectionText();
-	OnUpdateListOfItems();
+	UpdateBodyPartWidgetsToShow();
 }
 
 void UCustomisationWidget::RightButtonClick()
@@ -89,7 +91,7 @@ void UCustomisationWidget::RightButtonClick()
 	UE_LOG(LogTemp, Warning, TEXT("You have clicked on the Right Button."));
 	m_BodyPartSelectionTool->RotateRight();
 	UpdateBodySelectionText();
-	OnUpdateListOfItems();
+	UpdateBodyPartWidgetsToShow();
 }
 
 ESelection UCustomisationWidget::GetCurrentBodySelection()
@@ -121,4 +123,101 @@ void UCustomisationWidget::UpdateBodySelectionText()
 		break;
 	}
 
+}
+
+void UCustomisationWidget::CreateBodyPartWidgetLists()
+{
+	// Spawn the Head Widgets
+	for (auto& Items : m_ListOfHeadItems)
+	{
+		// Spawn the Widget
+		UItemImageWidget* NewItemWidget = Cast<UItemImageWidget>(CreateWidget<UUserWidget>(GetWorld(), ItemWidget));
+
+		// Configure the Widget
+		NewItemWidget->Mesh = Items.Mesh;
+		NewItemWidget->isHead = true;
+		NewItemWidget->SetImageOfWidget(Items.Silhouette);
+
+		// Add the new Widget to the List of Widgets
+		ListOfHeadWidgets.Add(NewItemWidget);
+	}
+
+	// Spawn the Chest Widgets
+	for (auto& Items : m_ListOfChestItems)
+	{
+		// Spawn the Widget
+		UItemImageWidget* NewItemWidget = Cast<UItemImageWidget>(CreateWidget<UUserWidget>(GetWorld(), ItemWidget));
+
+		// Configure the Widget
+		NewItemWidget->Mesh = Items.Mesh;
+		NewItemWidget->isChest = true;
+		NewItemWidget->SetImageOfWidget(Items.Silhouette);
+
+		// Add the new Widget to the List of Widgets
+		ListOfChestWidgets.Add(NewItemWidget);
+	}
+
+	// Spawn the Arm Widgets
+	for (auto& Items : m_ListOfArmItems)
+	{
+		// Spawn the Widget
+		UItemImageWidget* NewItemWidget = Cast<UItemImageWidget>(CreateWidget<UUserWidget>(GetWorld(), ItemWidget));
+
+		// Configure the Widget
+		NewItemWidget->Mesh = Items.Mesh;
+		NewItemWidget->isArms = true;
+		NewItemWidget->SetImageOfWidget(Items.Silhouette);
+
+		// Add the new Widget to the List of Widgets
+		ListOfArmWidgets.Add(NewItemWidget);
+	}
+
+	// Spawn the Leg Widgets
+	for (auto& Items : m_ListOfLegItems)
+	{
+		// Spawn the Widget
+		UItemImageWidget* NewItemWidget = Cast<UItemImageWidget>(CreateWidget<UUserWidget>(GetWorld(), ItemWidget));
+
+		// Configure the Widget
+		NewItemWidget->Mesh = Items.Mesh;
+		NewItemWidget->isLegs = true;
+		NewItemWidget->SetImageOfWidget(Items.Silhouette);
+
+		// Add the new Widget to the List of Widgets
+		ListOfLegWidgets.Add(NewItemWidget);
+	}
+}
+
+void UCustomisationWidget::UpdateBodyPartWidgetsToShow()
+{
+	// Remove all the Widgets from the Screen
+	ItemScrollBox->ClearChildren();
+
+	// Show Head Widgets
+	if (GetCurrentBodySelection() == ESelection::Head)
+	{
+		for (auto& Items : ListOfHeadWidgets)
+			ItemScrollBox->AddChild(Items);
+	}
+
+	// Show Chest Widgets
+	if (GetCurrentBodySelection() == ESelection::Chest)
+	{
+		for (auto& Items : ListOfChestWidgets)
+			ItemScrollBox->AddChild(Items);
+	}
+
+	// Show Arm Widgets
+	if (GetCurrentBodySelection() == ESelection::Arms)
+	{
+		for (auto& Items : ListOfArmWidgets)
+			ItemScrollBox->AddChild(Items);
+	}
+
+	// Show Leg Widgets
+	if (GetCurrentBodySelection() == ESelection::Legs)
+	{
+		for (auto& Items : ListOfLegWidgets)
+			ItemScrollBox->AddChild(Items);
+	}
 }
