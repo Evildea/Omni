@@ -98,6 +98,10 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = Camera)
 		class USphereComponent* ShakeCollider;
 
+	// Capsule Collider that is activated only to push things out of the way
+	UPROPERTY(VisibleAnywhere, Category = Camera)
+		class UCapsuleComponent* PushCollider;
+
 	// Other Actor
 	UPROPERTY()
 		AActor* Target;
