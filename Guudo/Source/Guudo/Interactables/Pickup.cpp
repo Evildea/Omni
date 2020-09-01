@@ -27,10 +27,6 @@ void UPickup::BeginPlay()
 		Mesh->SetGenerateOverlapEvents(true);
 		Mesh->SetSimulatePhysics(true);
 		Mesh->ComponentTags.Add(FName("Shakeable"));
-
-		// Setup PickupData
-		//PickupData.Mesh = Mesh->GetStaticMesh();
-
 	}
 	else
 	{
@@ -50,5 +46,8 @@ void UPickup::BeginPlay()
 	{
 		UE_LOG(LogTemp, Error, TEXT("[%s] Failed to setup Collision Component for Pickup"), *GetOwner()->GetName());
 	}
+
+	// Add the Pushable Tag
+	GetOwner()->Tags.Add(FName("Pushable"));
 	
 }

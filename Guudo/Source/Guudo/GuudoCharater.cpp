@@ -8,6 +8,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Components/InputComponent.h"
 #include "Components/SphereComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Materials/MaterialInstanceDynamic.h" 
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
@@ -49,6 +50,15 @@ AGuudoCharater::AGuudoCharater()
 	ShakeCollider->CanCharacterStepUpOn = ECanBeCharacterBase::ECB_No;
 	ShakeCollider->OnComponentBeginOverlap.AddDynamic(this, &AGuudoCharater::OnShakeOverlapBegin);
 	ShakeCollider->OnComponentEndOverlap.AddDynamic(this, &AGuudoCharater::OnShakeOverlapEnd);
+
+	// Push Collider Component
+	PushCollider = CreateDefaultSubobject<UCapsuleComponent>("PushCollider");
+	PushCollider->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	PushCollider->SetCapsuleHalfHeight(56.0f);
+	PushCollider->SetCapsuleRadius(47.0f);
+	PushCollider->SetRelativeLocation(FVector(0.f, 0.f, 8.0f));
+	PushCollider->SetCollisionProfileName(FName("Pawn"));
+	PushCollider->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 	// Controller
 	bUseControllerRotationPitch = false;
@@ -124,8 +134,13 @@ void AGuudoCharater::CustomJump()
 
 void AGuudoCharater::SetPushForce(float Amount)
 {
-	GetCharacterMovement()->InitialPushForceFactor = Amount;
-	GetCharacterMovement()->PushForceFactor = Amount * 1500.0f;
+	if (Amount == 0)
+		GetCharacterMovement()->bEnablePhysicsInteraction = false;
+	else
+	{
+		GetCharacterMovement()->InitialPushForceFactor = Amount;
+		GetCharacterMovement()->PushForceFactor = Amount * 1500.0f;
+	}
 }
 
 // Called every frame
@@ -193,6 +208,12 @@ void AGuudoCharater::Tick(float DeltaTime)
 	}
 	else
 		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
+
+	//// ----------- DEBUG TESTING -----------
+	//float GroundHeight = GetActorLocation().Z;
+
+	//UE_LOG(LogTemp, Warning, TEXT("Actor Height: %f"), GroundHeight);
+
 }
 
 // Called to bind functionality to input
@@ -361,6 +382,7 @@ void AGuudoCharater::Grow()
 			SetPushForce(LargePushForce);
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Large;
+			PushCollider->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
 			OnNormalToLarge();
 			return;
 		}
@@ -369,6 +391,7 @@ void AGuudoCharater::Grow()
 			SetPushForce(NormalPushForce);
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Normal;
+			PushCollider->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
 			OnSmallToNormal();
 			return;
 		}
@@ -390,7 +413,9 @@ void AGuudoCharater::Interact()
 
 void AGuudoCharater::SetGrowthState(TEnumAsByte<EGrowth> GrowthState)
 {
-	m_GrowthState = EGrowth::Unchanging;
+	m_GrowthState = GrowthState;
+	if (m_GrowthState == EGrowth::Unchanging)
+		PushCollider->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 
 void AGuudoCharater::UpdateGrowthState(float TimelineGrowthAmount, float BaseHeight)
