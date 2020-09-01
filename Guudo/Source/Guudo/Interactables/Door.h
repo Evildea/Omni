@@ -29,7 +29,7 @@ public:
 
 	// Mesh Component
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		class UStaticMeshComponent* Mesh;
+		class UStaticMeshComponent* DoorMesh;
 
 	// Camera Component
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

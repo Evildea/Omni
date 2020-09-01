@@ -43,9 +43,11 @@ public:
 
 	/// FUNCTIONS ////////////////////////////////////////////////////////////
 
+	// Player clicks the Rotate Body Parts Left button.
 	UFUNCTION()
 		void LeftButtonClick();
 
+	// Player clicks the Rotate Body Parts Right Button.
 	UFUNCTION()
 		void RightButtonClick();
 
@@ -86,12 +88,12 @@ private:
 	// This function is called when Updating the Body Selection Text.
 	void UpdateBodySelectionText();
 
-	class ABodyPartSelectionTool*	m_BodyPartSelectionTool;
-	class UGuudoGameInstance*		m_GameInstance;
+	class ABodyPartSelectionTool*	m_BodyPartSelectionTool;	// Reference to the Body Part Selection Tool.
+	class UGuudoGameInstance*		m_GameInstance;				// Reference to the Game Instance.
 
-	TArray<FPickupData> m_ListOfHeadItems;
-	TArray<FPickupData> m_ListOfChestItems;
-	TArray<FPickupData> m_ListOfArmItems;
-	TArray<FPickupData> m_ListOfLegItems;
+	TArray<FPickupData>				m_ListOfHeadItems;			// List of Head Items that the Player can apply.
+	TArray<FPickupData>				m_ListOfChestItems;			// List of Chest Items that the Player can apply.
+	TArray<FPickupData>				m_ListOfArmItems;			// List of Arm Items that the Player can apply.
+	TArray<FPickupData>				m_ListOfLegItems;			// List of Leg Items that the Player can apply.
 
 };

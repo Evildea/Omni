@@ -17,13 +17,14 @@ class GUUDO_API UItemImageWidget : public UUserWidget
 	
 public:
 
+    // Image Box that will contain the Silhouette for the Widget.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UImage* ImageBox;
 
 	UPROPERTY(BlueprintReadWrite)
 		class USkeletalMesh* Mesh;
 
-    // This widget can be connected to any of these body positions:
+    /// BODY PART VARIABLES ///////////////////////////////////////////////////
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         bool isHead = false;
 
@@ -35,6 +36,8 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         bool isLegs = false;
+
+    /// FUNCTIONS /////////////////////////////////////////////////////////////
 
     // Set the Body Parts of the Modular Guudo
     UFUNCTION(BlueprintCallable)

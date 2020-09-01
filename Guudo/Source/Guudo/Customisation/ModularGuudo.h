@@ -20,11 +20,8 @@ protected:
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	/// MODULAR BODY PARTS ////////////////////////////////////////////////////
 
 	// Modular Head (Can be swapped by the CustomsationWidget)
 	class USkeletalMeshComponent* ModularHead;
@@ -38,6 +35,11 @@ public:
 	// Modular Legs (Can be swapped by the CustomsationWidget)
 	class USkeletalMeshComponent* ModularLegs;
 	
+	/// FUNCTIONS /////////////////////////////////////////////////////////////
+
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
 	// Set the Head of the Modular Guudo
 	UFUNCTION(BlueprintCallable)
 		void SetHead(class USkeletalMesh* Head);

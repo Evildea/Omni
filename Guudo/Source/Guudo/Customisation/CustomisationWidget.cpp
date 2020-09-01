@@ -62,9 +62,9 @@ bool UCustomisationWidget::Initialize()
 		if (m_GameInstance->Inventory[Index].isLegs)
 			m_ListOfLegItems.Add(m_GameInstance->Inventory[Index]);
 	}
-	UpdateBodySelectionText();
-	OnListsCreated();
-	OnUpdateListOfItems();
+	OnListsCreated();			// Call Blueprints to generate all the Lists of Items that can exist (Head list, Body list etc...).
+	OnUpdateListOfItems();		// Call Blueprints to update which List of Items to show.
+	UpdateBodySelectionText();	// Update the Text that says "Body, Arms, Legs etc..."
 
 	// Print to debugger number of items generated
 	UE_LOG(LogTemp, Warning, TEXT("There are heads(%i), chests(%i), arms(%i) and legs(%i)"),
@@ -99,6 +99,7 @@ ESelection UCustomisationWidget::GetCurrentBodySelection()
 
 void UCustomisationWidget::PressDone()
 {
+	//----------------- TO DO ------------------------
 }
 
 void UCustomisationWidget::UpdateBodySelectionText()
