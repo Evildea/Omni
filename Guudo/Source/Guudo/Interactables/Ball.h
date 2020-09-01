@@ -23,6 +23,6 @@ public:
 
 	// Mesh for the Ball
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		class UStaticMeshComponent* Mesh;
+		class UStaticMeshComponent* BallMesh;
 
 };

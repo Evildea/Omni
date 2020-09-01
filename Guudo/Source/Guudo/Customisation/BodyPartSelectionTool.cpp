@@ -45,6 +45,9 @@ ABodyPartSelectionTool::ABodyPartSelectionTool()
 void ABodyPartSelectionTool::BeginPlay()
 {
 	Super::BeginPlay();
+
+	FRotator test;
+	test.Vector();
 }
 
 void ABodyPartSelectionTool::Tick(float DeltaTime)

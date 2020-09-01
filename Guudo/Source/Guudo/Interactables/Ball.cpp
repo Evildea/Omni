@@ -7,10 +7,10 @@
 ABall::ABall()
 {
 	// Set up the Mesh
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
-	Mesh->SetSimulatePhysics(true);
-	Mesh->ComponentTags.Add(FName("Ball"));
-	RootComponent = Mesh;
+	BallMesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
+	BallMesh->SetSimulatePhysics(true);
+	BallMesh->ComponentTags.Add(FName("Ball"));
+	RootComponent = BallMesh;
 	
 	// Give the Actor the Pushable Tag
 	Tags.Add(FName("Pushable"));

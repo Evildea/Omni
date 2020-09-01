@@ -31,14 +31,6 @@ AModularGuudo::AModularGuudo()
 void AModularGuudo::BeginPlay()
 {
 	Super::BeginPlay();
-	
-}
-
-// Called every frame
-void AModularGuudo::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
 }
 
 // Called to bind functionality to input

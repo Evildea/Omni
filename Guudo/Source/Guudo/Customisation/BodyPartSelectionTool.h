@@ -9,10 +9,10 @@
 UENUM(BlueprintType)
 enum class ESelection : uint8
 {
-	Head  UMETA(DisplayName = "Head"),
-	Arms  UMETA(DisplayName = "Arms"),
-	Chest UMETA(DisplayName = "Chest"),
-	Legs  UMETA(DisplayName = "Legs"),
+	Head	UMETA(DisplayName = "Head"),
+	Arms	UMETA(DisplayName = "Arms"),
+	Chest	UMETA(DisplayName = "Chest"),
+	Legs	UMETA(DisplayName = "Legs"),
 };
 
 UCLASS()
