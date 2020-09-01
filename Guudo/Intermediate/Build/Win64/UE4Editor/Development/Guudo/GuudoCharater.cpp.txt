@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\GuudoCharater.h
@@ -15,10 +16,15 @@ C:\Users\s191237\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Developme
 C:\Users\s191237\Desktop\Omni\Guudo\Source\Guudo\GuudoCharater.h
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
+C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\GuudoCharater.h
+>>>>>>> Stashed changes
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoCharater.generated.h
 =======
@@ -32,6 +38,9 @@ C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guu
 C:\Users\s191237\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoCharater.generated.h
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoCharater.generated.h
+>>>>>>> Stashed changes
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Engine\Classes\GameFramework/SpringArmComponent.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SpringArmComponent.generated.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Engine\Classes\Camera/CameraComponent.h
@@ -180,6 +189,7 @@ C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\In
 c:\program files\epic games\ue_4.23\engine\source\runtime\engine\classes\kismet\GameplayStaticsTypes.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\GuudoGameInstance.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\PickupData.h
@@ -197,6 +207,10 @@ C:\Users\s191237\Desktop\Omni\Guudo\Source\Guudo\GuudoGameInstance.h
 C:\Users\s191237\Desktop\Omni\Guudo\Source\Guudo\PickupData.h
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\GuudoGameInstance.h
+C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\PickupData.h
+>>>>>>> Stashed changes
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime/UMG/Public/UMG.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Core\Public\Misc/MonolithicHeaderBoilerplate.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Core\Public\Core.h
@@ -997,6 +1011,7 @@ c:\program files\epic games\ue_4.23\engine\source\runtime\umg\public\Animation/M
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\MovieSceneMarginTrack.generated.h
 c:\program files\epic games\ue_4.23\engine\source\runtime\umg\public\Animation/UMGSequencePlayer.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\UMGSequencePlayer.generated.h
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\PickupData.generated.h
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameInstance.generated.h
@@ -1030,3 +1045,11 @@ C:\Users\s191237\Desktop\Omni\Guudo\Source\Guudo\Interactables/Pickup.h
 C:\Users\s191237\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\Pickup.generated.h
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\PickupData.generated.h
+C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameInstance.generated.h
+C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables/Switch.h
+C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\Switch.generated.h
+C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables/Pickup.h
+C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\Pickup.generated.h
+>>>>>>> Stashed changes
