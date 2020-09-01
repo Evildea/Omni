@@ -3,11 +3,13 @@
 
 #include "GuudoGameInstance.h"
 #include "Engine.h"
+#include "Kismet/GameplayStatics.h"
+#include "Interactables/Pickup.h"
 
 void UGuudoGameInstance::Init()
 {
 	Super::Init();
-	GenerateSilhouette();
+	//GenerateSilhouette();
 }
 
 FSilhouetteData UGuudoGameInstance::GenerateSilhouette()
@@ -18,24 +20,38 @@ FSilhouetteData UGuudoGameInstance::GenerateSilhouette()
 	TArray<UMaterial*> ListOfArmMats;
 	TArray<UMaterial*> ListOfLegMats;
 
+	// Get a List of All Actors.
+	TArray<AActor*> ListOfActors;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AActor::StaticClass(), ListOfActors);
+	for (auto& Actor : ListOfActors)
+	{
+		// Check if the Actor has the Pickup Component.
+		UPickup* Pickup = Actor->FindComponentByClass<UPickup>();
+
+		// If it has the Pickup Component, add the data to the Silhouette List.
+		if (Pickup)
+			ListOfSilhouetteItems.Add(Pickup->PickupData);
+	}
+	UE_LOG(LogTemp, Warning, TEXT("Silhouette Items: %i"), ListOfSilhouetteItems.Num());
+
 	// Generate a list of Heads
-	for (int32 Index = 0; Index != ListOfPickups.Num(); ++Index)
+	for (int32 Index = 0; Index != ListOfSilhouetteItems.Num(); ++Index)
 	{
 		// Check Head Positions
-		if (ListOfPickups[Index].isHead)
-			ListOfHeadMats.Add(ListOfPickups[Index].Silhouette);
+		if (ListOfSilhouetteItems[Index].isHead)
+			ListOfHeadMats.Add(ListOfSilhouetteItems[Index].Silhouette);
 
 		// Check Chest Positions
-		if (ListOfPickups[Index].isChest)
-			ListOfChestMats.Add(ListOfPickups[Index].Silhouette);
+		if (ListOfSilhouetteItems[Index].isChest)
+			ListOfChestMats.Add(ListOfSilhouetteItems[Index].Silhouette);
 
 		// Check Arm Positions
-		if (ListOfPickups[Index].isArms)
-			ListOfArmMats.Add(ListOfPickups[Index].Silhouette);
+		if (ListOfSilhouetteItems[Index].isArms)
+			ListOfArmMats.Add(ListOfSilhouetteItems[Index].Silhouette);
 
 		// Check Leg Positions
-		if (ListOfPickups[Index].isLegs)
-			ListOfLegMats.Add(ListOfPickups[Index].Silhouette);
+		if (ListOfSilhouetteItems[Index].isLegs)
+			ListOfLegMats.Add(ListOfSilhouetteItems[Index].Silhouette);
 	}
 
 	// Pick a Head
@@ -94,7 +110,7 @@ UMaterial* UGuudoGameInstance::GetLegs()
 
 FPickupData* UGuudoGameInstance::GetPickupDataFor(FName Name)
 {
-	for (auto& Pickup : ListOfPickups)
+	for (auto& Pickup : ListOfSilhouetteItems)
 	{
 		if (Pickup.Name == Name)
 			return &Pickup;
@@ -104,5 +120,5 @@ FPickupData* UGuudoGameInstance::GetPickupDataFor(FName Name)
 
 void UGuudoGameInstance::PickupItem(FPickupData* Item)
 {
-	m_Inventory.Add(*Item);
+	Inventory.Add(*Item);
 }

@@ -21,8 +21,8 @@ ADoor::ADoor()
 	RootComponent = Root;
 
 	// Set up the Mesh
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
-	Mesh->AttachToComponent(Root, FAttachmentTransformRules::KeepRelativeTransform);
+	DoorMesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
+	DoorMesh->AttachToComponent(Root, FAttachmentTransformRules::KeepRelativeTransform);
 
 	// Set up the Camera
 	Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
@@ -41,7 +41,7 @@ void ADoor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	m_StartLocation = Mesh->RelativeLocation;
+	m_StartLocation = DoorMesh->RelativeLocation;
 }
 
 // Called every frame
@@ -79,7 +79,7 @@ void ADoor::Tick(float DeltaTime)
 void ADoor::SetDoorHeight(float value)
 {
 	float newZ = DoorHeight - (value * DoorHeight);
-	Mesh->SetRelativeLocation(FVector(m_StartLocation.X, m_StartLocation.Y, m_StartLocation.Z - newZ));
+	DoorMesh->SetRelativeLocation(FVector(m_StartLocation.X, m_StartLocation.Y, m_StartLocation.Z - newZ));
 }
 
 void ADoor::OnFinishOpening()
