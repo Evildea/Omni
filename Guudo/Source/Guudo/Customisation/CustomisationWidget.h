@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "../PickupData.h"
+#include "ItemImageWidget.h"
 #include "CustomisationWidget.generated.h"
 
 /**
@@ -16,12 +17,12 @@ class GUUDO_API UCustomisationWidget : public UUserWidget
 	GENERATED_BODY()
 
 public:
-	UCustomisationWidget(const FObjectInitializer& ObjectInitializer);
-
-	virtual void NativeConstruct() override;
-	virtual bool Initialize() override;
 
 	/// PROPERTIES ////////////////////////////////////////////////////////////
+
+	// This is configured by Blueprints and enables the Designer to select which ItemWidget to instantiate.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TSubclassOf<UItemImageWidget> ItemWidget;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UButton* Leftbutton;
@@ -43,6 +44,13 @@ public:
 
 	/// FUNCTIONS ////////////////////////////////////////////////////////////
 
+	// Constructor
+	UCustomisationWidget(const FObjectInitializer& ObjectInitializer);
+
+	// UE4 Functions
+	virtual void NativeConstruct() override;
+	virtual bool Initialize() override;
+
 	// Player clicks the Rotate Body Parts Left button.
 	UFUNCTION()
 		void LeftButtonClick();
@@ -50,22 +58,6 @@ public:
 	// Player clicks the Rotate Body Parts Right Button.
 	UFUNCTION()
 		void RightButtonClick();
-
-	// Return a List of Items based on the current selection.
-	UFUNCTION(BlueprintCallable)
-		TArray<FPickupData> GetListOfHeads() { return m_ListOfHeadItems; }
-
-	// Return a List of Items based on the current selection.
-	UFUNCTION(BlueprintCallable)
-		TArray<FPickupData> GetListOfChests() { return m_ListOfChestItems; }
-
-	// Return a List of Items based on the current selection.
-	UFUNCTION(BlueprintCallable)
-		TArray<FPickupData> GetListOfLegs() { return m_ListOfLegItems; }
-
-	// Return a List of Items based on the current selection.
-	UFUNCTION(BlueprintCallable)
-		TArray<FPickupData> GetListOfArms() { return m_ListOfArmItems; }
 
 	// Get the Current Body Selection.
 	UFUNCTION(BlueprintPure)
@@ -75,25 +67,32 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void PressDone();
 
-	// Event called when all lists have been generated.
+	// This is called by Blueprints to set up the ItemWidget from its Blueprint Derived Class.
 	UFUNCTION(BlueprintImplementableEvent)
-		void OnListsCreated();
-	
-	// Event called when List of Items is updated.
-	UFUNCTION(BlueprintImplementableEvent)
-		void OnUpdateListOfItems();
+		void OnFinaliseInitialisationInBlueprints();
 
 private:
 
-	// This function is called when Updating the Body Selection Text.
-	void UpdateBodySelectionText();
-
+	/// PROPERTIES ////////////////////////////////////////////////////////////
 	class ABodyPartSelectionTool*	m_BodyPartSelectionTool;	// Reference to the Body Part Selection Tool.
 	class UGuudoGameInstance*		m_GameInstance;				// Reference to the Game Instance.
+	TArray<UItemImageWidget*>		m_ListOfHeadWidgets;		// List of Widgets that represent equipable Head Items.
+	TArray<UItemImageWidget*>		m_ListOfChestWidgets;		// List of Widgets that represent equipable Chest Items.
+	TArray<UItemImageWidget*>		m_ListOfArmWidgets;			// List of Widgets that represent equipable Arm Items.
+	TArray<UItemImageWidget*>		m_ListOfLegWidgets;			// List of Widgets that represent equipable Leg Items.
 
-	TArray<FPickupData>				m_ListOfHeadItems;			// List of Head Items that the Player can apply.
-	TArray<FPickupData>				m_ListOfChestItems;			// List of Chest Items that the Player can apply.
-	TArray<FPickupData>				m_ListOfArmItems;			// List of Arm Items that the Player can apply.
-	TArray<FPickupData>				m_ListOfLegItems;			// List of Leg Items that the Player can apply.
+	/// FUNCTIONS ////////////////////////////////////////////////////////////
+
+	// This function is called when we the body selection text is refreshed.
+	void RefreshBodyPartSelectionText();
+	
+	// This function is called when the item lists for the body parts are refreshed
+	void RefreshListOfVisibleBodyParts();
+
+	// This function is called to spawn the Widgets Required for ALL the Body Parts.
+	void SpawnWidgetsFromInventoryItems();
+
+	// This function is called by SpawnWidgetsFromInventoryItems for each Body Location.
+	void SpawnWidgetsFromBodyPartList(TArray<FPickupData>& ItemList, TArray<UItemImageWidget*>& WidgetList, ESelection BodyPart);
 
 };
