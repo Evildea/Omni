@@ -89,7 +89,6 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnFinaliseInitialisationInBlueprints();
 
-
 	UFUNCTION(BlueprintCallable)
 		class UMaterial* GetHead();
 
@@ -111,6 +110,7 @@ private:
 	TArray<UItemImageWidget*>		m_ListOfChestWidgets;		// List of Widgets that represent equipable Chest Items.
 	TArray<UItemImageWidget*>		m_ListOfArmWidgets;			// List of Widgets that represent equipable Arm Items.
 	TArray<UItemImageWidget*>		m_ListOfLegWidgets;			// List of Widgets that represent equipable Leg Items.
+	bool							m_HasPressedDone = false;	// Has the Player Pressed the Done Button.
 
 	/// FUNCTIONS ////////////////////////////////////////////////////////////
 
