@@ -38,14 +38,17 @@ private:
 	UPROPERTY()
 		FSilhouetteData m_Silhouette;
 
+	// Has a Silhouette been generated?
+	bool m_hasSilhouette = false;
+
 public:
 	virtual void Init() override;
 
-	// Player's Inventory
+	// Player's Inventory/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TArray<FPickupData> Inventory;
 
-	// Silhouette Created for Winning the Game
+	// Silhouette Created for Winning the Game/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TArray<FPickupData> ListOfSilhouetteItems;
 
@@ -63,12 +66,15 @@ public:
 	UFUNCTION(BlueprintPure)
 		UMaterial* GetLegs();
 
-	// Return the Pickup Data for a Pickup with this Name
+	// Return the Pickup Data for a Pickup with this Name/
 	FPickupData* GetPickupDataFor(FName Name);
 
-	// Add item to the Players Inventory
+	// Add item to the Players Inventory/
 	void PickupItem(FPickupData* Item);
 
-	// Get number of items in the Players Inventory
+	// Get number of items in the Players Inventory/
 	int GetSizeOfInventory() { return Inventory.Num(); }
+
+	// Check whether a Silhouette has been generated before.
+	bool DoesSilhouetteExist() { return m_hasSilhouette; }
 };

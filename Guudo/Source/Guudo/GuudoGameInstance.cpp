@@ -9,7 +9,6 @@
 void UGuudoGameInstance::Init()
 {
 	Super::Init();
-	//GenerateSilhouette();
 }
 
 FSilhouetteData UGuudoGameInstance::GenerateSilhouette()
@@ -81,6 +80,9 @@ FSilhouetteData UGuudoGameInstance::GenerateSilhouette()
 		int32 random = FMath::RandRange(0, ListOfLegMats.Num() - 1);
 		m_Silhouette.LegsSilouette = ListOfLegMats[random];
 	}
+
+	// Set Generation to Complete
+	m_hasSilhouette = true;
 
 	// Debug
 	UE_LOG(LogTemp, Warning, TEXT("Silhouette Generated"));

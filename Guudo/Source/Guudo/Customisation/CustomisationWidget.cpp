@@ -55,6 +55,9 @@ bool UCustomisationWidget::Initialize()
 	RefreshListOfVisibleBodyParts();		// Refresh the List of Visible BodyParts.
 	RefreshBodyPartSelectionText();			// Refresh the Text that says "Body, Arms, Legs etc..."
 
+
+	
+
 	return Success;
 }
 
@@ -199,4 +202,40 @@ void UCustomisationWidget::SpawnWidgetsFromInventoryItems()
 		m_ListOfChestItems.Num(),
 		m_ListOfArmItems.Num(),
 		m_ListOfLegItems.Num());
+}
+
+UMaterial* UCustomisationWidget::GetHead()
+{
+	if (m_GameInstance)
+	{
+		return m_GameInstance->GetHead();
+	}
+	return nullptr;
+}
+
+UMaterial* UCustomisationWidget::GetChest()
+{
+	if (m_GameInstance)
+	{
+		return m_GameInstance->GetChest();
+	}
+	return nullptr;
+}
+
+UMaterial* UCustomisationWidget::GetArms()
+{
+	if (m_GameInstance)
+	{
+		return m_GameInstance->GetArms();
+	}
+	return nullptr;
+}
+
+UMaterial* UCustomisationWidget::GetLegs()
+{
+	if (m_GameInstance)
+	{
+		return m_GameInstance->GetLegs();
+	}
+	return nullptr;
 }
