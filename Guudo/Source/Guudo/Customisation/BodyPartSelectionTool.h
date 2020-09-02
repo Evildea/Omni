@@ -70,7 +70,15 @@ public:
 	UFUNCTION()
 		ESelection GetBodySelection() { return m_BodySelection; }
 
+	// This is called when we want to get rid of the Body Part Selection Tool.
+	UFUNCTION(BlueprintImplementableEvent)
+		void RemoveBodyPartSelectionTool();
+
+	UFUNCTION(BlueprintCallable)
+		void SetLocationZ(float Value);
+
 private:
+	float		m_PositionZ;
 	float		m_RotationZ;
 	float		m_TargetRotationZ;
 	ESelection	m_BodySelection;
