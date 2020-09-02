@@ -16,7 +16,7 @@ void USilhouetteWidget::NativeConstruct()
 	Super::NativeConstruct();
 
     gameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-    if (gameInstance)
+    if (gameInstance && !gameInstance->DoesSilhouetteExist())
     {
         gameInstance->GenerateSilhouette();
     }

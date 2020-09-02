@@ -42,6 +42,24 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UTextBlock* BodySelectionText;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UImage* HeadSilouette;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UImage* BodySilouette;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UImage* LeftArmSilouette;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UImage* RightArmSilouette;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UImage* LeftLegSilouette;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UImage* RightLegSilouette;
+
 	/// FUNCTIONS ////////////////////////////////////////////////////////////
 
 	// Constructor
@@ -70,6 +88,19 @@ public:
 	// This is called by Blueprints to set up the ItemWidget from its Blueprint Derived Class.
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnFinaliseInitialisationInBlueprints();
+
+
+	UFUNCTION(BlueprintCallable)
+		class UMaterial* GetHead();
+
+	UFUNCTION(BlueprintCallable)
+		class UMaterial* GetChest();
+
+	UFUNCTION(BlueprintCallable)
+		class UMaterial* GetArms();
+
+	UFUNCTION(BlueprintCallable)
+		class UMaterial* GetLegs();
 
 private:
 

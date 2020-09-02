@@ -209,11 +209,6 @@ void AGuudoCharater::Tick(float DeltaTime)
 	else
 		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
 
-	//// ----------- DEBUG TESTING -----------
-	//float GroundHeight = GetActorLocation().Z;
-
-	//UE_LOG(LogTemp, Warning, TEXT("Actor Height: %f"), GroundHeight);
-
 }
 
 // Called to bind functionality to input
