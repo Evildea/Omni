@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "ModularGuudo.h"
+#include "../ItemManagement/GuudoGameInstance.h"
 #include "ItemImageWidget.generated.h"
 
 /**
@@ -15,17 +16,16 @@ class GUUDO_API UItemImageWidget : public UUserWidget
 {
 	GENERATED_BODY()
 	
+private:
+
+    AModularGuudo*      m_ModularGuudo; // Reference to the Modular Guudo
+    UGuudoGameInstance* m_GameInstance; // Reference to the Game Instance
+
 public:
 
     // Image Box that will contain the Silhouette for the Widget.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UImage* ImageBox;
-
-	UPROPERTY(BlueprintReadWrite)
-		class USkeletalMesh* Mesh;
-
-    // Name of this Widget
-    FName Name;
 
     /// BODY PART VARIABLES ///////////////////////////////////////////////////
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -40,6 +40,11 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         bool isLegs = false;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        int ItemIndex = 0;
+
+    UGuudoGameInstance* GameInstance;
+
     /// FUNCTIONS /////////////////////////////////////////////////////////////
 
     // Set the Body Parts of the Modular Guudo
@@ -50,8 +55,7 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
         void SetImageOfWidget(class UMaterial* Image);
 
-private:
-
-    // Reference to the Modular Guudo
-    AModularGuudo* m_ModularGuudo;
+    // Set the Game Instance.
+    UFUNCTION()
+        void SetGameInstance(UGuudoGameInstance* GameInstance) { m_GameInstance = GameInstance; }
 };

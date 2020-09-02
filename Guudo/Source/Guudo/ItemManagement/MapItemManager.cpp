@@ -108,3 +108,23 @@ FPickupData MapItemManager::GetSilhouetteLegs()
 	else
 		return {};
 }
+
+FPickupData MapItemManager::GetSelectedHead()
+{
+	return ListOfAllHeadsOnMap[m_SelectedHead];
+}
+
+FPickupData MapItemManager::GetSelectedChest()
+{
+	return ListOfAllChestsOnMap[m_SelectedChest];
+}
+
+FPickupData MapItemManager::GetSelectedArms()
+{
+	return ListOfAllArmsOnMap[m_SelectedArms];
+}
+
+FPickupData MapItemManager::GetSelectedLegs()
+{
+	return ListOfAllLegsOnMap[m_SelectedLegs];
+}

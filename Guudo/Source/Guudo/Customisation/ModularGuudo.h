@@ -42,25 +42,18 @@ public:
 
 	// Set the Head of the Modular Guudo
 	UFUNCTION(BlueprintCallable)
-		void SetHead(class USkeletalMesh* Head, FName Name);
+		void SetHead(class USkeletalMesh* Head);
 
 	// Set the Chest of the Modular Guudo
 	UFUNCTION(BlueprintCallable)
-		void SetChest(class USkeletalMesh* Chest, FName Name);
+		void SetChest(class USkeletalMesh* Chest);
 
 	// Set the Arms of the Modular Guudo
 	UFUNCTION(BlueprintCallable)
-		void SetArms(class USkeletalMesh* Arms, FName Name);
+		void SetArms(class USkeletalMesh* Arms);
 
 	// Set the Legs of the Modular Guudo
 	UFUNCTION(BlueprintCallable)
-		void SetLegs(class USkeletalMesh* Legs, FName Name);
-
-private:
-	// Name of currently applied body parts
-	FName AppliedHead;
-	FName AppliedChest;
-	FName AppliedArms;
-	FName AppliedLegs;
+		void SetLegs(class USkeletalMesh* Legs);
 
 };

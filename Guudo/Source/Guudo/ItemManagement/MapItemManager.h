@@ -15,10 +15,17 @@ The Map Item Manager has the following core functionality:
 class GUUDO_API MapItemManager
 {
 private:
+	// Reference to the Silhouette in the appropriate array.
 	int m_Head = 0;
 	int m_Chest = 0;
 	int m_Arms = 0;
 	int m_Legs = 0;
+
+	// Reference to the Applied Body Part in the appropriate array.
+	int m_SelectedHead = 0;
+	int m_SelectedChest = 0;
+	int m_SelectedArms = 0;
+	int m_SelectedLegs = 0;
 
 public:
 	MapItemManager();
@@ -33,6 +40,17 @@ public:
 	FPickupData GetSilhouetteChest();
 	FPickupData GetSilhouetteArms();
 	FPickupData GetSilhouetteLegs();
+
+	FPickupData GetSelectedHead();
+	FPickupData GetSelectedChest();
+	FPickupData GetSelectedArms();
+	FPickupData GetSelectedLegs();
+
+	// Set the currently applied body part
+	void SetSelectedHead(int Index) { m_SelectedHead = Index; }
+	void SetSelectedChest(int Index) { m_SelectedChest = Index; }
+	void SetSelectedArms(int Index) { m_SelectedArms = Index; }
+	void SetSelectedLegs(int Index) { m_SelectedLegs = Index; }
 
 	// Static Variables
 	TArray<FPickupData> ListOfAllHeadsOnMap;

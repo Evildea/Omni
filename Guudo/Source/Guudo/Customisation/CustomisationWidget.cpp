@@ -93,10 +93,7 @@ void UCustomisationWidget::PressDone()
 {
 	m_BodyPartSelectionTool->RemoveBodyPartSelectionTool();
 	m_HasPressedDone = true;
-	//----------------- TO DO ------------------------
-
-
-
+	m_GameInstance->CalculateScore();
 }
 
 void UCustomisationWidget::RefreshBodyPartSelectionText()
@@ -165,24 +162,24 @@ void UCustomisationWidget::RefreshListOfVisibleBodyParts()
 void UCustomisationWidget::SpawnWidgetsFromBodyPartList(TArray<FPickupData>& ItemList, TArray<UItemImageWidget*>& WidgetList, ESelection BodyPart)
 {
 	// Spawn the Head Widgets
-	for (auto& Items : ItemList)
+	for (size_t index = 0; index < ItemList.Num(); index++)
 	{
 		// Spawn the Widget
 		UItemImageWidget* NewItemWidget = Cast<UItemImageWidget>(CreateWidget<UUserWidget>(GetWorld(), ItemWidget));
 
 		// Configure the Widget
-		NewItemWidget->Mesh = Items.Mesh;
-		NewItemWidget->Name = Items.Name;
-		NewItemWidget->SetImageOfWidget(Items.Silhouette);
+		NewItemWidget->SetGameInstance(m_GameInstance);
+		NewItemWidget->SetImageOfWidget(ItemList[index].Silhouette);
+		NewItemWidget->ItemIndex = index;
 
 		// Set the Body Part this Widget Belongs to
 		switch (BodyPart)
 		{
-			case ESelection::Head:	NewItemWidget->isHead = true; break;
-			case ESelection::Arms:	NewItemWidget->isArms = true; break;
-			case ESelection::Chest:	NewItemWidget->isChest = true; break;
-			case ESelection::Legs:	NewItemWidget->isLegs = true; break;
-			default: NewItemWidget->isHead = true; break;
+		case ESelection::Head:	NewItemWidget->isHead = true; break;
+		case ESelection::Arms:	NewItemWidget->isArms = true; break;
+		case ESelection::Chest:	NewItemWidget->isChest = true; break;
+		case ESelection::Legs:	NewItemWidget->isLegs = true; break;
+		default: NewItemWidget->isHead = true; break;
 		}
 
 		// Add the new Widget to the List of Widgets

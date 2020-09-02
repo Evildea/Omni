@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "../PickupData.h"
+#include "MapItemManager.h"
 
 /**
  * 
@@ -14,13 +14,6 @@ public:
 	ScoreCalculator();
 	~ScoreCalculator();
 
-	//static FPickupData SilhouetteHead;
-	//static FPickupData SilhouetteChest;
-	//static FPickupData SilhouetteArms;
-	//static FPickupData SilhouetteLegs;
-
-	//static FPickupData CurrentHead;
-	//static FPickupData CurrentChest;
-	//static FPickupData CurrentArms;
-	//static FPickupData CurrentLegs;
+	// Calculate the Score
+	void CalculateScore(MapItemManager* ItemManager);
 };

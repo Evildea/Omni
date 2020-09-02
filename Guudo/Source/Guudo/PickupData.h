@@ -48,7 +48,13 @@ struct FPickupData
         bool isLegs;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        float PercentagePointsScoredForNonprimaryButAcceptableSolution;
+        float PointsGivenIfCorrect = 25.f;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        float PointsGivenIfShapeIsSimilar = 12.5f;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        float PointsGivenIfWrong = 0.f;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         class USoundBase* VoiceOver;

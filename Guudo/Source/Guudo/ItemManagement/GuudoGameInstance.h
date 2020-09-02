@@ -5,6 +5,7 @@
 #include "PickupData.h"
 #include "CoreMinimal.h"
 #include "MapItemManager.h"
+#include "ScoreCalculator.h"
 #include "Engine/GameInstance.h"
 #include "GuudoGameInstance.generated.h"
 
@@ -17,11 +18,9 @@ class GUUDO_API UGuudoGameInstance : public UGameInstance
 	GENERATED_BODY()
 
 private:
-	// Item Manager
-	MapItemManager m_ItemManager;
-
-	// Has a Silhouette been generated?
-	bool m_hasSilhouette = false;
+	MapItemManager	m_ItemManager;				// Item Manager.
+	ScoreCalculator	m_ScoreCalculator;			// Score Calculator.
+	bool			m_hasSilhouette = false;	// Has a Silhouette been generated.
 
 public:
 	virtual void Init() override;
@@ -31,6 +30,8 @@ public:
 		TArray<FPickupData> Inventory;
 
 	void GenerateSilhouette();
+
+	void CalculateScore() { m_ScoreCalculator.CalculateScore(&m_ItemManager); }
 
 	UFUNCTION(BlueprintPure)
 		UMaterial* GetHead();
@@ -44,11 +45,14 @@ public:
 	UFUNCTION(BlueprintPure)
 		UMaterial* GetLegs();
 
-	// Add item to the Players Inventory/
+	// Add item to the Players Inventory.
 	void PickupItem(FPickupData* Item);
 
-	// Get number of items in the Players Inventory/
+	// Get number of items in the Players Inventory.
 	int GetSizeOfInventory() { return Inventory.Num(); }
+
+	// Get a reference to the Item Manager.
+	MapItemManager* GetItemManager() { return &m_ItemManager; }
 
 	// Check whether a Silhouette has been generated before.
 	bool DoesSilhouetteExist() { return m_hasSilhouette; }
