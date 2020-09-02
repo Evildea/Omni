@@ -17,10 +17,15 @@ void UItemImageWidget::SetSelectedBodyPart()
 			m_ModularGuudo = Cast<AModularGuudo>(GuudoModular[0]);
 		}
 		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("Guudo Modular Character Not Found"));
 			return;
+		}
 	}
 
 	// Set the appropriate body part
+	UE_LOG(LogTemp, Error, TEXT("Button Selected"));
+
 	if (isHead) { m_ModularGuudo->SetHead(Mesh); }
 	if (isChest) { m_ModularGuudo->SetChest(Mesh); }
 	if (isArms) { m_ModularGuudo->SetArms(Mesh); }

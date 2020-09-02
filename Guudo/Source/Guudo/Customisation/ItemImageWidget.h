@@ -43,6 +43,10 @@ public:
     UFUNCTION(BlueprintCallable)
         void SetSelectedBodyPart();
 
+    // This sets the image of the Widget. It is implemented inside BluePrints.
+    UFUNCTION(BlueprintImplementableEvent)
+        void SetImageOfWidget(class UMaterial* Image);
+
 private:
 
     // Reference to the Modular Guudo
