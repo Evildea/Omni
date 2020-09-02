@@ -45,9 +45,7 @@ ABodyPartSelectionTool::ABodyPartSelectionTool()
 void ABodyPartSelectionTool::BeginPlay()
 {
 	Super::BeginPlay();
-
-	FRotator test;
-	test.Vector();
+	m_PositionZ = GetActorLocation().Z;
 }
 
 void ABodyPartSelectionTool::Tick(float DeltaTime)
@@ -112,4 +110,11 @@ void ABodyPartSelectionTool::RotateRight()
 	}
 
 	UE_LOG(LogTemp, Warning, TEXT("Target Rotation: %f"), m_TargetRotationZ);
+}
+
+void ABodyPartSelectionTool::SetLocationZ(float Value)
+{
+	FVector Location = GetActorLocation();
+	Location.Z = m_PositionZ + Value * 150.0f;
+	SetActorLocation(Location);
 }
