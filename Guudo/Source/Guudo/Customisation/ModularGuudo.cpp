@@ -40,27 +40,31 @@ void AModularGuudo::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 
 }
 
-void AModularGuudo::SetHead(USkeletalMesh* Head)
+void AModularGuudo::SetHead(USkeletalMesh* Head, FName Name)
 {
 	ModularHead->SetSkeletalMesh(Head, true);
+	AppliedHead = Name;
 	UE_LOG(LogTemp, Error, TEXT("Guudo Modular Character Head Set"));
 }
 
-void AModularGuudo::SetChest(USkeletalMesh* Chest)
+void AModularGuudo::SetChest(USkeletalMesh* Chest, FName Name)
 {
 	ModularChest->SetSkeletalMesh(Chest, true);
+	AppliedChest = Name;
 	UE_LOG(LogTemp, Error, TEXT("Guudo Modular Character Chest Set"));
 }
 
-void AModularGuudo::SetArms(USkeletalMesh* Arms)
+void AModularGuudo::SetArms(USkeletalMesh* Arms, FName Name)
 {
 	ModularArms->SetSkeletalMesh(Arms, true);
+	AppliedArms = Name;
 	UE_LOG(LogTemp, Error, TEXT("Guudo Modular Character Arms Set"));
 }
 
-void AModularGuudo::SetLegs(USkeletalMesh* Legs)
+void AModularGuudo::SetLegs(USkeletalMesh* Legs, FName Name)
 {
 	ModularLegs->SetSkeletalMesh(Legs, true);
+	AppliedLegs = Name;
 	UE_LOG(LogTemp, Error, TEXT("Guudo Modular Character Legs Set"));
 }
 

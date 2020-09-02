@@ -24,6 +24,9 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 		class USkeletalMesh* Mesh;
 
+    // Name of this Widget
+    FName Name;
+
     /// BODY PART VARIABLES ///////////////////////////////////////////////////
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         bool isHead = false;

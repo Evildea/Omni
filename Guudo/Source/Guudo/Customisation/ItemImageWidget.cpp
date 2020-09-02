@@ -26,8 +26,8 @@ void UItemImageWidget::SetSelectedBodyPart()
 	// Set the appropriate body part
 	UE_LOG(LogTemp, Error, TEXT("Button Selected"));
 
-	if (isHead) { m_ModularGuudo->SetHead(Mesh); }
-	if (isChest) { m_ModularGuudo->SetChest(Mesh); }
-	if (isArms) { m_ModularGuudo->SetArms(Mesh); }
-	if (isLegs) { m_ModularGuudo->SetLegs(Mesh); }
+	if (isHead) { m_ModularGuudo->SetHead(Mesh, Name); }
+	if (isChest) { m_ModularGuudo->SetChest(Mesh, Name); }
+	if (isArms) { m_ModularGuudo->SetArms(Mesh, Name); }
+	if (isLegs) { m_ModularGuudo->SetLegs(Mesh, Name); }
 }

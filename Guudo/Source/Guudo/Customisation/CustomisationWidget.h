@@ -6,6 +6,7 @@
 #include "Blueprint/UserWidget.h"
 #include "../PickupData.h"
 #include "ItemImageWidget.h"
+#include "../ItemManagement/ScoreCalculator.h"
 #include "CustomisationWidget.generated.h"
 
 /**

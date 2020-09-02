@@ -8,7 +8,7 @@
 #include "Components/VerticalBox.h"
 #include "Components/TextBlock.h"
 #include "Components/ScrollBox.h"
-#include "GuudoGameInstance.h"
+#include "../ItemManagement/GuudoGameInstance.h"
 
 UCustomisationWidget::UCustomisationWidget(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
@@ -55,6 +55,8 @@ bool UCustomisationWidget::Initialize()
 	RefreshListOfVisibleBodyParts();		// Refresh the List of Visible BodyParts.
 	RefreshBodyPartSelectionText();			// Refresh the Text that says "Body, Arms, Legs etc..."
 
+	//ScoreCalculator::CurrentHead = m_GameInstance->ListOfSilhouetteItems[0];
+
 	return Success;
 }
 
@@ -92,6 +94,9 @@ void UCustomisationWidget::PressDone()
 	m_BodyPartSelectionTool->RemoveBodyPartSelectionTool();
 	m_HasPressedDone = true;
 	//----------------- TO DO ------------------------
+
+
+
 }
 
 void UCustomisationWidget::RefreshBodyPartSelectionText()
@@ -167,6 +172,7 @@ void UCustomisationWidget::SpawnWidgetsFromBodyPartList(TArray<FPickupData>& Ite
 
 		// Configure the Widget
 		NewItemWidget->Mesh = Items.Mesh;
+		NewItemWidget->Name = Items.Name;
 		NewItemWidget->SetImageOfWidget(Items.Silhouette);
 
 		// Set the Body Part this Widget Belongs to
@@ -208,15 +214,8 @@ void UCustomisationWidget::SpawnWidgetsFromInventoryItems()
 	// Spawn Widgets for Each Body Part
 	SpawnWidgetsFromBodyPartList(m_ListOfHeadItems, m_ListOfHeadWidgets, ESelection::Head);		// Spawn the Head Item Widgets
 	SpawnWidgetsFromBodyPartList(m_ListOfChestItems, m_ListOfChestWidgets, ESelection::Chest);	// Spawn the Chest Item Widgets
-	SpawnWidgetsFromBodyPartList(m_ListOfArmItems, m_ListOfArmWidgets, ESelection::Arms);			// Spawn the Arm Item Widgets
-	SpawnWidgetsFromBodyPartList(m_ListOfLegItems, m_ListOfLegWidgets, ESelection::Legs);			// Spawn the Leg Item Widgets
-
-	// Print to debugger number of items generated
-	UE_LOG(LogTemp, Warning, TEXT("There are heads(%i), chests(%i), arms(%i) and legs(%i)"),
-		m_ListOfHeadItems.Num(),
-		m_ListOfChestItems.Num(),
-		m_ListOfArmItems.Num(),
-		m_ListOfLegItems.Num());
+	SpawnWidgetsFromBodyPartList(m_ListOfArmItems, m_ListOfArmWidgets, ESelection::Arms);		// Spawn the Arm Item Widgets
+	SpawnWidgetsFromBodyPartList(m_ListOfLegItems, m_ListOfLegWidgets, ESelection::Legs);		// Spawn the Leg Item Widgets
 }
 
 UMaterial* UCustomisationWidget::GetHead()
