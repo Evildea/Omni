@@ -498,9 +498,27 @@
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I Runtime\ClothingSystemRuntimeInterface
+<<<<<<< HEAD
 /I C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo
 /I C:\Users\s181674\Desktop\Omni\Guudo\Source
 /I C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+/I C:\Users\s191215\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo
+/I C:\Users\s191215\Desktop\Omni\Guudo\Source
+/I C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo
+=======
+/I C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo
+/I C:\Users\s191281\Documents\Omni\Guudo\Source
+/I C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo
+>>>>>>> master
+=======
+/I C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo
+/I C:\Users\s171971\Documents\Omni\Guudo\Source
+/I C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo
+>>>>>>> Stashed changes
+>>>>>>> master
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
@@ -529,12 +547,39 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
+<<<<<<< HEAD
 /FI"C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
 /Yu"C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
 /Fp"C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.pch"
 "C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoCharater.gen.cpp"
 /FI"C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h"
 /Fo"C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\GuudoCharater.gen.cpp.obj"
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+/FI"C:\Users\s191215\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
+/Yu"C:\Users\s191215\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
+/Fp"C:\Users\s191215\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.pch"
+"C:\Users\s191215\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoCharater.gen.cpp"
+/FI"C:\Users\s191215\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h"
+/Fo"C:\Users\s191215\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\GuudoCharater.gen.cpp.obj"
+=======
+/FI"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
+/Yu"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
+/Fp"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.pch"
+"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoCharater.gen.cpp"
+/FI"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h"
+/Fo"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\GuudoCharater.gen.cpp.obj"
+>>>>>>> master
+=======
+/FI"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
+/Yu"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
+/Fp"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.pch"
+"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoCharater.gen.cpp"
+/FI"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h"
+/Fo"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\GuudoCharater.gen.cpp.obj"
+>>>>>>> Stashed changes
+>>>>>>> master
 /TP
 /GR-
 /W4

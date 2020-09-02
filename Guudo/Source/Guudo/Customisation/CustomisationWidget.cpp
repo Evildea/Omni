@@ -55,14 +55,15 @@ bool UCustomisationWidget::Initialize()
 	RefreshListOfVisibleBodyParts();		// Refresh the List of Visible BodyParts.
 	RefreshBodyPartSelectionText();			// Refresh the Text that says "Body, Arms, Legs etc..."
 
-
-	
-
 	return Success;
 }
 
 void UCustomisationWidget::LeftButtonClick()
 {
+	// Don't do anything if customisation is complete.
+	if (m_HasPressedDone)
+		return;
+
 	UE_LOG(LogTemp, Warning, TEXT("You have clicked on the Left Button."));
 	m_BodyPartSelectionTool->RotateLeft();
 	RefreshBodyPartSelectionText();
@@ -71,6 +72,10 @@ void UCustomisationWidget::LeftButtonClick()
 
 void UCustomisationWidget::RightButtonClick()
 {
+	// Don't do anything if customisation is complete.
+	if (m_HasPressedDone)
+		return;
+
 	UE_LOG(LogTemp, Warning, TEXT("You have clicked on the Right Button."));
 	m_BodyPartSelectionTool->RotateRight();
 	RefreshBodyPartSelectionText();
@@ -84,11 +89,17 @@ ESelection UCustomisationWidget::GetCurrentBodySelection()
 
 void UCustomisationWidget::PressDone()
 {
+	m_BodyPartSelectionTool->RemoveBodyPartSelectionTool();
+	m_HasPressedDone = true;
 	//----------------- TO DO ------------------------
 }
 
 void UCustomisationWidget::RefreshBodyPartSelectionText()
 {
+	// Don't do anything if customisation is complete.
+	if (m_HasPressedDone)
+		return;
+
 	ESelection BodySelection = m_BodyPartSelectionTool->GetBodySelection();
 	switch (BodySelection)
 	{
@@ -110,6 +121,10 @@ void UCustomisationWidget::RefreshBodyPartSelectionText()
 
 void UCustomisationWidget::RefreshListOfVisibleBodyParts()
 {
+	// Don't do anything if customisation is complete.
+	if (m_HasPressedDone)
+		return;
+
 	// Remove all the Item Widgets from the Screen.
 	ItemScrollBox->ClearChildren();
 
