@@ -179,8 +179,8 @@ void AGuudoCharater::Tick(float DeltaTime)
 	float RelativeDistance = RelativePosition.Size();
 
 	// Select check distance
-	float MinimumDistance;
-	float MaxDistance;
+	float MinimumDistance = 0.f;
+	float MaxDistance = 0.f;
 
 	switch (m_ScaleState)
 	{
@@ -406,7 +406,7 @@ void AGuudoCharater::Interact()
 		m_TargetSwitch->FlickSwitch();
 }
 
-void AGuudoCharater::SetGrowthState(TEnumAsByte<EGrowth> GrowthState)
+void AGuudoCharater::SetGrowthState(EGrowth GrowthState)
 {
 	m_GrowthState = GrowthState;
 	if (m_GrowthState == EGrowth::Unchanging)
