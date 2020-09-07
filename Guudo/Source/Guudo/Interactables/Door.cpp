@@ -30,8 +30,6 @@ ADoor::ADoor()
 
 	// Set Variables
 	m_isActivated = false;
-	isSwitchRequired = true;
-	isPressurePlateRequired = true;
 	DoorHeight = 150.0f;
 
 }
@@ -53,22 +51,37 @@ void ADoor::Tick(float DeltaTime)
 	if (m_isActivated)
 		return;
 
-	// Check if the Pressure Plate is active and the Switch is turned on.
-	if (isPressurePlateRequired)
+	// Check if the Pressure Plate is active
+	if (PressurePlate)
 	{
 		if (!PressurePlate->IsTurnedOn())
 			return;
 	}
 
-	if (isSwitchRequired)
+	// Check if the Switch is active
+	if (Switch)
 	{
 		if (!Switch->IsTurnedOn())
 			return;
 	}
 
+	// Check if the minimum number of objects has been reached
+	if (isMinObjCountRequired)
+	{
+		if (!m_GameInstance)
+			m_GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+
+		if (m_GameInstance)
+		{
+			if (m_GameInstance->GetSizeOfInventory() < MinObjCountRequired)
+				return;
+		}
+	}
+
 	// Set the new View Target
 	APlayerController* Character = UGameplayStatics::GetPlayerController(this, 0);
 	FViewTargetTransitionParams Params;
+	Params.BlendTime = CameraBlendTime;
 	Character->SetViewTarget(this, Params);
 
 	UE_LOG(LogTemp, Warning, TEXT("Door Activated"));
@@ -91,6 +104,7 @@ void ADoor::OnFinishOpening()
 	{
 		APlayerController* Controller = UGameplayStatics::GetPlayerController(this, 0);
 		FViewTargetTransitionParams Params;
+		Params.BlendTime = CameraBlendTime;
 		Controller->SetViewTarget(Character[0], Params);
 	}
 }
