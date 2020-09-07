@@ -40,11 +40,16 @@ public:
 	FPickupData GetSilhouetteChest();
 	FPickupData GetSilhouetteArms();
 	FPickupData GetSilhouetteLegs();
-
 	FPickupData GetSelectedHead();
 	FPickupData GetSelectedChest();
 	FPickupData GetSelectedArms();
 	FPickupData GetSelectedLegs();
+
+	// Get is has a body part
+	bool inline HasHead() { return ListOfAllHeadsOnMap.Num() > 0 ? true : false; }
+	bool inline HasChest() { return ListOfAllChestsOnMap.Num() > 0 ? true : false; }
+	bool inline HasArms() { return ListOfAllArmsOnMap.Num() > 0 ? true : false; }
+	bool inline HasLegs() { return ListOfAllLegsOnMap.Num() > 0 ? true : false; }
 
 	// Set the currently applied body part
 	void SetSelectedHead(int Index) { m_SelectedHead = Index; }

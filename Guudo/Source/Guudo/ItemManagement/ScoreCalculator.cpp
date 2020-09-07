@@ -11,29 +11,92 @@ ScoreCalculator::~ScoreCalculator()
 {
 }
 
-void ScoreCalculator::CalculateScore(MapItemManager* ItemManager)
+void ScoreCalculator::CalculateScore(MapItemManager* ItemManager, float &HeadScore, float &ChestScore, float &ArmScore, float &LegScore)
 {
-	float HeadScore = 0;
-	float ChestScore = 0;
-	float ArmScore = 0;
-	float LegScore = 0;
+	HeadScore = 0;
+	ChestScore = 0;
+	ArmScore = 0;
+	LegScore = 0;
 
 	UE_LOG(LogTemp, Warning, TEXT("Calculating Score..."));
 
-	// Check if any of the Selected Items match the Silhouette Items
-	if (ItemManager->GetSelectedHead().Name == ItemManager->GetSilhouetteHead().Name)
+	/// Check if any of the Selected Head match the Silhouette Head ////////////////////////////////////
+	if (ItemManager->HasHead())
 	{
-		HeadScore += ItemManager->GetSelectedHead().PointsGivenIfCorrect;
-		UE_LOG(LogTemp, Warning, TEXT("The head matches the Silhouette!"));
+		if (ItemManager->GetSelectedHead().Name == ItemManager->GetSilhouetteHead().Name)
+		{
+			HeadScore += 100.0f;
+			UE_LOG(LogTemp, Warning, TEXT("The head matches the Silhouette!"));
+		}
+		else if (ItemManager->GetSelectedHead().GeneralShape == ItemManager->GetSilhouetteHead().GeneralShape)
+		{
+			HeadScore += ItemManager->GetSelectedHead().SimilarScore;
+			UE_LOG(LogTemp, Warning, TEXT("The head matchs the general shape.."));
+		}
+		else
+		{
+			HeadScore += ItemManager->GetSelectedHead().WrongScore;
+			UE_LOG(LogTemp, Warning, TEXT("The head is completely wrong..."));
+		}
 	}
-	else if (ItemManager->GetSelectedHead().GeneralShape == ItemManager->GetSilhouetteHead().GeneralShape)
+
+	/// Check if any of the Selected Chest match the Silhouette Chest //////////////////////////////////
+	if (ItemManager->HasChest())
 	{
-		HeadScore += ItemManager->GetSelectedHead().PointsGivenIfShapeIsSimilar;
-		UE_LOG(LogTemp, Warning, TEXT("The head matchs the general shape.."));
+		if (ItemManager->GetSelectedChest().Name == ItemManager->GetSilhouetteChest().Name)
+		{
+			ChestScore += 100.0f;
+			UE_LOG(LogTemp, Warning, TEXT("The chest matches the Silhouette!"));
+		}
+		else if (ItemManager->GetSelectedChest().GeneralShape == ItemManager->GetSilhouetteChest().GeneralShape)
+		{
+			ChestScore += ItemManager->GetSelectedChest().SimilarScore;
+			UE_LOG(LogTemp, Warning, TEXT("The chest matchs the general shape.."));
+		}
+		else
+		{
+			ChestScore += ItemManager->GetSelectedChest().WrongScore;
+			UE_LOG(LogTemp, Warning, TEXT("The chest is completely wrong..."));
+		}
 	}
-	else
+
+	/// Check if any of the Selected Arms match the Silhouette Arms ////////////////////////////////////
+	if (ItemManager->HasArms())
 	{
-		HeadScore += ItemManager->GetSelectedHead().PointsGivenIfWrong;
-		UE_LOG(LogTemp, Warning, TEXT("The head is completely wrong..."));
+		if (ItemManager->GetSelectedArms().Name == ItemManager->GetSilhouetteArms().Name)
+		{
+			ArmScore += 100.0f;
+			UE_LOG(LogTemp, Warning, TEXT("The arms match the Silhouette!"));
+		}
+		else if (ItemManager->GetSelectedArms().GeneralShape == ItemManager->GetSilhouetteArms().GeneralShape)
+		{
+			ArmScore += ItemManager->GetSelectedArms().SimilarScore;
+			UE_LOG(LogTemp, Warning, TEXT("The arms match the general shape.."));
+		}
+		else
+		{
+			ArmScore += ItemManager->GetSelectedArms().WrongScore;
+			UE_LOG(LogTemp, Warning, TEXT("The arms are completely wrong..."));
+		}
+	}
+
+	/// Check if any of the Selected Legs match the Silhouette Arms ////////////////////////////////////
+	if (ItemManager->HasLegs())
+	{
+		if (ItemManager->GetSelectedLegs().Name == ItemManager->GetSilhouetteLegs().Name)
+		{
+			LegScore += 100.0f;
+			UE_LOG(LogTemp, Warning, TEXT("The legs match the Silhouette!"));
+		}
+		else if (ItemManager->GetSelectedLegs().GeneralShape == ItemManager->GetSilhouetteLegs().GeneralShape)
+		{
+			LegScore += ItemManager->GetSelectedLegs().SimilarScore;
+			UE_LOG(LogTemp, Warning, TEXT("The legs match the general shape.."));
+		}
+		else
+		{
+			LegScore += ItemManager->GetSelectedLegs().WrongScore;
+			UE_LOG(LogTemp, Warning, TEXT("The legs are completely wrong..."));
+		}
 	}
 }

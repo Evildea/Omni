@@ -47,14 +47,11 @@ struct FPickupData
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         bool isLegs;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        float PointsGivenIfCorrect = 25.f;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = "0.0", ClampMax = "100.0", UIMin = "0.0", UIMax = "100.0"))
+        float SimilarScore = 50.f;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        float PointsGivenIfShapeIsSimilar = 12.5f;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        float PointsGivenIfWrong = 0.f;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = "0.0", ClampMax = "100.0", UIMin = "0.0", UIMax = "100.0"))
+        float WrongScore = 0.f;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         class USoundBase* VoiceOver;

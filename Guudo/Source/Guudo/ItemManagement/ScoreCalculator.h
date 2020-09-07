@@ -15,5 +15,6 @@ public:
 	~ScoreCalculator();
 
 	// Calculate the Score
-	void CalculateScore(MapItemManager* ItemManager);
+	void CalculateScore(MapItemManager* ItemManager, float &HeadScore, float &ChestScore, float &ArmScore, float &LegScore);
+
 };

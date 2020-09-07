@@ -31,7 +31,7 @@ public:
 
 	void GenerateSilhouette();
 
-	void CalculateScore() { m_ScoreCalculator.CalculateScore(&m_ItemManager); }
+	void CalculateScore(float &HeadScore, float &ChestScore, float &ArmScore, float &LegScore) { m_ScoreCalculator.CalculateScore(&m_ItemManager, HeadScore, ChestScore, ArmScore, LegScore); }
 
 	UFUNCTION(BlueprintPure)
 		UMaterial* GetHead();

@@ -8,6 +8,7 @@
 #include "Components/VerticalBox.h"
 #include "Components/TextBlock.h"
 #include "Components/ScrollBox.h"
+#include "Components/ProgressBar.h"
 #include "../ItemManagement/GuudoGameInstance.h"
 
 UCustomisationWidget::UCustomisationWidget(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
@@ -55,8 +56,6 @@ bool UCustomisationWidget::Initialize()
 	RefreshListOfVisibleBodyParts();		// Refresh the List of Visible BodyParts.
 	RefreshBodyPartSelectionText();			// Refresh the Text that says "Body, Arms, Legs etc..."
 
-	//ScoreCalculator::CurrentHead = m_GameInstance->ListOfSilhouetteItems[0];
-
 	return Success;
 }
 
@@ -93,7 +92,37 @@ void UCustomisationWidget::PressDone()
 {
 	m_BodyPartSelectionTool->RemoveBodyPartSelectionTool();
 	m_HasPressedDone = true;
-	m_GameInstance->CalculateScore();
+
+	// Calculate the Final Score
+	float	FinalScoreF,
+			HeadScoreF,
+			ChestScoreF,
+			ArmsScoreF,
+			LegsScoreF;
+
+	m_GameInstance->CalculateScore(HeadScoreF, ChestScoreF, ArmsScoreF, LegsScoreF);
+
+	// Calculate Final Score
+	FinalScoreF = (1.0f / 400.f) * (HeadScoreF + ChestScoreF + ArmsScoreF + LegsScoreF);
+
+	// Calculate Individual Scores
+	HeadScoreF = (1.0f / 100.f) * (HeadScoreF * 0.25f);
+	ChestScoreF = (1.0f / 100.f) * (ChestScoreF * 0.25f);
+	ArmsScoreF = (1.0f / 100.f) * (ArmsScoreF * 0.25f);
+	LegsScoreF = (1.0f / 100.f) * (LegsScoreF * 0.25f);
+
+	// Debug
+	UE_LOG(LogTemp, Warning, TEXT("Head Score: %f"), HeadScoreF);
+	UE_LOG(LogTemp, Warning, TEXT("Chest Score: %f"), ChestScoreF);
+	UE_LOG(LogTemp, Warning, TEXT("Arms Score: %f"), ArmsScoreF);
+	UE_LOG(LogTemp, Warning, TEXT("Legs Score: %f"), LegsScoreF);
+
+	// Set Values
+	HeadScore->SetPercent(HeadScoreF);
+	ChestScore->SetPercent(ChestScoreF);
+	ArmsScore->SetPercent(ArmsScoreF);
+	LegsScore->SetPercent(LegsScoreF);
+	FinalScore->SetPercent(FinalScoreF);
 }
 
 void UCustomisationWidget::RefreshBodyPartSelectionText()
