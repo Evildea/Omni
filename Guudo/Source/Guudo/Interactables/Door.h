@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "../ItemManagement/GuudoGameInstance.h"
 #include "Door.generated.h"
 
 UCLASS()
@@ -38,18 +39,24 @@ public:
 	// The PressurePlate
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		class APressurePlate* PressurePlate;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		bool isPressurePlateRequired;
 
 	// The Switch
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		class ASwitch* Switch;
+
+	// Object Count
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		bool isSwitchRequired;
+		int MinObjCountRequired = 0;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		bool isMinObjCountRequired = false;
 
 	// Door Variables
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float DoorHeight;
+
+	// Camera Variables
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float CameraBlendTime = 0.f;
 
 	// This Event is called when the door is opened
 	UFUNCTION(BlueprintImplementableEvent)
@@ -66,5 +73,6 @@ public:
 private:
 	bool m_isActivated;
 	FVector m_StartLocation;
+	UGuudoGameInstance* m_GameInstance;
 
 };
