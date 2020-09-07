@@ -106,10 +106,10 @@ void UCustomisationWidget::PressDone()
 	FinalScoreF = (1.0f / 400.f) * (HeadScoreF + ChestScoreF + ArmsScoreF + LegsScoreF);
 
 	// Calculate Individual Scores
-	HeadScoreF = (1.0f / 100.f) * (HeadScoreF * 0.25f);
-	ChestScoreF = (1.0f / 100.f) * (ChestScoreF * 0.25f);
-	ArmsScoreF = (1.0f / 100.f) * (ArmsScoreF * 0.25f);
-	LegsScoreF = (1.0f / 100.f) * (LegsScoreF * 0.25f);
+	HeadScoreF = (1.0f / 100.f) * HeadScoreF;
+	ChestScoreF = (1.0f / 100.f) * ChestScoreF;
+	ArmsScoreF = (1.0f / 100.f) * ArmsScoreF;
+	LegsScoreF = (1.0f / 100.f) * LegsScoreF;
 
 	// Debug
 	UE_LOG(LogTemp, Warning, TEXT("Head Score: %f"), HeadScoreF);
