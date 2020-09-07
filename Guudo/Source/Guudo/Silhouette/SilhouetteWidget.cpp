@@ -3,7 +3,7 @@
 
 #include "SilhouetteWidget.h"
 #include "Kismet/GameplayStatics.h"
-#include "GuudoGameInstance.h"
+#include "../ItemManagement/GuudoGameInstance.h"
 #include "Styling/SlateBrush.h"
 
 USilhouetteWidget::USilhouetteWidget(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)

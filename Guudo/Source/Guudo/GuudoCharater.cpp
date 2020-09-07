@@ -14,7 +14,7 @@
 #include "GameFramework/Controller.h"
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
-#include "GuudoGameInstance.h"
+#include "ItemManagement/GuudoGameInstance.h"
 #include "Interactables/Switch.h"
 #include "Interactables/Pickup.h"
 #include "Engine.h" // Debug
