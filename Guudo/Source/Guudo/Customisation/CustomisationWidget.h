@@ -6,6 +6,7 @@
 #include "Blueprint/UserWidget.h"
 #include "../PickupData.h"
 #include "ItemImageWidget.h"
+#include "../ItemManagement/ScoreCalculator.h"
 #include "CustomisationWidget.generated.h"
 
 /**
@@ -59,6 +60,25 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UImage* RightLegSilouette;
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UProgressBar* HeadScore;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UProgressBar* ChestScore;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UProgressBar* ArmsScore;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UProgressBar* LegsScore;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UProgressBar* FinalScore;
+
+
+
 
 	/// FUNCTIONS ////////////////////////////////////////////////////////////
 
