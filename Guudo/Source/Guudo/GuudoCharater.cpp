@@ -162,7 +162,7 @@ void AGuudoCharater::Tick(float DeltaTime)
 				// Get Distance
 				FVector RelativePosition = GetActorLocation() - m_ShakeList[Index]->GetComponentLocation();
 				float RelativeDistance = RelativePosition.Size();
-				float Strength = ShakeStrength - ((ShakeStrength / 600.0f) * RelativeDistance);
+				float Strength = (ShakeStrength - ((ShakeStrength / 600.0f) * RelativeDistance)) * m_ShakeList[Index]->GetMass();
 
 				// Generate Bounce
 				float randomOffset1 = FMath::FRandRange(-Strength * .5f, Strength * .5f);
