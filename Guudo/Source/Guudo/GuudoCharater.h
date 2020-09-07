@@ -138,7 +138,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float ShakeFrequency = 0.25f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		float ShakeStrength = 4000.0f;
+		float ShakeStrength = 300.0f;
 
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")

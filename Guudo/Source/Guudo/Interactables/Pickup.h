@@ -26,5 +26,8 @@ public:
 // 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		FPickupData PickupData;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		bool isPhysicsEnabled = true;
 		
 };

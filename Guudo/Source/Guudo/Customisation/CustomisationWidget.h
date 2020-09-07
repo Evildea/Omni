@@ -77,9 +77,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UProgressBar* FinalScore;
 
-
-
-
 	/// FUNCTIONS ////////////////////////////////////////////////////////////
 
 	// Constructor
