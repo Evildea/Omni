@@ -84,6 +84,7 @@ void AGuudoCharater::BeginPlay()
 	m_ScaleState = EScale::Normal;
 	m_GrowthState = EGrowth::Unchanging;
 	m_WalkState = EWalking::Stationary;
+	m_GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 }
 
 bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset)
@@ -314,22 +315,20 @@ void AGuudoCharater::Pickup()
 		// Play consume sound
 		UGameplayStatics::SpawnSoundAttached(ConsumeSound, this->GetRootComponent());
 
-		// Update Game Instance
-		UGuudoGameInstance* gameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 		UPickup* Pickup = Target->FindComponentByClass<UPickup>();
 
-		if (gameInstance && Pickup)
+		if (m_GameInstance && Pickup)
 		{
-			gameInstance->PickupItem(&Pickup->PickupData);
-			OnPickup(gameInstance->GetSizeOfInventory());
-			UE_LOG(LogTemp, Warning, TEXT("Size of inventory: %d"), gameInstance->GetSizeOfInventory());
+			m_GameInstance->PickupItem(&Pickup->PickupData);
+			UE_LOG(LogTemp, Warning, TEXT("Size of inventory: %d"), m_GameInstance->GetSizeOfInventory());
 		}
 
 		// Destroy Object
 		isPickupPossible = false;
 		Target->Destroy();
-
 	}
+
+	OnPickup(m_GameInstance->GetSizeOfInventory());
 }
 
 void AGuudoCharater::Shrink()

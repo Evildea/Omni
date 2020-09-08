@@ -47,6 +47,9 @@ private:
 	int currentEnergy;		// Current Energy level.
 	float currentShakeFrequency;
 
+	// Game Instance
+	class UGuudoGameInstance* m_GameInstance = nullptr;
+
 	// Interacting
 	class ASwitch* m_TargetSwitch;
 
