@@ -1,0 +1,503 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+
+#include "GuudoCharater.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "Camera/CameraComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "Components/InputComponent.h"
+#include "Components/SphereComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "Materials/MaterialInstanceDynamic.h" 
+#include "GameFramework/CharacterMovementComponent.h"
+#include "GameFramework/Controller.h"
+#include "Blueprint/UserWidget.h"
+#include "Kismet/GameplayStatics.h"
+#include "ItemManagement/GuudoGameInstance.h"
+#include "Interactables/Switch.h"
+#include "Interactables/Pickup.h"
+#include "Engine.h" // Debug
+
+// Sets default values
+AGuudoCharater::AGuudoCharater()
+{
+ 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+
+	// Create the Camera Arm
+	CameraArm = CreateDefaultSubobject<USpringArmComponent>("Camera Arm");
+	CameraArm->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	CameraArm->TargetArmLength = CameraNormalTrailDistance;
+	CameraArm->bUsePawnControlRotation = true;
+
+	// Create the Camera
+	Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
+	Camera->AttachToComponent(CameraArm, FAttachmentTransformRules::KeepRelativeTransform, USpringArmComponent::SocketName);
+	Camera->bUsePawnControlRotation = false;
+
+	// Capsule Component
+	GetCapsuleComponent()->InitCapsuleSize(25.f, 45.f);
+	GetCapsuleComponent()->SetGenerateOverlapEvents(true);
+	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AGuudoCharater::OnOverlapBegin);
+	GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AGuudoCharater::OnOverlapEnd);
+
+	// Shake Collider Component
+	ShakeCollider = CreateDefaultSubobject<USphereComponent>("ObjectNearbyCollider");
+	ShakeCollider->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	ShakeCollider->SetSphereRadius(300.0f);
+	ShakeCollider->SetGenerateOverlapEvents(true);
+	ShakeCollider->CanCharacterStepUpOn = ECanBeCharacterBase::ECB_No;
+	ShakeCollider->OnComponentBeginOverlap.AddDynamic(this, &AGuudoCharater::OnShakeOverlapBegin);
+	ShakeCollider->OnComponentEndOverlap.AddDynamic(this, &AGuudoCharater::OnShakeOverlapEnd);
+
+	// Push Collider Component
+	PushCollider = CreateDefaultSubobject<UCapsuleComponent>("PushCollider");
+	PushCollider->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	PushCollider->SetCapsuleHalfHeight(56.0f);
+	PushCollider->SetCapsuleRadius(47.0f);
+	PushCollider->SetRelativeLocation(FVector(0.f, 0.f, 8.0f));
+	PushCollider->SetCollisionProfileName(FName("Pawn"));
+	PushCollider->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+	// Controller
+	bUseControllerRotationPitch = false;
+	bUseControllerRotationYaw = false;
+	bUseControllerRotationRoll = false;
+	GetCharacterMovement()->bOrientRotationToMovement = true;
+	GetCharacterMovement()->RotationRate = FRotator(0.f, RotationSpeed, 0.f);
+	GetCharacterMovement()->JumpZVelocity = NormalJumpHeight;
+	GetCharacterMovement()->AirControl = AirMovability;
+}
+
+// Called when the game starts or when spawned
+void AGuudoCharater::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// Set variables
+	m_TargetSwitch = nullptr;
+	isPickupPossible = false;
+	isAbleToGrow = true;
+	currentEnergy = 0;
+	currentShakeFrequency = 0;
+	m_ScaleState = EScale::Normal;
+	m_GrowthState = EGrowth::Unchanging;
+	m_WalkState = EWalking::Stationary;
+	m_GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+}
+
+bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset)
+{
+	// Setup Parameters
+	FHitResult HitResult;
+	FVector StartTrace = GetCapsuleComponent()->GetComponentLocation();
+	FVector UpVector = FVector(xOffset, yOffset, Height);
+	FVector EndTrace = StartTrace + UpVector;
+
+	// Ignore the Actor
+	FCollisionQueryParams TraceParams;
+	TraceParams.AddIgnoredActor(this);
+
+	// Only enabling growing if there is nothing in the way
+	bool result = GetWorld()->LineTraceSingleByChannel(HitResult, StartTrace, EndTrace, ECC_Visibility, TraceParams);
+	if (result && HitResult.GetActor())
+	{
+		// Allow growing next to Pushable objects
+		if (HitResult.GetActor()->ActorHasTag(FName("Pushable")))
+			result = false;
+
+		// Draw a Debug Line
+		if (isDebug)
+			DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor(255, 0, 0), true);
+	}
+
+	// Return result
+	return result;
+}
+
+void AGuudoCharater::CustomJump()
+{
+	switch (m_ScaleState)
+	{
+	case EScale::Small:
+		GetCharacterMovement()->JumpZVelocity = SmallJumpHeight;
+		break;
+	case EScale::Normal:
+		GetCharacterMovement()->JumpZVelocity = NormalJumpHeight;
+		break;
+	case EScale::Large:
+		GetCharacterMovement()->JumpZVelocity = LargeJumpHeight;
+		break;
+	}
+	Jump();
+}
+
+void AGuudoCharater::SetPushForce(float Amount)
+{
+	if (Amount == 0)
+		GetCharacterMovement()->bEnablePhysicsInteraction = false;
+	else
+	{
+		GetCharacterMovement()->InitialPushForceFactor = Amount;
+		GetCharacterMovement()->PushForceFactor = Amount * 1500.0f;
+	}
+}
+
+// Called every frame
+void AGuudoCharater::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	// Shake the ground if the Character is Large and Walking
+	if (m_WalkState == EWalking::Walking && m_ScaleState == EScale::Large)
+	{
+		currentShakeFrequency += DeltaTime;
+		if (currentShakeFrequency > ShakeFrequency)
+		{
+			currentShakeFrequency -= ShakeFrequency;
+
+			// Iterate through Shake list and give everything a shake
+			for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
+			{
+				// Get Distance
+				FVector RelativePosition = GetActorLocation() - m_ShakeList[Index]->GetComponentLocation();
+				float RelativeDistance = RelativePosition.Size();
+				float Strength = (ShakeStrength - ((ShakeStrength / 600.0f) * RelativeDistance)) * m_ShakeList[Index]->GetMass();
+
+				// Generate Bounce
+				float randomOffset1 = FMath::FRandRange(-Strength * .5f, Strength * .5f);
+				float randomOffset2 = FMath::FRandRange(-Strength * .5f, Strength * .5f);
+				float randomOffset3 = FMath::FRandRange(0.1f, Strength * .1f);
+				m_ShakeList[Index]->AddImpulse(FVector(randomOffset1, randomOffset2, Strength + randomOffset3));
+			}
+
+		}
+	}
+
+	// Set Transparency
+	FVector RelativePosition = GetActorLocation() - Camera->GetComponentLocation();
+	float RelativeDistance = RelativePosition.Size();
+
+	// Select check distance
+	float MinimumDistance = 0.f;
+	float MaxDistance = 0.f;
+
+	switch (m_ScaleState)
+	{
+	case EScale::Small:
+		MaxDistance = 100.0f;
+		MinimumDistance = 50.0f;
+		break;
+	case EScale::Normal:
+		MaxDistance = 150.0f;
+		MinimumDistance = 100.0f;
+		break;
+	case EScale::Large:
+		MaxDistance = 250.0f;
+		MinimumDistance = 200.0f;
+		break;
+	}
+
+	// Perform Calculation
+	if (RelativeDistance < MaxDistance)
+	{
+		float FadeOut = ((1.0f / MinimumDistance) * RelativeDistance) - 0.39f;
+		if (FadeOut > 1.f) { FadeOut = 1.f; }
+		else if (FadeOut < 0.f) { FadeOut = 0.f; }
+		GetMesh()->SetScalarParameterValueOnMaterials("Dither", FadeOut);
+	}
+	else
+		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
+
+}
+
+// Called to bind functionality to input
+void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
+	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
+
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AGuudoCharater::CustomJump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+	PlayerInputComponent->BindAction("Pickup", IE_Pressed, this, &AGuudoCharater::Pickup);
+
+	PlayerInputComponent->BindAction("Shrink", IE_Pressed, this, &AGuudoCharater::Shrink);
+	PlayerInputComponent->BindAction("Grow", IE_Pressed, this, &AGuudoCharater::Grow);
+
+	PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &AGuudoCharater::Interact);
+
+	PlayerInputComponent->BindAxis("MoveForward", this, &AGuudoCharater::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AGuudoCharater::MoveRight);
+
+	PlayerInputComponent->BindAxis("Scroll", this, &AGuudoCharater::Scroll);
+}
+
+void AGuudoCharater::MoveForward(float axis)
+{
+	// Don't computer if there is no movement
+	if (axis == 0.f)
+		return;
+
+	// Set movement speed
+	switch (m_ScaleState)
+	{
+	case EScale::Small:
+		GetCharacterMovement()->MaxWalkSpeed = SmallRunSpeed;
+		break;
+	case EScale::Normal:
+		GetCharacterMovement()->MaxWalkSpeed = NormalRunSpeed;
+		break;
+	case EScale::Large:
+		GetCharacterMovement()->MaxWalkSpeed = LargeRunSpeed;
+		break;
+	}
+
+	// Set walking state
+	m_WalkState = EWalking::Walking;
+	FTimerHandle Countdown;
+	GetWorldTimerManager().SetTimer(Countdown, this, &AGuudoCharater::ResetWalkingState, 0.5f, false);
+
+	// Move Character
+	const FRotator Rotation = Controller->GetControlRotation();
+	const FRotator YawRotation(0, Rotation.Yaw, 0);
+	const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+	AddMovementInput(Direction, axis);
+}
+
+void AGuudoCharater::MoveRight(float axis)
+{
+	// Don't computer if there is no movement
+	if (axis == 0.f)
+		return;
+
+	// Set movement speed
+	switch (m_ScaleState)
+	{
+	case EScale::Small:
+		GetCharacterMovement()->MaxWalkSpeed = SmallRunSpeed;
+		break;
+	case EScale::Normal:
+		GetCharacterMovement()->MaxWalkSpeed = NormalRunSpeed;
+		break;
+	case EScale::Large:
+		GetCharacterMovement()->MaxWalkSpeed = LargeRunSpeed;
+		break;
+	}
+
+	// Set walking state
+	m_WalkState = EWalking::Walking;
+	FTimerHandle Countdown;
+	GetWorldTimerManager().SetTimer(Countdown, this, &AGuudoCharater::ResetWalkingState, 0.5f, false);
+
+	// Move Character
+	const FRotator Rotation = Controller->GetControlRotation();
+	const FRotator YawRotation(0, Rotation.Yaw, 0);
+	const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+	AddMovementInput(Direction, axis);
+}
+
+void AGuudoCharater::Scroll(float axis)
+{
+	if (axis > 0.f)
+		Grow();
+	else if (axis < 0.f)
+		Shrink();
+}
+
+void AGuudoCharater::Pickup()
+{
+	// If Pickup is permited then pickup the Object
+	if (isPickupPossible)
+	{
+		// Play consume sound
+		UGameplayStatics::SpawnSoundAttached(ConsumeSound, this->GetRootComponent());
+
+		UPickup* Pickup = Target->FindComponentByClass<UPickup>();
+
+		if (m_GameInstance && Pickup)
+		{
+			m_GameInstance->PickupItem(&Pickup->PickupData);
+			UE_LOG(LogTemp, Warning, TEXT("Size of inventory: %d"), m_GameInstance->GetSizeOfInventory());
+		}
+
+		// Destroy Object
+		FTimerHandle CountdownTimerHandle;
+		GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AGuudoCharater::DestroyPickup, 1.f, false);
+	}
+
+	OnPickup(m_GameInstance->GetSizeOfInventory());
+}
+
+void AGuudoCharater::Shrink()
+{
+	// Don't attempt to shrink if already growing or shrinking
+	if (m_GrowthState != EGrowth::Unchanging)
+		return;
+
+	// Set the new Scale
+	if (m_ScaleState == EScale::Large)
+	{
+		SetPushForce(NormalPushForce);
+		m_GrowthState = EGrowth::Changing;
+		m_ScaleState = EScale::Normal;
+		OnLargeToNormal();
+		return;
+	}
+	if (m_ScaleState == EScale::Normal)
+	{
+		SetPushForce(SmallPushForce);
+		m_GrowthState = EGrowth::Changing;
+		m_ScaleState = EScale::Small;
+		OnNormalToSmall();
+		return;
+	}
+}
+
+void AGuudoCharater::Grow()
+{
+	// Don't attempt to grow if already growing or shrinking
+	if (m_GrowthState != EGrowth::Unchanging)
+		return;
+
+	// Only allow Growing if there is space to grow
+	float Height = m_ScaleState == EScale::Small ? 160.0f : 260.0f;
+	if (!IsCollisionAbove(Height, 0.0f, 0.0f) &&
+		!IsCollisionAbove(Height, 80.0f, 0.0f) &&
+		!IsCollisionAbove(Height, -80.0f, 0.0f) &&
+		!IsCollisionAbove(Height, 0.0f, 80.0f) &&
+		!IsCollisionAbove(Height, 0.0f, -80.0f))
+	{
+		// Set the new Scale
+		if (m_ScaleState == EScale::Normal)
+		{
+			SetPushForce(LargePushForce);
+			m_GrowthState = EGrowth::Changing;
+			m_ScaleState = EScale::Large;
+			PushCollider->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
+			OnNormalToLarge();
+			return;
+		}
+		if (m_ScaleState == EScale::Small)
+		{
+			SetPushForce(NormalPushForce);
+			m_GrowthState = EGrowth::Changing;
+			m_ScaleState = EScale::Normal;
+			PushCollider->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
+			OnSmallToNormal();
+			return;
+		}
+	}
+	else
+	{
+		FTimerHandle Countdown;
+		GetWorldTimerManager().SetTimer(Countdown, this, &AGuudoCharater::ResetIsAbleToGrowError, 1.f, false);
+		isAbleToGrow = false;
+	}
+}
+
+void AGuudoCharater::Interact()
+{
+	// Interact with a switch
+	if (m_TargetSwitch)
+		m_TargetSwitch->FlickSwitch();
+}
+
+void AGuudoCharater::SetGrowthState(EGrowth GrowthState)
+{
+	m_GrowthState = GrowthState;
+	if (m_GrowthState == EGrowth::Unchanging)
+		PushCollider->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+}
+
+void AGuudoCharater::UpdateGrowthState(float TimelineGrowthAmount, float BaseHeight)
+{
+	GetCapsuleComponent()->SetWorldScale3D(FVector(BaseHeight + TimelineGrowthAmount));
+}
+
+void AGuudoCharater::SetCameraTrailDistance(float StartDistance, float EndDistance, float Transition, bool isLargerThanNormal)
+{
+	if (isLargerThanNormal)
+	{
+		float Difference = EndDistance - StartDistance;
+		CameraArm->TargetArmLength = StartDistance + (Difference * Transition);
+	}
+	else
+	{
+		float ModifiedTransition = (Transition - 0.5f) * 2.0f;
+		float Difference = StartDistance - EndDistance;
+		CameraArm->TargetArmLength = EndDistance + (Difference * ModifiedTransition);
+	}
+}
+
+void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	// If within range of "Pickup" to permit pickup possibilities
+	if (OtherComponent->ComponentHasTag("Pickup"))
+	{
+		isPickupPossible = true;
+		Target = OtherActor;
+	}
+
+	// If within range of "Switch" to permit button pressing
+	if (OtherComponent->ComponentHasTag("Switch"))
+		m_TargetSwitch = Cast<ASwitch>(OtherActor);
+
+	UE_LOG(LogTemp, Warning, TEXT("Enter Zone"));
+}
+
+void AGuudoCharater::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	isPickupPossible = false;
+
+	// If exiting switch zone
+	if (Cast<ASwitch>(OtherActor))
+		m_TargetSwitch = nullptr;
+
+	UE_LOG(LogTemp, Warning, TEXT("Exit Zone"));
+}
+
+void AGuudoCharater::OnShakeOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	// Ignore self
+	if (OtherActor == this)
+		return;
+
+	// Check whether the Actor is already on the Shake list
+	bool Found = false;
+	for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
+	{
+		if (m_ShakeList[Index] == OtherComponent)
+		{
+			Found = true;
+			break;
+		}
+	}
+
+	// If the Actor isn't on the Shake list, then add it to the Shake list.
+	if (!Found && OtherComponent->ComponentHasTag(FName("Shakeable")))
+	{
+		m_ShakeList.Add(OtherComponent);
+		UE_LOG(LogTemp, Warning, TEXT("Shake list size: %d"), m_ShakeList.Num());
+	}
+
+}
+
+void AGuudoCharater::OnShakeOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	// Check whether the Actor is already on the Shake list.
+	for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
+	{
+		// Remove the Actor from the Shake list if it's on the Shake list.
+		if (m_ShakeList[Index] == OtherComp)
+		{
+			m_ShakeList.RemoveAt(Index, 1, true);
+			UE_LOG(LogTemp, Warning, TEXT("Shake list size: %d"), m_ShakeList.Num());
+			break;
+		}
+	}
+
+
+}

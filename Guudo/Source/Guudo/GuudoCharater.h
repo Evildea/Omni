@@ -67,6 +67,7 @@ private:
 	// Timers
 	inline void ResetIsAbleToGrowError() { isAbleToGrow = true; }
 	inline void ResetWalkingState() { m_WalkState = EWalking::Stationary; }
+	//inline void DestroyPickup() { isPickupPossible = false; if (Target != nullptr) { Target->Destroy(); } }
 
 	// Custom Jump for the Character
 	void CustomJump();
@@ -190,7 +191,7 @@ public:
 		void OnSmallToNormal();
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void OnPickup(int CurrentNumberOfItems);
+		void OnPickup(int CurrentNumberOfItems, AActor* Pickup, FVector OriginalScale);
 
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()
