@@ -47,6 +47,9 @@ private:
 	int currentEnergy;		// Current Energy level.
 	float currentShakeFrequency;
 
+	// Game Instance
+	class UGuudoGameInstance* m_GameInstance = nullptr;
+
 	// Interacting
 	class ASwitch* m_TargetSwitch;
 
@@ -155,7 +158,7 @@ public:
 
 	// Set the Growth State (Growing or not?)
 	UFUNCTION(BlueprintCallable)
-		void SetGrowthState(TEnumAsByte<EGrowth> GrowthState);
+		void SetGrowthState(EGrowth GrowthState);
 
 	// Update the Growth State (Size of growth)
 	UFUNCTION(BlueprintCallable)

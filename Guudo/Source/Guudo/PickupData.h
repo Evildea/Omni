@@ -32,7 +32,7 @@ struct FPickupData
 
     // This object has this general shape:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        TEnumAsByte<EShape> GeneralShape;
+        EShape GeneralShape;
 
     // This object can be connected to any of these body positions:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)

@@ -191,7 +191,7 @@ void UCustomisationWidget::RefreshListOfVisibleBodyParts()
 void UCustomisationWidget::SpawnWidgetsFromBodyPartList(TArray<FPickupData>& ItemList, TArray<UItemImageWidget*>& WidgetList, ESelection BodyPart)
 {
 	// Spawn the Head Widgets
-	for (size_t index = 0; index < ItemList.Num(); index++)
+	for (int index = 0; index < ItemList.Num(); index++)
 	{
 		// Spawn the Widget
 		UItemImageWidget* NewItemWidget = Cast<UItemImageWidget>(CreateWidget<UUserWidget>(GetWorld(), ItemWidget));
@@ -204,15 +204,12 @@ void UCustomisationWidget::SpawnWidgetsFromBodyPartList(TArray<FPickupData>& Ite
 		// Set the Body Part this Widget Belongs to
 		switch (BodyPart)
 		{
-		case ESelection::Head:	NewItemWidget->isHead = true; break;
-		case ESelection::Arms:	NewItemWidget->isArms = true; break;
-		case ESelection::Chest:	NewItemWidget->isChest = true; break;
-		case ESelection::Legs:	NewItemWidget->isLegs = true; break;
-		default: NewItemWidget->isHead = true; break;
+		case ESelection::Head:	NewItemWidget->isHead = true; WidgetList.Add(NewItemWidget); break;
+		case ESelection::Arms:	NewItemWidget->isArms = true; WidgetList.Add(NewItemWidget); break;
+		case ESelection::Chest:	NewItemWidget->isChest = true; WidgetList.Add(NewItemWidget); break;
+		case ESelection::Legs:	NewItemWidget->isLegs = true; WidgetList.Add(NewItemWidget); break;
+		default: break;
 		}
-
-		// Add the new Widget to the List of Widgets
-		WidgetList.Add(NewItemWidget);
 	}
 }
 
