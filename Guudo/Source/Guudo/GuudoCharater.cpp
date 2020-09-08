@@ -324,11 +324,12 @@ void AGuudoCharater::Pickup()
 		}
 
 		// Destroy Object
+		//FTimerHandle CountdownTimerHandle;
+		//GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AGuudoCharater::DestroyPickup, 0.5f, false);
 		isPickupPossible = false;
-		Target->Destroy();
 	}
 
-	OnPickup(m_GameInstance->GetSizeOfInventory());
+	OnPickup(m_GameInstance->GetSizeOfInventory(), Target, Target->GetActorRelativeScale3D());
 }
 
 void AGuudoCharater::Shrink()
