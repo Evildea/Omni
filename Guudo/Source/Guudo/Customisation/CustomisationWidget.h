@@ -61,7 +61,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UImage* RightLegSilouette;
 
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UProgressBar* HeadScore;
 

@@ -191,7 +191,7 @@ void UCustomisationWidget::RefreshListOfVisibleBodyParts()
 void UCustomisationWidget::SpawnWidgetsFromBodyPartList(TArray<FPickupData>& ItemList, TArray<UItemImageWidget*>& WidgetList, ESelection BodyPart)
 {
 	// Spawn the Head Widgets
-	for (size_t index = 0; index < ItemList.Num(); index++)
+	for (int index = 0; index < ItemList.Num(); index++)
 	{
 		// Spawn the Widget
 		UItemImageWidget* NewItemWidget = Cast<UItemImageWidget>(CreateWidget<UUserWidget>(GetWorld(), ItemWidget));

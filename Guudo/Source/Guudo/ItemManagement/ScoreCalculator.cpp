@@ -21,7 +21,7 @@ void ScoreCalculator::CalculateScore(MapItemManager* ItemManager, float &HeadSco
 	UE_LOG(LogTemp, Warning, TEXT("Calculating Score..."));
 
 	/// Check if any of the Selected Head match the Silhouette Head ////////////////////////////////////
-	if (ItemManager->HasHead())
+	if (ItemManager->HasHead() && ItemManager->getIsHeadSelected())
 	{
 		if (ItemManager->GetSelectedHead().Name == ItemManager->GetSilhouetteHead().Name)
 		{
@@ -41,7 +41,7 @@ void ScoreCalculator::CalculateScore(MapItemManager* ItemManager, float &HeadSco
 	}
 
 	/// Check if any of the Selected Chest match the Silhouette Chest //////////////////////////////////
-	if (ItemManager->HasChest())
+	if (ItemManager->HasChest() && ItemManager->getIsChestSelected())
 	{
 		if (ItemManager->GetSelectedChest().Name == ItemManager->GetSilhouetteChest().Name)
 		{
@@ -61,7 +61,7 @@ void ScoreCalculator::CalculateScore(MapItemManager* ItemManager, float &HeadSco
 	}
 
 	/// Check if any of the Selected Arms match the Silhouette Arms ////////////////////////////////////
-	if (ItemManager->HasArms())
+	if (ItemManager->HasArms() && ItemManager->getIsArmsSelected())
 	{
 		if (ItemManager->GetSelectedArms().Name == ItemManager->GetSilhouetteArms().Name)
 		{
@@ -81,7 +81,7 @@ void ScoreCalculator::CalculateScore(MapItemManager* ItemManager, float &HeadSco
 	}
 
 	/// Check if any of the Selected Legs match the Silhouette Arms ////////////////////////////////////
-	if (ItemManager->HasLegs())
+	if (ItemManager->HasLegs() && ItemManager->getIsLegsSelected())
 	{
 		if (ItemManager->GetSelectedLegs().Name == ItemManager->GetSilhouetteLegs().Name)
 		{
