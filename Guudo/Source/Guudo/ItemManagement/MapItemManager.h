@@ -27,6 +27,12 @@ private:
 	int m_SelectedArms = 0;
 	int m_SelectedLegs = 0;
 
+	// Whether that item has been selected
+	bool m_isHeadSelected = false;
+	bool m_isChestSelected = false;
+	bool m_isArmsSelected = false;
+	bool m_isLegsSelected = false;
+
 public:
 	MapItemManager();
 	~MapItemManager();
@@ -40,6 +46,10 @@ public:
 	FPickupData GetSilhouetteChest();
 	FPickupData GetSilhouetteArms();
 	FPickupData GetSilhouetteLegs();
+	bool getIsHeadSelected() { return m_isHeadSelected; }
+	bool getIsChestSelected() { return m_isChestSelected; }
+	bool getIsArmsSelected() { return m_isArmsSelected; }
+	bool getIsLegsSelected() { return m_isLegsSelected; }
 	FPickupData GetSelectedHead();
 	FPickupData GetSelectedChest();
 	FPickupData GetSelectedArms();
@@ -52,10 +62,10 @@ public:
 	bool inline HasLegs() { return ListOfAllLegsOnMap.Num() > 0 ? true : false; }
 
 	// Set the currently applied body part
-	void SetSelectedHead(int Index) { m_SelectedHead = Index; }
-	void SetSelectedChest(int Index) { m_SelectedChest = Index; }
-	void SetSelectedArms(int Index) { m_SelectedArms = Index; }
-	void SetSelectedLegs(int Index) { m_SelectedLegs = Index; }
+	void SetSelectedHead(int Index) { m_SelectedHead = Index; m_isHeadSelected = true; }
+	void SetSelectedChest(int Index) { m_SelectedChest = Index; m_isChestSelected = true; }
+	void SetSelectedArms(int Index) { m_SelectedArms = Index; m_isArmsSelected = true; }
+	void SetSelectedLegs(int Index) { m_SelectedLegs = Index; m_isLegsSelected = true; }
 
 	// Static Variables
 	TArray<FPickupData> ListOfAllHeadsOnMap;

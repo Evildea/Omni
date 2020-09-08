@@ -51,13 +51,9 @@ bool UCustomisationWidget::Initialize()
 	if (!m_GameInstance)
 		return false;
 
-	UE_LOG(LogTemp, Warning, TEXT("CHECK 1"));
 	OnFinaliseInitialisationInBlueprints();	// Go to Blueprints and set the ItemWidget to its Blueprint Derived Class.
-	UE_LOG(LogTemp, Warning, TEXT("CHECK 2"));
 	SpawnWidgetsFromInventoryItems();		// Spawn all Widgets based on the Inventory Items.
-	UE_LOG(LogTemp, Warning, TEXT("CHECK 3"));
 	RefreshListOfVisibleBodyParts();		// Refresh the List of Visible BodyParts.
-	UE_LOG(LogTemp, Warning, TEXT("CHECK 4"));
 	RefreshBodyPartSelectionText();			// Refresh the Text that says "Body, Arms, Legs etc..."
 
 	return Success;
