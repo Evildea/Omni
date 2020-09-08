@@ -4,6 +4,7 @@
 #include "Shakeable.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SphereComponent.h"
+#include "Engine/World.h"
 
 // Sets default values for this component's properties
 UShakeable::UShakeable()
@@ -35,6 +36,23 @@ void UShakeable::BeginPlay()
 		UE_LOG(LogTemp, Error, TEXT("[%s] Failed to setup Mesh Component for Shaking"), *GetOwner()->GetName());
 	}
 	
+}
+
+bool UShakeable::getIsOnGround()
+{
+	FHitResult HitResult;
+	FCollisionQueryParams TraceParams;
+	TraceParams.AddIgnoredActor(GetOwner());
+	bool bResult = GetWorld()->LineTraceSingleByChannel(HitResult, GetOwner()->GetActorLocation(), GetOwner()->GetActorLocation() - FVector(0.f, 0.f, 50.0f), ECC_Visibility, TraceParams);
+	if (bResult)
+	{
+		UE_LOG(LogTemp, Error, TEXT("[%s] is not on ground"), *GetOwner()->GetName());
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("[%s] is on ground"), *GetOwner()->GetName());
+	}
+	return bResult;
 }
 
 

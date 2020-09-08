@@ -160,19 +160,35 @@ void AGuudoCharater::Tick(float DeltaTime)
 			// Iterate through Shake list and give everything a shake
 			for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
 			{
+				// Check if it is on the ground
+				/*UShakeable* Shakeable = m_ShakeList[Index]->FindComponentByClass<UShakeable>();
+				if (Shakeable)
+				{
+					Shakeable->getIsOnGround();
+				}*/
+
+				//if (!m_ShakeList[Index]->getIsOnGround())
+
+				// Get the Mesh
+				UStaticMeshComponent* CMesh = m_ShakeList[Index]->FindComponentByClass<UStaticMeshComponent>();
+				if (!CMesh) continue;
+
 				// Get Distance
-				FVector RelativePosition = GetActorLocation() - m_ShakeList[Index]->GetComponentLocation();
+				FVector RelativePosition = GetActorLocation() - m_ShakeList[Index]->GetActorLocation();
 				float RelativeDistance = RelativePosition.Size();
-				float Strength = (ShakeStrength - ((ShakeStrength / 600.0f) * RelativeDistance)) * m_ShakeList[Index]->GetMass();
+				float Strength = (ShakeStrength - ((ShakeStrength / 600.0f) * RelativeDistance)) * CMesh->GetMass();
 
 				// Generate Bounce
 				float randomOffset1 = FMath::FRandRange(-Strength * .5f, Strength * .5f);
 				float randomOffset2 = FMath::FRandRange(-Strength * .5f, Strength * .5f);
 				float randomOffset3 = FMath::FRandRange(0.1f, Strength * .1f);
-				m_ShakeList[Index]->AddImpulse(FVector(randomOffset1, randomOffset2, Strength + randomOffset3));
+				CMesh->AddImpulse(FVector(randomOffset1, randomOffset2, Strength + randomOffset3));
 			}
 
 		}
+
+		// Add Walking Shake
+		GetWorld()->GetFirstPlayerController()->ClientPlayCameraShake(WalkShake);
 	}
 
 	// Set Transparency
@@ -321,15 +337,16 @@ void AGuudoCharater::Pickup()
 		{
 			m_GameInstance->PickupItem(&Pickup->PickupData);
 			UE_LOG(LogTemp, Warning, TEXT("Size of inventory: %d"), m_GameInstance->GetSizeOfInventory());
+
+			// Call the Blueprint OnPickup function which will play animations, shrink the object etc...
+			isPickupPossible = false;
+			OnShrinkAndDestroyPickup(Target, Target->GetActorRelativeScale3D());
 		}
-
-		// Destroy Object
-		//FTimerHandle CountdownTimerHandle;
-		//GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AGuudoCharater::DestroyPickup, 0.5f, false);
-		isPickupPossible = false;
 	}
-
-	OnPickup(m_GameInstance->GetSizeOfInventory(), Target, Target->GetActorRelativeScale3D());
+	
+	// Play Animation and Shake the Camera
+	OnPickupPlayAnimation();
+	GetWorld()->GetFirstPlayerController()->ClientPlayCameraShake(ConsumeShake);
 }
 
 void AGuudoCharater::Shrink()
@@ -470,20 +487,26 @@ void AGuudoCharater::OnShakeOverlapBegin(UPrimitiveComponent* OverLappedComponen
 	bool Found = false;
 	for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
 	{
-		if (m_ShakeList[Index] == OtherComponent)
+		if (m_ShakeList[Index] == OtherActor)
 		{
 			Found = true;
 			break;
 		}
 	}
 
-	// If the Actor isn't on the Shake list, then add it to the Shake list.
-	if (!Found && OtherComponent->ComponentHasTag(FName("Shakeable")))
+	if (!Found)
 	{
-		m_ShakeList.Add(OtherComponent);
-		UE_LOG(LogTemp, Warning, TEXT("Shake list size: %d"), m_ShakeList.Num());
-	}
+		// Perform Casts
+		UStaticMeshComponent* CMesh = OtherActor->FindComponentByClass<UStaticMeshComponent>();
+		if (!CMesh) return;
 
+		// If the Actor isn't on the Shake list, then add it to the Shake list.
+		if (CMesh->ComponentHasTag(FName("Shakeable")))
+		{
+			m_ShakeList.Add(OtherActor);
+			UE_LOG(LogTemp, Warning, TEXT("Shake list size: %d"), m_ShakeList.Num());
+		}
+	}
 }
 
 void AGuudoCharater::OnShakeOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
@@ -492,7 +515,7 @@ void AGuudoCharater::OnShakeOverlapEnd(UPrimitiveComponent* OverlappedComp, AAct
 	for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
 	{
 		// Remove the Actor from the Shake list if it's on the Shake list.
-		if (m_ShakeList[Index] == OtherComp)
+		if (m_ShakeList[Index] == OtherActor)
 		{
 			m_ShakeList.RemoveAt(Index, 1, true);
 			UE_LOG(LogTemp, Warning, TEXT("Shake list size: %d"), m_ShakeList.Num());

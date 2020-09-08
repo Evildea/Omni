@@ -16,9 +16,11 @@ public:
 	// Sets default values for this component's properties
 	UShakeable();
 
+	// Get whether the object is on the ground.
+	bool getIsOnGround();
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
-
 		
 };
