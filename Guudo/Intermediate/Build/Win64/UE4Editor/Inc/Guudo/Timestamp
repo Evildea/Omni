@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\Customisation\CustomisationWidget.h
 C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\Customisation\ItemImageWidget.h
 C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\Interactables\Door.h
@@ -14,3 +15,21 @@ C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\PickupData.h
 C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
 C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\Silhouette\SilhouetteWidget.h
 C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\GuudoGameMode.h
+=======
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Customisation\BodyPartSelectionTool.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Customisation\CustomisationWidget.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Customisation\ItemImageWidget.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Customisation\ModularGuudo.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Interactables\Ball.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Interactables\Door.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Interactables\Pickup.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Interactables\PressurePlate.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Interactables\Shakeable.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Interactables\Switch.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\ItemManagement\GuudoGameInstance.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Silhouette\SilhouetteWidget.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\GuudoCharater.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\GuudoGameMode.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\PickupData.h
+>>>>>>> master

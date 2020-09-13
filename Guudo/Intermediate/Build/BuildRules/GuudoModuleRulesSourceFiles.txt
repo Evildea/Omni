@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\Guudo.Build.cs
 C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo.Target.cs
 C:\Users\Daniel\Desktop\Omni\Guudo\Source\GuudoEditor.Target.cs
+=======
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Guudo.Build.cs
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo.Target.cs
+C:\Users\Joshu\Desktop\Omni\Guudo\Source\GuudoEditor.Target.cs
+>>>>>>> master
