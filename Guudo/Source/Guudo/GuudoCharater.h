@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Interactables/Shakeable.h"
 #include "GuudoCharater.generated.h"
 
 UENUM(BlueprintType)
@@ -59,7 +60,7 @@ private:
 
 	// Shaking
 	EWalking m_WalkState;
-	TArray<UPrimitiveComponent*> m_ShakeList;
+	TArray<AActor*> m_ShakeList;
 
 	// Perform Collision check above
 	bool IsCollisionAbove(float Height, float xOffset, float yOffset);
@@ -67,7 +68,6 @@ private:
 	// Timers
 	inline void ResetIsAbleToGrowError() { isAbleToGrow = true; }
 	inline void ResetWalkingState() { m_WalkState = EWalking::Stationary; }
-	//inline void DestroyPickup() { isPickupPossible = false; if (Target != nullptr) { Target->Destroy(); } }
 
 	// Custom Jump for the Character
 	void CustomJump();
@@ -109,6 +109,12 @@ public:
 	// Other Actor
 	UPROPERTY()
 		AActor* Target;
+
+	// Camera Shakes
+	UPROPERTY(EditAnywhere, Category = Camera)
+		TSubclassOf<UCameraShake> ConsumeShake;
+	UPROPERTY(EditAnywhere, Category = Camera)
+		TSubclassOf<UCameraShake> WalkShake;
 
 	// Movement Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -191,7 +197,10 @@ public:
 		void OnSmallToNormal();
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void OnPickup(int CurrentNumberOfItems, AActor* Pickup, FVector OriginalScale);
+		void OnShrinkAndDestroyPickup(AActor* Pickup, FVector OriginalScale);
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnPickupPlayAnimation();
 
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()
