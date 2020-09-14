@@ -16,11 +16,18 @@ public:
 	// Sets default values for this component's properties
 	UShakeable();
 
-	// Get whether the object is on the ground.
-	bool getIsOnGround();
+	// Shake the Actor
+	void Shake(float ShakeStrength, FVector PlayerLocation);
+
+	UPROPERTY(EditAnywhere)
+		class UStaticMeshComponent* Mesh;
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
+
+private:
+	// Actors Height (Auto Calculated)
+	float Height = 80.f;
 		
 };

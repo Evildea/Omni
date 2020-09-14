@@ -144,90 +144,6 @@ void AGuudoCharater::SetPushForce(float Amount)
 	}
 }
 
-// Called every frame
-void AGuudoCharater::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-	// Shake the ground if the Character is Large and Walking
-	if (m_WalkState == EWalking::Walking && m_ScaleState == EScale::Large)
-	{
-		currentShakeFrequency += DeltaTime;
-		if (currentShakeFrequency > ShakeFrequency)
-		{
-			currentShakeFrequency -= ShakeFrequency;
-
-			// Iterate through Shake list and give everything a shake
-			for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
-			{
-				// Check if it is on the ground
-				/*UShakeable* Shakeable = m_ShakeList[Index]->FindComponentByClass<UShakeable>();
-				if (Shakeable)
-				{
-					Shakeable->getIsOnGround();
-				}*/
-
-				//if (!m_ShakeList[Index]->getIsOnGround())
-
-				// Get the Mesh
-				UStaticMeshComponent* CMesh = m_ShakeList[Index]->FindComponentByClass<UStaticMeshComponent>();
-				if (!CMesh) continue;
-
-				// Get Distance
-				FVector RelativePosition = GetActorLocation() - m_ShakeList[Index]->GetActorLocation();
-				float RelativeDistance = RelativePosition.Size();
-				float Strength = (ShakeStrength - ((ShakeStrength / 600.0f) * RelativeDistance)) * CMesh->GetMass();
-
-				// Generate Bounce
-				float randomOffset1 = FMath::FRandRange(-Strength * .5f, Strength * .5f);
-				float randomOffset2 = FMath::FRandRange(-Strength * .5f, Strength * .5f);
-				float randomOffset3 = FMath::FRandRange(0.1f, Strength * .1f);
-				CMesh->AddImpulse(FVector(randomOffset1, randomOffset2, Strength + randomOffset3));
-			}
-
-		}
-
-		// Add Walking Shake
-		GetWorld()->GetFirstPlayerController()->ClientPlayCameraShake(WalkShake);
-	}
-
-	// Set Transparency
-	FVector RelativePosition = GetActorLocation() - Camera->GetComponentLocation();
-	float RelativeDistance = RelativePosition.Size();
-
-	// Select check distance
-	float MinimumDistance = 0.f;
-	float MaxDistance = 0.f;
-
-	switch (m_ScaleState)
-	{
-	case EScale::Small:
-		MaxDistance = 100.0f;
-		MinimumDistance = 50.0f;
-		break;
-	case EScale::Normal:
-		MaxDistance = 150.0f;
-		MinimumDistance = 100.0f;
-		break;
-	case EScale::Large:
-		MaxDistance = 250.0f;
-		MinimumDistance = 200.0f;
-		break;
-	}
-
-	// Perform Calculation
-	if (RelativeDistance < MaxDistance)
-	{
-		float FadeOut = ((1.0f / MinimumDistance) * RelativeDistance) - 0.39f;
-		if (FadeOut > 1.f) { FadeOut = 1.f; }
-		else if (FadeOut < 0.f) { FadeOut = 0.f; }
-		GetMesh()->SetScalarParameterValueOnMaterials("Dither", FadeOut);
-	}
-	else
-		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
-
-}
-
 // Called to bind functionality to input
 void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -477,51 +393,116 @@ void AGuudoCharater::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* O
 	UE_LOG(LogTemp, Warning, TEXT("Exit Zone"));
 }
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Called every frame
+void AGuudoCharater::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	// Shake the ground if the Character is Large and Walking
+	if (m_WalkState == EWalking::Walking && m_ScaleState == EScale::Large)
+	{
+		// Add to Shake Timer
+		currentShakeFrequency += DeltaTime;
+
+		// Shake Everything.
+		if (currentShakeFrequency > ShakeFrequency)
+		{
+			// Reset Shake
+			currentShakeFrequency -= ShakeFrequency;
+
+			// Iterate through Shake list and give everything a shake
+			for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
+			{
+				// Check if the Actor is on the ground or touching something
+				UShakeable* Shakeable = m_ShakeList[Index]->FindComponentByClass<UShakeable>();
+				if (Shakeable)
+					Shakeable->Shake(ShakeStrength, GetActorLocation());
+			}
+
+		}
+
+		// Add Walking Shake
+		GetWorld()->GetFirstPlayerController()->ClientPlayCameraShake(WalkShake);
+	}
+
+	// Set Transparency
+	FVector RelativePosition = GetActorLocation() - Camera->GetComponentLocation();
+	float RelativeDistance = RelativePosition.Size();
+
+	// Select check distance
+	float MinimumDistance = 0.f;
+	float MaxDistance = 0.f;
+
+	switch (m_ScaleState)
+	{
+	case EScale::Small:
+		MaxDistance = 100.0f;
+		MinimumDistance = 50.0f;
+		break;
+	case EScale::Normal:
+		MaxDistance = 150.0f;
+		MinimumDistance = 100.0f;
+		break;
+	case EScale::Large:
+		MaxDistance = 250.0f;
+		MinimumDistance = 200.0f;
+		break;
+	}
+
+	// Perform Calculation
+	if (RelativeDistance < MaxDistance)
+	{
+		float FadeOut = ((1.0f / MinimumDistance) * RelativeDistance) - 0.39f;
+		if (FadeOut > 1.f) { FadeOut = 1.f; }
+		else if (FadeOut < 0.f) { FadeOut = 0.f; }
+		GetMesh()->SetScalarParameterValueOnMaterials("Dither", FadeOut);
+	}
+	else
+		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
+
+}
+
 void AGuudoCharater::OnShakeOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	// Ignore self
 	if (OtherActor == this)
 		return;
 
-	// Check whether the Actor is already on the Shake list
-	bool Found = false;
+	// Check whether the Actor is already on the Shake List. If it is on the Shake List then exit early.
 	for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
 	{
 		if (m_ShakeList[Index] == OtherActor)
-		{
-			Found = true;
-			break;
-		}
+			return;
 	}
 
-	if (!Found)
-	{
-		// Perform Casts
-		UStaticMeshComponent* CMesh = OtherActor->FindComponentByClass<UStaticMeshComponent>();
-		if (!CMesh) return;
 
-		// If the Actor isn't on the Shake list, then add it to the Shake list.
-		if (CMesh->ComponentHasTag(FName("Shakeable")))
-		{
-			m_ShakeList.Add(OtherActor);
-			UE_LOG(LogTemp, Warning, TEXT("Shake list size: %d"), m_ShakeList.Num());
-		}
+	// Check if the Actor has a mesh.
+	UStaticMeshComponent* CMesh = OtherActor->FindComponentByClass<UStaticMeshComponent>();
+	if (!CMesh) return;
+
+	// Check if the Actor has the Shakeable tag.
+	if (CMesh->ComponentHasTag(FName("Shakeable")))
+	{
+		// Add the Actor to the Shake List.
+		m_ShakeList.Add(OtherActor);
+		UE_LOG(LogTemp, Warning, TEXT("Shake List: %d"), m_ShakeList.Num());
 	}
 }
 
 void AGuudoCharater::OnShakeOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	// Check whether the Actor is already on the Shake list.
+	// Check whether the Actor is already on the Shake list and remove it.
 	for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)
 	{
-		// Remove the Actor from the Shake list if it's on the Shake list.
 		if (m_ShakeList[Index] == OtherActor)
 		{
 			m_ShakeList.RemoveAt(Index, 1, true);
-			UE_LOG(LogTemp, Warning, TEXT("Shake list size: %d"), m_ShakeList.Num());
-			break;
+			UE_LOG(LogTemp, Warning, TEXT("Shake List: %d"), m_ShakeList.Num());
+			return;
 		}
 	}
-
 
 }
