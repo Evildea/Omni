@@ -78,9 +78,6 @@ public:
 
 	/// FUNCTIONS ////////////////////////////////////////////////////////////
 
-	// Constructor
-	UCustomisationWidget(const FObjectInitializer& ObjectInitializer);
-
 	// UE4 Functions
 	virtual void NativeConstruct() override;
 	virtual bool Initialize() override;

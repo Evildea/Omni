@@ -11,11 +11,6 @@
 #include "Components/ProgressBar.h"
 #include "../ItemManagement/GuudoGameInstance.h"
 
-UCustomisationWidget::UCustomisationWidget(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
-{
-
-}
-
 void UCustomisationWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
