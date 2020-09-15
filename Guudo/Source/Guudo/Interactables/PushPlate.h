@@ -23,6 +23,10 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	// Root for the Scene Component
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class USceneComponent* Root;
+
 	// Mesh for the Push Plate
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* Mesh;
