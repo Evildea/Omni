@@ -202,6 +202,10 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnPickupPlayAnimation();
 
+	// Make Guudo Follow a Path
+	UFUNCTION(BlueprintImplementableEvent)
+		void FollowPath(class APushPlate* Path, float Duration);
+
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()
 		void OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);

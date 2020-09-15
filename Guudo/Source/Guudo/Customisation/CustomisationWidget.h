@@ -120,11 +120,17 @@ public:
 private:
 
 	/// PROPERTIES ////////////////////////////////////////////////////////////
+	UPROPERTY()
 	class ABodyPartSelectionTool*	m_BodyPartSelectionTool;	// Reference to the Body Part Selection Tool.
+	UPROPERTY()
 	class UGuudoGameInstance*		m_GameInstance;				// Reference to the Game Instance.
+	UPROPERTY()
 	TArray<UItemImageWidget*>		m_ListOfHeadWidgets;		// List of Widgets that represent equipable Head Items.
+	UPROPERTY()
 	TArray<UItemImageWidget*>		m_ListOfChestWidgets;		// List of Widgets that represent equipable Chest Items.
+	UPROPERTY()
 	TArray<UItemImageWidget*>		m_ListOfArmWidgets;			// List of Widgets that represent equipable Arm Items.
+	UPROPERTY()
 	TArray<UItemImageWidget*>		m_ListOfLegWidgets;			// List of Widgets that represent equipable Leg Items.
 	bool							m_HasPressedDone = false;	// Has the Player Pressed the Done Button.
 

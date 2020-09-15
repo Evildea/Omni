@@ -41,6 +41,7 @@ AGuudoCharater::AGuudoCharater()
 	GetCapsuleComponent()->SetGenerateOverlapEvents(true);
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AGuudoCharater::OnOverlapBegin);
 	GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AGuudoCharater::OnOverlapEnd);
+	GetCapsuleComponent()->ComponentTags.Add(FName("Player"));
 
 	// Shake Collider Component
 	ShakeCollider = CreateDefaultSubobject<USphereComponent>("ObjectNearbyCollider");
