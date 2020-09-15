@@ -24,15 +24,19 @@ public:
 	/// MODULAR BODY PARTS ////////////////////////////////////////////////////
 
 	// Modular Head (Can be swapped by the CustomsationWidget)
+	UPROPERTY(VisibleAnywhere)
 	class USkeletalMeshComponent* ModularHead;
 
 	// Modular Chest (Can be swapped by the CustomsationWidget)
+	UPROPERTY(VisibleAnywhere)
 	class USkeletalMeshComponent* ModularChest;
 
 	// Modular Arms (Can be swapped by the CustomsationWidget)
+	UPROPERTY(VisibleAnywhere)
 	class USkeletalMeshComponent* ModularArms;
 
 	// Modular Legs (Can be swapped by the CustomsationWidget)
+	UPROPERTY(VisibleAnywhere)
 	class USkeletalMeshComponent* ModularLegs;
 	
 	/// FUNCTIONS /////////////////////////////////////////////////////////////
