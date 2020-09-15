@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Interactables/Shakeable.h"
+#include "Customisation/InventoryWidget.h"
 #include "GuudoCharater.generated.h"
 
 UENUM(BlueprintType)
@@ -110,6 +111,11 @@ public:
 	UPROPERTY()
 		AActor* Target;
 
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		TSubclassOf<UInventoryWidget> InventoryWidgetClass;
+	UPROPERTY()
+		UInventoryWidget* InventoryWidget;
+
 	// Camera Shakes
 	UPROPERTY(EditAnywhere, Category = Camera)
 		TSubclassOf<UCameraShake> ConsumeShake;
@@ -162,6 +168,7 @@ public:
 	void Shrink();
 	void Grow();
 	void Interact();
+	void OpenInventory();
 
 	// Set the Growth State (Growing or not?)
 	UFUNCTION(BlueprintCallable)
