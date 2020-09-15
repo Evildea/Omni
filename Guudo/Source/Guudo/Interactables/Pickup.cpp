@@ -33,7 +33,13 @@ void UPickup::BeginPlay()
 		UE_LOG(LogTemp, Error, TEXT("[%s] Failed to setup Collision Component for Pickup"), *GetOwner()->GetName());
 	}
 
+	// Setup the Mesh
+	UStaticMeshComponent* Mesh = GetOwner()->FindComponentByClass<UStaticMeshComponent>();
+	Mesh->SetRenderCustomDepth(true);
+	Mesh->SetCustomDepthStencilValue(1);
+
 	// Add the Pushable Tag
 	GetOwner()->Tags.Add(FName("Pushable"));
+
 	
 }
