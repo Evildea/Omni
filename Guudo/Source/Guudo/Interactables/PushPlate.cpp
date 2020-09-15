@@ -4,6 +4,7 @@
 #include "PushPlate.h"
 #include "Components/SplineComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Components/SceneComponent.h"
 #include "Components/BoxComponent.h"
 #include "../GuudoCharater.h"
 #include "GameFramework/Actor.h"
@@ -14,9 +15,13 @@ APushPlate::APushPlate()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	// Set up the Root
+	Root = CreateDefaultSubobject<USceneComponent>("Root");
+	RootComponent = Root;
+
 	// Set up the Mesh
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
-	RootComponent = Mesh;
+	Mesh->SetupAttachment(RootComponent);
 
 	// Setup the Track
 	Path = CreateDefaultSubobject<USplineComponent>("Track");
