@@ -19,19 +19,6 @@ void UPickup::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// Setup the Main Mesh so it's affected by gravity and shakes otherwise pump out an error message for the Designer.
-	//if (isPhysicsEnabled)
-	//{
-	//	UStaticMeshComponent* Mesh = GetOwner()->FindComponentByClass<UStaticMeshComponent>();
-	//	if (Mesh)
-	//	{
-	//		Mesh->SetMobility(EComponentMobility::Movable);
-	//		Mesh->SetGenerateOverlapEvents(true);
-	//		Mesh->SetSimulatePhysics(true);
-	//		Mesh->ComponentTags.Add(FName("Shakeable"));
-	//	}
-	//}
-
 	// Setup the Main Collider so it's configured for pickup otherwise pump out an error message for the Designer.
 	USphereComponent* PickupRange = GetOwner()->FindComponentByClass<USphereComponent>();
 	if (PickupRange)
