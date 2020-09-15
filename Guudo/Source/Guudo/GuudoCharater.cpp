@@ -156,6 +156,7 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AGuudoCharater::CustomJump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	PlayerInputComponent->BindAction("Pickup", IE_Pressed, this, &AGuudoCharater::Pickup);
+	PlayerInputComponent->BindAction("Inventory", IE_Pressed, this, &AGuudoCharater::OpenInventory);
 
 	PlayerInputComponent->BindAction("Shrink", IE_Pressed, this, &AGuudoCharater::Shrink);
 	PlayerInputComponent->BindAction("Grow", IE_Pressed, this, &AGuudoCharater::Grow);
@@ -338,6 +339,27 @@ void AGuudoCharater::Interact()
 	// Interact with a switch
 	if (m_TargetSwitch)
 		m_TargetSwitch->FlickSwitch();
+}
+
+void AGuudoCharater::OpenInventory()
+{
+	// If the Inventory Widget doesn't exist, then create it.
+	if (!InventoryWidget)
+		InventoryWidget = Cast<UInventoryWidget>(CreateWidget<UUserWidget>(GetWorld(), InventoryWidgetClass));
+
+	// Check if the Widget successfully created
+	if (!InventoryWidget)
+		return;
+
+	// Display the Inventory Widget
+	if (InventoryWidget->GetIsVisible())
+		InventoryWidget->RemoveFromViewport();
+	else
+	{
+		InventoryWidget->AddToViewport();
+		InventoryWidget->RefreshContent();
+	}
+
 }
 
 void AGuudoCharater::SetGrowthState(EGrowth GrowthState)
