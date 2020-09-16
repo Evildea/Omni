@@ -78,10 +78,9 @@ void AGuudoCharater::BeginPlay()
 
 	// Set variables
 	m_TargetSwitch = nullptr;
-	isPickupPossible = false;
-	isAbleToGrow = true;
-	currentEnergy = 0;
-	currentShakeFrequency = 0;
+	m_isPickupPossible = false;
+	m_isAbleToGrow = true;
+	m_CurrentShakeDelta = 0;
 	m_ScaleState = EScale::Normal;
 	m_GrowthState = EGrowth::Unchanging;
 	m_WalkState = EWalking::Stationary;
@@ -131,6 +130,8 @@ void AGuudoCharater::CustomJump()
 		GetCharacterMovement()->JumpZVelocity = LargeJumpHeight;
 		break;
 	}
+	if (JumpSounds)
+		UGameplayStatics::PlaySoundAtLocation(this, JumpSounds, GetActorLocation());
 	Jump();
 }
 
@@ -166,7 +167,7 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAxis("MoveForward", this, &AGuudoCharater::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AGuudoCharater::MoveRight);
 
-	PlayerInputComponent->BindAxis("Scroll", this, &AGuudoCharater::Scroll);
+	PlayerInputComponent->BindAxis("Scroll", this, &AGuudoCharater::ChangeSize);
 }
 
 void AGuudoCharater::MoveForward(float axis)
@@ -233,7 +234,7 @@ void AGuudoCharater::MoveRight(float axis)
 	AddMovementInput(Direction, axis);
 }
 
-void AGuudoCharater::Scroll(float axis)
+void AGuudoCharater::ChangeSize(float axis)
 {
 	if (axis > 0.f)
 		Grow();
@@ -244,12 +245,13 @@ void AGuudoCharater::Scroll(float axis)
 void AGuudoCharater::Pickup()
 {
 	// If Pickup is permited then pickup the Object
-	if (isPickupPossible)
+	if (m_isPickupPossible)
 	{
 		// Play consume sound
-		UGameplayStatics::SpawnSoundAttached(ConsumeSound, this->GetRootComponent());
+		if(ConsumeSounds)
+			UGameplayStatics::SpawnSoundAttached(ConsumeSounds, this->GetRootComponent());
 
-		UPickup* Pickup = Target->FindComponentByClass<UPickup>();
+		UPickup* Pickup = ConsumeTarget->FindComponentByClass<UPickup>();
 
 		if (m_GameInstance && Pickup)
 		{
@@ -257,9 +259,14 @@ void AGuudoCharater::Pickup()
 			UE_LOG(LogTemp, Warning, TEXT("Size of inventory: %d"), m_GameInstance->GetSizeOfInventory());
 
 			// Call the Blueprint OnPickup function which will play animations, shrink the object etc...
-			isPickupPossible = false;
-			OnShrinkAndDestroyPickup(Target, Target->GetActorRelativeScale3D());
+			m_isPickupPossible = false;
+			OnShrinkAndDestroyPickup(ConsumeTarget, ConsumeTarget->GetActorRelativeScale3D());
 		}
+	}
+	// Otherwise play a fail consume sound
+	else if (FailConsumeSounds)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, FailConsumeSounds, GetActorLocation());
 	}
 	
 	// Play Animation and Shake the Camera
@@ -279,6 +286,8 @@ void AGuudoCharater::Shrink()
 		SetPushForce(NormalPushForce);
 		m_GrowthState = EGrowth::Changing;
 		m_ScaleState = EScale::Normal;
+		if (ShrinkSounds)
+			UGameplayStatics::PlaySoundAtLocation(this, ShrinkSounds, GetActorLocation());
 		OnLargeToNormal();
 		return;
 	}
@@ -287,6 +296,8 @@ void AGuudoCharater::Shrink()
 		SetPushForce(SmallPushForce);
 		m_GrowthState = EGrowth::Changing;
 		m_ScaleState = EScale::Small;
+		if (ShrinkSounds)
+			UGameplayStatics::PlaySoundAtLocation(this, ShrinkSounds, GetActorLocation());
 		OnNormalToSmall();
 		return;
 	}
@@ -313,6 +324,8 @@ void AGuudoCharater::Grow()
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Large;
 			PushCollider->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
+			if (GrowSounds)
+				UGameplayStatics::PlaySoundAtLocation(this, GrowSounds, GetActorLocation());
 			OnNormalToLarge();
 			return;
 		}
@@ -322,6 +335,8 @@ void AGuudoCharater::Grow()
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Normal;
 			PushCollider->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
+			if (GrowSounds)
+				UGameplayStatics::PlaySoundAtLocation(this, GrowSounds, GetActorLocation());
 			OnSmallToNormal();
 			return;
 		}
@@ -330,7 +345,7 @@ void AGuudoCharater::Grow()
 	{
 		FTimerHandle Countdown;
 		GetWorldTimerManager().SetTimer(Countdown, this, &AGuudoCharater::ResetIsAbleToGrowError, 1.f, false);
-		isAbleToGrow = false;
+		m_isAbleToGrow = false;
 	}
 }
 
@@ -338,7 +353,11 @@ void AGuudoCharater::Interact()
 {
 	// Interact with a switch
 	if (m_TargetSwitch)
+	{
 		m_TargetSwitch->FlickSwitch();
+		if (InteractSounds)
+			UGameplayStatics::PlaySoundAtLocation(this, InteractSounds, GetActorLocation());
+	}
 }
 
 void AGuudoCharater::OpenInventory()
@@ -394,8 +413,8 @@ void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AA
 	// If within range of "Pickup" to permit pickup possibilities
 	if (OtherComponent->ComponentHasTag("Pickup"))
 	{
-		isPickupPossible = true;
-		Target = OtherActor;
+		m_isPickupPossible = true;
+		ConsumeTarget = OtherActor;
 	}
 
 	// If within range of "Switch" to permit button pressing
@@ -407,7 +426,7 @@ void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AA
 
 void AGuudoCharater::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	isPickupPossible = false;
+	m_isPickupPossible = false;
 
 	// If exiting switch zone
 	if (Cast<ASwitch>(OtherActor))
@@ -428,13 +447,13 @@ void AGuudoCharater::Tick(float DeltaTime)
 	if (m_WalkState == EWalking::Walking && m_ScaleState == EScale::Large)
 	{
 		// Add to Shake Timer
-		currentShakeFrequency += DeltaTime;
+		m_CurrentShakeDelta += DeltaTime;
 
 		// Shake Everything.
-		if (currentShakeFrequency > ShakeFrequency)
+		if (m_CurrentShakeDelta > ShakeFrequency)
 		{
 			// Reset Shake
-			currentShakeFrequency -= ShakeFrequency;
+			m_CurrentShakeDelta -= ShakeFrequency;
 
 			// Iterate through Shake list and give everything a shake
 			for (int32 Index = 0; Index != m_ShakeList.Num(); ++Index)

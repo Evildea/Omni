@@ -59,7 +59,7 @@ void APushPlate::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor
 		AGuudoCharater* Player = Cast<AGuudoCharater>(OtherActor);
 		if (OtherActor)
 		{
-			Player->FollowPath(this, Duration);
+			Player->OnFollowPath(this, Duration);
 			m_HasPathActivated = true;
 
 			if (CanReactivate)
