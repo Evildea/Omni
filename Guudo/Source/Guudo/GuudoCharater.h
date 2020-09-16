@@ -219,7 +219,7 @@ public:
 
 	// Make Guudo Follow a Path
 	UFUNCTION(BlueprintImplementableEvent)
-		void FollowPath(class APushPlate* Path, float Duration);
+		void OnFollowPath(class APushPlate* Path, float Duration);
 
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()
