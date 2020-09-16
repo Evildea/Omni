@@ -127,8 +127,15 @@ public:
 		float RotationSpeed = 540.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float AirMovability = 0.2f;
+
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		class USoundBase* ConsumeSound;
+		class USoundBase* ConsumeSounds;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* JumpSounds;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* GrowSounds;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* ShrinkSounds;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float SmallRunSpeed = 1200.0f;

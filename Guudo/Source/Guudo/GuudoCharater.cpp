@@ -131,6 +131,8 @@ void AGuudoCharater::CustomJump()
 		GetCharacterMovement()->JumpZVelocity = LargeJumpHeight;
 		break;
 	}
+	if (JumpSounds)
+		UGameplayStatics::PlaySoundAtLocation(this, JumpSounds, GetActorLocation());
 	Jump();
 }
 
@@ -247,7 +249,8 @@ void AGuudoCharater::Pickup()
 	if (isPickupPossible)
 	{
 		// Play consume sound
-		UGameplayStatics::SpawnSoundAttached(ConsumeSound, this->GetRootComponent());
+		if(ConsumeSounds)
+			UGameplayStatics::SpawnSoundAttached(ConsumeSounds, this->GetRootComponent());
 
 		UPickup* Pickup = Target->FindComponentByClass<UPickup>();
 
@@ -279,6 +282,8 @@ void AGuudoCharater::Shrink()
 		SetPushForce(NormalPushForce);
 		m_GrowthState = EGrowth::Changing;
 		m_ScaleState = EScale::Normal;
+		if (ShrinkSounds)
+			UGameplayStatics::PlaySoundAtLocation(this, ShrinkSounds, GetActorLocation());
 		OnLargeToNormal();
 		return;
 	}
@@ -287,6 +292,8 @@ void AGuudoCharater::Shrink()
 		SetPushForce(SmallPushForce);
 		m_GrowthState = EGrowth::Changing;
 		m_ScaleState = EScale::Small;
+		if (ShrinkSounds)
+			UGameplayStatics::PlaySoundAtLocation(this, ShrinkSounds, GetActorLocation());
 		OnNormalToSmall();
 		return;
 	}
@@ -313,6 +320,8 @@ void AGuudoCharater::Grow()
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Large;
 			PushCollider->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
+			if (GrowSounds)
+				UGameplayStatics::PlaySoundAtLocation(this, GrowSounds, GetActorLocation());
 			OnNormalToLarge();
 			return;
 		}
@@ -322,6 +331,8 @@ void AGuudoCharater::Grow()
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Normal;
 			PushCollider->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
+			if (GrowSounds)
+				UGameplayStatics::PlaySoundAtLocation(this, GrowSounds, GetActorLocation());
 			OnSmallToNormal();
 			return;
 		}
