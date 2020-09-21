@@ -106,11 +106,11 @@ bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset
 		// Allow growing next to Pushable objects
 		if (HitResult.GetActor()->ActorHasTag(FName("Pushable")))
 			result = false;
-
-		// Draw a Debug Line
-		if (isDebug)
-			DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor(255, 0, 0), true);
 	}
+
+	// Draw a Debug Line
+	if (isDebug)
+		DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor(255, 0, 0), true);
 
 	// Return result
 	return result;
@@ -310,12 +310,21 @@ void AGuudoCharater::Grow()
 		return;
 
 	// Only allow Growing if there is space to grow
-	float Height = m_ScaleState == EScale::Small ? 160.0f : 260.0f;
+	float Offset = m_ScaleState == EScale::Small ? ScaleUpRestrictionSmall : ScaleUpRestrictionLarge;
+	float Height = Offset * 1.5f;
+	float HalfOffset = Offset * .75f;
+	float HalfHeight = Height * .75f;
 	if (!IsCollisionAbove(Height, 0.0f, 0.0f) &&
-		!IsCollisionAbove(Height, 80.0f, 0.0f) &&
-		!IsCollisionAbove(Height, -80.0f, 0.0f) &&
-		!IsCollisionAbove(Height, 0.0f, 80.0f) &&
-		!IsCollisionAbove(Height, 0.0f, -80.0f))
+		!IsCollisionAbove(0.0f, Offset, 0.0f) &&
+		!IsCollisionAbove(0.0f, -Offset, 0.0f) &&
+		!IsCollisionAbove(0.0f, 0.0f, Offset) &&
+		!IsCollisionAbove(0.0f, 0.0f, -Offset) &&
+		!IsCollisionAbove(HalfHeight, HalfOffset, 0.0f) &&
+		!IsCollisionAbove(HalfHeight, -HalfOffset, 0.0f) &&
+		!IsCollisionAbove(HalfHeight, 0.0f, HalfOffset) &&
+		!IsCollisionAbove(HalfHeight, 0.0f, -HalfOffset)
+
+		)
 	{
 		// Set the new Scale
 		if (m_ScaleState == EScale::Normal)

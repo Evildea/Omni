@@ -164,6 +164,11 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float ShakeStrength = 300.0f;
 
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float ScaleUpRestrictionSmall = 40.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		float ScaleUpRestrictionLarge = 80.0f;
+
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		bool isDebug = false;
