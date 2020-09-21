@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Interactables/Shakeable.h"
+#include "Customisation/InventoryWidget.h"
 #include "GuudoCharater.generated.h"
 
 UENUM(BlueprintType)
@@ -43,13 +44,10 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-	bool isPickupPossible;	// Can't pickup because already picking up
-	bool isAbleToGrow;		// Can the player Grow here.
-	int currentEnergy;		// Current Energy level.
-	float currentShakeFrequency;
-
-	// Game Instance
-	class UGuudoGameInstance* m_GameInstance = nullptr;
+	bool m_isPickupPossible;							// Can't pickup because already picking up
+	bool m_isAbleToGrow;								// Can the player Grow here.
+	float m_CurrentShakeDelta = 0.f;					// How far the Character is through a walk shake
+	class UGuudoGameInstance* m_GameInstance = nullptr; // Reference to the Game Instance
 
 	// Interacting
 	class ASwitch* m_TargetSwitch;
@@ -66,8 +64,8 @@ private:
 	bool IsCollisionAbove(float Height, float xOffset, float yOffset);
 
 	// Timers
-	inline void ResetIsAbleToGrowError() { isAbleToGrow = true; }
-	inline void ResetWalkingState() { m_WalkState = EWalking::Stationary; }
+	inline void ResetIsAbleToGrowError()	{ m_isAbleToGrow = true; }
+	inline void ResetWalkingState()			{ m_WalkState = EWalking::Stationary; }
 
 	// Custom Jump for the Character
 	void CustomJump();
@@ -106,9 +104,14 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = Camera)
 		class UCapsuleComponent* PushCollider;
 
-	// Other Actor
+	// Target of Pickup or Consume
 	UPROPERTY()
-		AActor* Target;
+		AActor* ConsumeTarget;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		TSubclassOf<UInventoryWidget> InventoryWidgetClass;
+	UPROPERTY()
+		UInventoryWidget* InventoryWidget;
 
 	// Camera Shakes
 	UPROPERTY(EditAnywhere, Category = Camera)
@@ -121,8 +124,19 @@ public:
 		float RotationSpeed = 540.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float AirMovability = 0.2f;
+
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		class USoundBase* ConsumeSound;
+		class USoundBase* ConsumeSounds;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* FailConsumeSounds;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* InteractSounds;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* JumpSounds;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* GrowSounds;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* ShrinkSounds;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float SmallRunSpeed = 1200.0f;
@@ -157,11 +171,12 @@ public:
 	// FUNCTIONS /////////////////////////////////////////////////
 	void MoveForward(float axis);
 	void MoveRight(float axis);
-	void Scroll(float axis);
+	void ChangeSize(float axis);
 	void Pickup();
 	void Shrink();
 	void Grow();
 	void Interact();
+	void OpenInventory();
 
 	// Set the Growth State (Growing or not?)
 	UFUNCTION(BlueprintCallable)
@@ -173,7 +188,7 @@ public:
 
 	// Get if the Character can grow here (used by Widget)
 	UFUNCTION(BlueprintPure)
-		inline bool GetIsAbleToGrow() { return isAbleToGrow; }
+		inline bool GetIsAbleToGrow() { return m_isAbleToGrow; }
 
 	// Get the current Size of the Character
 	UFUNCTION(BlueprintPure)
@@ -204,7 +219,7 @@ public:
 
 	// Make Guudo Follow a Path
 	UFUNCTION(BlueprintImplementableEvent)
-		void FollowPath(class APushPlate* Path, float Duration);
+		void OnFollowPath(class APushPlate* Path, float Duration);
 
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()
