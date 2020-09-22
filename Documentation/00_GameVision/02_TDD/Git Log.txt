@@ -1,0 +1,5597 @@
+commit ff8fef6a80b21e471d8d3fc4fffe8854b70dab62
+Merge: b5d54424 d823ef10
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 22 12:57:51 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b5d544247de6d6bf3ca37ce09c60d1da2d1a7715
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 22 12:55:49 2020 +1000
+
+    Modified: Foliage Master MTL, Added: LeafyFern, Elephant Leaf, Tree MTLs
+    
+    added all foliage materials into instances of the master, reimported and updated the old greybox models with beta ones. Begun setdressing with newer models to fix flow of jungle.
+
+commit d823ef108f9c317f05402f65a7e15f464185da4d
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 22 12:51:51 2020 +1000
+
+    Modified: Silhouette Graphic Flipping
+    
+    I've modified the silhouette so it automatically flips the graphic.
+
+commit 85095a38ece55bd32e184a635f397be84e2cb0a6
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 22 12:41:20 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 22c66c0700391fdb58b0d26fd269073b0dbf0675
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 22 12:31:16 2020 +1000
+
+    Added: Light Stand Maya File
+
+commit 3460146f7f6e9da91eedec2dc7b720c6571c273a
+Merge: 08681c79 55b36633
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 22 12:16:16 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 08681c79f00709325bc564b2a2b7fcdfb272e905
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 22 12:16:07 2020 +1000
+
+    Modified: SM_Fan, 00_TutorialMap
+    
+    Adjusted pivot point, adjusted stencil depth settings
+
+commit 55b3663364c309101cf9841d89218888c6298563
+Merge: 7b1ebc78 c4187480
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 22 12:06:17 2020 +1000
+
+    Merge branch 'Development'
+
+commit c418748003ea7eff8cbeb74e600a0077d5ca1f38
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 22 12:05:54 2020 +1000
+
+    Modified: TDD Completed
+    
+    I've completed the TDD
+
+commit 7b1ebc78ce0764f19fdc18d379c61ee62bc65b5e
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 22 12:02:01 2020 +1000
+
+    Modified PP_Scan
+    
+    Fixed parameter inputs
+
+commit 60035d2b1c46fd8c852399131147213adbc45150
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 22 11:29:57 2020 +1000
+
+    Modified: PirateShip_BP, 03_LevelThreeCaribbean
+    
+    Added doors to the pirate ship blueprint, and added pirate ship blueprint to carribean level
+
+commit bed1f521770d918c0c4ecd449a26a3533a82dc17
+Merge: 904c6f71 7bf01009
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 22 11:17:04 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 904c6f715b0413c48607ba53e3163ea6a63bff30
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 22 11:16:56 2020 +1000
+
+    Added:SM_DeskChair Modified: SM_Cabin Door
+
+commit 7bf0100959056e6a979a698c51459cffab791cb5
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 22 11:12:32 2020 +1000
+
+    Modified: GDD V3.4
+    
+    Added User Journey Maps
+
+commit 30c39b301cb7426c128018bd4b2ede74ea398714
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 22 10:58:53 2020 +1000
+
+    Added: All finished pickups to skeleton and silhouettes done
+    
+    Finished putting the body parts onto the skeleton and imported into UE4, silhouettes for each body part finished as well and added into engine
+
+commit c403beb7ffa698dc51b6227c2abf3f0bfe97fbf0
+Merge: cb420ec5 a6d9a547
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 22 10:04:23 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a6d9a547433af30cf0e6771bbb668237c971a586
+Merge: b51f1384 9a6c18ca
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 22 08:35:44 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b51f1384a8a5aba86b022581c69e12141b94613d
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 22 08:35:29 2020 +1000
+
+    Modified: SM_Flintlock, SM_Musket
+
+commit 9a6c18ca4ce1d0d6f20a04bc20661c962238889d
+Author: Mitch <mitchellbsayer@gmail.com>
+Date:   Tue Sep 22 02:37:53 2020 +1000
+
+    Modified: GDD V3.3
+    
+    Controls layout edited, and GDD updated awaiting loops  to be implemented
+
+commit cb420ec541a874cde7566c9860e1c031f0d768df
+Merge: 3cff772e 5229e440
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 21 16:59:25 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 3cff772ea6867ae386d33dd90b40c63794db0027
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 21 16:59:05 2020 +1000
+
+    Added: Master Foliage Shader to UE4 Scene
+    
+    added a master foliage mtl to be instanced for the foliage FBX's
+
+commit 5229e44089c7fdf1972806a73b7712ade835d3a6
+Merge: 2a5ba17d 8f909e14
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 21 16:54:30 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2a5ba17d6937a94dd2395ac1885e4203a2459cc1
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 21 16:54:20 2020 +1000
+
+    Modified: GDD V3.2.1 + Project Scenes added
+    
+    Added concept art to GDD+ Levels have been separated
+
+commit 8f909e145d9cc441beeb1e845426e8d6c84f6acb
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 21 16:02:47 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit cb4a72ba472fae83945de365807fbf59694ac13a
+Merge: 3061554a d7e86b8f
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 21 16:02:33 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 3061554aef567b747cd9f9267d3073d573f8032b
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 21 16:02:26 2020 +1000
+
+    Modified: I've improved the Scale Up Detection
+    
+    I've improved the scale up detection and also added a designer debug setting so they can test to see if that is the issue.
+
+commit d7e86b8f7e56fce6c74485cebd78c9d8d383e8ba
+Merge: 91f95144 7bbce0f4
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 21 16:01:34 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 91f951446b69f55ece2ee1f7514ca2aac7e5d943
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 21 16:01:25 2020 +1000
+
+    Added: Vine Modular Pack FBX
+    
+    created Vine FBX models to replace unoptimized blockout models. Created a texture set and variations FBX models.
+
+commit 7bbce0f492dd2941d1a8e053e33876b84bae4c11
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 21 16:00:47 2020 +1000
+
+    Modified: Multiple Props
+    
+    SM_Fan, SM_FanwBase,SM_KegwStand,SM_Keg, SM_Scroll, SM_PegLeg
+
+commit 90c17cbe8a7cc4741937e807d1689ba4eea78f69
+Merge: 69ef9c73 ddcd7c5f
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 21 15:38:37 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 69ef9c733ac48e0f06fda14815086e494b40308f
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 21 15:37:54 2020 +1000
+
+    Added: SM_Fan, SM_FanwBase, SM_PirateShip Prop
+
+commit ddcd7c5fd148d349832ad61156c6c16cfbc1e8bc
+Merge: 87079946 0cb88119
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 21 15:03:20 2020 +1000
+
+    Merge branch 'Development'
+
+commit 0cb881196533a07b97ea5930c5d32765a13d4c30
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 21 14:59:43 2020 +1000
+
+    Modified: TDD
+    
+    I've updated the document extensively
+
+commit 87079946191a755ba72da14ea73b2660edb8c368
+Merge: cfc9d636 8b7adf21
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 21 14:15:49 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit cfc9d6368376385ce6c2ee3e2d0d525df47bdd02
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 21 14:15:25 2020 +1000
+
+    Modified: Foliage Folder Assets
+    
+    Updated foliage folder assets with fully completed pipeline models and substance designer textures.
+
+commit b7bcd736b443a74262faa1ca8a9e82a5d418aaae
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 21 12:52:00 2020 +1000
+
+    Modified: Mitch_AdvGB
+    
+    Barrels Physics Attached + now shakeable
+
+commit 8b7adf2155f7ce7d528160fe2cc987fc3cdabda3
+Merge: b106c21f 70369f06
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 21 12:41:48 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b106c21f8ee2926c03e2df9f862457917395b729
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 21 12:41:43 2020 +1000
+
+    Modified: Mitch_AdvGB
+    
+    Physics still being added
+
+commit 40bd756d47bc33336cdebd992cb3d9488133f52b
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 21 12:37:55 2020 +1000
+
+    Added: Pirate Ship Prop
+    
+    added pirate ship prop with collision
+
+commit 70369f06d028e6a00bb842f84812d03bd890a578
+Merge: 1e129a06 342ee292
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 21 11:57:44 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 1e129a0627d25f0fe40d14dc198c421e4efdf30c
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 21 11:57:38 2020 +1000
+
+    Modified: Alien Gun
+
+commit 342ee292a2a8ad232bdd0934bca0bb1ac85591b1
+Merge: bb851667 183569d8
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 21 11:51:32 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit bb8516670bb85459647b81f2b3d1139997e91014
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 21 11:51:26 2020 +1000
+
+    Modified: Mitch_AdvGB Physics added to some objects
+
+commit 183569d88ee7f933f7d4cf22fb670ed4a30e16f7
+Merge: 017aa945 f38da017
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 21 11:49:32 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 017aa9450f1d1b2311c946bdad8a6f66142fd592
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 21 11:49:26 2020 +1000
+
+    Added:Alien Gun
+    
+    alien gun Sm
+
+commit f38da01748049cfa89a3ff87b8366a2b6e76cf3a
+Author: Tiana Knobloch <xianta@hotmail.com>
+Date:   Mon Sep 21 11:01:42 2020 +1000
+
+    Modified: File name change
+
+commit 43d9b3d97845acac10ca6cb657367e3aeb85f3a6
+Author: Tiana Knobloch <xianta@hotmail.com>
+Date:   Mon Sep 21 10:25:04 2020 +1000
+
+    Added: Body Parts onto skeleton
+    
+    SK's created for current pickups finished and exported
+
+commit 77f51e72b406c4829e7a5299ace715c6b45ded5a
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 21 10:15:29 2020 +1000
+
+    Modified: Customisation Screen Layout + Game Scene Start
+    
+    Customisation screen now replicates starting area, more coherent in story telling.
+
+commit 5f6b23593305be2c0c965282650a3a8d9b0b0d9b
+Merge: 8f043a36 4f039fc6
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 21 09:52:17 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 4f039fc6125567be9193b207d96e2baeacdec1bd
+Merge: bf0b7bbd d67ffd43
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 21 08:47:21 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit bf0b7bbd0cc824a9983b8021f4fc3fba98284948
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 21 08:46:27 2020 +1000
+
+    Added and Modified various Props
+    
+    Added: SM_Open Book, SM_Long Desk, Modified SM_Book, SM_Computer Tower, SM_Desk, SM_GuudoUFO, SM_Keyboard, SM_Mouse, SM_Round Table
+
+commit d67ffd43337420d286f5379095b4e57ad57f5f0f
+Author: Mitch <mitchellbsayer@gmail.com>
+Date:   Mon Sep 21 01:44:09 2020 +1000
+
+    Modified: GDD V3.2
+    
+    Added Concept Art for Level Design
+
+commit d48a38a21dda86a951a967b245541ca7fcd97aa7
+Author: Mitch <mitchellbsayer@gmail.com>
+Date:   Sun Sep 20 22:54:14 2020 +1000
+
+    Modified: GDD V3.1.1
+    
+    Made changes prepping for Level Design revert
+
+commit 21aafd39c688c9655c2964b00279f054f4a28772
+Merge: 48063de2 947045cd
+Author: Mitch <mitchellbsayer@gmail.com>
+Date:   Sun Sep 20 15:05:28 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 48063de213e2f5e1383d73acf9d40780bf3eb059
+Author: Mitch <mitchellbsayer@gmail.com>
+Date:   Sun Sep 20 15:04:31 2020 +1000
+
+    Modified: GDD: V3.1
+    
+    Finalised visuals added sections that need information
+
+commit 947045cd6738e6d4addf9e5ea4a33e2475c5d741
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Sat Sep 19 14:16:53 2020 +1000
+
+    Modified: PP_Scan
+    
+    Improved masking quality of the scan effects and added panning gradient option for pickup items
+
+commit 4ff045f441660dd0ed8abc816af66489a7ecb3ac
+Author: Mitch <mitchellbsayer@gmail.com>
+Date:   Sat Sep 19 12:59:29 2020 +1000
+
+    Modified: Level Transition
+    
+    Intro scene will now go to Mitch_AdvGB
+
+commit a01a1dbc3a66add450562776c9f3d7afb9895869
+Merge: 1e671457 2d7d372d
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Fri Sep 18 16:26:00 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 1e671457ce5a608f9cba57f4f23e7d6dc47175a0
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Fri Sep 18 16:25:52 2020 +1000
+
+    Modified: Scifi Wall FBX UV's and added variations to Wall_5
+    
+    UV'd all Scifi walls and compiled them into an Atlas, completed two variations of Wall_5 to have more variance between environments.
+
+commit 2d7d372de4d05d227ae8a3ca6862be417400d481
+Author: Mitch <mitchellbsayer@gmail.com>
+Date:   Fri Sep 18 15:29:45 2020 +1000
+
+    Modified: Guudo Mats Bug Fixed
+    
+    Guudos skin wont fall off him now
+
+commit 86e00925f322f407dae72cde84c0d42ff889bc02
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Fri Sep 18 15:22:59 2020 +1000
+
+    Modified: Mitch_AdvGB level
+    
+    Set Stairs 5 to not simulate physics
+
+commit 2b506d8ef3b842ee127017cd881ecb071972da18
+Author: Mitch <mitchellbsayer@gmail.com>
+Date:   Fri Sep 18 11:13:02 2020 +1000
+
+    Modified: Level Transition Updated
+    
+    Changed loading from Main Menu to Mitch_AdvGB
+
+commit 5f12fd5026dfd55c1b5566b2c550004671fdb518
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Wed Sep 16 21:57:01 2020 +1000
+
+    Added: Mushroom Pickup FBX to engine and Normal Bakes
+    
+    added the completed mushroom pickup FBX, setup material instance for it and inserted normal bake to T folder
+
+commit 801dae72a7893cc0194fa61ce095a94f7675463c
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Wed Sep 16 17:25:32 2020 +1000
+
+    Added: Vine and Crystal FBX to Engine and Normal Bakes
+    
+    added the vine and crystals to Engine, create instanced materials and inserted maps into T folder.
+
+commit 77f57b5296f24aa38a62e5ddcec4f4c6b964b169
+Merge: c7893b2d a1852247
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Wed Sep 16 17:17:31 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c7893b2dc347764e076a0babe3cbe98551a17eb7
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Wed Sep 16 17:17:22 2020 +1000
+
+    Added: Vine and Crystal Pickup FBX
+    
+    Added the vine and crystal pickup models to the SM export folder.
+
+commit a185224773ab8811831c112cc1f8c77992058242
+Merge: c6ffdb0e b476de97
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 16 16:53:59 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c6ffdb0e4726fee34d0e54249116804e1a638948
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 16 16:53:53 2020 +1000
+
+    Modified: Musket Model
+    
+    WIP musket
+
+commit b476de9753554d2d401ec3ef8c0aea774a0477f2
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 16 16:39:28 2020 +1000
+
+    Modified: Silhouettes in Engine
+
+commit d025b94ee0f3649d9dcf4e6071f572eb31796497
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 16 16:38:36 2020 +1000
+
+    Added: Planet Silhouette
+    
+    Added planet silhouette to UE4
+
+commit 1b8e0c1c1a906532c3830708e5f6ab6c9fc3fa71
+Merge: 630d5031 b4fdb972
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 16 16:26:24 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 630d5031414ec91fbc392a35e3bd78e0cd7dc93a
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 16 16:26:16 2020 +1000
+
+    Added: Keg
+    
+    Keg and keg w stand
+
+commit b4fdb97251f4dd0b4b93c5d0a0e72c2fe36b3096
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 16 16:17:41 2020 +1000
+
+    Added: Silhouette UI Files
+    
+    Head silhouette PSD file for reference, Boom mic substance scene for future texturing and camera silhouette added in engine
+
+commit 1c2c784d3bc48ac3295feec62e694f003f9cb126
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 16 16:16:17 2020 +1000
+
+    Added: Silhouettes UE4
+    
+    Added and modified, Alien head, camera, coconut, tv and ufo silhouettes for UI
+
+commit c697a08cd1e944bc0bdf3849c5175dd3b9dedf64
+Merge: 73be50b8 e3faf69e
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 16 15:57:28 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 73be50b81fa4b26f7abf7e4cd588f8b409cd20c5
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 16 15:57:19 2020 +1000
+
+    Modified: Camera
+    
+    Camera and Camera with tripod
+
+commit e3faf69e2d7a50e5492ba092ca5907fb207f9706
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 16 14:45:26 2020 +1000
+
+    Added: Camera to Customizer UE4
+    
+    Camera model updated in UE4 and added SM_CameraPickup
+
+commit 317e193c45cd261285639c8972c492f66a30d3ed
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 16 14:35:06 2020 +1000
+
+    Added: Boom Mic SM, SK and Pickup vers
+    
+    Boom Mic added to UE4, SM file, Pickup version and SK file and normal map created
+
+commit 1d45d5533d9742d46a249b2bb88fef1eb4f69b51
+Merge: a3dc8af1 8274215c
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 16 14:18:26 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a3dc8af1ec57159ef05c082d8b39dee7178a67b4
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 16 14:18:16 2020 +1000
+
+    Modified: Camera (without tripod)
+
+commit 8274215cf52932fc0371e42dac44fe26d1a72422
+Merge: 37926205 8f043a36
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 16 13:38:42 2020 +1000
+
+    Merge branch 'Development'
+
+commit 8f043a36554ccf50694636f86c03891264108c66
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 16 13:38:20 2020 +1000
+
+    Modified: Update Guudo Character Variables
+
+commit 379262059934b1fe6428eae44cbed136b8239c39
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 16 13:12:32 2020 +1000
+
+    Added: Boom Mic Maya file
+
+commit e9d5981a7c84250f7ba5b94fba4819d91f04bad1
+Merge: 495a9745 3bccd312
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 16 12:32:26 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 495a974529f875bde78d6b58fddfbee2b2534aa9
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 16 12:32:10 2020 +1000
+
+    Modified: Object Organisation + Object Assigning/ Placement started
+    
+    Objects in scene are now being differentiated between either pickup or decoration in scene.
+    Pickup items are now being assigned meshes and are being placed in their respective position in the world
+
+commit 3bccd3125b28c9303ff938c1718db22139fc787b
+Merge: 671fd100 c482f806
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 16 12:22:56 2020 +1000
+
+    Merge branch 'Development'
+
+commit c482f8067aee66123ff4368ba1411095190ecbaa
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 16 12:22:39 2020 +1000
+
+    Add: Sound cues Modified: Variable Names
+    
+    I added sound cues for a failed pickup and interact.
+    I've modified some of the variable names to make them easier to understand
+
+commit 671fd10042899af901e2dfd60f471f8ff3fc29a6
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 16 12:11:27 2020 +1000
+
+    Added: Coconut added to UE4 and Boom Mic progress
+    
+    SM Coconut and SK Coconut added to UE4 and material made for asset. Boom Mic in modelling stage.
+
+commit c64373ade3029dd6f75142d3ed49221ebb0b59fa
+Merge: 4b94e97d 9efffc01
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 16 11:29:13 2020 +1000
+
+    Merge branch 'Development'
+
+commit 9efffc013a6a6d301c49d6bb1a0070519587a7e0
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 16 11:28:57 2020 +1000
+
+    Add: Sound Cues and Modified: Guudo
+    
+    I've added sound cues for Guudo grow, shrink, foot step and jump.
+    I've also updated Guudo to play these sounds.
+
+commit 4d0129ad8258def3267bed6c10bebf1ed8746dc5
+Merge: e7a6c2be 4b94e97d
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 16 10:48:44 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 4b94e97d110a51e43335d770bdb1fcc9a2c38848
+Merge: 6ec391f9 6af6b394
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 16 10:47:56 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 6ec391f931c6009d5213431b51aaba6127e1f135
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 16 10:47:50 2020 +1000
+
+    Added: Sound Effects
+    
+    Added Grow, Shrink and Jumping SFXs
+
+commit 6af6b39495ccade510c84fa0d4af7c38efed0513
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 16 10:14:40 2020 +1000
+
+    Added: Coconut
+    
+    SM_Coconut, SK_Coconut exported and normal map created.
+
+commit 8ad55e3ea52ca6476200ce33b409872e9d25abd8
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 16 09:18:22 2020 +1000
+
+    Added: New Map for Mitch to Edit in
+    
+    Duplicated Adv Greybox scene
+
+commit 22e6c011fe06cf5ebdddab1a6ffb13d0efcf62f7
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 16 09:04:32 2020 +1000
+
+    Added: Documentation Notes
+    
+    Added visuals for documentation + control layouts for TDD and GDD
+
+commit 6018447cdb8bbf047dd72061c69e6030e6ea3c15
+Merge: 4c5c0b8d 57b32d88
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 15 17:01:25 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4c5c0b8d16b59ca8e5937fadca0e503fb43a9fa0
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 15 17:00:37 2020 +1000
+
+    Modified: Adding Missed GDD push
+    
+    Added missing GDD push that happened 4:59pm 15/09
+
+commit 57b32d886e62ab5b44a3158bffb86db72d4652a3
+Merge: b36f2cb1 85b7f043
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 15 17:00:01 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b36f2cb1a6d1fecde740887ae904332bbba92919
+Merge: 888f3a50 abef657d
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 15 16:59:59 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 888f3a503c227492452412d1cafa9e332a5485d1
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 15 16:59:42 2020 +1000
+
+    Modified: Studio Props
+    
+    WIP Detail modelling on stereo, Mouse, fan
+
+commit 85b7f04374763fe94b1d228557c19f7586be6903
+Merge: 1a70dbcb abef657d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 15 16:59:00 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 1a70dbcb1b72de413e3b54b369826dec034c5b1c
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 15 16:58:50 2020 +1000
+
+    Added: TDD Designer Q || Modified: GDD Aesthetics
+    
+    TDD questions are answered with graphics
+    GDD UI background was added to put emphasis on context font further
+
+commit abef657d4c250529a4035ce787461e61cb37e736
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 15 16:55:50 2020 +1000
+
+    Added: Customization UI and Pickup Models
+    
+    Customization silhouette for the main gameplay added to UE4, pickups assigned proper SK assets that are available, added maya file for customization skeleton
+
+commit 2393847e240cf4a0e2c2195ec6eb57269a073c01
+Merge: e99ea6eb e7a6c2be
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 15 15:14:04 2020 +1000
+
+    Merge branch 'Development'
+
+commit e7a6c2be9aa5a656e291bff2d5b0ccd40ded68fb
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 15 15:13:52 2020 +1000
+
+    Modified: Pickups to include Custom Depth Pass and Stencil Value
+
+commit 872fc55ef4fa1fe9cd5b605642f20be61b312c94
+Merge: 4ddec406 e99ea6eb
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 15 15:01:53 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4ddec406367bd3ab17a3904bdd9a7c08b2c6ff5b
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 15 15:01:15 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 3ac589ffc806288c8f6bf47ebd1c1e77f7e7eaa3
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 15 14:59:39 2020 +1000
+
+    Modified: Caribbean set  Props
+
+commit 0b998ceccac3f27095a3fa45ae0588c56eaebe2c
+Merge: 25880e62 e99ea6eb
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 15 14:53:46 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit e99ea6eb0ea72500272133a61bd75d3a9c20a897
+Merge: d2148790 25880e62
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 15 14:53:26 2020 +1000
+
+    Merge branch 'Development'
+
+commit 25880e62c70e1e709f8666e8990e5628af891a6c
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 15 14:52:48 2020 +1000
+
+    Add: UI for Inventory
+    
+    Player can now press "tab" to load the inventory or unload it from the viewport.
+
+commit d21487909b7adae005a2ce6661db3cad3a18ff28
+Merge: 8110f35e a7f8da0a
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 15 14:14:42 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8110f35ed21b31774fddece53411d9417177f30f
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 15 14:14:19 2020 +1000
+
+    Added Back Prop Room to ADV_Greybox
+    
+    built back prop room to be used for bodybuilding customization screen. added backproproom folder to UE4 folder structure.
+
+commit a7f8da0a137378b093ac4e25e9a8b628aab3dd55
+Merge: a93b15fd f10520c9
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 15 12:38:44 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a93b15fd8eed67b2bfe5bc0a99a2a7ab509690d5
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 15 12:38:09 2020 +1000
+
+    Body Parts
+    
+    Added Peg Leg asset
+
+commit f10520c978531c363fb165c795acc0f5dca4b73c
+Merge: 1530154a 0131f142
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 15 12:36:51 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 1530154a486fcbe3b8dc5c63e7621a3ef618ed75
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 15 12:36:42 2020 +1000
+
+    Modified: GDD Revamping Visuals
+
+commit b32818534ef0b95169616509a7ab88d9313e7c96
+Merge: 01ab73ef 0abf435d
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 15 12:29:26 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 01ab73ef13f29e6ec28a82a92aeb80ed3176f0ce
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 15 12:28:46 2020 +1000
+
+    Tree Collision and Switchplate fix
+    
+    added a collision folder to folder structure and built an optimised tree collision mesh for the jungle level. Revisited jungle greybox also and removed all speedtree trees and rebuilt using a blueprint.
+
+commit 0131f1429e67308d260c5ca8f0bbb5072e962637
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 15 12:28:43 2020 +1000
+
+    Customization Maya File added
+
+commit 0abf435db3f08e9d9df2b98c8caa4b621a832b9a
+Merge: b3fbd6a1 2bd33058
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 15 12:27:49 2020 +1000
+
+    Merge branch 'Development'
+
+commit 2bd33058662923f2a4e715fc893b22a0f3978182
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 15 12:24:25 2020 +1000
+
+    Bug: Fixed bug related to customisation screen
+    
+    Bug caused random crashes on customisation screen. It turns out the issues was UE4's garbage collection system deleting widgets.
+
+commit b3fbd6a1674905c3e7d557c2efbedaff01b1ee20
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 15 12:18:53 2020 +1000
+
+    Modified: UE4 Scene
+    
+    Had to delete binaries to refresh files and fix compiling error
+
+commit 92cb19cd070f7ed00060c6bfb6a4436852e56808
+Merge: 83e35dcc 5e3bfddb
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 15 12:04:07 2020 +1000
+
+    Modified: UE4 scene
+    
+    Customization modified
+
+commit 83e35dccfac866e9c91eb4abec36008306941ed3
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 15 12:02:58 2020 +1000
+
+    Customization Modified
+    
+    Custom Body and SK updated
+    SK for body parts Baguette, BoomMic, AlienHead, Barrel, Camera, SetUFO, TV, Log updated and added and replacing body parts that are no longer a part of the body part list.
+
+commit 788d974477008e4ec086cd991677aaeec1d8efa2
+Merge: 22dace98 5e3bfddb
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 15 11:09:07 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 5e3bfddbb628a0df16e9ddc6c023524af39da029
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 15 11:08:38 2020 +1000
+
+    Modified: Guudo Character, PushPlate and Added: Blueprint of PushPlate
+    
+    I've added the PushPlate BP to the level
+
+commit 9e2f6795f6dd5cfed0e12f4469a7f9cf7696829d
+Merge: be267a1a 22dace98
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 15 10:49:38 2020 +1000
+
+    Merge branch 'Development'
+
+commit be267a1a1b7568d5f99f1a2be0f14ec0d7698c86
+Merge: aecd7c4f 083e5f32
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 15 10:47:47 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit aecd7c4f96ac0d4c14da57651767b3249a35fc71
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 15 10:47:30 2020 +1000
+
+    Elephant leaf model colour edited. Begun blocking out lighting
+    
+    added maps for elephant leaf to T folder and touched up colours, began jungle lighting bakes.
+
+commit 22dace9864252bfe48c66197640d3c09c83219ce
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 15 10:47:00 2020 +1000
+
+    Modified: Guudo Character, Added: PushPlate
+    
+    I've added a PushPlate and modified the Guudo Character accordingly.
+
+commit 083e5f320d0b5f10bf23728efe731d6365b1572d
+Author: Mitch <mitchellbsayer@gmail.com>
+Date:   Mon Sep 14 23:50:11 2020 +1000
+
+    Modified: GDD + Production Plan Visuals
+    
+    Theme and fonts have been changed
+
+commit f82c1b6aedc9e6db96e7ca75759142d67426469e
+Author: Mitch <mitchellbsayer@gmail.com>
+Date:   Mon Sep 14 23:27:52 2020 +1000
+
+    Modified GDD + Production Plan
+    
+    GDD Watermark added + Icons
+    Production Plan added and changed info in Scheduling
+
+commit 24be712bc7579bb91c226d9f31fc9f59f2fd8e2b
+Merge: a7524447 cb00f946
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 14 17:04:25 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9f62fcaf0c2a976651fb680a48b3d5d20daa8b8f
+Merge: 0d7b2a39 cb00f946
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 14 17:04:15 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a75244477641d8bfac5561acca03bc5d772cc5c6
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 14 17:03:59 2020 +1000
+
+    Carribean Assets WIP, Scan update
+    
+    Created multiple models for carribean set, and fixed outline shader for the scan effect
+
+commit 0d7b2a39efc18927f575059d3afa9688f0d6907c
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 14 17:03:54 2020 +1000
+
+    Elephant Leaf in Engine, Environment Work continued
+    
+    added elephant leaf to engine and setup a test mtl. Added emissives to sci fi planets, and resized new plant model to fit original blockout size.
+
+commit cb00f9468ff131951279b851569f139bf07d30a3
+Merge: 2aacd2c5 53619b5e
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 14 17:01:58 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2aacd2c59cba56ae9b86eb79458438caae6d1406
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 14 17:01:41 2020 +1000
+
+    Modified: Production Plan
+    
+    Modified Project Goals to reflect more current goals
+
+commit 53619b5e650fc702eff4ed97fe239a0bf1106001
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 14 16:55:52 2020 +1000
+
+    Customizer Modified
+    
+    Saved customizer maya file
+
+commit cf6d9fbbc05661c9d75d5cc25e677f9d4f832a27
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 14 16:54:44 2020 +1000
+
+    Custom Body Modified
+    
+    New body with new SK exported to FBX, will add to engine tomorrow
+
+commit 4add2613460b64c19f127c832facbe2539aca766
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 14 16:41:10 2020 +1000
+
+    Guudo Custom Body Added
+    
+    FBX and maya file added to working files for Guudos custom body
+
+commit c9d336f4f02360e7588486d02a42fe82da65052d
+Merge: 9ecfe234 aa3362f9
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 14 16:30:49 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9ecfe2348693230ad5328151241c4aa0c6c89a5c
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 14 16:28:53 2020 +1000
+
+    Elephant Leaf Mesh completed
+    
+    completed elephant leaf mesh, and prepared it to insert into engine
+
+commit 92afc80832648203cfbfd1bc9f841b4d3230be1f
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 14 14:16:10 2020 +1000
+
+    Modified: Opening Cinematic Audio || Added: Production Plan
+    
+    Introduction Warning audio file was modified to fix uneasy pitch found in the sound-byte.
+    Production Plan has been added for assessment use and Project Burndown velocity observation
+
+commit aa3362f9294a2a2f8d766f62e27715367b2310a4
+Merge: bd186853 bfc6f74f
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 14 14:00:07 2020 +1000
+
+    Merge branch 'Development'
+
+commit bfc6f74ffabc588cecac51302b21e7d6695d716a
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 14 13:59:19 2020 +1000
+
+    Modified: Guudo BP
+    
+    I fixed a bug caused by a merge. Basically, some of the Blueprint had been wiped out causing the pickup functionality to fail.
+
+commit bd1868539d68ab7056bdbb9516e12f438ae3ec88
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 14 13:44:11 2020 +1000
+
+    Fixed compile error
+    
+    deleted binaries, saved and intermediate folders and reopened unreal to fix compilation errors.
+
+commit de95d9d05402bef50ff9d408ca9b96ddb1729e9f
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 14 13:33:46 2020 +1000
+
+    Tentacle normals fixed
+
+commit a154ac2b701cddf9caaab91a7035907ffd758bb9
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 14 12:40:49 2020 +1000
+
+    Kraken added to Pirate level
+
+commit 65720016919270f645a0934a8d7f591c69024c24
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 14 12:10:17 2020 +1000
+
+    Kraken Tentacle Modelled and animated
+
+commit d282c24eb76a4c611ba1cbd4c80411cb9f6d6fcd
+Merge: f46cb9cc 5b32fbe2
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 14 11:16:20 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 5b32fbe2078667f54e0c375350049b15471bd254
+Merge: 2bcb87c7 f46cb9cc
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 14 11:15:37 2020 +1000
+
+    Merge branch 'Development'
+
+commit f46cb9cc3032d95b2f3f48080888acd29b5807e2
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 14 11:14:07 2020 +1000
+
+    I've changed the shake system
+    
+    I've changed how shake components work
+    I've also added a camera shake to big walking and eating
+
+commit 2bcb87c77d916b6531eb137557a11146f71575e3
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 14 11:04:57 2020 +1000
+
+    maze completed in jungle greybox
+
+commit 610004c4e40edb9c7d3d3db7c5523a11fede3333
+Merge: 5b19c201 d8287fb3
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 14 01:00:13 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 5b19c201e595c61450bf33042c6d4b8efd87caf4
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 14 00:44:47 2020 +1000
+
+    Scan effect and outlines through walls
+
+commit d8287fb3f17bab43049673c29ae4bf476211150d
+Merge: 6672804f 71a7373b
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Sun Sep 13 23:28:50 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 6672804fb1b8ee5225cf131d5464b57c6ee87f04
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Sun Sep 13 23:28:02 2020 +1000
+
+    pipe added to maze towards door, smoothed out foliage in jungle.
+
+commit 71a7373bfc3d73b35b5af1916ea600be98a95b82
+Author: Mitch <mitchellbsayer@gmail.com>
+Date:   Sun Sep 13 22:33:52 2020 +1000
+
+    Audio Files
+
+commit 889719f89fe3073a0db427b8c7a0e632819b5c51
+Merge: dda2d8bb a563ab3c
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 8 17:06:35 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit dda2d8bb27f0be1e5c299adf1a0c05120eab2163
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 8 17:04:03 2020 +1000
+
+    Foliage Pipeline started, working files added
+
+commit a563ab3c02c2e0778897956ef22e31e7171c0ecf
+Merge: b7fc3698 d2f5a545
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 8 17:00:30 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b7fc3698f7862cbd27e59e0b7e887bf3e20f87cc
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 8 17:00:17 2020 +1000
+
+    iMPORTed Assets
+
+commit 191dfcede7d275b83a04fa054e440d49adec2a81
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 16:55:43 2020 +1000
+
+    Redeveloping Shake System
+
+commit d2f5a5454021a321f443243a7445012bd5125adb
+Merge: a7f5cbea 1850d5d8
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 8 16:48:05 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a7f5cbea544acddf95a09dd52321524051d1663c
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 8 16:47:35 2020 +1000
+
+    Kraken Tentacle high poly and retopo progress
+
+commit 1850d5d88e17132d6d337a73a4209ece2cb81088
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 8 16:45:32 2020 +1000
+
+    Scan, Dirt,
+
+commit 584626c85b4d333c38d7b5436bd28779daa3a5ed
+Merge: cb061a26 70488c78
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 8 16:14:00 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit cb061a26da3b718f2ed0b57fd93075738fb3854b
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 8 16:13:54 2020 +1000
+
+    Canon and flintlock
+
+commit 70488c7821bc23f9522ee05e00cfa246b35a447f
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 8 15:58:36 2020 +1000
+
+    Updated Still needs fixing
+
+commit 83fa03d3cf5a497295988539d2bff396218621b6
+Merge: 7ccd766e cc269d34
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 8 15:46:10 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 7ccd766e7866d82c8107e8b7451eabb8083df2df
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 8 15:45:55 2020 +1000
+
+    Scan effect and dirt mat
+
+commit cc269d3444e7c078cbefdef04f0da7d8abd5ac38
+Merge: 4c140b00 ad94e9b9
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 8 15:43:12 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4c140b007980386b9ab86aba091e8d34db5d4132
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 8 15:43:08 2020 +1000
+
+    Audio Added
+    
+    Editing Required
+
+commit ad94e9b943b73896509ea154e0c2c63993db02f8
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 8 15:25:47 2020 +1000
+
+    Log Asset added
+
+commit 92bf0fa4ef95b29d6a697655069c47fc4a8829b5
+Merge: b5ba00d6 b89edb44
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 15:25:03 2020 +1000
+
+    Merge branch 'Development'
+
+commit b89edb44d147c4c386f25b2d36226d0189aaf297
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 15:24:52 2020 +1000
+
+    Added missing files
+
+commit f1874d48d3ac9a9a036d600f9f78ca6a54a89fc2
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 15:24:20 2020 +1000
+
+    I've made objects shrink after being eaten
+
+commit 6abd959a42323824d0f8e23a71c8a03471ff5aba
+Merge: 3e471687 b5ba00d6
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 14:49:08 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit b5ba00d6aa3835fcf66a509e55e8c3046541db15
+Merge: a494d7fd 3e471687
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 14:48:44 2020 +1000
+
+    Merge branch 'Development'
+
+commit a494d7fdf6943f471103c4d74e84f34c232f77d7
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 8 14:47:00 2020 +1000
+
+    Pickup animation ended me
+
+commit a18b6a65bfd582b018ac49c329e25c709f66989f
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 8 14:43:05 2020 +1000
+
+    Pickup animation working at last
+
+commit d0259b6e6b8937620b1c009c5bc554e3735b25c2
+Merge: b8f4fe6b 2bf8f6de
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Sep 8 14:04:53 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 16502e5d41dc7983d57699843c6100d648e00b45
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 8 13:56:07 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 3e4716876f4681215efe86967a9ac257a65b7315
+Merge: 8cd1dd47 2bf8f6de
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 11:28:15 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 2bf8f6dec32267bb99cf52d2b32ec48f1f094027
+Merge: 74103bfa 8cd1dd47
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 11:27:55 2020 +1000
+
+    Merge branch 'Development'
+
+commit 8cd1dd4796cd26a2b1af3b9e2b30e0f01020325c
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 11:27:40 2020 +1000
+
+    Removed another bug
+
+commit 74103bfa85afbef968542d1f56e7a511769093ae
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 8 10:25:38 2020 +1000
+
+    log normal map
+
+commit 895ff2da324086556ff45ae6bbefc7f5193addc2
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 8 10:24:54 2020 +1000
+
+    Log Mesh
+
+commit 94c06a39302c2a178d52a5eb121f6f755818c6ef
+Merge: d81ad88b 4f29c53e
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 10:24:19 2020 +1000
+
+    Merge branch 'Development'
+
+commit 4f29c53eff20a688d15906e695290affd10bcf7c
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 10:24:09 2020 +1000
+
+    Setup Pickup Event for head slapping fun
+
+commit d81ad88b0ffba24bf0bc448256fe02c92866b1c0
+Merge: a1ae9530 3c9c2231
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 10:12:55 2020 +1000
+
+    Merge branch 'Development'
+
+commit 3c9c2231d2695f6ea86712392cfe9ee9dec52eea
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 10:12:44 2020 +1000
+
+    I've put some safe guards in to try stop big crashes
+
+commit b0435c092783754941734e23d3e97fcaaa664110
+Merge: c4ecc376 a1ae9530
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 09:23:26 2020 +1000
+
+    Merge branch 'master'
+
+commit c4ecc37647d6afc0c17380fae6ab42379430bc03
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 8 09:22:40 2020 +1000
+
+    Push
+
+commit b8f4fe6b68ad9ca2112d37a974e9f10820f9da7b
+Merge: 4877baf1 a1ae9530
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 7 17:03:29 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4877baf1415b17cfd14d688c49585f754b1b04df
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 7 17:01:02 2020 +1000
+
+    greybox maze in progress
+
+commit 98a8a40b75e724d85377ed8f6038abe02ecc6271
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 7 17:00:47 2020 +1000
+
+    Multiple Changes
+
+commit a1ae95306e88a2a4d19fc49df7b86d69d04ab78f
+Merge: 0101b588 a05df8f5
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 7 16:59:55 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 0101b5886d0828796448a0416c9974585aba6875
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 7 16:59:16 2020 +1000
+
+    Dirt Material
+
+commit a05df8f59b8afadd52b79d927ded29c178b2c306
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 7 16:52:45 2020 +1000
+
+    Alien Head maya file
+
+commit d7524fcf1c99fa77a7aa595fc477a4eadd05f505
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 7 16:51:54 2020 +1000
+
+    Alien Head in engine
+
+commit 83bee97f321d2ed428f75004b3afd375ec5ed944
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 7 16:40:00 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit fe65276b154a58b3b0adbeea2c88354542d4002a
+Merge: 79c0f1c2 f40f1e36
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 7 16:38:29 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 79c0f1c28c9bbc66218da41219957c25f3002dcd
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 7 16:38:25 2020 +1000
+
+    Doorimplementing
+
+commit f40f1e367aa94cc710900f951a93ecefc4222e27
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 7 16:34:47 2020 +1000
+
+    Alien Head + Normals
+
+commit 40620faa6129204d01ac51cf1648a4e69febe3e4
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 7 16:12:00 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 52f2ff455f44b3aa42d0dd972ec167c045429ccf
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 7 16:11:29 2020 +1000
+
+    AlienHead
+
+commit 2e27ba96bb2af2f43462e832b4e787aec7540ace
+Merge: a056b6ba 6159fae8
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 7 15:46:26 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a056b6bafa6bbd7f326d49f2b543c35b1a1a3927
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 7 15:45:58 2020 +1000
+
+    Pickup Started implementing
+
+commit d4eab9b13e3edd80e828b1e70f3b1cd59e3d30e9
+Merge: 57c06838 6159fae8
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 7 15:45:23 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 6159fae834ef5365c4591bc4838e5028b321b606
+Merge: 2da52907 8094d28b
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 7 15:44:57 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2da52907d3841d11f483da547acea7e069541326
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 7 15:44:32 2020 +1000
+
+    I changed the door and fixed a pickup issue
+
+commit 8094d28b54719e6cbde2bdf560a6090261307c08
+Merge: 4f246440 b399b8b5
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 7 14:32:47 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4f24644051d20f6734d7780876740aa4b0c72e17
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 7 14:32:24 2020 +1000
+
+    Baguette Asset added
+
+commit b399b8b5428b2a9ab991015eb1f5c7240b237234
+Merge: df23a5d8 26ac0544
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 7 14:21:10 2020 +1000
+
+    PIrateShip optimization and blueprint
+
+commit 26ac0544f53503b2ce48dea81f0148cb813dae62
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 7 13:53:50 2020 +1000
+
+    Greybox Duplicate added and additional outliner changes
+
+commit a22a2e2ebf45137d7bc0593b611985d8d9a99c15
+Merge: 6245a020 ab52c57f
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 7 13:43:20 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 6245a02057d0abd591fbb3fe442cca02759e3ecb
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Sep 7 13:42:42 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit ab52c57f083328c2caafedbd3197ad3e6357d508
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 7 13:42:14 2020 +1000
+
+    Lilypads added
+
+commit c6041c2eb9646145714fe052f4d0e28c42360a2c
+Merge: 0c82176a 2e87f918
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 7 12:48:34 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 0c82176a3b7a87db984b5d64c6f60c28082e737c
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 7 12:48:27 2020 +1000
+
+    GameObject Organised
+
+commit 2e87f9184fd4d2d88130e83abe643c586e683813
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 7 12:09:36 2020 +1000
+
+    Lilypads added
+
+commit 927b29c87f9e383d48a11b6ccf58090a9af96dc6
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Sep 7 12:09:10 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit bdf85ab27cba193d81041c98c63305c3fbf0bdbf
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Sep 7 11:41:02 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 41169ad4de035c27e2cd4a2a4f23041fc1d20177
+Merge: 0d38b7c0 57c06838
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 7 11:39:01 2020 +1000
+
+    Merge branch 'Development'
+
+commit 57c068383a49139bfe0dc0b7deb92af8096117a2
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 7 11:38:52 2020 +1000
+
+    Fixed bug
+
+commit 6b8ffef7abb4825c68b76d559638b4862bd8dd01
+Merge: 289bf113 0d38b7c0
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 7 11:32:54 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 0d38b7c017fcc280ef5f0fa31a20b1ec5c9a778a
+Merge: 712bcdab 289bf113
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 7 11:32:23 2020 +1000
+
+    Merge Score System
+
+commit 289bf113190610a68ca28e7a11d0e16338504e43
+Author: Richard <evildea@gmail.com>
+Date:   Mon Sep 7 11:28:00 2020 +1000
+
+    Finished the first pass of the score system
+
+commit df23a5d8a5a3a46156d3982e866ec59002d0508e
+Merge: ff94aac0 712bcdab
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 7 10:13:15 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit ff94aac0b672d78df299ca0688e3c5bf382fe9f3
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 7 10:12:34 2020 +1000
+
+    commit
+
+commit 1b0fc174af39fafec0012125f46828a9874f7d02
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 7 10:12:07 2020 +1000
+
+    New Footstep
+
+commit 712bcdabc84701e28c76c3fb7c77b8621942cea6
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Sep 7 01:53:05 2020 +1000
+
+    Carribean Assets wip
+
+commit cd02ceb29794172355eaad26cab71c890ba89383
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Thu Sep 3 17:00:16 2020 +1000
+
+    Environment SetDressing Complete for testing
+
+commit efe63454424a17b915b408d905bd2c82b2517bdb
+Merge: c8037676 9e0aa2a6
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Sep 2 17:01:27 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c8037676bef6d3fd73966db9b562686a6ac6724c
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Sep 2 17:00:48 2020 +1000
+
+    Setdressing and colour adding to first build
+
+commit 9e0aa2a694af369b9a394bbb7fd351b3960250f0
+Merge: d6f9775d 71e9675d
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 2 17:00:29 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit d6f9775db11db368c08d9dde93ef7a23aa1c9fb0
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 2 17:00:20 2020 +1000
+
+    Carribean Asset WIP
+
+commit 1525f4eccdc356075752851ad5441f01b967b988
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 16:59:41 2020 +1000
+
+    Currently Implementing Score System
+
+commit 71e9675d4f3c14a7c26d212b21b62f3580332aa5
+Merge: 7f32ce71 d536062d
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 16:34:52 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 7f32ce7153745ffa8fb33d776e06fc01fe619bbc
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 16:34:39 2020 +1000
+
+    Renaming and Organising files
+
+commit d536062dbc0093f1243bbf0d33ca84ecb134f4ea
+Merge: c02a58a7 51d65de6
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 2 16:12:56 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c02a58a7e110e4d1bc2f3fc85349cb08b4112035
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 2 16:12:22 2020 +1000
+
+    Levels
+
+commit ea7c520bae385fd90143ce33f3cb2a2986a8965b
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 2 16:11:38 2020 +1000
+
+    Carribean Assets
+    
+    Cannon, Flintlock, Chain
+
+commit 51d65de6b8d5a7210b2615b0bb72e2a8535c0e59
+Merge: 8c968815 81365d55
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 2 15:59:09 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8c968815c0bb7365cc1fdcefe9d78ebd89520221
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 2 15:58:52 2020 +1000
+
+    File Organisation +Ship Layout Finished
+
+commit 81365d5503018a94434d9e3dbcb78671b68d6a7a
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 15:54:24 2020 +1000
+
+    Credits Updated
+
+commit 2fd88f44ed29677d1bc94feda29e3c8bc7635940
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 15:51:52 2020 +1000
+
+    Credits Updated
+
+commit 115f6d5f46057a3386d01309429ad018cb31e620
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 15:29:02 2020 +1000
+
+    Rebuilt the Inventory system AGAIN!!!
+    
+    I did this because it needed to be more flexible and the code was becoming a mess. Everything it a lot more modular now.... I hope...
+
+commit 9c36e01f2f38d943566ed2dd65489dada18c9442
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 15:27:02 2020 +1000
+
+    Intro Linked to Main Level
+
+commit 5c353b1a87e177b49e868af0d08f8501736ab64f
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 15:20:37 2020 +1000
+
+    Credits linked to Menu
+
+commit db8ab8cbb1ded4b1edb37b215055709053c5f5a4
+Merge: 730d25d1 46dff5db
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 2 14:53:05 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 730d25d19ee903d67853d1d383b46ad48492f983
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 2 14:51:46 2020 +1000
+
+    Carribean Models/ Footstep volume difference based on size
+
+commit 46dff5db92148d0defc07654afcd3ae11bfa543c
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 14:10:36 2020 +1000
+
+    Credits
+
+commit bc1c57a54eec5f3cae1f01f9bad870a67ecda741
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 14:09:28 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 3ff2ff38994dc12137b3329bec0117ff5b7902b1
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 14:09:08 2020 +1000
+
+    Dance and Idle Anim updated
+
+commit efae022df07c02bb43f790e5b6c9a0d287f704a7
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 2 13:40:49 2020 +1000
+
+    Fixed Object placement
+
+commit b2fbc2bacc7747c13ab05bf829110c8b7d2273c5
+Merge: c33e3fce 6f52e622
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 2 13:35:47 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c33e3fced53a65fc26da398c8dfcfcf3760a6cb5
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 2 13:35:32 2020 +1000
+
+    Tutorial Maze objects Filed
+
+commit 6f52e622bd9aec85729f29334757f6e48b355a47
+Merge: 3721ab82 460cf72f
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 13:25:50 2020 +1000
+
+    Merge branch 'Development'
+
+commit 460cf72ff2a509416c2ca0de3bdd92e7da847f2f
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 13:25:24 2020 +1000
+
+    HUD issue fixed
+
+commit 3721ab82a71ed6666dc54dae54ec51514b2cf3ea
+Merge: f3acc193 d91916d5
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 13:23:18 2020 +1000
+
+    Merge branch 'Development'
+
+commit d91916d57e8187910e67168a1e8738f9162eb408
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 13:22:32 2020 +1000
+
+    Commit
+
+commit 8fe8e15f97a22c2ee0b37d9e14145c835d28a8d6
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 13:20:09 2020 +1000
+
+    Bug Fix
+
+commit f3acc1937fd590eed28ff3a724949ca085d5c8f9
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 12:40:22 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit bc43adb5a3e57219d3cf223064852e4852be4cae
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 2 12:39:00 2020 +1000
+
+    Bug Fix1.0
+    
+    Deleted Nodes requiring class from Gamemode BP
+
+commit 29374c5e8b6d335605c61a945dd623942ea4f698
+Merge: f34504e1 e67d4e61
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 12:30:38 2020 +1000
+
+    Merge branch 'Development'
+
+commit e67d4e61cc466c3a58c1dfd7ac64cf1b8bb4878f
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 12:30:19 2020 +1000
+
+    Added animations to customization screen
+
+commit f34504e115729089f69a1bc394998738b48579e2
+Merge: 24d88b9a 32d70b31
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 2 12:24:22 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 24d88b9a7a5ec97d0408c8ef49a7288dea7b9e79
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 2 12:24:06 2020 +1000
+
+    Animation Changes
+
+commit 32d70b3106b867584296dfcac53a93e3bc1e331d
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 12:20:57 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit ea55bc93ff4be2e630fc69d5ac1b7d4d62b02b1a
+Merge: 2b38116e 4c953f0c
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Sep 2 12:03:21 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2b38116e93c1e3b2c0e32ed34d6cf37550e65be1
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Sep 2 12:01:53 2020 +1000
+
+    Final Setdress before game build
+
+commit 4c953f0c54d557ba176e1ae2b70336abae5d109c
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Sep 2 11:56:50 2020 +1000
+
+    Idle Animation Update
+
+commit 7d9cde0afa3a9aa28cf7b134a6524eb405430c36
+Merge: eba3640e 6067a78f
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 2 11:47:14 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit eba3640e65777de7a4272f4e0bfff3f3b3af36c1
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Sep 2 11:46:38 2020 +1000
+
+    Master Material updated
+
+commit dc9cba68f7725d1edc0d58760ff2e403f44fc1bb
+Merge: d7e5a4ef 6067a78f
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 11:35:45 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 6067a78f8a3e63337caa6ce1ec407be5e7625ad1
+Merge: 74e8a962 d7e5a4ef
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 11:35:33 2020 +1000
+
+    Merge branch 'Development'
+
+commit d7e5a4ef8fb549b1963d7adedd49494dfc7a745b
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 11:35:06 2020 +1000
+
+    Add Silhouette to Customisation Screen and Perform Production Build
+
+commit 74e8a962827dc33588eb3b631202a8b31e1fdd04
+Merge: 1b69828d 73dd47bb
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 2 11:04:49 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 73dd47bbea38ef5f693d18f97b21e987ccef3fa5
+Merge: 3e5a8d82 ecbdfb65
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Sep 2 11:02:10 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 3e5a8d822b17702cd10a4a728ae1b3815ad3c049
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Sep 2 11:02:04 2020 +1000
+
+    space level complete
+
+commit 9e208027a7fbbd8b6055b678e9c7343adc100291
+Merge: c61ed7f2 ecbdfb65
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 10:40:21 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit ecbdfb65bd8bf1caa8352bbacaa86e94ee94bfff
+Merge: fdd59435 c61ed7f2
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 10:40:11 2020 +1000
+
+    Merge branch 'Development' into Development
+
+commit c61ed7f27ac65949fb8372127713ab418637dbe4
+Author: Richard <evildea@gmail.com>
+Date:   Wed Sep 2 10:39:37 2020 +1000
+
+    I've completely refactored the customization Screen Code
+
+commit 1b69828db4769b423c2944527a77f0da2e76c1e4
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 2 10:15:18 2020 +1000
+
+    GreenScreen Fix
+
+commit fdd594352da9acde4f60b205944a5c64cb641f58
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Sep 2 09:13:31 2020 +1000
+
+    ship changes
+
+commit b6e9666ac2efb87ee0d2930647228b39d75c0014
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 1 17:00:21 2020 +1000
+
+    I've transferred Widget Blueprint Code into C++ Code
+
+commit ea75de79a8d6733f6bfc610d9a2cd70c7906ee45
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 16:59:01 2020 +1000
+
+    Carribean Assets WIP
+
+commit c7756978ed05d64e1690e4765e1befe90ac6b9a2
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 16:57:42 2020 +1000
+
+    changed footprint duration
+
+commit 48414b3ca336d6397a54fbc03810ad6fe0e11209
+Merge: 2ba32e1f 23d402eb
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 16:51:54 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2ba32e1f1e65e91c4da300e4f419f774baf8aec0
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 16:51:49 2020 +1000
+
+    Flipped footprint texture
+
+commit 23d402ebea17ab7e3dea1015c80f69a823ac1fe3
+Merge: eb5e700b 97547bfa
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 1 16:47:00 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit eb5e700bfcae5867726259cbe4249b43faef0c22
+Merge: 166db28d 588786d7
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 1 16:46:33 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 97547bfacde9262250492cd2c4c5271a498fe8c0
+Merge: 81b81971 588786d7
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 16:46:33 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 166db28de2618da42939cb3baca9a263e03a6352
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 1 16:46:27 2020 +1000
+
+    Music Upgrade
+
+commit 81b81971d93579b7b736c03bb2f5aced63ea495a
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 16:46:22 2020 +1000
+
+    Loading Screen PSD
+
+commit 588786d7fc3f9afd4d20548dfcf813744d5cc018
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 16:45:52 2020 +1000
+
+    Footprints Master Material
+    
+    Added footprint sound effects, and flatcolour to master material
+
+commit b0298a51499bcbd8a48191f590502a6a96bc113b
+Merge: 735a82f3 2756be44
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 16:19:35 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 735a82f37bcab6f69b289ead9c28df0b15c6730f
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 16:19:06 2020 +1000
+
+    Loading Screen UI
+
+commit 0296787dc7754fe42b67bbe3e3c7753d1947f5c3
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 16:18:50 2020 +1000
+
+    LoadingScreen
+
+commit 2756be442993410b801887bb4e7a53e09c4eb7dd
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 1 16:09:25 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit b06ea7874523b61237f06819ad3bdc6f8b8fa727
+Merge: 88e0590f a17208fa
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Tue Sep 1 15:18:32 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 88e0590fe9e7171757c7d524e1e86e3b7a9c402a
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Tue Sep 1 15:09:41 2020 +1000
+
+    Hallway and Sci fi level setdressing
+
+commit a17208fac0527378aad45f6b6b4890254d1789a3
+Merge: 0b3c4d4c 681fa164
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 1 15:03:33 2020 +1000
+
+    Merge branch 'Development'
+
+commit 681fa16486f49f4026ab3c89c4b71e48ddd3a309
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 1 15:03:22 2020 +1000
+
+    Fixed spawn of decals for feet
+
+commit b04b78c8493c2733e724b890328cb68229264605
+Merge: 54c5e5a6 0b3c4d4c
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 1 14:38:08 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 0b3c4d4cb53e6305f0545e5532c3167b1c817e61
+Merge: bac24964 13d5fe62
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 14:31:09 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit bac24964eb00b3d2fcc192fe6ad2bae4ca8b7ef0
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 14:30:50 2020 +1000
+
+    Footprints again
+
+commit 13d5fe62138aa4565210f0ff6d3dc3a8407dceb6
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 14:18:15 2020 +1000
+
+    Lighting exposure fixed
+
+commit 2ab870281d8946975585a88bb57abc88633fb120
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 13:34:25 2020 +1000
+
+    MainMenu Edit
+
+commit 868c75fd94f4df32b461933939108dc778a472c0
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 12:39:01 2020 +1000
+
+    Arrow PSD
+
+commit 240eaa3fdad68cd4b141d877cec107517af9ac15
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 12:38:49 2020 +1000
+
+    Customization Arrows
+
+commit 0b8c97d7ff6938117fbce695e4b8382c8324368c
+Merge: 40d7d3d8 7bf6650b
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 12:36:03 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 40d7d3d8fe32e29b5be591249462c78c91aa7c0e
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 12:35:53 2020 +1000
+
+    Footprints
+
+commit 54c5e5a6a3902b1c3dcde296ca0e30e5768b03ff
+Merge: 02156a25 7bf6650b
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 1 12:31:53 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 7bf6650bb44cdbb66641d40595af71b9b5895487
+Merge: 67f4a2da 02156a25
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 1 12:31:40 2020 +1000
+
+    Merge branch 'Development'
+
+commit 02156a25da6ae3ca2f230516b54d497010de8b19
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 1 12:30:56 2020 +1000
+
+    Fixed bug with half going through the ground
+
+commit 67f4a2daa045df3b19de71eed20579c23dd10793
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 12:23:54 2020 +1000
+
+    Customization HUD
+
+commit afa5249353c1b2c16659b7b5cbcbc6d4d2ed669d
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 12:14:46 2020 +1000
+
+    UE4 Test
+
+commit 6dfaacd39d68b039907cc8f033a90af88626a486
+Merge: 30781954 cacb8859
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 12:10:00 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 30781954026083d5b5b1e40c0f60ecb120f3f810
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 12:09:25 2020 +1000
+
+    Customization UI
+
+commit cacb88591c669bd3a2b344a005ae6e33758b710e
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Sep 1 12:02:32 2020 +1000
+
+    Added Footsteps Sound
+
+commit 27279d7b7d1fc192930664bdf1bb49459a4a5af4
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 11:51:19 2020 +1000
+
+    customization Skeleton
+
+commit 3ef51a79dbac4619bdff9f836c1f310fec811ccc
+Merge: 9b380c2e d0534821
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 11:14:34 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9b380c2e38125bdc0b80df590230140c672e951b
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Sep 1 11:10:48 2020 +1000
+
+    New Body Parts Skinning
+
+commit d05348219e869998ed1616a7a0873d250e4ac473
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Sep 1 10:53:58 2020 +1000
+
+    Customisation screen
+
+commit 906bababba075f98155aa9fc67e8d76603cc0883
+Merge: d12b0f73 bb5a8746
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 1 10:25:42 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit bb5a8746f6a120f4e028cfe41771bbb80ce335c8
+Merge: 30f42791 d12b0f73
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 1 10:25:21 2020 +1000
+
+    Merge branch 'Development'
+
+commit d12b0f7382a13657aeb00cde43319f74e9567a8c
+Author: Richard <evildea@gmail.com>
+Date:   Tue Sep 1 10:19:16 2020 +1000
+
+    I've added a transition to the Intro Video with the Skip button.
+
+commit 3f6336d3c84554050557ac38cf331d9ef52f649e
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 31 17:02:42 2020 +1000
+
+    Custom skel
+
+commit 30f4279131ad4936b37299371d1ac3b1931e378b
+Merge: 823ab8c2 3fc42e7d
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 31 17:02:02 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 823ab8c2ab3e64778a2e7e46db047044c3c6e8fc
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 31 17:00:38 2020 +1000
+
+    sci fi area greyboxing change. Pit added
+
+commit 3fc42e7ddc63db7bed99d314340d5365a101d88e
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 31 16:49:22 2020 +1000
+
+    owo
+
+commit 7557817a4fc56c75c4a7e87f4f93c2d5309b34e7
+Merge: 5c93f0b4 4c74fa1b
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 31 16:33:09 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4c74fa1b58c4ce97e0d6adc900a225e05faee2c6
+Merge: 0d41f9dd 6aed03de
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 31 16:13:08 2020 +1000
+
+    Merge branch 'Development' into Development
+
+commit 6aed03de299924a99bb1621d55dafd1670419a66
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 31 16:04:38 2020 +1000
+
+    Performing cleanup
+
+commit a886f781737957d2d8db8ee9b179002308911dc4
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 31 16:03:29 2020 +1000
+
+    Footprints (Decal version)
+
+commit 5edadd7c171ddc2c5d792bf83444c3aab028990d
+Merge: cc74aa53 0d41f9dd
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 31 15:23:03 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 5c93f0b4c9e9fa702c53ab75a37b722e3085543d
+Merge: 600a2379 0d41f9dd
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 31 15:12:13 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 600a2379f9263518ada81e138a9c614993cbed91
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 31 15:10:08 2020 +1000
+
+    Grow UI
+
+commit 0d41f9dda71170fd9164b8f70d378f2a8c000a35
+Merge: ade93901 88373bce
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 31 15:02:02 2020 +1000
+
+    Merge branch 'Development' into Development
+
+commit 88373bcebf97bf4758604010f7e61d795f507cfc
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 31 15:01:39 2020 +1000
+
+    I've updated main menu and added Silhouette to HUD
+
+commit cc74aa53ace4520b48d668965814ac564358532c
+Merge: 3cf92883 ade93901
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 31 14:38:27 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 3cf92883fbc962570f5e90aca37b1d7bfdc49fd8
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 31 14:38:11 2020 +1000
+
+    Jungle Scene final touches
+
+commit ade93901a84240fbf16469c2ee13cb7972031690
+Merge: 155bfac7 4a8256a2
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 31 14:30:07 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 155bfac7110e3d355f4dd73776fa91ce98ba0e8d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 31 14:28:49 2020 +1000
+
+    Asset collision changed
+
+commit 4189f6990d617f51f477afab3135fd12d21736db
+Merge: e2eae59a 4a8256a2
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 31 14:14:28 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 4a8256a27e1b473ecac1899d690aad834da729e1
+Merge: a71532fe e2eae59a
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 31 14:14:07 2020 +1000
+
+    Extensive changes to Inventory and customization System
+
+commit e2eae59a553e5a57dcb5d7628d1253e483ff7d37
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 31 14:09:58 2020 +1000
+
+    Removed garbage
+
+commit dc223e2b11385300efa1ae72587fc33d981de4ce
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 31 13:57:09 2020 +1000
+
+    Integrated the inventory with customization screen
+
+commit c29c6e702438b84e960513648acad94252e191a1
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 31 13:34:53 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit a71532fed48f7cfe3a8a7c26869b2b9aac2c54b4
+Merge: 9b1c6e3f 44ea1ab9
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 31 12:31:48 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9b1c6e3f8119ad619259c3d436af142e2ed59188
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 31 12:31:21 2020 +1000
+
+    Puzzle V1.2
+    
+    Space
+
+commit 44ea1ab95561af91518458cd37b55a67704286ca
+Merge: 76afb82d 0cd92a52
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 31 12:23:35 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 76afb82d9a4ba2911be6b3bd51c02554a8c2df9f
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 31 12:22:56 2020 +1000
+
+    Menu Screen
+
+commit c2ec5c33f2b4e1f417970083c5be5d672c8098d3
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 31 12:22:37 2020 +1000
+
+    MenuScreen
+
+commit 0cd92a525b4f4178d289b8df71e2ef15ae4fabf9
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 31 12:00:34 2020 +1000
+
+    Bug Log Updated
+
+commit ceba28f8d49e5692b143846c61ae03732580297b
+Merge: 40151673 12a316bb
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 31 11:47:55 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4015167321fa1f868b6f517c693ac3961d947351
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 31 11:47:45 2020 +1000
+
+    Bug Log added + Space Set Puzzle Started
+    
+    UFO collision settings modified complex -> to simple but complex
+
+commit 12a316bb08b1deb3f33d55888c21c080690504ed
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 31 11:46:04 2020 +1000
+
+    Caribbean Assets
+
+commit 9b8faefb8b4e3fdf071a51bc9e08e225b9c0761f
+Merge: f19ef2ae 71f299e9
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 31 11:21:50 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit f19ef2ae0a443be3e3e3d079d3e65a29f3bd33af
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 31 11:21:16 2020 +1000
+
+    Pirate Ship optimization
+
+commit 71f299e994f2ff153281a6ee5bcb296e7221c2e1
+Merge: bcf9f7a1 0eff5708
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 31 10:25:26 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit bcf9f7a14d654888c1a4ecc15c24dc943b7295fb
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 31 10:25:03 2020 +1000
+
+    PuzzleV1.0
+
+commit 0eff5708b889a362000df309dbf00787f03ff318
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 31 10:20:32 2020 +1000
+
+    tree changes in second level
+
+commit 638e50dbbe15e3d877433deb35f20db4e4babf34
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 31 09:31:13 2020 +1000
+
+    PirateShip
+    
+    Optimisation and Rope planes
+
+commit cdbf587becde4f6da556549e7f19ac2fec053753
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Sat Aug 29 12:37:50 2020 +1000
+
+    Pirate ship greyboxing
+
+commit 7d15030c00282100f9dc436b6f96d2876dcd90c5
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Fri Aug 28 00:46:16 2020 +1000
+
+    Pirate Ship WIP
+
+commit b6001b7bd5dce63a5499505cf9695025668a78db
+Merge: 44db1900 8decacf5
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 25 17:02:32 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 44db1900802a5dd06f7e640482c7d1004ec5ec3c
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 25 17:02:23 2020 +1000
+
+    Ship
+
+commit 60b051b367796bd91cfb94bd3e88877c8f7f9436
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 25 17:01:28 2020 +1000
+
+    Tree stuff
+
+commit 8decacf5564b848399b3c6ede76a52509592e5ba
+Merge: 56efcc41 d359d460
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 25 17:00:16 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a5ef2ae586448def4779b287061238af5c4fdbde
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 25 17:00:07 2020 +1000
+
+    idk
+
+commit 56efcc41d9bfb7e7310193dadbf577232ec04444
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 25 17:00:05 2020 +1000
+
+    Bigboi Tree replaced with second pass
+
+commit 2fa99d0a8bb7380928fdd8c916282741f2cabcd2
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 25 16:58:23 2020 +1000
+
+    PirateShipWIP
+
+commit d359d460e15d69d65f9440ae971f93fee13d8cd4
+Merge: 364c9135 d54e9b45
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 25 16:55:29 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 364c913557a5006720baf94348371a09dd77e27b
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 25 16:55:23 2020 +1000
+
+    Collision modified, Planets adjusted
+
+commit 4c090db532673bac3e899aaa3a1e4ed7e904f78b
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 25 16:52:50 2020 +1000
+
+    Made a few little changes to layout before finishing for the day
+
+commit d54e9b45318776192b504722e09d14f4cb55f7fc
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 25 16:47:57 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 9c498b018e9976b0e058d4bfcb49b6b8d725eccb
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 25 16:41:00 2020 +1000
+
+    Extensive changes to the Customization Screen
+
+commit 52f5fe32f1341b80ede0fdb29c21324316cbf8a7
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 25 16:38:08 2020 +1000
+
+    Landmarks changed
+
+commit 54dbbb2cd8a0bd87de9e73e968881e1c0f884eec
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 25 15:46:17 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit fc7018cb8bf74bcfca9ffe1d1b8099a8e7b133f1
+Merge: 8ecd3fd4 41ad814d
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 25 15:38:54 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8ecd3fd42fa1b47926365b388d1976119c4d5553
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 25 15:32:01 2020 +1000
+
+    Basic ui update
+
+commit 41ad814dca5737b7e6a84aef3b46bd5786ee535d
+Merge: c0ff49ef 3b210ab6
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 25 15:13:00 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c0ff49ef7f571528d574cff68c54a4c87439076d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 25 15:12:51 2020 +1000
+
+    Deleted GB2 Replaced with MitchSpaceGreybox
+
+commit 3b210ab6ebbc87f333007e65416760080e5f88b0
+Merge: 01751a89 93bb4298
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 25 15:05:23 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 93bb42982607bf27d865f65666d096da13e8c036
+Merge: b84795e0 3ec214d8
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 25 15:02:57 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b84795e0b7d49bf8a2458255c84f9926f614e292
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 25 14:58:55 2020 +1000
+
+    Mooshrooms added
+
+commit 01751a894169a916f76c9a266d1cf08d28b907e3
+Merge: b8af5096 14830581
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 25 14:52:17 2020 +1000
+
+    greybox updated jungle and space
+
+commit 148b06dfec7e3cf15625713e24ae51374db17602
+Merge: 48a9059c 3ec214d8
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 25 14:51:00 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 48a9059c920c5e2866d57ad3410e583960979cd2
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 25 14:50:36 2020 +1000
+
+    pirate ship
+
+commit 3ec214d8cef0034ea287b0b29c55c63a3978cb4e
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 25 14:48:47 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 050fa4e2e58bb7725dd246b30582cc36afd47325
+Merge: 6fef1a4b d5e29a5d
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 25 14:48:20 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 6fef1a4b118325ef2167ce41c64e7f77e0dbb68a
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 25 14:47:45 2020 +1000
+
+    PirateShip WIP
+
+commit d5e29a5daa3888ebd44ee1d6c8bcf761371712bf
+Merge: afbf4c71 a030ba5b
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 25 14:35:07 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit afbf4c71f7e7f3721e913d96c9b1d4e9b8f7ec2b
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 25 14:34:54 2020 +1000
+
+    Puzzle fixed and tested
+    
+    Minutes modified
+
+commit a030ba5b4d7f6c287760e96a462f99d16be19e6c
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 25 14:17:35 2020 +1000
+
+    guudo
+
+commit 45300e270d680a64849ec1da1261e1bb3f1e8d41
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 25 12:18:22 2020 +1000
+
+    Font Added
+
+commit f0864f336f69a9ecd124a1dd1fd4f0fcde5c0a8c
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 25 12:11:01 2020 +1000
+
+    Rename assets and Organised UE4
+
+commit 06944a7d4004da7f451b931125638daf75ad268b
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 25 12:04:13 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit b8af50965ffc53f465de5761bb4f0fcbcdb2ca36
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 25 11:56:31 2020 +1000
+
+    Greybox additions
+
+commit 14830581a41aaf3a086dba58c09f376919936cf5
+Merge: 8ad56754 2a59d320
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 25 10:33:01 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8ad5675481b36d9592f9888c9cfc97cac0ce5552
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 25 10:30:53 2020 +1000
+
+    PirateShipWIP
+
+commit 2a59d320e6343a4b61b02cc9685f35ae6a264f8c
+Merge: 4f2c5eb2 48a3fd08
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 25 10:18:55 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4f2c5eb2933f7eb7c9a8b76f62581b14a04487e4
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 25 10:18:30 2020 +1000
+
+    File Cleanup in Outliner, removal of wrong scaled objects
+
+commit 48a3fd086005f299a0c84cab60fd0d291edef552
+Merge: 2beade51 f115d1a2
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 25 10:05:54 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2beade512a9e794302d6a79f0076af1a1a8a3f5b
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 25 10:05:38 2020 +1000
+
+    Organised UE4
+
+commit 1a6118eb3a37c4b626925b16a0393d62eb039710
+Merge: f1014323 f115d1a2
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 25 09:32:37 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit f115d1a2e291f31aca20f17979fccaa67fb18b27
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 25 09:30:43 2020 +1000
+
+    Reimplement Greybox Puzzle switches
+
+commit 6a432c927af73f4a85e56902c358f14a5b0e391f
+Merge: fbe2d7b2 e3737915
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 25 09:19:37 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit f1014323fb8c0fdb044a969de6b83d828c57acdc
+Merge: 7476f5e5 e3737915
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 25 09:18:06 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit e3737915860779b693f2bb34f045fbec8f96976b
+Merge: 64cc05e9 6d1f9290
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 25 09:17:44 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 64cc05e927b935a5b8dfad410cfa49313165d617
+Merge: 32b3a8a4 7476f5e5
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 25 09:17:38 2020 +1000
+
+    Merge branch 'Development'
+
+commit 6d1f929085010ffc36341dcc8d9aff1a91857bfd
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 24 23:00:16 2020 +1000
+
+    Asset modelling
+
+commit fbe2d7b2f0a673dca15c7075d971078c6856eea2
+Merge: c567069f 32b3a8a4
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 24 17:04:30 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 32b3a8a4ebf84fa55e8d9786b62a278c415e4781
+Merge: 7687a778 adcd81eb
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 24 17:03:13 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 7687a77836841d2d5ed2d227eb7437b5c1d49fda
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 24 17:03:04 2020 +1000
+
+    underground map wip jungle level
+
+commit c567069f254dd01bf3408cbb3e75ce6d55805f06
+Merge: 9879c745 adcd81eb
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 24 17:02:50 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9879c745b25ece7cf09000ff6223e207cf2a1c8d
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 24 17:01:57 2020 +1000
+
+    Pirate ShipWIP
+
+commit 7476f5e5e6a750a8e35898e5173f4b58ed91f1a3
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 16:55:44 2020 +1000
+
+    Started work on customisation screen
+
+commit adcd81ebf570ed50562a4796ddb674e1851fdd37
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 24 16:38:20 2020 +1000
+
+    Opening Animatic
+
+commit 8b84f3eb8e59b72ea147c1dff84ca836b485e571
+Merge: f271b418 5d94c5bc
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 16:23:12 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 5d94c5bc5d1101a07221214d2c98065fbb95563b
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 24 16:21:02 2020 +1000
+
+    rolling ball puzzle implemented
+
+commit 833cfed513a5ffce9f4dfac912ce6ad7dd31c05e
+Merge: f69f9767 6c38b0c7
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 24 16:09:48 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit f69f9767637cc6a5eda978a129e02d13eb314c45
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 24 16:09:35 2020 +1000
+
+    Level changes to complete rolling ball puzzle
+
+commit 6c38b0c74fa69f58e73f3ce0ef68b10d276e2dfd
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 24 16:05:31 2020 +1000
+
+    Door BP was corrupted. Made a Second.
+
+commit 495d817989ba7371fd4387fa36317e2184482f3d
+Merge: 24cb3c28 3a0abeac
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 24 15:45:53 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 24cb3c28c58f3d8bef08678a2d47a51f6479101d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 24 15:45:26 2020 +1000
+
+    Ruins Puzzle Update V2
+    
+    Jesses Dead End Tales
+
+commit 3a0abeac32cfd0a7a27c6ec733539a7bbc427cd4
+Merge: 98b95c19 f271b418
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 15:42:50 2020 +1000
+
+    Merge branch 'Development'
+
+commit f271b4184e8b3a0195d6141fbcecd80d27bfa0f9
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 15:42:37 2020 +1000
+
+    Fixed Up Door Camera
+
+commit 98b95c197bca6ebaaa3f2111dcf9d43c5e75fac4
+Merge: a6273e83 b15e375e
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 15:28:05 2020 +1000
+
+    Merge branch 'Development'
+
+commit b15e375e5874a78ce3fc0741aa50864960f64917
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 15:27:53 2020 +1000
+
+    Fixed Up Door
+
+commit 7f8efb81ae20e34c295953234207a26bf851487e
+Merge: 5b3c9575 a6273e83
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 15:22:42 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit a6273e8305083c3d96e50607e2fa7d8c8f98fed7
+Merge: 660f5e29 5b3c9575
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 15:22:22 2020 +1000
+
+    Merge branch 'Development'
+
+commit 5b3c957531165e8ae26945956c8fee12310c893d
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 15:21:56 2020 +1000
+
+    Fixed some bugs and other stuff
+
+commit 660f5e29a15bd105e68ebe4a20f17103a8881e54
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 24 15:20:21 2020 +1000
+
+    TowerDoor added for blueprinting
+
+commit 6748936cac36fc3a0b961144619283e8a382481b
+Merge: 99357af5 9f432b55
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 14:28:46 2020 +1000
+
+    Merge branch 'Development'
+
+commit 9f432b555edddb2e9fe1cac59677e5e17babd6d5
+Merge: 6902933d 99357af5
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 14:28:29 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 99357af591b99c52245c66a39cc49723ea210c9e
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 14:12:53 2020 +1000
+
+    Setup the Open-world to work with the switches
+
+commit a837df94e332aacdb5f451946d0a88f47cc145a3
+Merge: 4dc3572a 6902933d
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 13:54:04 2020 +1000
+
+    Merge branch 'Development'
+
+commit 6902933d593076f614f2cdaafef8148cff723e6f
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 13:53:35 2020 +1000
+
+    Added Switches, Pressure Plates, Balls (hehe) and doors
+
+commit 4dc3572af7042dbba86d00c35f7c0773de7d0ac4
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 24 13:53:21 2020 +1000
+
+    Jungle level prepared for bluepriting
+
+commit a98a63590ca7a00c9cf35e5068917daf4f3a804b
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 24 12:21:44 2020 +1000
+
+    Openworld Greybox folder added
+
+commit 49907e7e03ef9b0882f4bb292b92b0d145734f84
+Merge: 44e9b255 7c39ebbf
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 24 12:19:30 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 44e9b255eb828d590199133eca948a37a19db132
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 24 12:19:09 2020 +1000
+
+    Puzzles added to jungle area
+
+commit 7c39ebbfe5dd9626614026dcd5b1a00d660788f1
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 24 12:19:06 2020 +1000
+
+    Ruins Puzzle Blocked
+
+commit f76e9cf345ca99a1f734a3e4b8a1e8147965834b
+Merge: b9f2232c 232e54b9
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 24 10:20:10 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b9f2232c7e8b605194b150717591211b4603d1c4
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 24 10:20:03 2020 +1000
+
+    GDD V 2.1
+
+commit d2c1627d281843f1f8229083291efcaedff92ed1
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 10:11:31 2020 +1000
+
+    I've added fade in / out of body based on camera
+    
+    Head material instance doesn't have an opacity node I can manipulate yet.
+
+commit 232e54b9f49e866db45e3199508b690b108c960b
+Merge: 9cc9fb53 51762920
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 24 09:36:52 2020 +1000
+
+    Merge branch 'Development' into Development
+
+commit 9cc9fb530253ef2a6e8a5fd2c966d615c215d54d
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 24 00:51:48 2020 +1000
+
+    Pirate Ship WIP
+
+commit 23ddd579db28cc42c2181f3690dc226603ce794d
+Merge: e3992a2b 0f8b78ef
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Sun Aug 23 15:58:23 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 0f8b78efa6d68eb63f02372dea04a828f0eff3f8
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Sun Aug 23 15:00:43 2020 +1000
+
+    Pivot Point Fixes, Lambert MTL removed, Openworld Greybox
+
+commit e3992a2b95dfac19a3d0e173af655c2a838208ea
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Sat Aug 22 15:37:46 2020 +1000
+
+    Ruins Puzzle
+
+commit e6f97fd851b5a8be5151900007b781c8022bd37e
+Merge: 611e79b4 a18e7eca
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Aug 19 17:01:37 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 611e79b41f4ecd3eb22a49b5cee63196e0716984
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Wed Aug 19 17:00:37 2020 +1000
+
+    Pirate Ship and Guudo M
+    
+    Pirate ship progress, added dither for camera distance fade for Guudo
+
+commit a18e7ecaa9db5d136b0707b683e497778c55f37f
+Merge: 6a273fe9 29576c79
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 19 16:58:59 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 6a273fe953d6d623f013e87d66999adb20fd8ded
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 19 16:58:45 2020 +1000
+
+    gREYBOXING
+
+commit 5176292021906480fe99a52d14cd3cb5ec0819c7
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 19 16:57:38 2020 +1000
+
+    Started Working on Camera Fade Out
+
+commit 29576c7990a1bc0409e089d98fb18425b88e49d0
+Merge: eae27cb1 e7c28418
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Aug 19 16:55:23 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit eae27cb1815c5ada8298312ec838c659be37a5c3
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Aug 19 16:53:25 2020 +1000
+
+    Tutorial Level added
+
+commit e7c2841874c65f9e27e2735f2de907c7bdfd450d
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 19 16:49:22 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit dd9e2174a667380d0f90a319a04b968696948e8b
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 19 16:15:57 2020 +1000
+
+    Slight changes
+
+commit 74503083c0034383f31bcd2c635d7e4099be111e
+Merge: 9cef4e74 980b6f59
+Author: Nathaniel <s181479@students.aie.edu.au>
+Date:   Wed Aug 19 16:08:32 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9cef4e741953e4651ffecac58dd0507e6cb568b1
+Author: Nathaniel <s181479@students.aie.edu.au>
+Date:   Wed Aug 19 16:08:22 2020 +1000
+
+    exported with smoothing groups
+
+commit 980b6f59fd70ce8646ebdd3d0d5e7af1836a5f56
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 19 15:54:36 2020 +1000
+
+    Imported new meshes
+
+commit b3950e46541d326c39674e486b2d45f7f02af2e5
+Merge: 2731a7ad bb48eb98
+Author: Nathaniel <s181479@students.aie.edu.au>
+Date:   Wed Aug 19 15:50:20 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2731a7ad6e6f0705be20918b4b38ee0786b04d87
+Author: Nathaniel <s181479@students.aie.edu.au>
+Date:   Wed Aug 19 15:50:11 2020 +1000
+
+    Update - scaled models
+
+commit bb48eb98c53903a1c8916cb752826c2df3c47556
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 19 15:47:29 2020 +1000
+
+    BLOCKOUT TESTED
+
+commit e8da826484a988263b0900511f7067b02d639169
+Merge: cdc41e91 20952fce
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 19 15:47:21 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 20952fced4a948c744b5ecc83a07cd5e79517cb1
+Merge: 80360e38 9de04e7a
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 19 15:10:28 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9de04e7a1c5acb68f4d1c18c4cc602ace72ba9e7
+Merge: b61b4e7a cdc41e91
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 19 15:04:59 2020 +1000
+
+    Merge branch 'Development' into Development
+
+commit cdc41e9196389bc5c6d628fb5c7d65a775a2a05e
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 19 15:00:27 2020 +1000
+
+    STUFF SHAKES NOW when you walk past
+
+commit bcf250944c57421345099464708348f717665807
+Merge: fcf4b088 b61b4e7a
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Aug 19 14:59:36 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit fcf4b08881f22500dad7a72c0818cede972ac965
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Aug 19 14:58:50 2020 +1000
+
+    pUZZLe Blockout added to scene
+
+commit 80360e38d33fe7f46772fac43fbc690bd44bd0e9
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 19 14:57:06 2020 +1000
+
+    GreyboxingTutorialUpdate3
+
+commit b61b4e7afd6e7daca487c27b713a4032c2ae3805
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 19 14:11:55 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 6618b585f563c47ea93e455738c944bce06e25cb
+Merge: 8697ec7a e58e9123
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 19 12:34:00 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8697ec7a36ff6dbb04a87abf8f23fbd3f3093c2e
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 19 12:33:55 2020 +1000
+
+    GreyboxingLevel Design
+
+commit 839c552aee20c9e7b7d3e2f887d8c812f19eb5c8
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 19 12:29:13 2020 +1000
+
+    Now at a stable state
+
+commit e58e9123e5f8cf707278c771890731921ab81c7d
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 19 11:56:34 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 83c9933430e76c9013dd350672277cdb4c4384d1
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 19 11:56:22 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit d0046a20d27077ba54360baa4ee38c498144424d
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Aug 19 11:50:24 2020 +1000
+
+    Added Tutorial Level greybox
+
+commit 333aeeae7a9c39d849e005b53f7054f7f5aeb33a
+Merge: 418592c7 4d7729fe
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 19 11:46:09 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit cb37a2dbee8d369388c9636ca273adb9a7922e11
+Merge: 26153460 4d7729fe
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Aug 19 11:34:54 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4d7729fef0f8b61fc5b2951ffa63e5a828899f7f
+Merge: 150f5897 caf83672
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 19 11:33:53 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 150f58974f8c46d34a4109c86ee37146c6f36b2d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 19 11:32:46 2020 +1000
+
+    Tutorial Blockout 1/2 done
+
+commit 261534605f4133a7dfa2de6b67973176d1812c3b
+Merge: bfc7210e caf83672
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Aug 19 11:31:22 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit caf8367270ec0651a94469e362112181a2ba6817
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 19 10:41:27 2020 +1000
+
+    UE Guudo
+
+commit 2d5b02b918b8ecf30f4200fb3adfce34476fc78a
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 19 10:40:50 2020 +1000
+
+    Walk + Mini Sprint + Normal Sprint added to engine
+
+commit e4896d8780f97028a4c0e9a957e2d766647c0586
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 19 10:26:18 2020 +1000
+
+    Guudo
+
+commit 38d0c7cc3e6ea7173d59dfad3d6b4d670c67bbad
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 19 10:25:54 2020 +1000
+
+    Sprint
+
+commit f58445cc3a8a79504696b579be454d6cc9946e1d
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 19 10:25:11 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 5f6635b2fa9195aa7c7ae81cf2fb5a5d0d0e5007
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 19 10:24:59 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit bfc7210e157d7ba23729eb6c30ef428b3d7c6680
+Merge: 2fde706d 4a261c8e
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Aug 19 10:23:53 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2fde706d62a36b79cba2679682399dd12ebd664c
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Aug 19 10:22:44 2020 +1000
+
+    Set Dressing in-progress push
+
+commit 4a261c8edb8cc2c571b8e8086a58b087e4ca9e88
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 19 10:12:14 2020 +1000
+
+    Guudo Player Controls Refined
+
+commit 5b6633125fa11828de413495f4e5afc642cb380b
+Merge: 4c7114df 61926209
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Aug 19 09:36:16 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4c7114df4614d7d80b8ce9683c04fc98dcd6f4a2
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Wed Aug 19 09:35:23 2020 +1000
+
+    Asset Pivot Points Fixed and aligned
+
+commit 619262092c46047ade7033be7e59267db723179d
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 23:59:29 2020 +1000
+
+    PirateShip
+    
+    Pirate Ship model WIP
+
+commit d92a012e4d9c11e0cb51b0452b4912617b5314b1
+Merge: 2d0742cb fd2688e4
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 22:48:32 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2d0742cbfee37acc648c7d89cbdbe8a868b21ed1
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 22:48:24 2020 +1000
+
+    Particles
+    
+    updated jelly splash particle, removed unnecessary testing assets
+
+commit fd2688e4ed4a7d86dbadd85720100bee214d46f7
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 18 22:19:45 2020 +1000
+
+    GDD V2.1.1
+
+commit 589be8c1e98a29bdb38c624e47bef43278143e53
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 18 19:35:42 2020 +1000
+
+    GDD 2.1
+
+commit d2550634ae13569d539917add21f931754474df3
+Author: Nathaniel <s181479@students.aie.edu.au>
+Date:   Tue Aug 18 17:01:01 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 6a6ae79611fd59f33c18d6bb9476d20a0f4ebb0b
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 16:58:26 2020 +1000
+
+    Pirate Ship
+    
+    Pirate Ship WIP
+
+commit d6abf72f14856a8ae34a6b0fe30013cf489bd415
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 16:55:27 2020 +1000
+
+    Sprint maya file
+
+commit 122b2ff6cab39281ce1e201366216deeaadd4269
+Merge: 8ff3b1cd 75784b86
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 18 16:52:35 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8ff3b1cdea77ed0200c2221e03d38aeb5d9418af
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 18 16:52:22 2020 +1000
+
+    Made changes
+
+commit 75784b86cf4080871ff405f0b835b430f9723c88
+Merge: 3a05b3ff 418592c7
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 16:42:32 2020 +1000
+
+    Merge branch 'Development'
+
+commit 418592c72033f7f281825a2b6e0e957a8672d4d6
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 16:42:03 2020 +1000
+
+    Added UI Size Indication
+
+commit 3a05b3ffcc0ae21486b3673e7a5817f57433ef20
+Merge: 83fcc770 4bb93885
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 18 16:32:00 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 83fcc770049d537044a3e3174a1eeaa04c3d5c8c
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 18 16:31:15 2020 +1000
+
+    GDD 2.1
+
+commit 4bb93885fa4d98539ed92d440a08975fd51db7ff
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 16:30:24 2020 +1000
+
+    Jump Animations in Engine
+
+commit c1a113dd7a9ffb0f884cc9e20be38d66ee3d4db5
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 16:12:26 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 111aced9a7cfe81a66325cb969aa6403e58fcbd2
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 16:09:42 2020 +1000
+
+    Guudo Jump Anim
+
+commit d81228375d172a0417f8db20305ebdb541844adb
+Merge: 73998ed5 6353f48b
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 16:09:21 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 73998ed5527816ee5e38ec488ac2ea7eba0f2e77
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 16:09:00 2020 +1000
+
+    Guudo
+
+commit 6353f48b2db437f36d70f1b1fd50499acea2d576
+Merge: ab76d009 b70350a2
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 18 16:05:41 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit ab76d009fa500abbe2b9bd095822f3a760c12baa
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 18 16:02:56 2020 +1000
+
+    Lighting changed and speed fixed
+    
+    Removed all of Joshs work
+
+commit b70350a29aed872009299ba78c37086e1a9e378c
+Merge: 0b8749fa 6292f3bf
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 15:53:12 2020 +1000
+
+    Merge branch 'Development'
+
+commit 6292f3bf3bdb641fdeb49068d6716f5a615bf2bb
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 15:52:37 2020 +1000
+
+    I've added Designer variables that affect push force
+
+commit 0b8749fa29e9eec5504de247fae150b120f623d9
+Merge: 8a316b16 dbd7c6f5
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 15:39:40 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8a316b16b7a69c578327805dd97424d06ee61b8e
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 15:38:44 2020 +1000
+
+    Cleanup
+    
+    Removed Duplicates, created temporary collisions, displacement material adjustments
+
+commit dbd7c6f5bb52ca19b73b303045887baa49d192e1
+Merge: 29e5fdbb 0465505a
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 15:27:23 2020 +1000
+
+    Merge branch 'Development'
+
+commit 0465505a480da44f909f42b1e127b51ff1f3b004
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 15:27:01 2020 +1000
+
+    I've created the inventory
+
+commit 29e5fdbbb7b239769e43765d12ffe00e9beeb9c1
+Merge: c64d62cd ff3669d3
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 14:37:49 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c64d62cd0bc307cd3154fbdb968a9781e739d794
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 14:37:24 2020 +1000
+
+    Decals
+    
+    Shrink Area Decal
+
+commit c9b47927cfc1883f769d1bde3bcb82aa0733518d
+Merge: ff6fa124 ff3669d3
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 14:35:54 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit ff3669d32dc76ece537a6c9b03f203d147dbca09
+Merge: 1e6d3914 4272ada7
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 14:35:24 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 1e6d3914e130dc7009031250022cf814d23dd770
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 14:34:58 2020 +1000
+
+    I've added the tag 'Pushable' for objects that can be knocked over
+
+commit 4272ada7fe8adc47c77bacba8b3c91b94f47aa81
+Merge: b86febcc 7d2687f1
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 18 14:28:51 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b86febcce025a75d19b30f32a8e323046e88b490
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 18 14:28:15 2020 +1000
+
+    GreyBoxing Open World Completed
+
+commit 7d2687f1049e738192984476e90e34991f97fba6
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 14:26:44 2020 +1000
+
+    Guudo Shader fixed
+
+commit e58cfe2fa8d03360f9c031864715e1c6fa659094
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 14:24:04 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit e3ae1d35300131a1282186bb82effa86c277a805
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 14:23:43 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 94e833da7dfb1ada83c87bdd2ede12d51f92b286
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 18 14:20:52 2020 +1000
+
+    Player Movement Fixed
+
+commit f01f2446e93e990597f3585c5530f6ecf7f9a9d5
+Merge: 0c37ac21 ff6fa124
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 13:50:18 2020 +1000
+
+    Merge branch 'Development' into Development
+
+commit ff6fa1247088573c986ba9ce821b0492fb80da45
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 13:49:45 2020 +1000
+
+    Large Updates to Camera and Other Systems
+
+commit 0c37ac21a6db37e1543254dcc4e8da415b4c66b6
+Merge: ac192807 c68caa97
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 12:33:06 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit ac192807d975b42327a4f38ace57661e15bb8fff
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 12:32:15 2020 +1000
+
+    Pirate Ship
+    
+    Pirateship blockout and imported
+
+commit c68caa972e67b65397831e9c41354ae763bbdf97
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 18 12:31:30 2020 +1000
+
+    SM Fixures
+
+commit 915c9e70c90ce8a0afb506e1c825eac5dda53629
+Merge: c3ab69ea b76a60c7
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 18 12:24:35 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c3ab69ea1a96a4685a7784d33ccbd8dbde35ec0a
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 18 12:24:16 2020 +1000
+
+    2/3 Greybox completion
+
+commit f6ea1bfeec61550a5107a73558b1a9104cf3dd11
+Merge: 9a2d5538 b76a60c7
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 12:23:54 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit b76a60c7dc55a2004a9df15512f6130abd4b587d
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 12:21:37 2020 +1000
+
+    Guudo Run Walk
+
+commit b787380c16adef6de6f89b1c9a60963700507db9
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 12:17:24 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 9ef6c7671a5008db1ebd4e176fd497d8df913953
+Merge: 8f6082c6 83829f2a
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 18 12:15:55 2020 +1000
+
+    OpenWorld Greybox Added
+
+commit a68cc03a7d18d713bad18b69656b0ca0660f6cf4
+Merge: 8f6082c6 83829f2a
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 18 12:15:55 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8f6082c67d05531a2109f6860a80f86fff78413e
+Merge: 29af572a a1224dd4
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 18 12:15:40 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 83829f2aa3c25b7593b7fdfe770bb427b36f7345
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 12:13:56 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 296f81d17d693c00ea99578def0dc67a83920e7b
+Merge: 762b9e63 5e30239b
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 12:13:46 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 762b9e63992f5635a90bc6976083485015fb8a90
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 12:13:36 2020 +1000
+
+    Update gitignore
+
+commit 5e30239b7a2eece644b15df072ce8426cc4eec88
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 12:13:12 2020 +1000
+
+    Guudo
+
+commit bd1e4edeccd6a458bda3ff3e35884ef1a6a4db56
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 12:11:31 2020 +1000
+
+    BS_Updated
+
+commit 8ff8137f93c769531d84648cc2bb5bb587433c53
+Merge: 073d5308 506db077
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 12:09:12 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 506db0773d1a16435c1f15550a8d46cbc7e18e40
+Merge: ad8ee386 781028c6
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 12:05:32 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit ad8ee38695a2cd3e6c25af3c01624f483269474d
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 12:05:20 2020 +1000
+
+    Motion Blur off
+
+commit 781028c668431d43790b37bb89a016f5694a954e
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 18 12:05:00 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 073d53087cb7afae996f1c7f64e8ac14fa01d5c6
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 12:02:01 2020 +1000
+
+    erorr
+
+commit a0923ae164e3d87acfef896ef49fe5471b08e94f
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 12:01:11 2020 +1000
+
+    Guudo Anim added to BP
+
+commit 29af572a3328b8f5b33cc5dbb5275d26a66f2ec4
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 18 12:00:41 2020 +1000
+
+    Open World Greybox Added, Levels combined
+
+commit f9761136947b543784a150ec0940a3d2c07eea76
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 12:00:40 2020 +1000
+
+    PirateShip
+    
+    started blockout
+
+commit a1224dd49ce6ae770c0f9466ef4ebe897d22834b
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 11:58:52 2020 +1000
+
+    Guudo Animated
+
+commit 2fa29d3c9fba5dfadf90f7fdaa8152f26ef37bce
+Merge: 0786206f 9a2d5538
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 11:52:42 2020 +1000
+
+    Merge branch 'Development' into Development
+
+commit 9a2d553860f144339f144952fea80ffaa7fa15c4
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 11:51:39 2020 +1000
+
+    I've started the Pivot
+    
+    - I've removed the pickup widgets
+    - I've changed the defaults of Guudo
+
+commit 0786206f60c4b343ee1658e14923cf9ed1f6970f
+Merge: d406fffd e52d9788
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 11:27:19 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit d406fffdda22ccec7c08809d85f0b6512019b3c5
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 11:27:13 2020 +1000
+
+    Sprint Anim Maya
+
+commit e52d9788148d28f4ab42078b12b1bbc93e1c2d2f
+Merge: 9f387d00 4f168e12
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 11:26:33 2020 +1000
+
+    Merge branch 'Development'
+
+commit 9f387d00bef002d7fa564df2316493f7d29189c3
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 10:46:51 2020 +1000
+
+    Sprint Anim
+
+commit 820ebdf58a942d53cdc8d7a7b51eac6fbc581bb2
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 10:27:50 2020 +1000
+
+    Particles
+    
+    splat particle texture
+
+commit 5787ac820fafd32dfb1a904fb0b6df7a63e6d922
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 18 10:25:10 2020 +1000
+
+    Guudo Matertial
+    
+    made two sided, less transparent
+
+commit 4f168e12a23b5b02e2011970b287d60d5697f513
+Merge: 50338981 5cc0f7eb
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 09:33:53 2020 +1000
+
+    Merge branch 'master' into Development
+
+commit 5cc0f7ebb4010e5a7e27595a80dbd62e885f0e3e
+Merge: 1935a643 ef829492
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 18 09:31:02 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 1935a6435cf4843d38c874ec042a84964c6730ea
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 18 09:30:46 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit ef8294926fa74d5754aadbcf74da6e48118a3e0f
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 18 09:28:42 2020 +1000
+
+    Guudo
+
+commit f8c01878dd51b8fd6ec336f0e0a8197e9585e302
+Merge: e8757145 50338981
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 09:26:36 2020 +1000
+
+    Merge branch 'Development'
+
+commit 503389812d53f39fa5ddf049109fd0f43c24d067
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 18 09:25:50 2020 +1000
+
+    Slight changes
+
+commit e8757145169db2ede3ac6b44a74633814817235c
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 17 22:01:02 2020 +1000
+
+    Guudo Bobble Head
+    
+    implemented bobble head physics for guudos head
+
+commit 814d69d3aa723845b838d0c5489085c55b21bc31
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 17 20:58:03 2020 +1000
+
+    Optimisation
+    
+    Removed mesh distance fields and niagara plugin
+
+commit 3a1fb50711de628e93be8f037bfdd180adc072fc
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 17 16:55:22 2020 +1000
+
+    Started working on the Inventory
+
+commit eaa841b55f75060b906f5a91fe4b5a127a0b4a50
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 17 16:50:17 2020 +1000
+
+    Guudo on Controller
+
+commit e62276e8a6989cf163729613aae031e1ebb0dfd1
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 17 16:32:18 2020 +1000
+
+    Walking Animation
+
+commit b5f6be785c0cd7217e4f410d0e144e3c1997ad6c
+Merge: 0b583b28 4a8cd891
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 17 15:04:36 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 0b583b28b9a951062281cdd5b07759ef1db255c3
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 17 15:04:30 2020 +1000
+
+    Animation Blockout
+
+commit 4a8cd891c5c3a320c755255853619459bc95b3aa
+Merge: 093a9c7c 08698cd5
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 17 14:48:18 2020 +1000
+
+    Merge branch 'Development'
+
+commit 08698cd5acb2a81d5fd119aaa285be64d57774c0
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 17 14:48:05 2020 +1000
+
+    Added Designer variables for run and jump
+
+commit 093a9c7ccbc1aabaae61afa5ed357efed8cc9f88
+Merge: 0d993dd7 9cabb55e
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 17 13:58:16 2020 +1000
+
+    Merge branch 'Development'
+
+commit 9cabb55e47236e8a06be71707ba912e2ad1e349b
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 17 13:57:34 2020 +1000
+
+    Fixed bugs with Growth and Shrink and Added UI Element
+
+commit 0d993dd78528c577604f1ec834fe46458710dc04
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 17 13:43:42 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 09de757c8af0f662515e9cd1337727fb72365853
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 17 13:43:25 2020 +1000
+
+    GuudoModel
+
+commit 6cc86d520aaad5217099e978fe66bffc216275d5
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 17 13:33:04 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 1532b1410719a0868a65a18977c38d9ae34960dc
+Merge: d7a885b5 bf3e6682
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 17 13:30:49 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit d7a885b593ee6e40aee8fd9e173549c1c3c65b51
+Merge: 37d931e2 fa694113
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 17 13:30:42 2020 +1000
+
+    Merge branch 'Development'
+
+commit fa694113b3f0f384e3f1d59b85e0517c96340d88
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 17 12:35:13 2020 +1000
+
+    Improved Growth to take collisions into account
+
+commit bf3e668275b72b2b9e504fdccb62d197a8afcf07
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 17 12:11:31 2020 +1000
+
+    Guudo Rig and Textures
+
+commit a2ffe26689f1f8c4cea9dc6bb597f84635791cbb
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 17 11:27:45 2020 +1000
+
+    Platforming Added to Scifi Level
+
+commit 37d931e241cd0923ac7c7e372eb296517defbe38
+Merge: ef3500b7 e358ca4c
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 17 10:46:42 2020 +1000
+
+    Merge 'Development' into 'Master'
+
+commit e358ca4c3604e5b63c84d67e75af9a5d6c8cda1b
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 17 10:43:36 2020 +1000
+
+    Finished basics of Growth and Shrink Mechanics
+
+commit ef3500b741227f599d014b23e3982662b5727f43
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 17 10:13:50 2020 +1000
+
+    POC Changes
+    
+    Submission Quality
+
+commit 1893b21555e2838a848b86e6ea247b23405820fb
+Merge: 031cb6fb a05b7463
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 17 00:00:30 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 031cb6fb2f47ee5fe89e0cc9cf7d599e341c308f
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 17 00:00:20 2020 +1000
+
+    Particles
+    
+    particles testing
+
+commit a05b7463ac9f9e18e7e5e1d115da5f450c2fb8e1
+Author: Tiana Knobloch <xianta@hotmail.com>
+Date:   Sun Aug 16 11:06:54 2020 +1000
+
+    Head UV v2
+
+commit 4e7ec741f9c9e4747df40f6406501f72609dbbe3
+Merge: 6ed3e618 fec1c78a
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Sat Aug 15 21:31:09 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 6ed3e618a6bbdcd21081a5ba04f1a8bfdda3e82b
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Sat Aug 15 21:31:02 2020 +1000
+
+    Materials
+    
+    Added subsurface to Master and Guudo material - further work on guudo material
+
+commit fec1c78a3b86a925444bc44dd6ab67c871b7d171
+Author: Tiana Knobloch <xianta@hotmail.com>
+Date:   Fri Aug 14 17:22:54 2020 +1000
+
+    Guudo High + Low
+
+commit 8e88348b0539f1f5f31a00a2a54fd1159e19745d
+Merge: 45b306fa b68b4deb
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Thu Aug 13 11:27:59 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 45b306fa04d9883309bea2f8ceb5ad4cc7039921
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Thu Aug 13 11:27:53 2020 +1000
+
+    POC Changes done
+
+commit b68b4debf0496ecff906dfcbae85630447732384
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 11 23:40:41 2020 +1000
+
+    Jelly Physics
+    
+    tested jelly physics setup
+
+commit 620f6b0e51fb8aff10ff471b07a112e6a247ae66
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 11 16:53:31 2020 +1000
+
+    Started programming the Shrink and Grow Systems
+
+commit 4e8002721f7724cd9e05f02cf9e64b5033e02810
+Merge: 141a8b3f e9639b5b
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 11 16:02:14 2020 +1000
+
+    Merge branch 'Development' into Development
+
+commit e9639b5b96b6598a34cba5e4da82e204d7381b97
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 11 15:55:40 2020 +1000
+
+    Silhouette system 100% built
+
+commit 1e5d89e891e0c5a1247bdb3d3f0b01ec0445c9ad
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 11 15:35:35 2020 +1000
+
+    silhouette system 50% built
+
+commit 141a8b3f27c276eeb6fe7cf0d77ccdb1d3d0a6d2
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Tue Aug 11 13:31:55 2020 +1000
+
+    jungle greybox updated
+
+commit d6159ada7a9639077f794685e990863ccd2a049d
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Tue Aug 11 12:48:24 2020 +1000
+
+    Jungle Greybox Completed
+
+commit 71ef53ae329f98b17be21bf30dc32d4892f28b8f
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Tue Aug 11 12:20:31 2020 +1000
+
+    jungle tower added
+
+commit 70121d3a71458360159f0cab75dc34a151b87b97
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 11 12:15:28 2020 +1000
+
+    L3 Greyboxed
+
+commit 9a8a2da2e6bba3330c25d827446a9c72379b2a50
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Tue Aug 11 11:40:49 2020 +1000
+
+    Greybox_Jungle foliage complete
+
+commit 0852b2e2a0a6be7ed879bb8405d7a274d4ce9fe8
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 11 11:30:28 2020 +1000
+
+    New Scene for environment blockout
+
+commit 4e07462bc0e866f80b9602fc87b9d792ef223176
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 11 10:41:53 2020 +1000
+
+    Burndown alteration
+
+commit b6807a077448ba5698499ac8dbf6fc6a0e4e7957
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 21:00:00 2020 +1000
+
+    GDD V2.0.2
+
+commit 4a96d5e1e84e8180ec01a49d3e8af43f484ce183
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 20:16:29 2020 +1000
+
+    GDDV2.0.1
+
+commit 6a94ef6556fc1986e6fce1a1bce2dd2ad9519277
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 20:01:14 2020 +1000
+
+    GDD V2.0 & PP V2.0 Updated
+
+commit a7592ee8fb7774f0830cfe7b20859cf83ad78fcf
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 10 17:03:45 2020 +1000
+
+    greybox jungle progess
+
+commit 49c26c8fa33128333b1b50162d841e31445b5458
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 10 17:00:00 2020 +1000
+
+    Started Building the Inventory System
+
+commit b1bd4e3d4123ca777bd2011070ce9eab391f3cce
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 15:05:33 2020 +1000
+
+    Exterior Greybox finished
+
+commit d266f7b063dc82596585c3e1a2f65429d8d7e385
+Merge: 32251878 69f36eb7
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 14:01:13 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 322518785d259d78c5a60a2c374cafa47561328d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 14:01:06 2020 +1000
+
+    Removed bug
+
+commit 69f36eb759553f7a402fef93fb1040515969b23b
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 10 13:56:23 2020 +1000
+
+    Art bible addded to docs
+
+commit 2854c671dda39d0018cf722ee8bf6353b83ea908
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 13:51:31 2020 +1000
+
+    GitFile Documentation Structure reorganized
+
+commit 65250e39c7255453ccbd71d1fb9abc0c4122dcbc
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 10 13:25:38 2020 +1000
+
+    Updated Gitignore
+
+commit 039805a720e56d7091201a266c6541e339408559
+Merge: 8d8460e8 8e4dc795
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 10 13:24:10 2020 +1000
+
+    Merge remote-tracking branch 'origin/Development' into Development
+
+commit 8d8460e84fdf5a0b27f51ab0e26cdaa49fe64457
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 10 12:41:05 2020 +1000
+
+    I've introduced a new widget
+
+commit 8e4dc795a93d65042d8ae5726c03afaf3cc7b1e4
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 10 12:41:05 2020 +1000
+
+    I've introduced a new widget
+
+commit 40956888fd4351b088ff9dbbdb5ac31cc688df0e
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 12:40:58 2020 +1000
+
+    Added Animation Scene
+
+commit e080212270324d1327dbca45a2d7279dabf730e2
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 12:37:10 2020 +1000
+
+    Project Folders Organised
+
+commit 56575f5d0e28e94f0ca105f1d9237899a2cbb762
+Merge: 52051cd3 74d0d68d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 12:21:21 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 52051cd35865e59df83e779ed2d26315ff38ef8d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 12:21:11 2020 +1000
+
+    Level3 Design
+
+commit 74d0d68d7c56a8a4c49773abd9b208546a49f2b0
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 10 12:20:54 2020 +1000
+
+    Greybox Refinement
+
+commit e91955c743f4aebe2e51baeb17bd5f798390c7af
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 10 10:47:46 2020 +1000
+
+    Guudo Model
+
+commit 39f6e090c2bdded5267791435ee4d6fc6dfed530
+Merge: 2e922c2e 35e0b78a
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 10 10:33:21 2020 +1000
+
+    Merge branch 'Development'
+
+commit 35e0b78a3052f25521041a3034268157b86fa842
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 10 10:32:46 2020 +1000
+
+    Removal of Test for branching
+
+commit 2e922c2e6cad072c2658dd9c6825e3258b06e4bf
+Merge: 7417a68a bf3b27c5
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 10:31:01 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 7417a68a122949cb734968d1526774d2603fd444
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 10 10:30:53 2020 +1000
+
+    Production Log V.10
+    
+    Added Week 1 Goals Details
+
+commit bf3b27c509951107a2feee1bd11b8f816106853f
+Merge: a86c824c f828bce5
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 10 10:29:08 2020 +1000
+
+    Merge remote-tracking branch 'origin/Development' into Development
+
+commit a86c824c44d53d515a9424ce291926064c700f44
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 10 10:20:42 2020 +1000
+
+    Test
+
+commit cfd036a5275091043c575a7a4fc231807e0b8a99
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 10 10:24:35 2020 +1000
+
+    GuudoLow
+
+commit f828bce51ccc181915b2f380039fb37dc2ed1e4d
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 10 10:20:42 2020 +1000
+
+    Test
+
+commit 74eea49bc74ef93931c2c1f6436657386ab7d6c0
+Author: Josh Freeman <joshuafreemanart@outlook.com>
+Date:   Mon Aug 10 10:08:46 2020 +1000
+
+    Jungle Greybox
+    
+    advanced greybox added
+
+commit 5cd85352f80d190c30ecd2cf5923e0ce7ec18f21
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 10 09:36:20 2020 +1000
+
+    Guudo High Poly
+
+commit 9f2b3a651646f207d8ec125c498271a4b824de49
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 10 09:14:36 2020 +1000
+
+    Feedback
+
+commit 11fc0f0ebf57bcbd01ae2812c0475f4b566d72a0
+Merge: 842ed652 8689515e
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 10 01:20:35 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 842ed6521602b24b1e20497cd44d7c68c7826816
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 10 01:13:58 2020 +1000
+
+    Guudo Ufo
+    
+    guudo ufo high poly
+
+commit b3cead8f4b27e802d86ce1acfa797b9a1c5a3533
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 10 01:11:15 2020 +1000
+
+    UFOs
+    
+    Set and Guudo UFO High and Low polys, test bake for guudo UFO
+
+commit 8689515e3a2b545a8441dc677fc57dd34495671d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Fri Aug 7 11:17:35 2020 +1000
+
+    Jungle/ruins SCENE Added + greyboxing
+
+commit 320b1189db1a6962fdd979de26c000d30bd203a2
+Merge: c9ab662d 30359525
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Fri Aug 7 00:14:27 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c9ab662d08a1b7723f98247c1daf851fd5f9c86e
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Fri Aug 7 00:13:38 2020 +1000
+
+    Level update
+
+commit 303595250a8d9ded23817ae1c2059b8f308bf630
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 5 16:53:32 2020 +1000
+
+    Thing? Updated?
+
+commit 0aad2ca3e0d229549d59c1ce8e0747ffd581b1cd
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 5 16:52:26 2020 +1000
+
+    GDD 1.6
+    
+    UPDATE
+
+commit 19466a58998bd1bd1e458fc2f187594814bac83c
+Merge: dcd5c3ad d8758cbe
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 5 16:26:13 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit dcd5c3ad50bea278d93e4d12e184d04f720119ea
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 5 16:26:01 2020 +1000
+
+    TDD updated
+
+commit d8758cbec67cbe766cfb11d395d1a90e6fb3d70e
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 5 16:25:43 2020 +1000
+
+    Omni_Artbible
+
+commit b83f91a7cba89cf8855a451af54cb2ba5df964ec
+Merge: 5d223f2c 6d714083
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 5 16:19:26 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 5d223f2c43bda53e97fd2d8d6a615d7fa1227c55
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 5 16:19:21 2020 +1000
+
+    Slight update to TDD
+
+commit 6d714083e8b44a4aad2c0eeb6af9242697ae0761
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Aug 5 16:08:01 2020 +1000
+
+    GuudoModel02
+
+commit 69087377fa5e98dfbcf2ef97800dbf7b66a1bdd7
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 5 15:59:03 2020 +1000
+
+    Updated code + TTD
+
+commit facb30f07210aa795f363299340736ddafbf0278
+Merge: c730858d cf037a12
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 5 13:53:52 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c730858deb2ad86ef1308a12d1bea4e40383b5ed
+Author: Richard <evildea@gmail.com>
+Date:   Wed Aug 5 13:52:57 2020 +1000
+
+    Fixed up artists folder structure
+
+commit cf037a122d3c8d1738c9dd5f25e5d75ca5a20719
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 5 12:23:46 2020 +1000
+
+    Design Documentation Complete + new scene
+
+commit 9619ad7a0fbe8aef892ad617f4ab9ff776ab25c0
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Aug 5 00:10:44 2020 +1000
+
+    SWOT Implemented
+    
+    needs lessoned learnt
+
+commit 69795a1b21d3b942b75eee5108ea58586b8de7ce
+Merge: b4c7b901 c72ef3ba
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 4 17:03:15 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b4c7b901ed2c690e67a7c8c746c02132d398dfed
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 4 17:02:18 2020 +1000
+
+    foliage asset test in engine
+
+commit c72ef3ba4ec0963b8ad71c51dda18b3d2ec5eec6
+Merge: 73d7ee6a cfc3500c
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 4 16:58:17 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 73d7ee6a47c06c78111c31db992c6dad64a595d2
+Author: Richard <evildea@gmail.com>
+Date:   Tue Aug 4 16:56:34 2020 +1000
+
+    Update Technical Design Document
+
+commit cfc3500c0866296a01281ddba669cb9f1768e938
+Merge: a2191cee 49497d34
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 4 16:54:40 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a2191ceeae8a14086c4c37030ede3b79993c3d82
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 4 16:54:35 2020 +1000
+
+    Master Mat
+    
+    Fixed UV Scale
+
+commit 49497d3421401d68330a70be11a7ea5fba752964
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 4 16:54:17 2020 +1000
+
+    GuudoModel
+
+commit cfe75c2c183919731b81819012ddc08464088736
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 4 16:53:25 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 379519b75b39c08060b9f88a3a6719a8b1223e0b
+Merge: 9bb93269 6a431459
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 4 16:47:14 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9bb932697112368a0d9e6ac513f8cdca8d548855
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 4 16:46:41 2020 +1000
+
+    Master Mat
+    
+    added emission and opacity switch to material
+
+commit 6a431459c75f927b235f9d63a4b1e36c9247265e
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Tue Aug 4 16:42:28 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit e4e1b1148e95d7fa0a6f774fed6bbc26ded335d8
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 4 16:04:16 2020 +1000
+
+    Master Mat
+    
+    Created master material
+
+commit 7617b8a26fb8047082241f82fabe6c65608c74d9
+Merge: f96019f0 4464a566
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 4 15:25:35 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit f96019f0600e494f5ec65c4a969bf9bc4048389a
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 4 15:24:37 2020 +1000
+
+    Materials
+    
+    added  dist field displacment to guudo, created master material
+
+commit 4464a56626feff9855e50e6cec819a8bb685304d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 4 15:19:29 2020 +1000
+
+    GDD 1.5.1
+    
+    Removed Human like category
+
+commit d034731f60bc3b8b19568103972968b07fe09ecd
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Aug 4 15:07:39 2020 +1000
+
+    GDD 1.5
+    
+    Updated Controls for abilities and added 'Human?' category to scoring
+
+commit d29cc1edcb8b2fb05435f08cb03c668977175a2e
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 4 14:37:45 2020 +1000
+
+    GuudoBlockout02
+
+commit 53383dde5ba10b30cb60164b4f77078adfa882b4
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 4 12:34:49 2020 +1000
+
+    Guudo Blockout
+
+commit 058e87152ffd69c0d232bb9387ccdb2ab5d15b86
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Aug 4 09:25:46 2020 +1000
+
+    Customisation screen
+
+commit 33ea62bd1c13284180bbacf786b6220366c2b85f
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Tue Aug 4 08:40:01 2020 +1000
+
+    Final Change
+
+commit 2022fd22bb86d5ec502de213d680bc81991481e6
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Aug 4 00:13:42 2020 +1000
+
+    Texturing testing
+    
+    tested texture style on set ufo
+
+commit 873608d644d9aa33c6bba8b2e64304007e05768a
+Merge: f4cf7a7c e9d57918
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 23:50:21 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit f4cf7a7ca5044b2ddea0e6f4ac3f63749e81a837
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 23:50:14 2020 +1000
+
+    Outline Shader
+    
+    Removed Duplicate Objects and created outline post process
+
+commit e9d57918713b20e0d196a774a7e957df761268b4
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 3 23:11:30 2020 +1000
+
+    Pitch Fixed
+
+commit 1fc9ddf111521f2c6aa25dca062bb10b5e52871b
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 3 22:57:40 2020 +1000
+
+    GDD 1.4 + Industry Pitch
+    
+    GDD complete, review needed for UI, Pitch requires replacement video
+
+commit 789fe9ffce7164e3fa005ddd733824c1a1687245
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 16:58:57 2020 +1000
+
+    Outline PP
+
+commit 68ebb67ee686aba563d48554ad1faacfeafa1c9a
+Merge: 3ec547f3 374bccc2
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 3 16:56:42 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 3ec547f3611c48371aebb155e8ceaa20ab2d365d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 3 16:56:32 2020 +1000
+
+    GDD V1.3.1
+
+commit 374bccc2fcc4d0b1085cf5952527481bf28034a5
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 3 16:55:19 2020 +1000
+
+    Foliage Bois have been added
+
+commit a1bfc597a046f3e448b15a30e759a5f2d28ac5e1
+Merge: 789fbe8b 8218345d
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 16:55:18 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 789fbe8b6e32a31ff55b5711774d62a85918042c
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 16:54:33 2020 +1000
+
+    TDD
+
+commit 8218345dbd10e78e06a3de990dd3326704e44640
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 16:26:10 2020 +1000
+
+    ui
+
+commit f2c5981634254383ce985ad56ae00ba23d66440a
+Author: Nathaniel-artist <66983123+Nathaniel-artist@users.noreply.github.com>
+Date:   Mon Aug 3 16:11:49 2020 +1000
+
+    Lightstand
+    
+    Light Stand
+
+commit 9b9cbb3f8433830f3e84f8dc3371759462c704b5
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 14:54:39 2020 +1000
+
+    guudo
+
+commit ae2782909158101784f65d40399c430458796b90
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 14:43:11 2020 +1000
+
+    Menu_Fixed
+
+commit 9e387cd1959d1f1cf6db1a25fa99f6714c808c2d
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 14:29:06 2020 +1000
+
+    menu button
+
+commit 07d53c0b1867a85aaeecd7195fd48bac5d951b22
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 14:27:08 2020 +1000
+
+    Menu
+
+commit 03f11e701e82f4964a883a6584c7f65c28e619f9
+Merge: d6cb8ddf b36958ec
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 13:44:43 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit d6cb8ddff3896955c6687f3f2fab86f7e876b927
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 13:44:22 2020 +1000
+
+    AAAA
+
+commit b36958ec5979f08a29710192a107fe524b4864e7
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 13:43:53 2020 +1000
+
+    Updated
+
+commit 61cc518fa1a13f2c35f5267b9000008725dbf933
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 13:26:46 2020 +1000
+
+    Added all music and fixed bugs
+
+commit b2a03783755cde7a8027cf98024ea41992ebed74
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 3 13:06:56 2020 +1000
+
+    Hope
+
+commit 0cb728d3cb5ee3057250d05d85e9ef3d731b095f
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 13:03:11 2020 +1000
+
+    Several Changes
+
+commit 65b6b898ddbb023942aea3ea17edba2f1f9cdf37
+Merge: d0924fe5 7afe02ee
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 12:41:46 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit d0924fe5e05d8f37332e681d7c29e00d9bee3623
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 12:41:36 2020 +1000
+
+    Heqad and torso Sk
+
+commit 7afe02eeb412b659ca36b579ed477b23f0fe4533
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 12:41:21 2020 +1000
+
+    Imported
+
+commit 1b0e920fa1f123d59e4c05ba8b2b285fce6e47ee
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 12:36:15 2020 +1000
+
+    SK_Guudo_Skin
+
+commit 002dede9b40dd510806fc373076d1736d30eb00a
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 12:31:53 2020 +1000
+
+    SK_guudo
+
+commit baba3409e682204046fb9fbf32822aa5f95d4c4b
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 12:31:23 2020 +1000
+
+    Push
+
+commit d3eb6c14fd189a7eb3e4f1a2074cf794476278da
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 12:28:42 2020 +1000
+
+    Guudo Skin
+    
+    Guudo Skin
+
+commit 7b0b482ad4a7324d4e1a4fee523ded5d1611f4d4
+Merge: ae0d4a14 27aa1b1a
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 12:26:42 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit ae0d4a147ed540e7e3349bb57623d53f2214ba21
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 12:26:03 2020 +1000
+
+    Guudo Skin
+    
+    Guudo Skin and bones
+
+commit 27aa1b1a1295e18346423136e503d7a0a8651ee8
+Merge: 2b2f422c 8ba6ba75
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 12:20:03 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2b2f422c86251ffcd286bf12fffc4f647199f452
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 12:19:58 2020 +1000
+
+    Changes
+
+commit 8ba6ba7597865029aee096d3f794dcd8ae21bdb5
+Merge: 13d6c451 f7284e5b
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 12:16:57 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 13d6c4510c7af16d7a96eb639b2065c448109655
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 12:16:27 2020 +1000
+
+    Customiser Skeletal meshes
+    
+    skinned props for body customization
+
+commit b083dd1e29b0a5f4e898c23298871049cfef6df2
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 12:06:36 2020 +1000
+
+    Skinning
+    
+    Skinned all meshes to skel
+
+commit f7284e5bd1a50432d174da3bd96221eefa332eb5
+Merge: 22fd3e2a f0506f2c
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 12:06:19 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 22fd3e2a9ea6277322d10a8c48d670cc914b39e7
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 12:06:12 2020 +1000
+
+    Added UI sounds
+
+commit f0506f2ce7630592e2db4c79c3e007e9bfee753d
+Merge: 7c331579 b1beba75
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 11:53:08 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 7c331579d62a57648e7b2651b8f4a74fc0823ce1
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 11:53:03 2020 +1000
+
+    Skeleton
+    
+    Laid out meshes on skeleton
+
+commit b1beba754475dc49ef2d8b25f71af5e60708dfd5
+Merge: c2d22b2e b5017868
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 11:51:47 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c2d22b2ebed67b94b1b1dc9bd7a7982e831f5dc0
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 11:51:42 2020 +1000
+
+    Eating sound added
+
+commit b5017868a8cbe17f26b5b59db4696e1045adab2a
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 11:34:31 2020 +1000
+
+    UI
+
+commit c8701327baf59b8b97fb34db803c40c1c264bc91
+Merge: a51b87ea 6a62466a
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 11:28:14 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a51b87ea74ca83fa1485ba6f92998898d4992a54
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 11:28:05 2020 +1000
+
+    Blockouts
+    
+    Scale Changes
+
+commit 6a62466a283cf2d0959f0ac4459d68b463db7f18
+Merge: 77f13cb4 05640a4c
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 11:25:45 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 05640a4c54a593dd1db7e7b951129e9a1f0378e5
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 11:25:24 2020 +1000
+
+    Blockouts
+    
+    blockouts size adjustments
+
+commit 77f13cb4f00c70724837dc75533d4f639d6e6a99
+Merge: 32b6576d 2b2d3e89
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 11:25:12 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 32b6576de1b00308b0b2e9379ca0dfbb8c732a04
+Author: Richard <evildea@gmail.com>
+Date:   Mon Aug 3 11:25:06 2020 +1000
+
+    Customisation Screen
+
+commit 2b2d3e895ac144f4f04159691b68cd8d1dc4a418
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 11:23:15 2020 +1000
+
+    Blockouts
+    
+    smoothing groups
+
+commit b44c69680554cebe2b2ae88c1f3e47cc774c00e0
+Author: Joshua Freeman <Joshua.freeman@outlook.com.au>
+Date:   Mon Aug 3 11:14:18 2020 +1000
+
+    Blockout Models
+    
+    environment blockouts
+
+commit 9a8ac0d7715b1e427f0954d885db2eabe354c931
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 10:38:06 2020 +1000
+
+    MainMenu_UI
+
+commit d6f2a518be8caa0dedc1d4132a84384fb98e7c16
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 10:26:52 2020 +1000
+
+    button
+
+commit 355be7c34a9a967d3ae331d69734609eaff73049
+Merge: 10364a73 36f5bc8f
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 10:19:52 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 10364a73a50a5ef695e29bde6a4ff8fa3e229f5b
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 10:19:32 2020 +1000
+
+    UI_button
+
+commit 36f5bc8f193d40e0e301b10987d288dc95757586
+Merge: 9b1bf85e 7f7efcd9
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 3 10:19:18 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9b1bf85e17a26b0273936267b586bf48cb51e349
+Merge: 62f035b8 cf273d98
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 3 10:19:11 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 7f7efcd994570c9bc4ed0a40a2725adff743bfc4
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Aug 3 10:19:01 2020 +1000
+
+    UI
+
+commit 62f035b84fde09375129331dc8f50c8f812c2632
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Aug 3 10:17:53 2020 +1000
+
+    GDD Tweak/ Pitch Fix
+    
+    Pitch still awaiting new demo video
+
+commit cf273d986fc8ada4ef1a3b9a65cf6f15384f753e
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 09:42:27 2020 +1000
+
+    Blockouts
+    
+    Updated Blockouts
+
+commit 9ad4fde1da705ef07fab51dd3f79ac7bcbe00514
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Aug 3 04:26:47 2020 +1000
+
+    Blockouts
+    
+    added asset blockouts
+
+commit 2b99f5b07ae957e7630684dd01221306a9a8160a
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Sun Aug 2 23:30:21 2020 +1000
+
+    GDD V1.3
+    
+    Added sections: Economy and Target Market are still required to be finished
+
+commit d34e49c6f77a5c3c992b476d200a3a4acf042ab5
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Sun Aug 2 21:48:37 2020 +1000
+
+    Production Plan V1.2
+    
+    Added majority of info missing SWOT info and risk analysis
+
+commit 3f8a6236ba775f6290f018aa5cfee3cea2c05621
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Sun Aug 2 21:12:07 2020 +1000
+
+    Production plan V1.1
+    
+    Info added not completed
+
+commit 2fd774eb5703960c753591825f673523ed37e69d
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Sun Aug 2 19:58:32 2020 +1000
+
+    Feedback Log Updated
+    
+    added feedback from 27/07/20
+
+commit 74f222fefe9437ba200997446fb3865e38596cd7
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Tue Jul 28 16:53:47 2020 +1000
+
+    Documentation Management
+
+commit 2b0bbd153b27736649350e27c79e6cdab7f4c42d
+Merge: 85e6c11b 4733e520
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 16:52:36 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 85e6c11b4208e5c2d7cb714b64af70ce39de2183
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 16:52:30 2020 +1000
+
+    Final change
+
+commit 4733e520a2f6abbd5800b8e5f7bc75f6b663c801
+Merge: 05cb7c5c 8a2d4f99
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Tue Jul 28 16:39:23 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 05cb7c5ca06f94fb669b8137737865584bb1e714
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Tue Jul 28 16:39:07 2020 +1000
+
+    GDD and Pitch Fixes
+
+commit 8a2d4f99a2cb303bd0665b73ceb1a79a621eeddd
+Merge: a4f24907 4d333f59
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 16:35:56 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a4f249079c88dafa61cc7013c29d856679343631
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 16:33:51 2020 +1000
+
+    I've updated the Pickup system
+
+commit 4d333f59d14bf443a57a74051a501fd2ca495874
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Jul 28 14:58:10 2020 +1000
+
+    guudo model
+
+commit 02442562b60992257eb9e5715ebc8cc50b103a2d
+Merge: ae84fbe4 623b84cf
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Tue Jul 28 12:38:13 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit ae84fbe42d3ec376de4e5e5076b660f321507d5d
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Tue Jul 28 12:38:07 2020 +1000
+
+    GDD Update 28/07 Lunch
+
+commit 623b84cfd79b6de460b06452ab07f3194f649c64
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Jul 28 12:22:29 2020 +1000
+
+    Guudo mat/ particles
+    
+    updated guudo material and added particle system to bp
+
+commit 2b11dfb076a78bed06879d16990fe0d834c43525
+Merge: 7be56266 e9b65644
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Jul 28 12:21:28 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 7be56266f933f542ad11d2f636af7d27155c6211
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Jul 28 12:21:21 2020 +1000
+
+    Skeleton Test
+    
+    added skeletal meshes and bones for customization testing
+
+commit e9b65644ec4609cdc5b6a5a85326bf16fdc71548
+Merge: 3419a612 26059154
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Tue Jul 28 12:18:35 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 3419a612d62d04be6701dd4caab1d99e0b4411d0
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Tue Jul 28 12:16:52 2020 +1000
+
+    Document
+
+commit 260591541982b9f9772c4d3f261a21fd72cc1fdd
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 12:07:27 2020 +1000
+
+    Remove "Saved"
+
+commit 4d801a8b576ba87f3039be5f2753f1a0dd7ead10
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 12:06:47 2020 +1000
+
+    Update Gitignore
+
+commit b30826f1ef86994ff18ec6f55eb4409fed7d293b
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 12:04:28 2020 +1000
+
+    Update Gitignore
+
+commit 42d58c07bcf90a5f4e01665178bc27237ed20edd
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 12:00:50 2020 +1000
+
+    Fixing conflict issues
+
+commit ba5c34db538acf89cef6d573d05c9c931951a266
+Author: Tiana <xianta@hotmail.com>
+Date:   Tue Jul 28 11:52:05 2020 +1000
+
+    Pitch Done
+
+commit e58e2a2fcfebac6f56f584fc7c868e95374c97f6
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 11:37:21 2020 +1000
+
+    Created Main Menu
+
+commit 9a7083e51719e9a27bab1f3917db13b8ab86234d
+Merge: b463d415 77a45b9a
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Tue Jul 28 10:50:59 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 77a45b9ab640d7073c3a648d68e0205afc207a64
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 10:45:42 2020 +1000
+
+    Block out - Dear God
+
+commit b463d41582fab87e87e3241dc17f58052676cee8
+Merge: 077451a6 c7e17164
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Tue Jul 28 10:32:34 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c7e171649cf9b099422188c5adcb003f38a7dfce
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 10:31:07 2020 +1000
+
+    We have a really badly appearing blocked out level
+
+commit c1b0794f7e38b7c9c8b4c2d1cc4e7f07c3b90dfc
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 10:00:42 2020 +1000
+
+    Rebuilt after code issues
+
+commit 8df12976c630fc2f04d6b09468ed5fdb23ebd63a
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 09:56:38 2020 +1000
+
+    Perform Rebuild
+
+commit 077451a69f1a523516a2a8194c444d5ab9849cc2
+Author: Mitchell Sayer <s191237@students.aie.edu.au>
+Date:   Tue Jul 28 09:50:31 2020 +1000
+
+    GDD Update
+
+commit 1fbbcacbed7d406fef0b36e7ab297b92995ff7e7
+Merge: f166e2db 7ed8f745
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 09:21:14 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit f166e2db5cf146a327e6c52cd2bd0e77873195ff
+Author: Richard <richard@amikumu.com>
+Date:   Tue Jul 28 09:19:13 2020 +1000
+
+    Updates
+
+commit 7ed8f745cf5cfbbd20861a96f396cb51f68016d2
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Jul 28 01:13:20 2020 +1000
+
+    Blockout Level 1 Space Scene
+    
+    WARNING MADE ON MORE RECENT VRS 1.25.1
+
+commit bb6f1349a646109d3480ff11849ee2d66bfd814b
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Tue Jul 28 00:04:09 2020 +1000
+
+    GDD1.2.1
+    
+    Added section info, Economies, art, tech limitations, audio direction, target market, still need attention
+
+commit fad0689aa3534659950d0ee3959d52692609c29e
+Merge: 23347262 35514fa9
+Author: Tiana Knobloch <xianta@hotmail.com>
+Date:   Mon Jul 27 23:03:31 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 233472625253dd1d06a1674dc9d3a201880bbdea
+Author: Tiana Knobloch <xianta@hotmail.com>
+Date:   Mon Jul 27 23:03:25 2020 +1000
+
+    Docs updated
+
+commit 35514fa9466769a29c0135b820720bb38d9742ec
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Jul 27 22:12:24 2020 +1000
+
+    GDD 1.2
+    
+    Added Flowcharts
+
+commit 831ece10f642a03891b27dbfb0d966e50c2accc9
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Mon Jul 27 19:28:40 2020 +1000
+
+    Pitch Awaiting Photo Updates
+    
+    Fixed preso problems
+
+commit d77b7ec509d5d8850db7c1d4d542a60c85d73756
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Jul 27 17:00:57 2020 +1000
+
+    Base Material for guudo
+    
+    created base material and instance, and substance working files
+
+commit 823d865ab72235b32a1352158d7c757941d674ec
+Author: Tiana <xianta@hotmail.com>
+Date:   Mon Jul 27 16:59:25 2020 +1000
+
+    Art slides for pitch
+
+commit 31c813f0cf753e041cfd66eae59062a2d4b6cb88
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Mon Jul 27 16:54:10 2020 +1000
+
+    Pitch Fix + basic Unreal blocking out
+
+commit 920ca570c79acce2598fadff2b18ad289e2a3712
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Mon Jul 27 16:15:42 2020 +1000
+
+    Auto stash before merge of "master" and "origin/master"
+
+commit 041f92097c4cf52077e3407d6acd0c1ac0042ac2
+Merge: 2c73577d ff5e8840
+Author: Richard <richard@amikumu.com>
+Date:   Mon Jul 27 16:14:14 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2c73577d3156be80658557ee12a5e0d91c58da2a
+Author: Richard <richard@amikumu.com>
+Date:   Mon Jul 27 16:13:06 2020 +1000
+
+    Added Timer + Destroy Pickup
+
+commit ff5e88403252330a10f73933efd2ab27ae7ddc2b
+Merge: da82da0d de216269
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Mon Jul 27 15:53:29 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit da82da0db46c9f656932d270c78d0c0fae8af947
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Mon Jul 27 15:53:22 2020 +1000
+
+    Class Pitch 27/07
+    
+    Things discussed
+
+commit de21626928d0ea0b97c9fee683201d7dc4c049b1
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Mon Jul 27 13:43:41 2020 +1000
+
+    Batch Export Plugin
+    
+    Batch Export Maya Plugin
+
+commit 901c6cc6cf07265738d3b8591cd6c1e17d399478
+Merge: 387e9110 80cfacd2
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Mon Jul 27 12:37:50 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 387e911001e4ef08fa55b9bda23beaa31380b0d7
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Mon Jul 27 12:33:00 2020 +1000
+
+    Map
+
+commit 80cfacd2af947e72cb7e1caa3b1bdffc9e6bca22
+Author: Richard <richard@amikumu.com>
+Date:   Mon Jul 27 12:32:09 2020 +1000
+
+    HUD for pickup now works
+
+commit b076d9b1ab265c70bdcedc9dcc9cc9b3cbf76e38
+Author: Richard <richard@amikumu.com>
+Date:   Mon Jul 27 11:15:58 2020 +1000
+
+    Fixed a bug
+
+commit ba216b29946b4e952453640e27a8c4f93135fa07
+Merge: 51668081 96c28d46
+Author: Richard <richard@amikumu.com>
+Date:   Mon Jul 27 11:03:26 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 516680814b84a8281d810dca0a37dfadf02b8418
+Author: Richard <richard@amikumu.com>
+Date:   Mon Jul 27 10:59:17 2020 +1000
+
+    Zoom in / out and interaction with Pickups done
+
+commit 96c28d46daa3e6de9ac0054dd0fefedb321405d8
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Mon Jul 27 09:55:19 2020 +1000
+
+    Rebuilding Project
+    
+    Prompt ask to rebuild because of missing Modules
+
+commit 8ee233f033f8e45487a3fad38a01954753ea3f16
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Sun Jul 26 16:16:52 2020 +1000
+
+    GDD 1.1
+    
+    Added all necessary headings, brief info about theme, pillars have been added
+
+commit f1eafff019e7a95257956ddc59d04eb7e2c20927
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Sun Jul 26 15:37:16 2020 +1000
+
+    Drawn Ideas
+    
+    Discusses gameplay objectives.
+
+commit 8b69f865c4794b5019b402407e6380ea71a15e8c
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Fri Jul 24 12:29:01 2020 +1000
+
+    Documentation Update
+    
+    Includes Production Plan Foundation, HacknPlan updated
+
+commit 1953d807535abbaafa7cd430ac4b6d8114fa7735
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Jul 22 23:25:23 2020 +1000
+
+    More Feedback and Doco Logos
+    
+    Omni Logo updated, feedback included main points still to be elaborated on
+
+commit 02a44d6db2a39af186747169aca393fa6830a7e4
+Author: Mitchell <mitchellbsayer@gmail.com>
+Date:   Wed Jul 22 23:08:21 2020 +1000
+
+    Concepts, Feedback Documents
+    
+    Concepts Doco awaiting updated logo,
+    Feedback Doco main points listed needs further detail added
+
+commit e69ec79fda121be21181e2a78914c51490fb6be2
+Merge: 8c2f6a05 ab9d1e46
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Wed Jul 22 17:00:11 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8c2f6a054d4839f1433bf39a13addafc484f66a7
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Wed Jul 22 17:00:03 2020 +1000
+
+    gdd title
+    
+    concepts
+
+commit ab9d1e466e195277cfd2b3c067d3f6673d948f79
+Author: Richard <richard@amikumu.com>
+Date:   Wed Jul 22 16:52:26 2020 +1000
+
+    I've started working on Pickups
+    
+    I'm halfway through building a base pickup
+
+commit 43fb96698d038909d06085de843c258ce3f8fecd
+Author: Richard <richard@amikumu.com>
+Date:   Wed Jul 22 16:22:55 2020 +1000
+
+    Added Temp Model
+
+commit f394ffdad9c9a20a7ff1d69bd52e268f2a03b76d
+Author: Richard <richard@amikumu.com>
+Date:   Wed Jul 22 16:18:35 2020 +1000
+
+    Basic Controller Built
+    
+    - Can Move
+    - Can Jump
+
+commit b86e4bbbc88957e403d0a121d4d4e529a3f59b82
+Author: Richard <richard@amikumu.com>
+Date:   Wed Jul 22 16:03:03 2020 +1000
+
+    Loaded a test model in
+
+commit 852d3da8c962cfc05f054732aceea00945148c07
+Author: Richard <richard@amikumu.com>
+Date:   Wed Jul 22 15:59:00 2020 +1000
+
+    First Push
+    
+    Started Programming Character Controller - IT's NOT READY
+
+commit 8e2933b6accfd7f90309c2ceaf09fb1a076858ea
+Merge: 0821c90f 39a8b623
+Author: Richard <richard@amikumu.com>
+Date:   Wed Jul 22 15:54:33 2020 +1000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 0821c90f312b986934eb1bc0acc9a7e6309b922f
+Author: Richard <richard@amikumu.com>
+Date:   Wed Jul 22 15:53:59 2020 +1000
+
+    Gitignore
+
+commit 39a8b623c582a011de35b16c5f7708a384d4b557
+Author: Tiana <xianta@hotmail.com>
+Date:   Wed Jul 22 15:49:51 2020 +1000
+
+    character
+
+commit 03d6602e4a77a428e963f98a49fba4ff17111072
+Author: Mitchell Sayer <mitchellbsayer@gmail.com>
+Date:   Wed Jul 22 15:07:51 2020 +1000
+
+    Added Documentation
+    
+    Added Documentation Folder including GDD, Concepts Document, Feedback Document
+
+commit 72673c621e555254b045d83371e12489862fb754
+Author: Daniel <danielmathewiaria@gmail.com>
+Date:   Tue Jul 21 15:55:23 2020 +1000
+
+    Folder Structure
+    
+    changed anim folder
+
+commit 38bd9c59a8f35ac05699f224b5df9d7c5e60db60
+Author: Evildea <35228400+Evildea@users.noreply.github.com>
+Date:   Tue Jul 21 14:53:25 2020 +1000
+
+    Folder Structure
+    
+    created artist folder structure
