@@ -16,12 +16,13 @@ class GUUDO_API UItemImageWidget : public UUserWidget
 {
 	GENERATED_BODY()
 	
-private:
-
-    AModularGuudo*      m_ModularGuudo; // Reference to the Modular Guudo
-    UGuudoGameInstance* m_GameInstance; // Reference to the Game Instance
-
 public:
+
+    UPROPERTY()
+    AModularGuudo*      m_ModularGuudo; // Reference to the Modular Guudo
+
+    UPROPERTY()
+    UGuudoGameInstance* m_GameInstance; // Reference to the Game Instance
 
     // Image Box that will contain the Silhouette for the Widget.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
