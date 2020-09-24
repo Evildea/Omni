@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: Assets_Daniel.ma
-//Last modified: Tue, Sep 22, 2020 02:38:15 PM
+//Last modified: Tue, Sep 22, 2020 11:07:28 PM
 //Codeset: 1252
 requires maya "2019";
 requires "stereoCamera" "10.0";
@@ -14,8 +14,8 @@ fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 19041)\n";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "0126D186-45E6-4A3B-4998-F68B3DFF4421";
-	setAttr ".t" -type "double3" -118.49101899997257 56.753347768886044 180.21971520348552 ;
-	setAttr ".r" -type "double3" 8277.8616440989736 -2194.9999999999673 0 ;
+	setAttr ".t" -type "double3" 155.91000875135359 56.75334768546746 146.52750550204678 ;
+	setAttr ".r" -type "double3" 8277.8616441221111 -671.00000000000648 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "3444BBB5-418C-2F36-93FE-A4B2F45803CB";
 	setAttr -k off ".v";
