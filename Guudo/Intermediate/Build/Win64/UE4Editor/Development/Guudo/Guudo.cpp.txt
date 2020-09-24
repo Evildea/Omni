@@ -1,2 +1,2 @@
-C:\Users\mitch\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
-c:\users\mitch\desktop\omni\guudo\source\guudo\Guudo.h
+D:\Github\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
+d:\github\omni\guudo\source\guudo\Guudo.h

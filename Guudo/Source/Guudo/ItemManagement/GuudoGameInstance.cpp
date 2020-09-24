@@ -42,34 +42,22 @@ void UGuudoGameInstance::Reset()
 
 UMaterial* UGuudoGameInstance::GetHead()
 {
-	if (Inventory.Num() == 0)
-		return nullptr;
-	else
-		return m_ItemManager.GetSilhouetteHead().Silhouette;
+	return m_ItemManager.GetSilhouetteHead().Silhouette;
 }
 
 UMaterial* UGuudoGameInstance::GetChest()
 {
-	if (Inventory.Num() == 0)
-		return nullptr;
-	else
-		return m_ItemManager.GetSilhouetteChest().Silhouette;
+	return m_ItemManager.GetSilhouetteChest().Silhouette;
 }
 
 UMaterial* UGuudoGameInstance::GetArms()
 {
-	if (Inventory.Num() == 0)
-		return nullptr;
-	else
-		return m_ItemManager.GetSilhouetteArms().Silhouette;
+	return m_ItemManager.GetSilhouetteArms().Silhouette;
 }
 
 UMaterial* UGuudoGameInstance::GetLegs()
 {
-	if (Inventory.Num() == 0)
-		return nullptr;
-	else
-		return m_ItemManager.GetSilhouetteLegs().Silhouette;
+	return m_ItemManager.GetSilhouetteLegs().Silhouette;
 }
 
 void UGuudoGameInstance::PickupItem(FPickupData* Item)
