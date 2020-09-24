@@ -50,6 +50,7 @@ private:
 	class UGuudoGameInstance* m_GameInstance = nullptr; // Reference to the Game Instance
 
 	// Interacting
+	UPROPERTY()
 	class ASwitch* m_TargetSwitch;
 
 	// Scaling
@@ -58,6 +59,7 @@ private:
 
 	// Shaking
 	EWalking m_WalkState;
+	UPROPERTY()
 	TArray<AActor*> m_ShakeList;
 
 	// Perform Collision check above

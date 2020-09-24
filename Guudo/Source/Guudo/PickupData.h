@@ -28,11 +28,11 @@ struct FPickupData
         FName Name;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        UMaterial* Silhouette;
+        UMaterial* Silhouette = nullptr;
 
     // This object has this general shape:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        EShape GeneralShape;
+        EShape GeneralShape = EShape::Box;
 
     // This object can be connected to any of these body positions:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -54,10 +54,10 @@ struct FPickupData
         float WrongScore = 0.f;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        class USoundBase* VoiceOver;
+        class USoundBase* VoiceOver = nullptr;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        class USkeletalMesh* Mesh;
+        class USkeletalMesh* Mesh = nullptr;
 
 };
 

@@ -20,12 +20,13 @@ class GUUDO_API UGuudoGameInstance : public UGameInstance
 private:
 	MapItemManager	m_ItemManager;				// Item Manager.
 	ScoreCalculator	m_ScoreCalculator;			// Score Calculator.
+
 	bool			m_hasSilhouette = false;	// Has a Silhouette been generated.
 
 public:
 	virtual void Init() override;
 
-	// Player's Inventory/
+	// Player's Inventory
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TArray<FPickupData> Inventory;
 
@@ -56,4 +57,12 @@ public:
 
 	// Check whether a Silhouette has been generated before.
 	bool DoesSilhouetteExist() { return m_hasSilhouette; }
+
+	// Reset the Silhouette
+	UFUNCTION(BlueprintCallable)
+		void ResetSilhouette();
+
+	// Reset
+	UFUNCTION(BlueprintCallable)
+		void Reset();
 };

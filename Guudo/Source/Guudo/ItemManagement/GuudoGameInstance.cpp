@@ -26,27 +26,54 @@ void UGuudoGameInstance::GenerateSilhouette()
 	UE_LOG(LogTemp, Warning, TEXT("Silhouette Generated"));
 }
 
+void UGuudoGameInstance::ResetSilhouette()
+{
+	m_hasSilhouette = false;
+	m_ItemManager.ResetSilhouette();
+}
+
+void UGuudoGameInstance::Reset()
+{
+	m_hasSilhouette = false;
+	m_ItemManager.ResetSilhouette();
+	m_ItemManager.ClearItemList();
+	Inventory.Empty();
+}
+
 UMaterial* UGuudoGameInstance::GetHead()
 {
-	return m_ItemManager.GetSilhouetteHead().Silhouette;
+	if (Inventory.Num() == 0)
+		return nullptr;
+	else
+		return m_ItemManager.GetSilhouetteHead().Silhouette;
 }
 
 UMaterial* UGuudoGameInstance::GetChest()
 {
-	return m_ItemManager.GetSilhouetteChest().Silhouette;
+	if (Inventory.Num() == 0)
+		return nullptr;
+	else
+		return m_ItemManager.GetSilhouetteChest().Silhouette;
 }
 
 UMaterial* UGuudoGameInstance::GetArms()
 {
-	return m_ItemManager.GetSilhouetteArms().Silhouette;
+	if (Inventory.Num() == 0)
+		return nullptr;
+	else
+		return m_ItemManager.GetSilhouetteArms().Silhouette;
 }
 
 UMaterial* UGuudoGameInstance::GetLegs()
 {
-	return m_ItemManager.GetSilhouetteLegs().Silhouette;
+	if (Inventory.Num() == 0)
+		return nullptr;
+	else
+		return m_ItemManager.GetSilhouetteLegs().Silhouette;
 }
 
 void UGuudoGameInstance::PickupItem(FPickupData* Item)
 {
-	Inventory.Add(*Item);
+	if (Item != nullptr)
+		Inventory.Add(*Item);
 }

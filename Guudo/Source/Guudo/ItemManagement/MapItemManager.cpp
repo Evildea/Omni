@@ -18,12 +18,6 @@ MapItemManager::~MapItemManager()
 
 void MapItemManager::GenerateListOfAllItems(const UObject* WorldContextObject)
 {
-	// Only Generate Lists of Items if they are currently empty.
-	if (ListOfAllHeadsOnMap.Num() == 0
-		&& ListOfAllChestsOnMap.Num() == 0
-		&& ListOfAllArmsOnMap.Num() == 0
-		&& ListOfAllLegsOnMap.Num() == 0)
-	{
 		// Setup Temp Variables
 		TArray<AActor*>		ListOfActorsWithPickupComponent;
 		TArray<FPickupData> ListOfFPickups;
@@ -66,7 +60,6 @@ void MapItemManager::GenerateListOfAllItems(const UObject* WorldContextObject)
 			ListOfAllChestsOnMap.Num(),
 			ListOfAllArmsOnMap.Num(),
 			ListOfAllLegsOnMap.Num());
-	}
 }
 
 void MapItemManager::GenerateTargetSilhouette()
@@ -77,12 +70,36 @@ void MapItemManager::GenerateTargetSilhouette()
 	m_Legs = FMath::RandRange(0, ListOfAllLegsOnMap.Num() - 1);
 }
 
+void MapItemManager::ResetSilhouette()
+{
+	m_isHeadSelected = false;
+	m_isChestSelected = false;
+	m_isArmsSelected = false;
+	m_isLegsSelected = false;
+	m_SelectedHead = 0;
+	m_SelectedChest = 0;
+	m_SelectedArms = 0;
+	m_SelectedLegs = 0;
+	m_Head = 0;
+	m_Chest = 0;
+	m_Arms = 0;
+	m_Legs = 0;
+}
+
+void MapItemManager::ClearItemList()
+{
+	ListOfAllHeadsOnMap.Empty();
+	ListOfAllChestsOnMap.Empty();
+	ListOfAllArmsOnMap.Empty();
+	ListOfAllLegsOnMap.Empty();
+}
+
 FPickupData MapItemManager::GetSilhouetteHead()
 {
 	if (ListOfAllHeadsOnMap.Num() != 0)
 		return ListOfAllHeadsOnMap[m_Head];
 	else
-		return {};
+		return { };
 }
 
 FPickupData MapItemManager::GetSilhouetteChest()
@@ -90,7 +107,7 @@ FPickupData MapItemManager::GetSilhouetteChest()
 	if (ListOfAllChestsOnMap.Num() != 0)
 		return ListOfAllChestsOnMap[m_Chest];
 	else
-		return {};
+		return { };
 }
 
 FPickupData MapItemManager::GetSilhouetteArms()
@@ -98,7 +115,7 @@ FPickupData MapItemManager::GetSilhouetteArms()
 	if (ListOfAllArmsOnMap.Num() != 0)
 		return ListOfAllArmsOnMap[m_Arms];
 	else
-		return {};
+		return { };
 }
 
 FPickupData MapItemManager::GetSilhouetteLegs()
@@ -106,7 +123,7 @@ FPickupData MapItemManager::GetSilhouetteLegs()
 	if (ListOfAllLegsOnMap.Num() != 0)
 		return ListOfAllLegsOnMap[m_Legs];
 	else
-		return {};
+		return { };
 }
 
 FPickupData MapItemManager::GetSelectedHead()

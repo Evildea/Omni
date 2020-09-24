@@ -40,6 +40,8 @@ public:
 	// Functions
 	void GenerateListOfAllItems(const UObject* WorldContextObject);
 	void GenerateTargetSilhouette();
+	void ResetSilhouette();
+	void ClearItemList();
 
 	// Get the Target Body Parts
 	FPickupData GetSilhouetteHead();
@@ -68,8 +70,12 @@ public:
 	void SetSelectedLegs(int Index) { m_SelectedLegs = Index; m_isLegsSelected = true; }
 
 	// Static Variables
+	UPROPERTY()
 	TArray<FPickupData> ListOfAllHeadsOnMap;
+	UPROPERTY()
 	TArray<FPickupData> ListOfAllChestsOnMap;
+	UPROPERTY()
 	TArray<FPickupData> ListOfAllArmsOnMap;
+	UPROPERTY()
 	TArray<FPickupData> ListOfAllLegsOnMap;
 };

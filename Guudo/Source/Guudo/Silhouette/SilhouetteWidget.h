@@ -42,7 +42,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UImage* RightLegSilouette;
 
-
 	UFUNCTION(BlueprintCallable)
 		class UMaterial* GetHead();
 
