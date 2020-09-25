@@ -253,12 +253,9 @@ void AGuudoCharater::Pickup()
 
 		UPickup* Pickup = ConsumeTarget->FindComponentByClass<UPickup>();
 
-		if (m_GameInstance && Pickup)
+		if (Pickup)
 		{
-			m_GameInstance->PickupItem(&Pickup->PickupData);
-			UE_LOG(LogTemp, Warning, TEXT("Size of inventory: %d"), m_GameInstance->GetSizeOfInventory());
-
-			// Call the Blueprint OnPickup function which will play animations, shrink the object etc...
+			Pickup->Pickup();
 			m_isPickupPossible = false;
 			OnShrinkAndDestroyPickup(ConsumeTarget, ConsumeTarget->GetActorRelativeScale3D());
 		}

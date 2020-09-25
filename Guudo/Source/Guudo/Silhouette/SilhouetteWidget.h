@@ -16,13 +16,12 @@ class GUUDO_API USilhouetteWidget : public UUserWidget
 {
 	GENERATED_BODY()
 	
-public:
-	USilhouetteWidget(const FObjectInitializer& ObjectInitializer);
-
-	virtual void NativeConstruct() override;
-
+private:
 	UPROPERTY()
-		class UGuudoGameInstance* gameInstance;
+		class UGuudoGameInstance* m_GameInstance;
+
+public:
+	virtual void NativeConstruct() override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UImage* HeadSilouette;

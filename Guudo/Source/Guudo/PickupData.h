@@ -34,19 +34,6 @@ struct FPickupData
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         EShape GeneralShape = EShape::Box;
 
-    // This object can be connected to any of these body positions:
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        bool isHead;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        bool isChest;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        bool isArms;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        bool isLegs;
-
     UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = "0.0", ClampMax = "100.0", UIMin = "0.0", UIMax = "100.0"))
         float SimilarScore = 50.f;
 

@@ -23,7 +23,10 @@ protected:
 
 public:	
 	
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		FPickupData PickupData;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Designer")
+		FName Name;
 		
+	// This function is called when Guudo pickups the Item
+	void Pickup();
+
 };

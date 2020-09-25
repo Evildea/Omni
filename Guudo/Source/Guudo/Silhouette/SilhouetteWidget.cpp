@@ -6,54 +6,36 @@
 #include "../ItemManagement/GuudoGameInstance.h"
 #include "Styling/SlateBrush.h"
 
-USilhouetteWidget::USilhouetteWidget(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
-{
-
-}
-
 void USilhouetteWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
-
-    gameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-    if (gameInstance && !gameInstance->DoesSilhouetteExist())
-    {
-        gameInstance->GenerateSilhouette();
-    }
+    m_GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 }
 
 UMaterial* USilhouetteWidget::GetHead()
 {
-    if (gameInstance)
-    {
-        return gameInstance->GetHead();
-    }
+    if (m_GameInstance)
+        return m_GameInstance->GetSilhouetteHead();
     return nullptr;
 }
 
 UMaterial* USilhouetteWidget::GetChest()
 {
-    if (gameInstance)
-    {
-        return gameInstance->GetChest();
-    }
+	if (m_GameInstance)
+		return m_GameInstance->GetSilhouetteChest();
     return nullptr;
 }
 
 UMaterial* USilhouetteWidget::GetArms()
 {
-    if (gameInstance)
-    {
-        return gameInstance->GetArms();
-    }
+	if (m_GameInstance)
+		return m_GameInstance->GetSilhouetteArm();
     return nullptr;
 }
 
 UMaterial* USilhouetteWidget::GetLegs()
 {
-    if (gameInstance)
-    {
-        return gameInstance->GetLegs();
-    }
+	if (m_GameInstance)
+		return m_GameInstance->GetSilhouetteLeg();
     return nullptr;
 }
