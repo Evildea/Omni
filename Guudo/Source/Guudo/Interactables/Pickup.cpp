@@ -4,6 +4,7 @@
 #include "Pickup.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SphereComponent.h"
+#include "../ItemManagement/GuudoGameInstance.h"
 
 // Sets default values for this component's properties
 UPickup::UPickup()
@@ -19,6 +20,14 @@ void UPickup::BeginPlay()
 {
 	Super::BeginPlay();
 
+	// Check if Pickup Exist
+	UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+	if (!GameInstance->CheckPickupExists(Name))
+	{
+		GetOwner()->Destroy();
+		return;
+	}
+
 	// Setup the Main Collider so it's configured for pickup otherwise pump out an error message for the Designer.
 	USphereComponent* PickupRange = GetOwner()->FindComponentByClass<USphereComponent>();
 	if (PickupRange)
@@ -28,10 +37,6 @@ void UPickup::BeginPlay()
 		PickupRange->SetCollisionProfileName(FName("OverlapAllDynamic"));
 		PickupRange->ComponentTags.Add(FName("Pickup"));
 	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("[%s] Failed to setup Collision Component for Pickup"), *GetOwner()->GetName());
-	}
 
 	// Setup the Mesh
 	UStaticMeshComponent* Mesh = GetOwner()->FindComponentByClass<UStaticMeshComponent>();
@@ -40,6 +45,10 @@ void UPickup::BeginPlay()
 
 	// Add the Pushable Tag
 	GetOwner()->Tags.Add(FName("Pushable"));
+}
 
-	
+void UPickup::Pickup()
+{
+	UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+	GameInstance->AddItemToInventory(Name);
 }

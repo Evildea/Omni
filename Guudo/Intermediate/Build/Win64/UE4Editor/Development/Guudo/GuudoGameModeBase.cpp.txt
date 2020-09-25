@@ -1,7 +1,7 @@
-D:\Github\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
-d:\github\omni\guudo\source\guudo\GuudoGameModeBase.h
+D:\Unreal\GitKraken\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
+d:\unreal\gitkraken\omni\guudo\source\guudo\GuudoGameModeBase.h
 D:\Software\UE_4.23\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 D:\Software\UE_4.23\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 D:\Software\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 D:\Software\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-D:\Github\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameModeBase.generated.h
+D:\Unreal\GitKraken\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameModeBase.generated.h
