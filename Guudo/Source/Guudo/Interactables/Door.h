@@ -73,6 +73,8 @@ public:
 private:
 	bool m_isActivated;
 	FVector m_StartLocation;
+
+	UPROPERTY()
 	UGuudoGameInstance* m_GameInstance;
 
 };

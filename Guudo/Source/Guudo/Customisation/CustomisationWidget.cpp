@@ -97,6 +97,7 @@ void UCustomisationWidget::PressDone()
 
 	m_GameInstance->CalculateScore(HeadScoreF, ChestScoreF, ArmsScoreF, LegsScoreF);
 
+
 	// Calculate Final Score
 	FinalScoreF = (1.0f / 400.f) * (HeadScoreF + ChestScoreF + ArmsScoreF + LegsScoreF);
 
@@ -142,7 +143,6 @@ void UCustomisationWidget::RefreshBodyPartSelectionText()
 		BodySelectionText->SetText(FText::FromString("Legs"));
 		break;
 	}
-
 }
 
 void UCustomisationWidget::RefreshListOfVisibleBodyParts()
@@ -158,33 +158,35 @@ void UCustomisationWidget::RefreshListOfVisibleBodyParts()
 	switch (GetCurrentBodySelection())
 	{
 		// Show Head Widgets
-		case ESelection::Head:
-			for (auto& Items : m_ListOfHeadWidgets)
-				ItemScrollBox->AddChild(Items);
-			break;
+	case ESelection::Head:
+		for (auto& Items : m_ListOfHeadWidgets)
+			ItemScrollBox->AddChild(Items);
+		break;
 
 		// Show Chest Widgets
-		case ESelection::Chest:
-			for (auto& Items : m_ListOfChestWidgets)
-				ItemScrollBox->AddChild(Items);
-			break;
+	case ESelection::Chest:
+		for (auto& Items : m_ListOfChestWidgets)
+			ItemScrollBox->AddChild(Items);
+		break;
 
 		// Show Arm Widgets
-		case ESelection::Arms:
-			for (auto& Items : m_ListOfArmWidgets)
-				ItemScrollBox->AddChild(Items);
-			break;
+	case ESelection::Arms:
+		for (auto& Items : m_ListOfArmWidgets)
+			ItemScrollBox->AddChild(Items);
+		break;
 
 		// Show Leg Widgets
-		case ESelection::Legs:
-			for (auto& Items : m_ListOfLegWidgets)
-				ItemScrollBox->AddChild(Items);
-			break;
+	case ESelection::Legs:
+		for (auto& Items : m_ListOfLegWidgets)
+			ItemScrollBox->AddChild(Items);
+		break;
 	}
 }
 
 void UCustomisationWidget::SpawnWidgetsFromBodyPartList(TArray<FPickupData>& ItemList, TArray<UItemImageWidget*>& WidgetList, ESelection BodyPart)
 {
+	UE_LOG(LogTemp, Display, TEXT("Log: %i"), ItemList.Num());
+
 	// Spawn the Head Widgets
 	for (int index = 0; index < ItemList.Num(); index++)
 	{
@@ -210,64 +212,41 @@ void UCustomisationWidget::SpawnWidgetsFromBodyPartList(TArray<FPickupData>& Ite
 
 void UCustomisationWidget::SpawnWidgetsFromInventoryItems()
 {
-	// Create Temp Body Part Lists for all the Inventory Items.
-	TArray<FPickupData>	m_ListOfHeadItems;
-	TArray<FPickupData>	m_ListOfChestItems;
-	TArray<FPickupData>	m_ListOfArmItems;
-	TArray<FPickupData>	m_ListOfLegItems;
-
-	// Add the Inventory Items to the Body Part Lists.
-	for (int32 Index = 0; Index != m_GameInstance->Inventory.Num(); ++Index)
-	{
-		if (m_GameInstance->Inventory[Index].isHead)
-			m_ListOfHeadItems.Add(m_GameInstance->Inventory[Index]);
-		if (m_GameInstance->Inventory[Index].isChest)
-			m_ListOfChestItems.Add(m_GameInstance->Inventory[Index]);
-		if (m_GameInstance->Inventory[Index].isArms)
-			m_ListOfArmItems.Add(m_GameInstance->Inventory[Index]);
-		if (m_GameInstance->Inventory[Index].isLegs)
-			m_ListOfLegItems.Add(m_GameInstance->Inventory[Index]);
-	}
+	// Check if the Game Instance Exists first.
+	if (!m_GameInstance)
+		return;
 
 	// Spawn Widgets for Each Body Part
-	SpawnWidgetsFromBodyPartList(m_ListOfHeadItems, m_ListOfHeadWidgets, ESelection::Head);		// Spawn the Head Item Widgets
-	SpawnWidgetsFromBodyPartList(m_ListOfChestItems, m_ListOfChestWidgets, ESelection::Chest);	// Spawn the Chest Item Widgets
-	SpawnWidgetsFromBodyPartList(m_ListOfArmItems, m_ListOfArmWidgets, ESelection::Arms);		// Spawn the Arm Item Widgets
-	SpawnWidgetsFromBodyPartList(m_ListOfLegItems, m_ListOfLegWidgets, ESelection::Legs);		// Spawn the Leg Item Widgets
+	SpawnWidgetsFromBodyPartList(m_GameInstance->ListOfInventoryHeadPickups, m_ListOfHeadWidgets, ESelection::Head);	// Spawn the Head Item Widgets
+	SpawnWidgetsFromBodyPartList(m_GameInstance->ListOfInventoryChestPickups, m_ListOfChestWidgets, ESelection::Chest);	// Spawn the Chest Item Widgets
+	SpawnWidgetsFromBodyPartList(m_GameInstance->ListOfInventoryArmPickups, m_ListOfArmWidgets, ESelection::Arms);		// Spawn the Arm Item Widgets
+	SpawnWidgetsFromBodyPartList(m_GameInstance->ListOfInventoryLegPickups, m_ListOfLegWidgets, ESelection::Legs);		// Spawn the Leg Item Widgets
 }
 
 UMaterial* UCustomisationWidget::GetHead()
 {
 	if (m_GameInstance)
-	{
-		return m_GameInstance->GetHead();
-	}
+		return m_GameInstance->GetSilhouetteHead();
 	return nullptr;
 }
 
 UMaterial* UCustomisationWidget::GetChest()
 {
 	if (m_GameInstance)
-	{
-		return m_GameInstance->GetChest();
-	}
+		return m_GameInstance->GetSilhouetteChest();
 	return nullptr;
 }
 
 UMaterial* UCustomisationWidget::GetArms()
 {
 	if (m_GameInstance)
-	{
-		return m_GameInstance->GetArms();
-	}
+		return m_GameInstance->GetSilhouetteArm();
 	return nullptr;
 }
 
 UMaterial* UCustomisationWidget::GetLegs()
 {
 	if (m_GameInstance)
-	{
-		return m_GameInstance->GetLegs();
-	}
+		return m_GameInstance->GetSilhouetteLeg();
 	return nullptr;
 }

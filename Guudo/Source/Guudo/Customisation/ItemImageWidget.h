@@ -17,9 +17,11 @@ class GUUDO_API UItemImageWidget : public UUserWidget
 	GENERATED_BODY()
 	
 private:
+	UPROPERTY()
+		AModularGuudo*      m_ModularGuudo; // Reference to the Modular Guudo
 
-    AModularGuudo*      m_ModularGuudo; // Reference to the Modular Guudo
-    UGuudoGameInstance* m_GameInstance; // Reference to the Game Instance
+	UPROPERTY()
+		UGuudoGameInstance* m_GameInstance; // Reference to the Game Instance
 
 public:
 
@@ -42,8 +44,6 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         int ItemIndex = 0;
-
-    UGuudoGameInstance* GameInstance;
 
     /// FUNCTIONS /////////////////////////////////////////////////////////////
 

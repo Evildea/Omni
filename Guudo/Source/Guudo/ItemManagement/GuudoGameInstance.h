@@ -4,8 +4,6 @@
 
 #include "PickupData.h"
 #include "CoreMinimal.h"
-#include "MapItemManager.h"
-#include "ScoreCalculator.h"
 #include "Engine/GameInstance.h"
 #include "GuudoGameInstance.generated.h"
 
@@ -18,42 +16,74 @@ class GUUDO_API UGuudoGameInstance : public UGameInstance
 	GENERATED_BODY()
 
 private:
-	MapItemManager	m_ItemManager;				// Item Manager.
-	ScoreCalculator	m_ScoreCalculator;			// Score Calculator.
-	bool			m_hasSilhouette = false;	// Has a Silhouette been generated.
+	// LIST OF SILHOUETTE ITEMS
+	bool HasSilhouette = false;
+	int SilhouetteHead = -1;
+	int SilhouetteChest = -1;
+	int SilhouetteArm = -1;
+	int SilhouetteLeg = -1;
+	int SelectedHead = -1;
+	int SelectedArm = -1;
+	int SelectedChest = -1;
+	int SelectedLeg = -1;
+
 
 public:
 	virtual void Init() override;
 
-	// Player's Inventory/
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TArray<FPickupData> Inventory;
-
 	void GenerateSilhouette();
 
-	void CalculateScore(float &HeadScore, float &ChestScore, float &ArmScore, float &LegScore) { m_ScoreCalculator.CalculateScore(&m_ItemManager, HeadScore, ChestScore, ArmScore, LegScore); }
+	/// LIST OF INVENTORY ITEMS (PICKUPS AVAILABLE) ///////////////////////////////
+	UPROPERTY()
+		TArray<FPickupData> ListOfInventoryHeadPickups;
 
-	UFUNCTION(BlueprintPure)
-		UMaterial* GetHead();
+	UPROPERTY()
+		TArray<FPickupData> ListOfInventoryChestPickups;
 
-	UFUNCTION(BlueprintPure)
-		UMaterial* GetChest();
+	UPROPERTY()
+		TArray<FPickupData> ListOfInventoryArmPickups;
 
-	UFUNCTION(BlueprintPure)
-		UMaterial* GetArms();
+	UPROPERTY()
+		TArray<FPickupData> ListOfInventoryLegPickups;
 
-	UFUNCTION(BlueprintPure)
-		UMaterial* GetLegs();
+	/// LIST OF PICKUPS THAT THE PLAYER CAN COLLECT ///////////////////////////////
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<FPickupData> ListOfHeadPickups;
 
-	// Add item to the Players Inventory.
-	void PickupItem(FPickupData* Item);
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<FPickupData> ListOfChestPickups;
 
-	// Get number of items in the Players Inventory.
-	int GetSizeOfInventory() { return Inventory.Num(); }
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<FPickupData> ListOfArmPickups;
 
-	// Get a reference to the Item Manager.
-	MapItemManager* GetItemManager() { return &m_ItemManager; }
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<FPickupData> ListOfLegPickups;
 
-	// Check whether a Silhouette has been generated before.
-	bool DoesSilhouetteExist() { return m_hasSilhouette; }
+	bool inline GetHasSilhouette() { return HasSilhouette; }
+	
+	UFUNCTION(BlueprintCallable)
+		void AddItemToInventory(FName Pickup);
+	
+	UFUNCTION(BlueprintCallable)
+		bool CheckPickupExists(FName Pickup);
+
+	UFUNCTION(BlueprintCallable)
+		void ResetGameInstance();
+
+	// Calculate the Score
+	void CalculateScore(float &HeadScore, float &ChestScore, float &ArmScore, float &LegScore);
+
+	void SetSelectedHead(int value) { SelectedHead = 0; }
+	void SetSelectedArm(int value) { SelectedArm = 0; }
+	void SetSelectedChest(int value) { SelectedChest = 0; }
+	void SetSelectedLeg(int value) { SelectedLeg = 0; }
+
+	UMaterial* GetSilhouetteHead();
+	UMaterial* GetSilhouetteChest();
+	UMaterial* GetSilhouetteArm();
+	UMaterial* GetSilhouetteLeg();
+
+	int GetSizeOfInventory() { return ListOfHeadPickups.Num() + ListOfChestPickups.Num() + ListOfArmPickups.Num() + ListOfLegPickups.Num(); }
+
+
 };

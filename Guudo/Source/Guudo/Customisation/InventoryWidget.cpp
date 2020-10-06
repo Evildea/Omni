@@ -25,7 +25,7 @@ void UInventoryWidget::RefreshContent()
 	ItemScrollBox04->ClearChildren();
 
 	// Set variables
-	int Size = m_GameInstance->Inventory.Num();
+	int Size = 0;// m_GameInstance->Inventory.Num();
 
 	// Add the Inventory Items to the List.
 	for (int32 Index = 0; Index != Size; ++Index)
@@ -35,7 +35,7 @@ void UInventoryWidget::RefreshContent()
 
 		// Configure the Widget
 		NewItemWidget->SetGameInstance(m_GameInstance);
-		NewItemWidget->SetImageOfWidget(m_GameInstance->Inventory[Index].Silhouette);
+//		NewItemWidget->SetImageOfWidget(m_GameInstance->Inventory[Index].Silhouette);
 		NewItemWidget->ItemIndex = Index;
 
 		// Add to Scroll Bar

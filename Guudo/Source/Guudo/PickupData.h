@@ -28,24 +28,11 @@ struct FPickupData
         FName Name;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        UMaterial* Silhouette;
+        UMaterial* Silhouette = nullptr;
 
     // This object has this general shape:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        EShape GeneralShape;
-
-    // This object can be connected to any of these body positions:
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        bool isHead;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        bool isChest;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        bool isArms;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        bool isLegs;
+        EShape GeneralShape = EShape::Box;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = "0.0", ClampMax = "100.0", UIMin = "0.0", UIMax = "100.0"))
         float SimilarScore = 50.f;
@@ -54,10 +41,10 @@ struct FPickupData
         float WrongScore = 0.f;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        class USoundBase* VoiceOver;
+        class USoundBase* VoiceOver = nullptr;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-        class USkeletalMesh* Mesh;
+        class USkeletalMesh* Mesh = nullptr;
 
 };
 
