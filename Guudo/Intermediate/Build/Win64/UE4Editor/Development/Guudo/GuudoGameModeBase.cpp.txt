@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+C:\Users\s191215\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
+C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
+=======
 <<<<<<< Updated upstream
 C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
@@ -5,12 +9,17 @@ C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
 >>>>>>> Stashed changes
+>>>>>>> master
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+<<<<<<< HEAD
+C:\Users\s191215\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameModeBase.generated.h
+=======
 <<<<<<< Updated upstream
 C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameModeBase.generated.h
 =======
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameModeBase.generated.h
 >>>>>>> Stashed changes
+>>>>>>> master
