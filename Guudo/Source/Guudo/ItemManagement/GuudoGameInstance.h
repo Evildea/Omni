@@ -83,5 +83,7 @@ public:
 	UMaterial* GetSilhouetteArm();
 	UMaterial* GetSilhouetteLeg();
 
+	int GetSizeOfInventory() { return ListOfHeadPickups.Num() + ListOfChestPickups.Num() + ListOfArmPickups.Num() + ListOfLegPickups.Num(); }
+
 
 };
