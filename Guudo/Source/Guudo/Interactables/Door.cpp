@@ -71,11 +71,11 @@ void ADoor::Tick(float DeltaTime)
 		if (!m_GameInstance)
 			m_GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 
-		/*if (m_GameInstance)
+		if (m_GameInstance)
 		{
 			if (m_GameInstance->GetSizeOfInventory() < MinObjCountRequired)
 				return;
-		}*/
+		}
 	}
 
 	// Set the new View Target
