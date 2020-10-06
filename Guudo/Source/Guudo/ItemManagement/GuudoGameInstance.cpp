@@ -24,10 +24,10 @@ void UGuudoGameInstance::GenerateSilhouette()
 		SilhouetteArm = FMath::RandRange(0, ListOfArmPickups.Num() - 1);
 		SilhouetteLeg = FMath::RandRange(0, ListOfLegPickups.Num() - 1);
 
-		UE_LOG(LogTemp, Warning, TEXT("Head selected: %i out of %i pieces"), SilhouetteHead, ListOfHeadPickups.Num() - 1);
-		UE_LOG(LogTemp, Warning, TEXT("Head selected: %i out of %i pieces"), SilhouetteChest, ListOfChestPickups.Num() - 1);
-		UE_LOG(LogTemp, Warning, TEXT("Head selected: %i out of %i pieces"), SilhouetteArm, ListOfArmPickups.Num() - 1);
-		UE_LOG(LogTemp, Warning, TEXT("Head selected: %i out of %i pieces"), SilhouetteLeg, ListOfLegPickups.Num() - 1);
+		UE_LOG(LogTemp, Warning, TEXT("Head selected: %i out of %i pieces"), SilhouetteHead, ListOfHeadPickups.Num());
+		UE_LOG(LogTemp, Warning, TEXT("Head selected: %i out of %i pieces"), SilhouetteChest, ListOfChestPickups.Num());
+		UE_LOG(LogTemp, Warning, TEXT("Head selected: %i out of %i pieces"), SilhouetteArm, ListOfArmPickups.Num());
+		UE_LOG(LogTemp, Warning, TEXT("Head selected: %i out of %i pieces"), SilhouetteLeg, ListOfLegPickups.Num());
 	}
 }
 
