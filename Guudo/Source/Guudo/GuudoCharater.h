@@ -72,9 +72,6 @@ private:
 	// Custom Jump for the Character
 	void CustomJump();
 
-	// Set Push Force
-	void SetPushForce(float Amount);
-
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -153,13 +150,6 @@ public:
 		float NormalJumpHeight = 600.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float LargeJumpHeight = 300.0f;
-
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float SmallPushForce = 100.0f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float NormalPushForce = 500.0f;
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		float LargePushForce = 1500.0f;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float ShakeFrequency = 0.25f;

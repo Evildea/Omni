@@ -135,17 +135,6 @@ void AGuudoCharater::CustomJump()
 	Jump();
 }
 
-void AGuudoCharater::SetPushForce(float Amount)
-{
-	if (Amount == 0)
-		GetCharacterMovement()->bEnablePhysicsInteraction = false;
-	else
-	{
-		GetCharacterMovement()->InitialPushForceFactor = Amount;
-		GetCharacterMovement()->PushForceFactor = Amount * 1500.0f;
-	}
-}
-
 // Called to bind functionality to input
 void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -280,7 +269,6 @@ void AGuudoCharater::Shrink()
 	// Set the new Scale
 	if (m_ScaleState == EScale::Large)
 	{
-		SetPushForce(NormalPushForce);
 		m_GrowthState = EGrowth::Changing;
 		m_ScaleState = EScale::Normal;
 		if (ShrinkSounds)
@@ -290,7 +278,6 @@ void AGuudoCharater::Shrink()
 	}
 	if (m_ScaleState == EScale::Normal)
 	{
-		SetPushForce(SmallPushForce);
 		m_GrowthState = EGrowth::Changing;
 		m_ScaleState = EScale::Small;
 		if (ShrinkSounds)
@@ -326,7 +313,6 @@ void AGuudoCharater::Grow()
 		// Set the new Scale
 		if (m_ScaleState == EScale::Normal)
 		{
-			SetPushForce(LargePushForce);
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Large;
 			PushCollider->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
@@ -337,7 +323,6 @@ void AGuudoCharater::Grow()
 		}
 		if (m_ScaleState == EScale::Small)
 		{
-			SetPushForce(NormalPushForce);
 			m_GrowthState = EGrowth::Changing;
 			m_ScaleState = EScale::Normal;
 			PushCollider->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
