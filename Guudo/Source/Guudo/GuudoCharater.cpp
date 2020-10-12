@@ -132,6 +132,7 @@ void AGuudoCharater::CustomJump()
 	}
 	if (JumpSounds)
 		UGameplayStatics::PlaySoundAtLocation(this, JumpSounds, GetActorLocation());
+
 	Jump();
 }
 
@@ -495,6 +496,38 @@ void AGuudoCharater::Tick(float DeltaTime)
 	}
 	else
 		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
+
+	// Falling Damage
+	if (isOnTheGround && !GetCharacterMovement()->IsMovingOnGround())
+	{
+		UE_LOG(LogTemp, Display, TEXT("Is in the air"));
+		
+		StartAirTime = GetWorld()->GetRealTimeSeconds();
+
+		isOnTheGround = false;
+	}
+	if (!isOnTheGround && GetCharacterMovement()->IsMovingOnGround())
+	{
+		UE_LOG(LogTemp, Display, TEXT("Is in the ground"));
+
+		float EndAirTime = GetWorld()->GetRealTimeSeconds();
+		if (EndAirTime - StartAirTime >= SafeFallDuration)
+		{
+			float Result = EndAirTime - StartAirTime - SafeFallDuration;
+			Health -= (Result * DamagePerSecondOfFall);
+			UE_LOG(LogTemp, Display, TEXT("Health: %f"), Health);
+
+			UGameplayStatics::PlaySoundAtLocation(this, PainSounds, GetActorLocation());
+
+			if (Health < 0.f)
+			{
+				OnDead();
+				return;
+			}
+		}
+
+		isOnTheGround = true;
+	}
 
 }
 
