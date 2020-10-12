@@ -136,6 +136,8 @@ public:
 		class USoundBase* GrowSounds;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		class USoundBase* ShrinkSounds;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* PainSounds;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float SmallRunSpeed = 1200.0f;
@@ -160,6 +162,17 @@ public:
 		float ScaleUpRestrictionSmall = 40.0f;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float ScaleUpRestrictionLarge = 80.0f;
+
+	// FALL DAMAGE //
+	UPROPERTY(EditAnywhere, Category = "Designer")
+	float SafeFallDuration = 1.5f;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+	float DamagePerSecondOfFall = 1.f;
+
+	float Health = 100.0f;
+	float StartAirTime;
+	bool isOnTheGround = true;
 
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -195,6 +208,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void SetCameraTrailDistance(float StartDistance, float EndDistance, float Transition, bool isLargerThanNormal);
 
+	// Get Guudo's Health
+	UFUNCTION(BlueprintPure)
+		float GetGuudosHealth() { return Health; }
+
 	// BLUEPRINT EVENTS ///////////////////////////////////////////
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnLargeToNormal();
@@ -217,6 +234,10 @@ public:
 	// Make Guudo Follow a Path
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnFollowPath(class APushPlate* Path, float Duration);
+
+	// Guudo dies from fall damage
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnDead();
 
 	// COLLISION HANDLING ////////////////////////////////////////
 	UFUNCTION()

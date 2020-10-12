@@ -15,6 +15,7 @@ enum class ESelection : uint8
 	Legs	UMETA(DisplayName = "Legs"),
 };
 
+////
 UCLASS()
 class GUUDO_API ABodyPartSelectionTool : public AActor
 {
