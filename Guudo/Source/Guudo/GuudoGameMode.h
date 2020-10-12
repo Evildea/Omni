@@ -24,14 +24,14 @@ public:
 	APlayerController* Controller;
 
 	// Timer
-	float TimePassed;
+	//float TimePassed;
 
-	// VARIABLES /////////////////////////////////////////////////
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		int Minutes;
+	//// VARIABLES /////////////////////////////////////////////////
+	//UPROPERTY(EditAnywhere, Category = "Designer")
+	//	int Minutes;
 
-	UPROPERTY(EditAnywhere, Category = "Designer")
-		int Seconds;
+	//UPROPERTY(EditAnywhere, Category = "Designer")
+	//	int Seconds;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 	FName CustomisationLevelName;
@@ -39,12 +39,12 @@ public:
 	// FUNCTIONS /////////////////////////////////////////////////
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintPure)
-		float GetSeconds() { return Seconds; }
+	//UFUNCTION(BlueprintPure)
+	//	float GetSeconds() { return Seconds; }
 
-	UFUNCTION(BlueprintPure)
-		float GetMinutes() { return Minutes; }
+	//UFUNCTION(BlueprintPure)
+	//	float GetMinutes() { return Minutes; }
 
-	UFUNCTION(BlueprintPure)
-		FString GetTimer();
+	//UFUNCTION(BlueprintPure)
+	//	FString GetTimer();
 };
