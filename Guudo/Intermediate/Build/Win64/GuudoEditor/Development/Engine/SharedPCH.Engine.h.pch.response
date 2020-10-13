@@ -246,11 +246,33 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
+<<<<<<< HEAD
 /I C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine
 /Yc"C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
 /Fp"C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.pch"
 "C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.cpp"
 /Fo"C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.obj"
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+/I C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine
+/Yc"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
+/Fp"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.pch"
+"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.cpp"
+/Fo"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.obj"
+<<<<<<< Updated upstream
+=======
+/I C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine
+/Yc"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
+/Fp"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.pch"
+"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.cpp"
+/Fo"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.obj"
+>>>>>>> master
+=======
+>>>>>>> Stashed changes
+>>>>>>> master
 /TP
 /GR-
 /W4
