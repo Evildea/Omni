@@ -319,7 +319,7 @@ UMaterial * UGuudoGameInstance::GetSilhouetteLeg()
 
 int UGuudoGameInstance::GetSizeOfInventory()
 {
-	return CurrentMap.ListOfHeads.Num() + CurrentMap.ListOfChests.Num() + CurrentMap.ListOfArms.Num() + CurrentMap.ListOfLegs.Num();
+	return CurrentMap.ListOfInventoryHeads.Num() + CurrentMap.ListOfInventoryChests.Num() + CurrentMap.ListOfInventoryArms.Num() + CurrentMap.ListOfInventoryLegs.Num();
 }
 
 FString UGuudoGameInstance::GetNextLevel()
