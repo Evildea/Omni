@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
@@ -8,10 +9,13 @@ C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo/GuudoCharater.h
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo/GuudoCharater.h
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
 C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
@@ -22,10 +26,13 @@ C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo/GuudoCharater.h
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables/Shakeable.h
 C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\Shakeable.generated.h
@@ -47,6 +54,11 @@ C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guu
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Customisation/InventoryWidget.h
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Interactables/Shakeable.h
+C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\Shakeable.generated.h
+C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Customisation/InventoryWidget.h
+>>>>>>> Stashed changes
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\UMG\Public\Blueprint/UserWidget.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\UMG\Public\Components/SlateWrapperTypes.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\SlateWrapperTypes.generated.h
@@ -159,6 +171,7 @@ C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\In
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\DynamicPropertyPath.generated.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\WidgetBlueprintGeneratedClass.generated.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\UserWidget.generated.h
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Customisation\ItemImageWidget.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Customisation\ModularGuudo.h
@@ -170,11 +183,14 @@ C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\PickupData.h
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Customisation\ItemImageWidget.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Customisation\ModularGuudo.h
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\ModularGuudo.generated.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Customisation\../ItemManagement/GuudoGameInstance.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\PickupData.h
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
 C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo\Customisation\ItemImageWidget.h
@@ -186,6 +202,8 @@ C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo\PickupData.h
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime/UMG/Public/UMG.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Core\Public\Misc/MonolithicHeaderBoilerplate.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Core\Public\Core.h
@@ -1021,6 +1039,7 @@ C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\UMG\Public\Animation/M
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\MovieSceneMarginTrack.generated.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\UMG\Public\Animation/UMGSequencePlayer.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG\UMGSequencePlayer.generated.h
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\PickupData.generated.h
 C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameInstance.generated.h
@@ -1032,11 +1051,14 @@ C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\PickupData.generated.h
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameInstance.generated.h
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\ItemImageWidget.generated.h
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\InventoryWidget.generated.h
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoCharater.generated.h
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
 C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\PickupData.generated.h
@@ -1048,3 +1070,5 @@ C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guu
 =======
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
