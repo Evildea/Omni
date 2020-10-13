@@ -10,65 +10,87 @@
 /**
  * 
  */
+USTRUCT(BlueprintType)
+struct FMapData
+{
+	GENERATED_USTRUCT_BODY()
+
+	UPROPERTY()
+	FString LevelName;
+
+	UPROPERTY()
+	FString NextLevelName;
+
+	UPROPERTY()
+	TArray<FPickupData> ListOfHeads;
+
+	UPROPERTY()
+	TArray<FPickupData> ListOfChests;
+
+	UPROPERTY()
+	TArray<FPickupData> ListOfArms;
+
+	UPROPERTY()
+	TArray<FPickupData> ListOfLegs;
+
+	UPROPERTY()
+	TArray<FPickupData> ListOfInventoryHeads;
+
+	UPROPERTY()
+	TArray<FPickupData> ListOfInventoryChests;
+
+	UPROPERTY()
+	TArray<FPickupData> ListOfInventoryArms;
+
+	UPROPERTY()
+	TArray<FPickupData> ListOfInventoryLegs;
+
+	UPROPERTY()
+	int32 SilhouetteHead = -1;
+
+	UPROPERTY()
+	int32 SilhouetteChest = -1;
+
+	UPROPERTY()
+	int32 SilhouetteArms = -1;
+
+	UPROPERTY()
+	int32 SilhouetteLegs = -1;
+};
+
+
 UCLASS()
 class GUUDO_API UGuudoGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 
 private:
-	// LIST OF SILHOUETTE ITEMS
-	bool HasSilhouette = false;
-	int SilhouetteHead = -1;
-	int SilhouetteChest = -1;
-	int SilhouetteArm = -1;
-	int SilhouetteLeg = -1;
+	// List of all Map Data
+	UPROPERTY()
+	TArray<FMapData> ListOfMaps;
+
+	// The Current Map
+	int32 m_CurrentMap = -1;
+	   	  
+	// List of Selected Body Parts
 	int SelectedHead = -1;
 	int SelectedArm = -1;
 	int SelectedChest = -1;
 	int SelectedLeg = -1;
 
-
 public:
 	virtual void Init() override;
 
-	void GenerateSilhouette();
-
-	/// LIST OF INVENTORY ITEMS (PICKUPS AVAILABLE) ///////////////////////////////
-	UPROPERTY()
-		TArray<FPickupData> ListOfInventoryHeadPickups;
-
-	UPROPERTY()
-		TArray<FPickupData> ListOfInventoryChestPickups;
-
-	UPROPERTY()
-		TArray<FPickupData> ListOfInventoryArmPickups;
-
-	UPROPERTY()
-		TArray<FPickupData> ListOfInventoryLegPickups;
-
-	/// LIST OF PICKUPS THAT THE PLAYER CAN COLLECT ///////////////////////////////
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TArray<FPickupData> ListOfHeadPickups;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TArray<FPickupData> ListOfChestPickups;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TArray<FPickupData> ListOfArmPickups;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TArray<FPickupData> ListOfLegPickups;
-
-	bool inline GetHasSilhouette() { return HasSilhouette; }
-	
 	UFUNCTION(BlueprintCallable)
-		void AddItemToInventory(FName Pickup);
-	
-	UFUNCTION(BlueprintCallable)
-		bool CheckPickupExists(FName Pickup);
+	void GenerateSilhouette(FString CurrentLevelName, FString NextLevelName);
 
 	UFUNCTION(BlueprintCallable)
-		void ResetGameInstance();
+	void AddItemToInventory(FName Pickup);
+
+	FMapData& GetCurrentMap() { return ListOfMaps[m_CurrentMap]; }
+	   	 
+	UFUNCTION(BlueprintCallable)
+	void ResetGameInstance();
 
 	// Calculate the Score
 	void CalculateScore(float &HeadScore, float &ChestScore, float &ArmScore, float &LegScore);
@@ -83,7 +105,10 @@ public:
 	UMaterial* GetSilhouetteArm();
 	UMaterial* GetSilhouetteLeg();
 
-	int GetSizeOfInventory() { return ListOfHeadPickups.Num() + ListOfChestPickups.Num() + ListOfArmPickups.Num() + ListOfLegPickups.Num(); }
+	int GetSizeOfInventory();
+
+	UFUNCTION(BlueprintPure)
+	FString GetNextLevel();
 
 
 };

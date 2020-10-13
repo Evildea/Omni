@@ -218,10 +218,10 @@ void UCustomisationWidget::SpawnWidgetsFromInventoryItems()
 		return;
 
 	// Spawn Widgets for Each Body Part
-	SpawnWidgetsFromBodyPartList(m_GameInstance->ListOfInventoryHeadPickups, m_ListOfHeadWidgets, ESelection::Head);	// Spawn the Head Item Widgets
-	SpawnWidgetsFromBodyPartList(m_GameInstance->ListOfInventoryChestPickups, m_ListOfChestWidgets, ESelection::Chest);	// Spawn the Chest Item Widgets
-	SpawnWidgetsFromBodyPartList(m_GameInstance->ListOfInventoryArmPickups, m_ListOfArmWidgets, ESelection::Arms);		// Spawn the Arm Item Widgets
-	SpawnWidgetsFromBodyPartList(m_GameInstance->ListOfInventoryLegPickups, m_ListOfLegWidgets, ESelection::Legs);		// Spawn the Leg Item Widgets
+	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryHeads, m_ListOfHeadWidgets, ESelection::Head);	// Spawn the Head Item Widgets
+	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryChests, m_ListOfChestWidgets, ESelection::Chest);	// Spawn the Chest Item Widgets
+	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryArms, m_ListOfArmWidgets, ESelection::Arms);		// Spawn the Arm Item Widgets
+	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryLegs, m_ListOfLegWidgets, ESelection::Legs);		// Spawn the Leg Item Widgets
 }
 
 UMaterial* UCustomisationWidget::GetHead()

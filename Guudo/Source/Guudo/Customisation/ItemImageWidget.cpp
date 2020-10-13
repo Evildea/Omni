@@ -25,22 +25,22 @@ void UItemImageWidget::SetSelectedBodyPart()
 	UE_LOG(LogTemp, Error, TEXT("Button Selected"));
 
 	if (isHead) { 
-		m_ModularGuudo->SetHead(m_GameInstance->ListOfInventoryHeadPickups[ItemIndex].Mesh);
+		m_ModularGuudo->SetHead(m_GameInstance->GetCurrentMap().ListOfInventoryHeads[ItemIndex].Mesh);
 		m_GameInstance->SetSelectedHead(ItemIndex);
 		UE_LOG(LogTemp, Display, TEXT("Head [%i] selected"), ItemIndex);
 	}
 	if (isChest) { 
-		m_ModularGuudo->SetChest(m_GameInstance->ListOfInventoryChestPickups[ItemIndex].Mesh);
+		m_ModularGuudo->SetChest(m_GameInstance->GetCurrentMap().ListOfInventoryChests[ItemIndex].Mesh);
 		m_GameInstance->SetSelectedChest(ItemIndex);
 		UE_LOG(LogTemp, Display, TEXT("Chest [%i] selected"), ItemIndex);
 	}
 	if (isArms) { 
-		m_ModularGuudo->SetArms(m_GameInstance->ListOfInventoryArmPickups[ItemIndex].Mesh);
+		m_ModularGuudo->SetArms(m_GameInstance->GetCurrentMap().ListOfInventoryArms[ItemIndex].Mesh);
 		m_GameInstance->SetSelectedArm(ItemIndex);
 		UE_LOG(LogTemp, Display, TEXT("Arms [%i] selected"), ItemIndex);
 	}
 	if (isLegs) { 
-		m_ModularGuudo->SetLegs(m_GameInstance->ListOfInventoryLegPickups[ItemIndex].Mesh);
+		m_ModularGuudo->SetLegs(m_GameInstance->GetCurrentMap().ListOfInventoryLegs[ItemIndex].Mesh);
 		m_GameInstance->SetSelectedLeg(ItemIndex);
 		UE_LOG(LogTemp, Display, TEXT("Legs [%i] selected"), ItemIndex);
 	}

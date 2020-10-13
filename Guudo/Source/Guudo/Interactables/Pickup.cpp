@@ -21,8 +21,15 @@ void UPickup::BeginPlay()
 	Super::BeginPlay();
 
 	// Check if Pickup Exist
-	UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-	if (!GameInstance->CheckPickupExists(Name))
+	//UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+	//if (!GameInstance->CheckPickupExists(Name))
+	//{
+	//	GetOwner()->Destroy();
+	//	return;
+	//}
+
+	// Destroy the Pickup if it isn't configured
+	if (Data.BodyPosition == EBodyPart::None || Data.GeneralShape == EShape::None || Data.Silhouette == nullptr || Data.Mesh == nullptr || Data.Name == "None")
 	{
 		GetOwner()->Destroy();
 		return;
@@ -50,5 +57,5 @@ void UPickup::BeginPlay()
 void UPickup::Pickup()
 {
 	UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-	GameInstance->AddItemToInventory(Name);
+	GameInstance->AddItemToInventory(Data.Name);
 }

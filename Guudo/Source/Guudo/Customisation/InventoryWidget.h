@@ -50,4 +50,6 @@ private:
 	UPROPERTY()
 		class UGuudoGameInstance* m_GameInstance; // Reference to the Game Instance.
 
+	void ConfigureScrollBox(UScrollBox*& ScrollBox, TArray<FPickupData>& List);
+
 };
