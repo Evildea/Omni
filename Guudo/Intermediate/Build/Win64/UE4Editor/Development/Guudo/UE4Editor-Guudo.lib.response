@@ -6,7 +6,10 @@
 /NAME:"UE4Editor-Guudo.dll"
 /IGNORE:4221
 /NODEFAULTLIB
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\BodyPartSelectionTool.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\CustomisationWidget.cpp.obj"
@@ -50,6 +53,7 @@
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Switch.gen.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Default.rc2.res"
 /OUT:"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\UE4Editor-Guudo.lib"
+<<<<<<< Updated upstream
 =======
 "C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.obj"
 "C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\BodyPartSelectionTool.cpp.obj"
@@ -95,4 +99,6 @@
 "C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Default.rc2.res"
 /OUT:"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\UE4Editor-Guudo.lib"
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 /INCLUDE:IMPLEMENT_MODULE_Guudo

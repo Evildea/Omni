@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -114,6 +115,8 @@ C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo\PickupData.h
 =======
 <<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Customisation\BodyPartSelectionTool.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Customisation\CustomisationWidget.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Customisation\InventoryWidget.h
@@ -121,10 +124,14 @@ C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Customisation\ItemImageWidget
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Customisation\ModularGuudo.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Interactables\Ball.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Interactables\Door.h
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Interactables\Physics.h
 =======
 >>>>>>> master
+=======
+C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Interactables\Physics.h
+>>>>>>> Stashed changes
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Interactables\Pickup.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Interactables\PressurePlate.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Interactables\PushPlate.h
@@ -132,11 +139,15 @@ C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Interactables\Shakeable.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Interactables\Switch.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\ItemManagement\GuudoGameInstance.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Silhouette\SilhouetteWidget.h
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\GuudoCharater.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\GuudoGameMode.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\PickupData.h
+<<<<<<< Updated upstream
 =======
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\GuudoGameMode.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
@@ -160,3 +171,5 @@ C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo\Interactables\Physics.h
 >>>>>>> master
 >>>>>>> Development
 >>>>>>> master
+=======
+>>>>>>> Stashed changes

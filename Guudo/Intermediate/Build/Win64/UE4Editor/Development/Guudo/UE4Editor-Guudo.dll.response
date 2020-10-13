@@ -31,7 +31,10 @@
 /NODEFAULTLIB:"LIBCD"
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\BodyPartSelectionTool.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\CustomisationWidget.cpp.obj"
@@ -74,6 +77,7 @@
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\SilhouetteWidget.gen.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Switch.gen.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Default.rc2.res"
+<<<<<<< Updated upstream
 =======
 "C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.obj"
 "C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\BodyPartSelectionTool.cpp.obj"
@@ -118,6 +122,8 @@
 "C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Switch.gen.cpp.obj"
 "C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Default.rc2.res"
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"
@@ -147,6 +153,7 @@
 "C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
 "C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
 "C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Development\InputCore\UE4Editor-InputCore.lib"
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /OUT:"C:\Users\s171971\Documents\Omni\Guudo\Binaries\Win64\UE4Editor-Guudo.dll"
 /IMPLIB:"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\UE4Editor-Guudo.suppressed.lib"
@@ -156,5 +163,10 @@
 /IMPLIB:"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\UE4Editor-Guudo.suppressed.lib"
 /PDB:"C:\Users\s191281\Documents\Omni\Guudo\Binaries\Win64\UE4Editor-Guudo.pdb"
 >>>>>>> master
+=======
+/OUT:"C:\Users\s171971\Documents\Omni\Guudo\Binaries\Win64\UE4Editor-Guudo.dll"
+/IMPLIB:"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\UE4Editor-Guudo.suppressed.lib"
+/PDB:"C:\Users\s171971\Documents\Omni\Guudo\Binaries\Win64\UE4Editor-Guudo.pdb"
+>>>>>>> Stashed changes
 /ignore:4078
 /INCLUDE:IMPLEMENT_MODULE_Guudo
