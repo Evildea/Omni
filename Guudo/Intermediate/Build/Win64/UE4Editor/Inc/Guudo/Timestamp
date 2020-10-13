@@ -1,62 +1,27 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Customisation\InventoryWidget.h
+>>>>>>> Stashed changes
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Customisation\BodyPartSelectionTool.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Customisation\CustomisationWidget.h
-C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Customisation\InventoryWidget.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Customisation\ItemImageWidget.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Customisation\ModularGuudo.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\Ball.h
-C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\Door.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\Physics.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\Pickup.h
+C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\Door.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\PressurePlate.h
-C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\PushPlate.h
-C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\Shakeable.h
-=======
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Customisation\CustomisationWidget.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Customisation\ItemImageWidget.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Interactables\Door.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Interactables\Pickup.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\ItemManagement\GuudoGameInstance.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Silhouette\SilhouetteWidget.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\GuudoCharater.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\PickupData.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Customisation\BodyPartSelectionTool.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Customisation\InventoryWidget.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Customisation\ModularGuudo.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Interactables\Ball.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Interactables\PressurePlate.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Interactables\PushPlate.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Interactables\Shakeable.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\Interactables\Switch.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\GuudoGameMode.h
-C:\Users\s191215\Desktop\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
-=======
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
-C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\Ball.h
-C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\PressurePlate.h
-C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Customisation\CustomisationWidget.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\Shakeable.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\PushPlate.h
->>>>>>> master
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\Switch.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\ItemManagement\GuudoGameInstance.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Silhouette\SilhouetteWidget.h
-C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\GuudoCharater.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\GuudoGameMode.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
-<<<<<<< HEAD
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\PickupData.h
+<<<<<<< Updated upstream
 =======
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Interactables\Door.h
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Customisation\ItemImageWidget.h
@@ -180,4 +145,7 @@ C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo\Interactables\Physics.h
 >>>>>>> master
 =======
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
+>>>>>>> Stashed changes
+=======
+C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\GuudoCharater.h
 >>>>>>> Stashed changes

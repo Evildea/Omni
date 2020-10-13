@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Guudo.Build.cs
 C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo.Target.cs
@@ -24,4 +25,9 @@ C:\Users\s171971\Documents\Omni\Guudo\Source\GuudoEditor.Target.cs
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\Guudo.Build.cs
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo.Target.cs
 C:\Users\s171971\Documents\Omni\Guudo\Source\GuudoEditor.Target.cs
+>>>>>>> Stashed changes
+=======
+C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo\Guudo.Build.cs
+C:\Users\s181674\Desktop\Omni\Guudo\Source\Guudo.Target.cs
+C:\Users\s181674\Desktop\Omni\Guudo\Source\GuudoEditor.Target.cs
 >>>>>>> Stashed changes

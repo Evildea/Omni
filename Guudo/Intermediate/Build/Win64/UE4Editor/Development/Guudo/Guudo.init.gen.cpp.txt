@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
 =======
@@ -14,6 +15,9 @@ C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Develop
 >>>>>>> master
 =======
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
+>>>>>>> Stashed changes
+=======
+C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
 >>>>>>> Stashed changes
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
