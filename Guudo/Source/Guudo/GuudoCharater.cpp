@@ -116,8 +116,17 @@ bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset
 	return result;
 }
 
+inline void AGuudoCharater::RestartLevel()
+{
+	UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
+}
+
 void AGuudoCharater::CustomJump()
 {
+	// Don't do anything if Dead
+	if (Health == 0)
+		return;
+
 	switch (m_ScaleState)
 	{
 	case EScale::Small:
@@ -162,6 +171,10 @@ void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 void AGuudoCharater::MoveForward(float axis)
 {
+	// Don't do anything if Dead
+	if (Health == 0)
+		return;
+
 	// Don't computer if there is no movement
 	if (axis == 0.f)
 		return;
@@ -194,6 +207,10 @@ void AGuudoCharater::MoveForward(float axis)
 
 void AGuudoCharater::MoveRight(float axis)
 {
+	// Don't do anything if Dead
+	if (Health == 0)
+		return;
+
 	// Don't computer if there is no movement
 	if (axis == 0.f)
 		return;
@@ -226,6 +243,10 @@ void AGuudoCharater::MoveRight(float axis)
 
 void AGuudoCharater::ChangeSize(float axis)
 {
+	// Don't do anything if Dead
+	if (Health == 0)
+		return;
+
 	if (axis > 0.f)
 		Grow();
 	else if (axis < 0.f)
@@ -234,6 +255,10 @@ void AGuudoCharater::ChangeSize(float axis)
 
 void AGuudoCharater::Pickup()
 {
+	// Don't do anything if Dead
+	if (Health == 0)
+		return;
+
 	// If Pickup is permited then pickup the Object
 	if (m_isPickupPossible)
 	{
@@ -263,6 +288,10 @@ void AGuudoCharater::Pickup()
 
 void AGuudoCharater::Shrink()
 {
+	// Don't do anything if Dead
+	if (Health == 0)
+		return;
+
 	// Don't attempt to shrink if already growing or shrinking
 	if (m_GrowthState != EGrowth::Unchanging)
 		return;
@@ -290,6 +319,10 @@ void AGuudoCharater::Shrink()
 
 void AGuudoCharater::Grow()
 {
+	// Don't do anything if Dead
+	if (Health == 0)
+		return;
+
 	// Don't attempt to grow if already growing or shrinking
 	if (m_GrowthState != EGrowth::Unchanging)
 		return;
@@ -343,6 +376,10 @@ void AGuudoCharater::Grow()
 
 void AGuudoCharater::Interact()
 {
+	// Don't do anything if Dead
+	if (Health == 0)
+		return;
+
 	// Interact with a switch
 	if (m_TargetSwitch)
 	{
@@ -354,6 +391,10 @@ void AGuudoCharater::Interact()
 
 void AGuudoCharater::OpenInventory()
 {
+	// Don't do anything if Dead
+	if (Health == 0)
+		return;
+
 	// If the Inventory Widget doesn't exist, then create it.
 	if (!InventoryWidget)
 		InventoryWidget = Cast<UInventoryWidget>(CreateWidget<UUserWidget>(GetWorld(), InventoryWidgetClass));
@@ -506,21 +547,31 @@ void AGuudoCharater::Tick(float DeltaTime)
 
 		isOnTheGround = false;
 	}
-	if (!isOnTheGround && GetCharacterMovement()->IsMovingOnGround())
+	if (!isOnTheGround && GetCharacterMovement()->IsMovingOnGround() && Health != 0)
 	{
 		UE_LOG(LogTemp, Display, TEXT("Is in the ground"));
 
 		float EndAirTime = GetWorld()->GetRealTimeSeconds();
 		if (EndAirTime - StartAirTime >= SafeFallDuration)
 		{
-			float Result = EndAirTime - StartAirTime - SafeFallDuration;
-			Health -= (Result * DamagePerSecondOfFall);
+			int Result = (int)(EndAirTime - StartAirTime - SafeFallDuration);
+
+			if (m_ScaleState == EScale::Large)
+				Result = FMath::Clamp(Result, MinFallDamageWhenBig, MaxFallDamageWhenBig);
+			else if (m_ScaleState == EScale::Normal)
+				Result = FMath::Clamp(Result, MinFallDamageWhenNormal, MaxFallDamageWhenNormal);
+			else if (m_ScaleState == EScale::Small)
+				Result = FMath::Clamp(Result, MinFallDamageWhenSmall, MaxFallDamageWhenSmall);
+
+			Health -= Result;
 			UE_LOG(LogTemp, Display, TEXT("Health: %f"), Health);
 
 			UGameplayStatics::PlaySoundAtLocation(this, PainSounds, GetActorLocation());
 
-			if (Health < 0.f)
+			if (Health <= 0)
 			{
+				FTimerHandle CountdownTimerHandle;
+				GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AGuudoCharater::RestartLevel, 3.f, false);
 				OnDead();
 				return;
 			}
