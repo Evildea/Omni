@@ -66,6 +66,47 @@ void UGuudoGameInstance::GenerateSilhouette(FString CurrentLevelName, FString Ne
 		ListOfMaps.Add(NewMap);
 		m_CurrentMap = ListOfMaps.Num() - 1;
 	}
+	else
+	{
+		// Configure the new Map
+		TArray<AActor*> ListOfActors;
+		TArray<UPickup*> ListOfComponentedActors;
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), AActor::StaticClass(), ListOfActors);
+
+		for (int32 Index = 0; Index != ListOfActors.Num(); ++Index)
+		{
+			UPickup* Pickup = ListOfActors[Index]->FindComponentByClass<UPickup>();
+			if (Pickup)
+				ListOfComponentedActors.Add(Pickup);
+		}
+
+		for (int32 Index2 = 0; Index2 != ListOfComponentedActors.Num(); ++Index2)
+		{
+			//UE_LOG(LogTemp, Warning, TEXT("Tester %s"), *ListOfComponentedActors[Index2]->Data.Name.ToString());
+
+			for (int32 Index = 0; Index != CurrentMap.ListOfInventoryHeads.Num(); ++Index)
+			{
+				if (CurrentMap.ListOfInventoryHeads[Index].Name == ListOfComponentedActors[Index2]->Data.Name)
+					ListOfComponentedActors[Index2]->GetOwner()->Destroy();
+			}
+			for (int32 Index = 0; Index != CurrentMap.ListOfInventoryChests.Num(); ++Index)
+			{
+				if (CurrentMap.ListOfInventoryChests[Index].Name == ListOfComponentedActors[Index2]->Data.Name)
+					ListOfComponentedActors[Index2]->GetOwner()->Destroy();
+			}
+			for (int32 Index = 0; Index != CurrentMap.ListOfInventoryArms.Num(); ++Index)
+			{
+				if (CurrentMap.ListOfInventoryArms[Index].Name == ListOfComponentedActors[Index2]->Data.Name)
+					ListOfComponentedActors[Index2]->GetOwner()->Destroy();
+			}
+			for (int32 Index = 0; Index != CurrentMap.ListOfInventoryLegs.Num(); ++Index)
+			{
+				if (CurrentMap.ListOfInventoryLegs[Index].Name == ListOfComponentedActors[Index2]->Data.Name)
+					ListOfComponentedActors[Index2]->GetOwner()->Destroy();
+			}
+		}
+
+	}
 
 	// Debug
 	UE_LOG(LogTemp, Warning, TEXT("Number of Heads found: %i"), CurrentMap.ListOfHeads.Num());
@@ -278,7 +319,7 @@ UMaterial * UGuudoGameInstance::GetSilhouetteLeg()
 
 int UGuudoGameInstance::GetSizeOfInventory()
 {
-	return CurrentMap.ListOfHeads.Num() + CurrentMap.ListOfChests.Num() + CurrentMap.ListOfArms.Num() + CurrentMap.ListOfLegs.Num();
+	return CurrentMap.ListOfInventoryHeads.Num() + CurrentMap.ListOfInventoryChests.Num() + CurrentMap.ListOfInventoryArms.Num() + CurrentMap.ListOfInventoryLegs.Num();
 }
 
 FString UGuudoGameInstance::GetNextLevel()
