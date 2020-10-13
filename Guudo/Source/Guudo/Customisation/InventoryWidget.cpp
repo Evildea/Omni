@@ -24,29 +24,27 @@ void UInventoryWidget::RefreshContent()
 	ItemScrollBox03->ClearChildren();
 	ItemScrollBox04->ClearChildren();
 
-	// Set variables
-	int Size = 0;// m_GameInstance->Inventory.Num();
+	// Configure each scroll box to contain the correct information
+	ConfigureScrollBox(ItemScrollBox01, m_GameInstance->GetCurrentMap().ListOfInventoryHeads);
+	ConfigureScrollBox(ItemScrollBox02, m_GameInstance->GetCurrentMap().ListOfInventoryChests);
+	ConfigureScrollBox(ItemScrollBox03, m_GameInstance->GetCurrentMap().ListOfInventoryArms);
+	ConfigureScrollBox(ItemScrollBox04, m_GameInstance->GetCurrentMap().ListOfInventoryLegs);
 
-	// Add the Inventory Items to the List.
-	for (int32 Index = 0; Index != Size; ++Index)
+}
+
+void UInventoryWidget::ConfigureScrollBox(UScrollBox*& ScrollBox, TArray<FPickupData>& List)
+{
+	for (int32 Index = 0; Index != List.Num(); ++Index)
 	{
 		// Spawn the Widget
 		UItemImageWidget* NewItemWidget = Cast<UItemImageWidget>(CreateWidget<UUserWidget>(GetWorld(), ItemWidget));
 
 		// Configure the Widget
 		NewItemWidget->SetGameInstance(m_GameInstance);
-//		NewItemWidget->SetImageOfWidget(m_GameInstance->Inventory[Index].Silhouette);
+		NewItemWidget->SetImageOfWidget(List[Index].Silhouette);
 		NewItemWidget->ItemIndex = Index;
 
-		// Add to Scroll Bar
-		if (Index <= 2)
-			ItemScrollBox01->AddChild(NewItemWidget);
-		else if (Index > 2 && Index < 5)
-			ItemScrollBox02->AddChild(NewItemWidget);
-		else if (Index > 5 && Index < 8)
-			ItemScrollBox03->AddChild(NewItemWidget);
-		else if (Index > 8 && Index < 11)
-			ItemScrollBox04->AddChild(NewItemWidget);
+		ScrollBox->AddChild(NewItemWidget);
 	}
 }
 

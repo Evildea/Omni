@@ -22,9 +22,9 @@ protected:
 	virtual void BeginPlay() override;
 
 public:	
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Designer")
-		FName Name;
+	FPickupData Data;
 		
 	// This function is called when Guudo pickups the Item
 	void Pickup();
