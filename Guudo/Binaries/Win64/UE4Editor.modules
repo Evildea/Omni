@@ -3,9 +3,13 @@
 	"Modules": 
 	{
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"Guudo": "UE4Editor-Guudo.dll"
 =======
 		"Guudo": "UE4Editor-Guudo-9984.dll"
+>>>>>>> master
+=======
+		"Guudo": "UE4Editor-Guudo.dll"
 >>>>>>> master
 	}
 }
