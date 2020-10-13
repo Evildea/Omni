@@ -2,6 +2,22 @@
 	"BuildId": "8386587",
 	"Modules": 
 	{
+<<<<<<< Updated upstream
+<<<<<<< HEAD
 		"Guudo": "UE4Editor-Guudo.dll"
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+		"Guudo": "UE4Editor-Guudo-7125.dll"
+=======
+		"Guudo": "UE4Editor-Guudo-6016.dll"
+>>>>>>> master
+=======
+		"Guudo": "UE4Editor-Guudo-7125.dll"
+>>>>>>> Stashed changes
+>>>>>>> master
+=======
+		"Guudo": "UE4Editor-Guudo.dll"
+>>>>>>> Stashed changes
 	}
 }

@@ -68,6 +68,7 @@ private:
 	// Timers
 	inline void ResetIsAbleToGrowError()	{ m_isAbleToGrow = true; }
 	inline void ResetWalkingState()			{ m_WalkState = EWalking::Stationary; }
+	inline void RestartLevel();
 
 	// Custom Jump for the Character
 	void CustomJump();
@@ -168,9 +169,24 @@ public:
 	float SafeFallDuration = 1.5f;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
-	float DamagePerSecondOfFall = 1.f;
+	int MaxFallDamageWhenBig = 3;
 
-	float Health = 100.0f;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+	int MinFallDamageWhenBig = 1;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+	int MaxFallDamageWhenNormal = 3;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+	int MinFallDamageWhenNormal = 1;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		int MaxFallDamageWhenSmall = 2;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		int MinFallDamageWhenSmall = 1;
+
+	int Health = 5;
 	float StartAirTime;
 	bool isOnTheGround = true;
 
@@ -210,7 +226,7 @@ public:
 
 	// Get Guudo's Health
 	UFUNCTION(BlueprintPure)
-		float GetGuudosHealth() { return Health; }
+		int GetGuudosHealth() { return Health; }
 
 	// BLUEPRINT EVENTS ///////////////////////////////////////////
 	UFUNCTION(BlueprintImplementableEvent)
