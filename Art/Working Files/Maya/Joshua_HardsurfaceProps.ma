@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: Joshua_HardsurfaceProps.ma
-//Last modified: Wed, Oct 14, 2020 01:40:14 PM
+//Last modified: Wed, Oct 14, 2020 01:44:45 PM
 //Codeset: 1252
 requires maya "2019";
 requires "mtoa" "3.1.2";
@@ -14733,6 +14733,9 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
+select -ne :modelPanel4ViewSelectedSet;
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".dsm";
 connectAttr "groupId3.id" "SM_MazePressurePadShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "SM_MazePressurePadShape.iog.og[0].gco";
 connectAttr "groupId4.id" "SM_MazePressurePadShape.iog.og[1].gid";
