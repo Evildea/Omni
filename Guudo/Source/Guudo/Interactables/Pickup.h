@@ -26,7 +26,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Designer")
 	FPickupData Data;
 		
-	// This function is called when Guudo pickups the Item
+	// This function is called when Guudo pickups the Item.
 	void Pickup();
 
 };
