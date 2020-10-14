@@ -83,6 +83,5 @@ private:
 	float		m_RotationZ;
 	float		m_TargetRotationZ;
 	ESelection	m_BodySelection;
-	FRotator	m_OriginalRotation;
 
 };

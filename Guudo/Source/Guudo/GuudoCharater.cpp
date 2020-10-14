@@ -85,7 +85,6 @@ void AGuudoCharater::BeginPlay()
 	m_GrowthState = EGrowth::Unchanging;
 	m_WalkState = EWalking::Stationary;
 	m_GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-
 }
 
 bool AGuudoCharater::IsCollisionAbove(float Height, float xOffset, float yOffset)
