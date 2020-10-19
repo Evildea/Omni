@@ -30,6 +30,14 @@ enum class EWalking : uint8
 	Stationary	UMETA(DisplayName = "Stationary"),
 };
 
+UENUM(BlueprintType)
+enum class ELocation : uint8
+{
+	InTheAir		UMETA(DisplayName = "In the Air"),
+	OnTheGround		UMETA(DisplayName = "On the Ground"),
+	InTheWater		UMETA(DisplayName = "In the Water"),
+};
+
 UCLASS()
 class GUUDO_API AGuudoCharater : public ACharacter
 {
@@ -57,6 +65,13 @@ private:
 	EScale m_ScaleState;
 	EGrowth m_GrowthState;
 
+	// Location State (Is the Player in the air, on the ground or in the water?)
+	ELocation m_CurrentLocation;
+	ELocation m_PreviousLocation;
+	float SlowTick = 0.f;
+	float StartAirTime;
+	float StartWaterTime;
+
 	// Shaking
 	EWalking m_WalkState;
 	UPROPERTY()
@@ -72,6 +87,9 @@ private:
 
 	// Custom Jump for the Character
 	void CustomJump();
+
+	// Check if the Character Should die or not
+	void CheckHealth();
 
 public:	
 	// Called every frame
@@ -181,14 +199,15 @@ public:
 	int MinFallDamageWhenNormal = 1;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		int MaxFallDamageWhenSmall = 2;
+	int MaxFallDamageWhenSmall = 2;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
-		int MinFallDamageWhenSmall = 1;
+	int MinFallDamageWhenSmall = 1;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+	float SafeSwimmingDuration = 1.0f;
 
 	int Health = 5;
-	float StartAirTime;
-	bool isOnTheGround = true;
 
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")

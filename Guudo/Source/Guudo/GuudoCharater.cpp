@@ -145,6 +145,21 @@ void AGuudoCharater::CustomJump()
 	Jump();
 }
 
+void AGuudoCharater::CheckHealth()
+{
+	UE_LOG(LogTemp, Display, TEXT("Health: %i"), Health);
+
+	UGameplayStatics::PlaySoundAtLocation(this, PainSounds, GetActorLocation());
+
+	if (Health <= 0)
+	{
+		FTimerHandle CountdownTimerHandle;
+		GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AGuudoCharater::RestartLevel, 3.f, false);
+		OnDead();
+		return;
+	}
+}
+
 // Called to bind functionality to input
 void AGuudoCharater::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -476,6 +491,10 @@ void AGuudoCharater::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	// Don't proceed if dead
+	if (Health == 0)
+		return;
+
 	// Shake the ground if the Character is Large and Walking
 	if (m_WalkState == EWalking::Walking && m_ScaleState == EScale::Large)
 	{
@@ -538,46 +557,79 @@ void AGuudoCharater::Tick(float DeltaTime)
 	else
 		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
 
-	// Falling Damage
-	if (isOnTheGround && !GetCharacterMovement()->IsMovingOnGround())
+	// Check if the Location has changed from the previous location and update it accordingly.
+	// Only check every 8 miliseconds so as to skip any errors caused by leaving the ground for a
+	// fraction of a second. This ensures the Player actually has changed states enough to be considered for a state change.
+	SlowTick += DeltaTime;
+	if (SlowTick > .8f)
 	{
-		UE_LOG(LogTemp, Display, TEXT("Is in the air"));
-		
-		StartAirTime = GetWorld()->GetRealTimeSeconds();
+		// Reset state tracking variables
+		m_PreviousLocation = m_CurrentLocation;
+		SlowTick = .10f - SlowTick;
 
-		isOnTheGround = false;
-	}
-	if (!isOnTheGround && GetCharacterMovement()->IsMovingOnGround() && Health != 0)
-	{
-		UE_LOG(LogTemp, Display, TEXT("Is in the ground"));
+		// Perform change check and update accordingly
+		if (GetCharacterMovement()->IsMovingOnGround())
+			m_CurrentLocation = ELocation::OnTheGround;
+		else if (GetCharacterMovement()->IsFalling())
+			m_CurrentLocation = ELocation::InTheAir;
+		else if (GetCharacterMovement()->IsSwimming())
+			m_CurrentLocation = ELocation::InTheWater;
+		bool HasChangedLocation = false;
+		if (m_CurrentLocation != m_PreviousLocation) { HasChangedLocation = true; }
 
-		float EndAirTime = GetWorld()->GetRealTimeSeconds();
-		if (EndAirTime - StartAirTime >= SafeFallDuration)
+		// Perform functions related to changing to new state.
+		if (HasChangedLocation)
 		{
-			int Result = (int)(EndAirTime - StartAirTime - SafeFallDuration);
-
-			if (m_ScaleState == EScale::Large)
-				Result = FMath::Clamp(Result, MinFallDamageWhenBig, MaxFallDamageWhenBig);
-			else if (m_ScaleState == EScale::Normal)
-				Result = FMath::Clamp(Result, MinFallDamageWhenNormal, MaxFallDamageWhenNormal);
-			else if (m_ScaleState == EScale::Small)
-				Result = FMath::Clamp(Result, MinFallDamageWhenSmall, MaxFallDamageWhenSmall);
-
-			Health -= Result;
-			UE_LOG(LogTemp, Display, TEXT("Health: %f"), Health);
-
-			UGameplayStatics::PlaySoundAtLocation(this, PainSounds, GetActorLocation());
-
-			if (Health <= 0)
+			switch (m_CurrentLocation)
 			{
-				FTimerHandle CountdownTimerHandle;
-				GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AGuudoCharater::RestartLevel, 3.f, false);
-				OnDead();
-				return;
+			case ELocation::InTheAir:
+				UE_LOG(LogTemp, Display, TEXT("Is in the air"));
+				StartAirTime = GetWorld()->GetRealTimeSeconds();
+				break;
+			case ELocation::OnTheGround:
+				if (m_PreviousLocation == ELocation::InTheAir)
+				{
+					float EndAirTime = GetWorld()->GetRealTimeSeconds();
+					if (EndAirTime - StartAirTime >= SafeFallDuration)
+					{
+						UE_LOG(LogTemp, Display, TEXT("Player hits the ground hard"));
+						int Result = (int)(EndAirTime - StartAirTime - SafeFallDuration);
+
+						if (m_ScaleState == EScale::Large)
+							Result = FMath::Clamp(Result, MinFallDamageWhenBig, MaxFallDamageWhenBig);
+						else if (m_ScaleState == EScale::Normal)
+							Result = FMath::Clamp(Result, MinFallDamageWhenNormal, MaxFallDamageWhenNormal);
+						else if (m_ScaleState == EScale::Small)
+							Result = FMath::Clamp(Result, MinFallDamageWhenSmall, MaxFallDamageWhenSmall);
+
+						Health -= Result;
+						CheckHealth();
+					}
+				}
+
+				UE_LOG(LogTemp, Display, TEXT("Is on the ground"));
+
+				break;
+			case ELocation::InTheWater:
+				StartWaterTime = GetWorld()->GetRealTimeSeconds();
+				UE_LOG(LogTemp, Display, TEXT("Is in the water"));
+				break;
+			default:
+				break;
 			}
 		}
+	}
 
-		isOnTheGround = true;
+	// Check if the Player is in the water and if damage over time should be applied
+	if (m_CurrentLocation == ELocation::InTheWater)
+	{
+		float EndWaterTime = GetWorld()->GetRealTimeSeconds();
+		if (EndWaterTime - StartWaterTime >= SafeSwimmingDuration)
+		{
+			StartWaterTime = GetWorld()->GetRealTimeSeconds();
+			Health -= 1;
+			CheckHealth();
+		}
 	}
 
 }
