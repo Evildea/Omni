@@ -39,6 +39,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UBoxComponent* CollisionBox;
 
+	// Sound the Play when the push plate is activated
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* PushSounds;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class UParticleSystem* PushParticles;
+
 	// How long it takes to complete the Path
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Designer")
 		float Duration = 1.0f;
@@ -59,6 +66,10 @@ private:
 	
 	bool m_HasPathActivated = false;
 
+	UPROPERTY()
+	class AGuudoCharater* Player;
+
 	// Timer used when the Player can reuse the Push Plate.
 	void ResetActivationTimer() { m_HasPathActivated = false; };
+	void ResetPlayerAbleToReceiveDamage();
 };

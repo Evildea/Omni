@@ -437,6 +437,13 @@ void AGuudoCharater::OpenInventory()
 
 }
 
+void AGuudoCharater::SetCanPlayerTakeDamage(bool value)
+{
+	CanPlayerTakeDamage = value;
+	StartAirTime = GetWorld()->GetRealTimeSeconds();
+	StartWaterTime = GetWorld()->GetRealTimeSeconds();
+}
+
 void AGuudoCharater::SetGrowthState(EGrowth GrowthState)
 {
 	m_GrowthState = GrowthState;
@@ -566,67 +573,70 @@ void AGuudoCharater::Tick(float DeltaTime)
 		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
 
 	// Check if the Location has changed from the previous location and update it accordingly.
-	m_PreviousLocation = m_CurrentLocation;
-	if (GetCharacterMovement()->IsMovingOnGround())
-		m_CurrentLocation = ELocation::OnTheGround;
-	else if (GetCharacterMovement()->IsFalling())
-		m_CurrentLocation = ELocation::InTheAir;
-	else if (GetCharacterMovement()->IsSwimming())
-		m_CurrentLocation = ELocation::InTheWater;
-	bool HasChangedLocation = false;
-	if (m_CurrentLocation != m_PreviousLocation) { HasChangedLocation = true; }
-
-	// Perform functions related to changing to new state.
-	if (HasChangedLocation)
+	if (CanPlayerTakeDamage)
 	{
-		switch (m_CurrentLocation)
+		m_PreviousLocation = m_CurrentLocation;
+		if (GetCharacterMovement()->IsMovingOnGround())
+			m_CurrentLocation = ELocation::OnTheGround;
+		else if (GetCharacterMovement()->IsFalling())
+			m_CurrentLocation = ELocation::InTheAir;
+		else if (GetCharacterMovement()->IsSwimming())
+			m_CurrentLocation = ELocation::InTheWater;
+		bool HasChangedLocation = false;
+		if (m_CurrentLocation != m_PreviousLocation) { HasChangedLocation = true; }
+
+		// Perform functions related to changing to new state.
+		if (HasChangedLocation)
 		{
-		case ELocation::InTheAir:
-			UE_LOG(LogTemp, Display, TEXT("Is in the air"));
-			StartAirTime = GetWorld()->GetRealTimeSeconds();
-			break;
-		case ELocation::OnTheGround:
-			if (m_PreviousLocation == ELocation::InTheAir)
+			switch (m_CurrentLocation)
 			{
-				float EndAirTime = GetWorld()->GetRealTimeSeconds();
-				if (EndAirTime - StartAirTime >= SafeFallDuration)
+			case ELocation::InTheAir:
+				UE_LOG(LogTemp, Display, TEXT("Is in the air"));
+				StartAirTime = GetWorld()->GetRealTimeSeconds();
+				break;
+			case ELocation::OnTheGround:
+				if (m_PreviousLocation == ELocation::InTheAir)
 				{
-					UE_LOG(LogTemp, Display, TEXT("Player hits the ground hard"));
-					int Result = (int)(EndAirTime - StartAirTime - SafeFallDuration);
+					float EndAirTime = GetWorld()->GetRealTimeSeconds();
+					if (EndAirTime - StartAirTime >= SafeFallDuration)
+					{
+						UE_LOG(LogTemp, Display, TEXT("Player hits the ground hard"));
+						int Result = (int)(EndAirTime - StartAirTime - SafeFallDuration);
 
-					if (m_ScaleState == EScale::Large)
-						Result = FMath::Clamp(Result, MinFallDamageWhenBig, MaxFallDamageWhenBig);
-					else if (m_ScaleState == EScale::Normal)
-						Result = FMath::Clamp(Result, MinFallDamageWhenNormal, MaxFallDamageWhenNormal);
-					else if (m_ScaleState == EScale::Small)
-						Result = FMath::Clamp(Result, MinFallDamageWhenSmall, MaxFallDamageWhenSmall);
+						if (m_ScaleState == EScale::Large)
+							Result = FMath::Clamp(Result, MinFallDamageWhenBig, MaxFallDamageWhenBig);
+						else if (m_ScaleState == EScale::Normal)
+							Result = FMath::Clamp(Result, MinFallDamageWhenNormal, MaxFallDamageWhenNormal);
+						else if (m_ScaleState == EScale::Small)
+							Result = FMath::Clamp(Result, MinFallDamageWhenSmall, MaxFallDamageWhenSmall);
 
-					Health -= Result;
-					CheckHealth();
+						Health -= Result;
+						CheckHealth();
+					}
 				}
+
+				UE_LOG(LogTemp, Display, TEXT("Is on the ground"));
+
+				break;
+			case ELocation::InTheWater:
+				StartWaterTime = GetWorld()->GetRealTimeSeconds();
+				UE_LOG(LogTemp, Display, TEXT("Is in the water"));
+				break;
+			default:
+				break;
 			}
-
-			UE_LOG(LogTemp, Display, TEXT("Is on the ground"));
-
-			break;
-		case ELocation::InTheWater:
-			StartWaterTime = GetWorld()->GetRealTimeSeconds();
-			UE_LOG(LogTemp, Display, TEXT("Is in the water"));
-			break;
-		default:
-			break;
 		}
-	}
 
-	// Check if the Player is in the water and if damage over time should be applied
-	if (m_CurrentLocation == ELocation::InTheWater)
-	{
-		float EndWaterTime = GetWorld()->GetRealTimeSeconds();
-		if (EndWaterTime - StartWaterTime >= SafeSwimmingDuration)
+		// Check if the Player is in the water and if damage over time should be applied
+		if (m_CurrentLocation == ELocation::InTheWater)
 		{
-			StartWaterTime = GetWorld()->GetRealTimeSeconds();
-			Health -= 1;
-			CheckHealth();
+			float EndWaterTime = GetWorld()->GetRealTimeSeconds();
+			if (EndWaterTime - StartWaterTime >= SafeSwimmingDuration)
+			{
+				StartWaterTime = GetWorld()->GetRealTimeSeconds();
+				Health -= 1;
+				CheckHealth();
+			}
 		}
 	}
 

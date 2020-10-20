@@ -209,6 +209,7 @@ public:
 	float SafeSwimmingDuration = 1.0f;
 
 	int Health = 5;
+	bool CanPlayerTakeDamage = true;
 
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -223,6 +224,7 @@ public:
 	void Grow();
 	void Interact();
 	void OpenInventory();
+	void SetCanPlayerTakeDamage(bool value);
 
 	// Set the Growth State (Growing or not?)
 	UFUNCTION(BlueprintCallable)
@@ -269,7 +271,7 @@ public:
 
 	// Make Guudo Follow a Path
 	UFUNCTION(BlueprintImplementableEvent)
-		void OnFollowPath(class APushPlate* Path, float Duration);
+		void OnFollowPath(class USplineComponent* Path, float Duration);
 
 	// Guudo dies from fall damage
 	UFUNCTION(BlueprintImplementableEvent)
