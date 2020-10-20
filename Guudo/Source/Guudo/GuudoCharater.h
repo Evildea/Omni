@@ -68,7 +68,6 @@ private:
 	// Location State (Is the Player in the air, on the ground or in the water?)
 	ELocation m_CurrentLocation;
 	ELocation m_PreviousLocation;
-	float SlowTick = 0.f;
 	float StartAirTime;
 	float StartWaterTime;
 
@@ -101,11 +100,11 @@ public:
 	// COMPONENTS ////////////////////////////////////////////////
 
 	// Camera
-	UPROPERTY(VisibleAnywhere, Category = Camera)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Camera)
 		class UCameraComponent* Camera;
 
 	// Camera Arm
-	UPROPERTY(VisibleAnywhere, Category = Camera)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Camera)
 		class USpringArmComponent* CameraArm;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Designer")
 		float CameraSmallTrailDistance = 220.0f;

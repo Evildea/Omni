@@ -558,65 +558,55 @@ void AGuudoCharater::Tick(float DeltaTime)
 		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
 
 	// Check if the Location has changed from the previous location and update it accordingly.
-	// Only check every 8 miliseconds so as to skip any errors caused by leaving the ground for a
-	// fraction of a second. This ensures the Player actually has changed states enough to be considered for a state change.
-	SlowTick += DeltaTime;
-	if (SlowTick > .8f)
+	m_PreviousLocation = m_CurrentLocation;
+	if (GetCharacterMovement()->IsMovingOnGround())
+		m_CurrentLocation = ELocation::OnTheGround;
+	else if (GetCharacterMovement()->IsFalling())
+		m_CurrentLocation = ELocation::InTheAir;
+	else if (GetCharacterMovement()->IsSwimming())
+		m_CurrentLocation = ELocation::InTheWater;
+	bool HasChangedLocation = false;
+	if (m_CurrentLocation != m_PreviousLocation) { HasChangedLocation = true; }
+
+	// Perform functions related to changing to new state.
+	if (HasChangedLocation)
 	{
-		// Reset state tracking variables
-		m_PreviousLocation = m_CurrentLocation;
-		SlowTick = .10f - SlowTick;
-
-		// Perform change check and update accordingly
-		if (GetCharacterMovement()->IsMovingOnGround())
-			m_CurrentLocation = ELocation::OnTheGround;
-		else if (GetCharacterMovement()->IsFalling())
-			m_CurrentLocation = ELocation::InTheAir;
-		else if (GetCharacterMovement()->IsSwimming())
-			m_CurrentLocation = ELocation::InTheWater;
-		bool HasChangedLocation = false;
-		if (m_CurrentLocation != m_PreviousLocation) { HasChangedLocation = true; }
-
-		// Perform functions related to changing to new state.
-		if (HasChangedLocation)
+		switch (m_CurrentLocation)
 		{
-			switch (m_CurrentLocation)
+		case ELocation::InTheAir:
+			UE_LOG(LogTemp, Display, TEXT("Is in the air"));
+			StartAirTime = GetWorld()->GetRealTimeSeconds();
+			break;
+		case ELocation::OnTheGround:
+			if (m_PreviousLocation == ELocation::InTheAir)
 			{
-			case ELocation::InTheAir:
-				UE_LOG(LogTemp, Display, TEXT("Is in the air"));
-				StartAirTime = GetWorld()->GetRealTimeSeconds();
-				break;
-			case ELocation::OnTheGround:
-				if (m_PreviousLocation == ELocation::InTheAir)
+				float EndAirTime = GetWorld()->GetRealTimeSeconds();
+				if (EndAirTime - StartAirTime >= SafeFallDuration)
 				{
-					float EndAirTime = GetWorld()->GetRealTimeSeconds();
-					if (EndAirTime - StartAirTime >= SafeFallDuration)
-					{
-						UE_LOG(LogTemp, Display, TEXT("Player hits the ground hard"));
-						int Result = (int)(EndAirTime - StartAirTime - SafeFallDuration);
+					UE_LOG(LogTemp, Display, TEXT("Player hits the ground hard"));
+					int Result = (int)(EndAirTime - StartAirTime - SafeFallDuration);
 
-						if (m_ScaleState == EScale::Large)
-							Result = FMath::Clamp(Result, MinFallDamageWhenBig, MaxFallDamageWhenBig);
-						else if (m_ScaleState == EScale::Normal)
-							Result = FMath::Clamp(Result, MinFallDamageWhenNormal, MaxFallDamageWhenNormal);
-						else if (m_ScaleState == EScale::Small)
-							Result = FMath::Clamp(Result, MinFallDamageWhenSmall, MaxFallDamageWhenSmall);
+					if (m_ScaleState == EScale::Large)
+						Result = FMath::Clamp(Result, MinFallDamageWhenBig, MaxFallDamageWhenBig);
+					else if (m_ScaleState == EScale::Normal)
+						Result = FMath::Clamp(Result, MinFallDamageWhenNormal, MaxFallDamageWhenNormal);
+					else if (m_ScaleState == EScale::Small)
+						Result = FMath::Clamp(Result, MinFallDamageWhenSmall, MaxFallDamageWhenSmall);
 
-						Health -= Result;
-						CheckHealth();
-					}
+					Health -= Result;
+					CheckHealth();
 				}
-
-				UE_LOG(LogTemp, Display, TEXT("Is on the ground"));
-
-				break;
-			case ELocation::InTheWater:
-				StartWaterTime = GetWorld()->GetRealTimeSeconds();
-				UE_LOG(LogTemp, Display, TEXT("Is in the water"));
-				break;
-			default:
-				break;
 			}
+
+			UE_LOG(LogTemp, Display, TEXT("Is on the ground"));
+
+			break;
+		case ELocation::InTheWater:
+			StartWaterTime = GetWorld()->GetRealTimeSeconds();
+			UE_LOG(LogTemp, Display, TEXT("Is in the water"));
+			break;
+		default:
+			break;
 		}
 	}
 
