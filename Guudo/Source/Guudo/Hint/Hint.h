@@ -26,6 +26,9 @@ public:
 	class UHintWidget* WidgetToShow;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
+	class USoundBase* EnterSound;
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
 	FString Title;
 	
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -42,5 +45,8 @@ public:
 
 	// This Timer is called when the Player walks over the Collider
 	void OnEndPopup();
+
+private:
+	bool HasAudioPlayed = false;
 
 };

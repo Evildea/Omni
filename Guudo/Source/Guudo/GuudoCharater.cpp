@@ -278,8 +278,13 @@ void AGuudoCharater::Pickup()
 	if (m_isPickupPossible)
 	{
 		// Play consume sound
-		if(ConsumeSounds)
+		if (ConsumeSounds && m_canPlayEatSound)
+		{
 			UGameplayStatics::SpawnSoundAttached(ConsumeSounds, this->GetRootComponent());
+			FTimerHandle ConsumeTimerHandle;
+			GetWorldTimerManager().SetTimer(ConsumeTimerHandle, this, &AGuudoCharater::ResetCanPlayEatSound, 1.f, false);
+			m_canPlayEatSound = false;
+		}
 
 		UPickup* Pickup = ConsumeTarget->FindComponentByClass<UPickup>();
 
@@ -291,9 +296,12 @@ void AGuudoCharater::Pickup()
 		}
 	}
 	// Otherwise play a fail consume sound
-	else if (FailConsumeSounds)
+	else if (FailConsumeSounds && m_canPlayEatSound)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, FailConsumeSounds, GetActorLocation());
+		FTimerHandle ConsumeTimerHandle;
+		GetWorldTimerManager().SetTimer(ConsumeTimerHandle, this, &AGuudoCharater::ResetCanPlayEatSound, 1.f, false);
+		m_canPlayEatSound = false;
 	}
 	
 	// Play Animation and Shake the Camera
@@ -429,6 +437,13 @@ void AGuudoCharater::OpenInventory()
 
 }
 
+void AGuudoCharater::SetCanPlayerTakeDamage(bool value)
+{
+	CanPlayerTakeDamage = value;
+	StartAirTime = GetWorld()->GetRealTimeSeconds();
+	StartWaterTime = GetWorld()->GetRealTimeSeconds();
+}
+
 void AGuudoCharater::SetGrowthState(EGrowth GrowthState)
 {
 	m_GrowthState = GrowthState;
@@ -558,16 +573,9 @@ void AGuudoCharater::Tick(float DeltaTime)
 		GetMesh()->SetScalarParameterValueOnMaterials("Dither", 1.0f);
 
 	// Check if the Location has changed from the previous location and update it accordingly.
-	// Only check every 8 miliseconds so as to skip any errors caused by leaving the ground for a
-	// fraction of a second. This ensures the Player actually has changed states enough to be considered for a state change.
-	SlowTick += DeltaTime;
-	if (SlowTick > .8f)
+	if (CanPlayerTakeDamage)
 	{
-		// Reset state tracking variables
 		m_PreviousLocation = m_CurrentLocation;
-		SlowTick = .10f - SlowTick;
-
-		// Perform change check and update accordingly
 		if (GetCharacterMovement()->IsMovingOnGround())
 			m_CurrentLocation = ELocation::OnTheGround;
 		else if (GetCharacterMovement()->IsFalling())
@@ -618,17 +626,17 @@ void AGuudoCharater::Tick(float DeltaTime)
 				break;
 			}
 		}
-	}
 
-	// Check if the Player is in the water and if damage over time should be applied
-	if (m_CurrentLocation == ELocation::InTheWater)
-	{
-		float EndWaterTime = GetWorld()->GetRealTimeSeconds();
-		if (EndWaterTime - StartWaterTime >= SafeSwimmingDuration)
+		// Check if the Player is in the water and if damage over time should be applied
+		if (m_CurrentLocation == ELocation::InTheWater)
 		{
-			StartWaterTime = GetWorld()->GetRealTimeSeconds();
-			Health -= 1;
-			CheckHealth();
+			float EndWaterTime = GetWorld()->GetRealTimeSeconds();
+			if (EndWaterTime - StartWaterTime >= SafeSwimmingDuration)
+			{
+				StartWaterTime = GetWorld()->GetRealTimeSeconds();
+				Health -= 1;
+				CheckHealth();
+			}
 		}
 	}
 

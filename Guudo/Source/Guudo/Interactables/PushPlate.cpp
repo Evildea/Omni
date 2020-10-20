@@ -8,6 +8,7 @@
 #include "Components/BoxComponent.h"
 #include "../GuudoCharater.h"
 #include "GameFramework/Actor.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 APushPlate::APushPlate()
@@ -46,7 +47,6 @@ void APushPlate::BeginPlay()
 void APushPlate::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void APushPlate::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -56,18 +56,32 @@ void APushPlate::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor
 
 	if (OtherComponent->ComponentHasTag("Player"))
 	{
-		AGuudoCharater* Player = Cast<AGuudoCharater>(OtherActor);
-		if (OtherActor)
+		Player = Cast<AGuudoCharater>(OtherActor);
+		if (Player)
 		{
-			Player->OnFollowPath(this, Duration);
+			Player->OnFollowPath(Path, Duration);
+			Player->SetCanPlayerTakeDamage(false);
 			m_HasPathActivated = true;
+			if (PushSounds)
+			{
+				UGameplayStatics::PlaySoundAtLocation(this, PushSounds, GetActorLocation());
+				UGameplayStatics::SpawnEmitterAtLocation(this, PushParticles, GetActorLocation() + FVector(0.f,0.f,82.f));
+			}
 
 			if (CanReactivate)
 			{
 				FTimerHandle CountdownTimerHandle;
-				GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &APushPlate::ResetActivationTimer, DelayBeforeReset, true);
+				GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &APushPlate::ResetActivationTimer, DelayBeforeReset, false);
+				FTimerHandle CountdownTimerHandle2;
+				GetWorldTimerManager().SetTimer(CountdownTimerHandle2, this, &APushPlate::ResetPlayerAbleToReceiveDamage, Duration, false);
 			}
 		}
 	}
 
+}
+
+void APushPlate::ResetPlayerAbleToReceiveDamage()
+{
+	if (Player)
+		Player->SetCanPlayerTakeDamage(true);
 }

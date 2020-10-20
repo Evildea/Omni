@@ -54,6 +54,7 @@ protected:
 private:
 	bool m_isPickupPossible;							// Can't pickup because already picking up
 	bool m_isAbleToGrow;								// Can the player Grow here.
+	bool m_canPlayEatSound = true;						// Whether the Player can Play an Eat sound again
 	float m_CurrentShakeDelta = 0.f;					// How far the Character is through a walk shake
 	class UGuudoGameInstance* m_GameInstance = nullptr; // Reference to the Game Instance
 
@@ -68,7 +69,6 @@ private:
 	// Location State (Is the Player in the air, on the ground or in the water?)
 	ELocation m_CurrentLocation;
 	ELocation m_PreviousLocation;
-	float SlowTick = 0.f;
 	float StartAirTime;
 	float StartWaterTime;
 
@@ -83,6 +83,7 @@ private:
 	// Timers
 	inline void ResetIsAbleToGrowError()	{ m_isAbleToGrow = true; }
 	inline void ResetWalkingState()			{ m_WalkState = EWalking::Stationary; }
+	inline void ResetCanPlayEatSound()		{ m_canPlayEatSound = true; }
 	inline void RestartLevel();
 
 	// Custom Jump for the Character
@@ -101,11 +102,11 @@ public:
 	// COMPONENTS ////////////////////////////////////////////////
 
 	// Camera
-	UPROPERTY(VisibleAnywhere, Category = Camera)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Camera)
 		class UCameraComponent* Camera;
 
 	// Camera Arm
-	UPROPERTY(VisibleAnywhere, Category = Camera)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Camera)
 		class USpringArmComponent* CameraArm;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Designer")
 		float CameraSmallTrailDistance = 220.0f;
@@ -208,6 +209,7 @@ public:
 	float SafeSwimmingDuration = 1.0f;
 
 	int Health = 5;
+	bool CanPlayerTakeDamage = true;
 
 	// Debug Settings
 	UPROPERTY(EditAnywhere, Category = "Designer")
@@ -222,6 +224,7 @@ public:
 	void Grow();
 	void Interact();
 	void OpenInventory();
+	void SetCanPlayerTakeDamage(bool value);
 
 	// Set the Growth State (Growing or not?)
 	UFUNCTION(BlueprintCallable)
@@ -268,7 +271,7 @@ public:
 
 	// Make Guudo Follow a Path
 	UFUNCTION(BlueprintImplementableEvent)
-		void OnFollowPath(class APushPlate* Path, float Duration);
+		void OnFollowPath(class USplineComponent* Path, float Duration);
 
 	// Guudo dies from fall damage
 	UFUNCTION(BlueprintImplementableEvent)
