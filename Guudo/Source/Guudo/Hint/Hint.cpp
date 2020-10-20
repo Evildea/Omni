@@ -8,6 +8,7 @@
 #include "TimerManager.h"
 #include "GameFramework/Actor.h"
 #include "HintWidget.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AHint::AHint()
@@ -41,6 +42,12 @@ void AHint::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor* Oth
 
 			FTimerHandle CountdownTimerHandle;
 			GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AHint::OnEndPopup, 1.f, false);
+
+			if (EnterSound != nullptr && !HasAudioPlayed)
+			{
+				UGameplayStatics::PlaySoundAtLocation(this, EnterSound, OtherActor->GetActorLocation());
+				HasAudioPlayed = true;
+			}
 		}
 	}
 }
