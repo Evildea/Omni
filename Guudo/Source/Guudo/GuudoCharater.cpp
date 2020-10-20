@@ -278,8 +278,13 @@ void AGuudoCharater::Pickup()
 	if (m_isPickupPossible)
 	{
 		// Play consume sound
-		if(ConsumeSounds)
+		if (ConsumeSounds && m_canPlayEatSound)
+		{
 			UGameplayStatics::SpawnSoundAttached(ConsumeSounds, this->GetRootComponent());
+			FTimerHandle ConsumeTimerHandle;
+			GetWorldTimerManager().SetTimer(ConsumeTimerHandle, this, &AGuudoCharater::ResetCanPlayEatSound, 1.f, false);
+			m_canPlayEatSound = false;
+		}
 
 		UPickup* Pickup = ConsumeTarget->FindComponentByClass<UPickup>();
 
@@ -291,9 +296,12 @@ void AGuudoCharater::Pickup()
 		}
 	}
 	// Otherwise play a fail consume sound
-	else if (FailConsumeSounds)
+	else if (FailConsumeSounds && m_canPlayEatSound)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, FailConsumeSounds, GetActorLocation());
+		FTimerHandle ConsumeTimerHandle;
+		GetWorldTimerManager().SetTimer(ConsumeTimerHandle, this, &AGuudoCharater::ResetCanPlayEatSound, 1.f, false);
+		m_canPlayEatSound = false;
 	}
 	
 	// Play Animation and Shake the Camera
