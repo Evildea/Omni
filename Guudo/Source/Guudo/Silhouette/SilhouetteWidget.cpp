@@ -39,3 +39,31 @@ UMaterial* USilhouetteWidget::GetLegs()
 		return m_GameInstance->GetSilhouetteLeg();
     return nullptr;
 }
+
+bool USilhouetteWidget::GetHaveCorrectHead()
+{
+	if (m_GameInstance)
+		return m_GameInstance->GetHaveCorrectHead();
+	return false;
+}
+
+bool USilhouetteWidget::GetHaveCorrectChest()
+{
+	if (m_GameInstance)
+		return m_GameInstance->GetHaveCorrectChest();
+	return false;
+}
+
+bool USilhouetteWidget::GetHaveCorrectArms()
+{
+	if (m_GameInstance)
+		return m_GameInstance->GetHaveCorrectArms();
+	return false;
+}
+
+bool USilhouetteWidget::GetHaveCorrectLegs()
+{
+	if (m_GameInstance)
+		return m_GameInstance->GetHaveCorrectLegs();
+	return false;
+}

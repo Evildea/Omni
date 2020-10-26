@@ -15,6 +15,11 @@ void UGuudoGameInstance::Init()
 
 void UGuudoGameInstance::GenerateSilhouette(FString CurrentLevelName, FString NextLevelName)
 {
+	// Reset Variables
+	HaveHead = false;
+	HaveChest = false;
+	HaveArms = false;
+	HaveLegs = false;
 
 	// Set the Map
 	bool hasFoundMap = false;
@@ -82,8 +87,6 @@ void UGuudoGameInstance::GenerateSilhouette(FString CurrentLevelName, FString Ne
 
 		for (int32 Index2 = 0; Index2 != ListOfComponentedActors.Num(); ++Index2)
 		{
-			//UE_LOG(LogTemp, Warning, TEXT("Tester %s"), *ListOfComponentedActors[Index2]->Data.Name.ToString());
-
 			for (int32 Index = 0; Index != CurrentMap.ListOfInventoryHeads.Num(); ++Index)
 			{
 				if (CurrentMap.ListOfInventoryHeads[Index].Name == ListOfComponentedActors[Index2]->Data.Name)
@@ -126,6 +129,11 @@ void UGuudoGameInstance::AddItemToInventory(FName Pickup)
 	{
 		if (CurrentMap.ListOfHeads[Index].Name == Pickup)
 		{
+			if (Pickup == CurrentMap.ListOfHeads[CurrentMap.SilhouetteHead].Name)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Picked Up Correct Head!"));
+				HaveHead = true;
+			}
 			CurrentMap.ListOfInventoryHeads.Add(CurrentMap.ListOfHeads[Index]);
 			UE_LOG(LogTemp, Display, TEXT("Added"));
 			return;
@@ -136,6 +144,11 @@ void UGuudoGameInstance::AddItemToInventory(FName Pickup)
 	{
 		if (CurrentMap.ListOfChests[Index].Name == Pickup)
 		{
+			if (Pickup == CurrentMap.ListOfChests[CurrentMap.SilhouetteChest].Name)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Picked Up Correct Chest!"));
+				HaveChest = true;
+			}
 			CurrentMap.ListOfInventoryChests.Add(CurrentMap.ListOfChests[Index]);
 			UE_LOG(LogTemp, Display, TEXT("Added"));
 			return;
@@ -148,6 +161,11 @@ void UGuudoGameInstance::AddItemToInventory(FName Pickup)
 		{
 			if (CurrentMap.ListOfArms[Index].Name == Pickup)
 			{
+				if (Pickup == CurrentMap.ListOfArms[CurrentMap.SilhouetteArms].Name)
+				{
+					UE_LOG(LogTemp, Warning, TEXT("Picked Up Correct Arms!"));
+					HaveArms = true;
+				}
 				CurrentMap.ListOfInventoryArms.Add(CurrentMap.ListOfArms[Index]);
 				UE_LOG(LogTemp, Display, TEXT("Added"));
 				return;
@@ -161,6 +179,11 @@ void UGuudoGameInstance::AddItemToInventory(FName Pickup)
 		{
 			if (CurrentMap.ListOfLegs[Index].Name == Pickup)
 			{
+				if (Pickup == CurrentMap.ListOfLegs[CurrentMap.SilhouetteLegs].Name)
+				{
+					UE_LOG(LogTemp, Warning, TEXT("Picked Up Correct Legs!"));
+					HaveLegs = true;
+				}
 				CurrentMap.ListOfInventoryLegs.Add(CurrentMap.ListOfLegs[Index]);
 				UE_LOG(LogTemp, Display, TEXT("Added"));
 				return;
@@ -179,7 +202,10 @@ void UGuudoGameInstance::ResetGameInstance()
 	SelectedArm = -1;
 	SelectedChest = -1;
 	SelectedLeg = -1;
-
+	HaveHead = false;
+	HaveChest = false;
+	HaveArms = false;
+	HaveLegs = false;
 
 }
 

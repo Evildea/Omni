@@ -53,4 +53,16 @@ public:
 	UFUNCTION(BlueprintCallable)
 		class UMaterial* GetLegs();
 
+	UFUNCTION(BlueprintCallable)
+		bool GetHaveCorrectHead();
+
+	UFUNCTION(BlueprintCallable)
+		bool GetHaveCorrectChest();
+
+	UFUNCTION(BlueprintCallable)
+		bool GetHaveCorrectArms();
+
+	UFUNCTION(BlueprintCallable)
+		bool GetHaveCorrectLegs();
+
 };
