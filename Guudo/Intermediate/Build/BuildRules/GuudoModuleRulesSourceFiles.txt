@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-C:\Users\xiant\Documents\Omni\Guudo\Source\Guudo\Guudo.Build.cs
-C:\Users\xiant\Documents\Omni\Guudo\Source\Guudo.Target.cs
-C:\Users\xiant\Documents\Omni\Guudo\Source\GuudoEditor.Target.cs
-=======
-C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo\Guudo.Build.cs
-C:\Users\Daniel\Desktop\Omni\Guudo\Source\Guudo.Target.cs
-C:\Users\Daniel\Desktop\Omni\Guudo\Source\GuudoEditor.Target.cs
->>>>>>> master
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Guudo.Build.cs
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo.Target.cs
+D:\Unreal\GitKraken\Omni\Guudo\Source\GuudoEditor.Target.cs
