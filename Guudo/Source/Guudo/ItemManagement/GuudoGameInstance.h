@@ -78,6 +78,8 @@ private:
 	int SelectedChest = -1;
 	int SelectedLeg = -1;
 
+	bool HaveHead;
+
 public:
 	virtual void Init() override;
 

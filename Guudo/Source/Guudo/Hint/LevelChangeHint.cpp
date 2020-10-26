@@ -3,6 +3,7 @@
 
 #include "LevelChangeHint.h"
 #include "Kismet/GameplayStatics.h"
+#include "ItemManagement/GuudoGameInstance.h"
 #include "Engine/World.h"
 
 ALevelChangeHint::ALevelChangeHint() : ABaseHint()
@@ -10,6 +11,8 @@ ALevelChangeHint::ALevelChangeHint() : ABaseHint()
 
 void ALevelChangeHint::Transition()
 {
+	UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+	GameInstance->GenerateSilhouette(GetWorld()->GetMapName(), Level.ToString());
 	UGameplayStatics::OpenLevel(this, Level);
 }
 
