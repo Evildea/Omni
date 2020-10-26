@@ -413,7 +413,13 @@ void AGuudoCharater::Interact()
 	}
 
 	// Interact with a Level Change Hint ///////////////////////////////////////////////////////////////////////////
-	if (m_LevelChangeHint && m_LevelChangeHint->GetCanTransition())
+if (m_LevelChangeHint)
+{
+UE_LOG(LogTemp, Warning, TEXT("Transition Level B"));
+}	
+
+
+if (m_LevelChangeHint && m_LevelChangeHint->GetCanTransition())
 	{
 		m_LevelChangeHint->Transition();
 		UE_LOG(LogTemp, Warning, TEXT("Transition Level"));
@@ -494,8 +500,15 @@ void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AA
 		m_TargetSwitch = Cast<ASwitch>(OtherActor);
 
 	// If within range of "Level Trigger" permit level transitioning
-	if (OtherActor->IsA(ALevelChangeHint::StaticClass()))
-		m_LevelChangeHint = Cast<ALevelChangeHint>(OtherActor);
+	m_LevelChangeHint = Cast<ALevelChangeHint>(OtherActor);
+if (m_LevelChangeHit)
+{
+UE_LOG(LogTemp, Warning, TEXT("TEST"));
+}
+else
+{
+UE_LOG(LogTemp, Warning, TEXT("FAIL"));
+}
 
 	UE_LOG(LogTemp, Warning, TEXT("Enter Zone"));
 }
