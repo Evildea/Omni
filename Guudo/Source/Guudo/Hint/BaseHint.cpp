@@ -25,6 +25,7 @@ ABaseHint::ABaseHint()
 	Collider->SetCollisionProfileName(FName("Trigger"));
 	Collider->SetGenerateOverlapEvents(true);
 	Collider->OnComponentBeginOverlap.AddDynamic(this, &ABaseHint::OnOverlapBegin);
+	Collider->OnComponentEndOverlap.AddDynamic(this, &ABaseHint::OnOverlapEnd);
 	Collider->SetupAttachment(RootComponent);
 	
 }
@@ -35,13 +36,20 @@ void ABaseHint::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor*
 	{
 		if (WidgetToCreate)
 		{
-			WidgetToShow = CreateWidget<UHintWidget>(GetWorld(), WidgetToCreate);
-			WidgetToShow->SetContents(Title, Subtitle, Thumbnail);
-
-			WidgetToShow->AddToViewport();
+			if (!WidgetToShow)
+			{
+				WidgetToShow = CreateWidget<UHintWidget>(GetWorld(), WidgetToCreate);
+				WidgetToShow->SetContents(Title, Subtitle, Thumbnail);
+				WidgetToShow->AddToViewport();
+			}
+			else if (!WidgetToShow->IsInViewport())
+			{
+				WidgetToShow->SetContents(Title, Subtitle, Thumbnail);
+				WidgetToShow->AddToViewport();
+			}
 
 			// Call Overlap Event
-			OnOverlap();
+			OnOverlapBegin();
 
 			if (EnterSound != nullptr && !HasAudioPlayed)
 			{
@@ -49,6 +57,16 @@ void ABaseHint::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor*
 				HasAudioPlayed = true;
 			}
 		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Widget To Create not set for %s"), *GetName());
+		}
 	}
+}
+
+void ABaseHint::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	if (OtherActor->IsA(ACharacter::StaticClass()))
+		OnOverlapEnd();
 }
 

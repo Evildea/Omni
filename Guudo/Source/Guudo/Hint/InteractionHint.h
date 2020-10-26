@@ -21,6 +21,6 @@ public:
 	void OnEndPopup();
 
 protected:
-	virtual void OnOverlap() override;
+	virtual void OnOverlapBegin() override;
 
 };

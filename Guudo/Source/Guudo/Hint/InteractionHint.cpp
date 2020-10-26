@@ -16,7 +16,7 @@ void AInteractionHint::OnEndPopup()
 	Destroy();
 }
 
-void AInteractionHint::OnOverlap()
+void AInteractionHint::OnOverlapBegin()
 {
 	FTimerHandle CountdownTimerHandle;
 	GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AInteractionHint::OnEndPopup, 1.f, false);

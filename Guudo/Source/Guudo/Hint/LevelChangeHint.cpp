@@ -2,12 +2,25 @@
 
 
 #include "LevelChangeHint.h"
+#include "Kismet/GameplayStatics.h"
+#include "Engine/World.h"
 
 ALevelChangeHint::ALevelChangeHint() : ABaseHint()
-{
+{ }
 
+void ALevelChangeHint::Transition()
+{
+	UGameplayStatics::OpenLevel(this, Level);
 }
 
-void ALevelChangeHint::OnOverlap()
+void ALevelChangeHint::OnOverlapBegin()
 {
+	CanTransitionLevel = true;
+	UE_LOG(LogTemp, Warning, TEXT("Can Level Transition = true"));
+}
+
+void ALevelChangeHint::OnOverlapEnd()
+{
+	CanTransitionLevel = false;
+	UE_LOG(LogTemp, Warning, TEXT("Can Level Transition = false"));
 }
