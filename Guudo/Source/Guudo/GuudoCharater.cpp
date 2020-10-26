@@ -17,6 +17,7 @@
 #include "ItemManagement/GuudoGameInstance.h"
 #include "Interactables/Switch.h"
 #include "Interactables/Pickup.h"
+#include "Hint/LevelChangeHint.h"
 #include "Engine.h" // Debug //
 
 // Sets default values
@@ -410,6 +411,14 @@ void AGuudoCharater::Interact()
 		if (InteractSounds)
 			UGameplayStatics::PlaySoundAtLocation(this, InteractSounds, GetActorLocation());
 	}
+
+	// Interact with a Level Change Hint ///////////////////////////////////////////////////////////////////////////
+	if (m_LevelChangeHint && m_LevelChangeHint->GetCanTransition())
+	{
+		m_LevelChangeHint->Transition();
+		UE_LOG(LogTemp, Warning, TEXT("Transition Level"));
+	}
+
 }
 
 void AGuudoCharater::OpenInventory()
@@ -483,6 +492,10 @@ void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AA
 	// If within range of "Switch" to permit button pressing
 	if (OtherComponent->ComponentHasTag("Switch"))
 		m_TargetSwitch = Cast<ASwitch>(OtherActor);
+
+	// If within range of "Level Trigger" permit level transitioning
+	if (OtherActor->IsA(ALevelChangeHint::StaticClass()))
+		m_LevelChangeHint = Cast<ALevelChangeHint>(OtherActor);
 
 	UE_LOG(LogTemp, Warning, TEXT("Enter Zone"));
 }

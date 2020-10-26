@@ -61,6 +61,9 @@ private:
 	// Interacting
 	UPROPERTY()
 	class ASwitch* m_TargetSwitch;
+	
+	UPROPERTY()
+	class ALevelChangeHint* m_LevelChangeHint;
 
 	// Scaling
 	EScale m_ScaleState;

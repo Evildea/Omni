@@ -17,7 +17,17 @@ class GUUDO_API ALevelChangeHint : public ABaseHint
 public:
 	ALevelChangeHint();
 
+	bool inline GetCanTransition() { return CanTransitionLevel; }
+	void Transition();
+
+	UPROPERTY(EditAnywhere, Category = "Designer")
+	FName Level;
+
 protected:
-	virtual void OnOverlap() override;
+	virtual void OnOverlapBegin() override;
+	virtual void OnOverlapEnd() override;
+
+private:
+	bool CanTransitionLevel = false;
 
 };

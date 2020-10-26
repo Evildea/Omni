@@ -969,3 +969,7 @@ C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo\Interactables/Switch.h
 C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\Switch.generated.h
 C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo\Interactables/Pickup.h
 C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\Pickup.generated.h
+C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo\Hint/LevelChangeHint.h
+C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo\Hint\BaseHint.h
+C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\BaseHint.generated.h
+C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\LevelChangeHint.generated.h
