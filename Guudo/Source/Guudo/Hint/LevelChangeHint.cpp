@@ -11,9 +11,12 @@ ALevelChangeHint::ALevelChangeHint() : ABaseHint()
 
 void ALevelChangeHint::Transition()
 {
-	UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-	GameInstance->GenerateSilhouette(GetWorld()->GetMapName(), Level.ToString());
-	UGameplayStatics::OpenLevel(this, Level);
+	if (!Level.IsNone())
+	{
+		UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+		GameInstance->GenerateSilhouette(GetWorld()->GetMapName(), Level.ToString());
+		UGameplayStatics::OpenLevel(this, Level);
+	}
 }
 
 void ALevelChangeHint::OnOverlapBegin()

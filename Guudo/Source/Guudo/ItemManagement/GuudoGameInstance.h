@@ -78,7 +78,10 @@ private:
 	int SelectedChest = -1;
 	int SelectedLeg = -1;
 
-	bool HaveHead;
+	bool HaveHead = false;
+	bool HaveChest = false;
+	bool HaveArms = false;
+	bool HaveLegs = false;
 
 public:
 	virtual void Init() override;
@@ -106,6 +109,18 @@ public:
 	UMaterial* GetSilhouetteChest();
 	UMaterial* GetSilhouetteArm();
 	UMaterial* GetSilhouetteLeg();
+
+	UFUNCTION(BlueprintCallable)
+	bool GetHaveCorrectHead() { return HaveHead; }
+
+	UFUNCTION(BlueprintCallable)
+	bool GetHaveCorrectChest() { return HaveChest; }
+
+	UFUNCTION(BlueprintCallable)
+	bool GetHaveCorrectArms() { return HaveArms; }
+
+	UFUNCTION(BlueprintCallable)
+	bool GetHaveCorrectLegs() { return HaveLegs; }
 
 	int GetSizeOfInventory();
 
