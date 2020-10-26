@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 C:\Users\Joshu\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
 c:\users\joshu\desktop\omni\guudo\source\guudo\GuudoGameModeBase.h
@@ -5,12 +6,20 @@ c:\users\joshu\desktop\omni\guudo\source\guudo\GuudoGameModeBase.h
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
 C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
 >>>>>>> Stashed changes
+=======
+C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
+C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
+>>>>>>> master
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 C:\Program Files\Epic Games\UE_4.23\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 C:\Users\Joshu\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameModeBase.generated.h
 =======
 C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameModeBase.generated.h
 >>>>>>> Stashed changes
+=======
+C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo\GuudoGameModeBase.generated.h
+>>>>>>> master

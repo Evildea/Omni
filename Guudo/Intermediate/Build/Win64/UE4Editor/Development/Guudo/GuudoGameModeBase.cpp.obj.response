@@ -498,6 +498,7 @@
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I Runtime\ClothingSystemRuntimeInterface
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 /I C:\Users\Joshu\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo
 /I C:\Users\Joshu\Desktop\Omni\Guudo\Source
@@ -507,6 +508,11 @@
 /I C:\Users\s171971\Documents\Omni\Guudo\Source
 /I C:\Users\s171971\Documents\Omni\Guudo\Source\Guudo
 >>>>>>> Stashed changes
+=======
+/I C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Inc\Guudo
+/I C:\Users\s191281\Documents\Omni\Guudo\Source
+/I C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo
+>>>>>>> master
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
@@ -530,6 +536,7 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 /I "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"
@@ -543,11 +550,14 @@
 /FI"C:\Users\Joshu\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h"
 /Fo"C:\Users\Joshu\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\GuudoGameModeBase.cpp.obj"
 =======
+=======
+>>>>>>> master
 /I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.24.28314\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
+<<<<<<< HEAD
 /FI"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
 /Yu"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
 /Fp"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.pch"
@@ -555,6 +565,14 @@
 /FI"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h"
 /Fo"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\GuudoGameModeBase.cpp.obj"
 >>>>>>> Stashed changes
+=======
+/FI"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
+/Yu"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h"
+/Fp"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.pch"
+"C:\Users\s191281\Documents\Omni\Guudo\Source\Guudo\GuudoGameModeBase.cpp"
+/FI"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h"
+/Fo"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\GuudoGameModeBase.cpp.obj"
+>>>>>>> master
 /TP
 /GR-
 /W4
