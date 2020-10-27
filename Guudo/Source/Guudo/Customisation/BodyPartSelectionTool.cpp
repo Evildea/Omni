@@ -46,6 +46,7 @@ void ABodyPartSelectionTool::BeginPlay()
 {
 	Super::BeginPlay();
 	m_PositionZ = GetActorLocation().Z;
+	m_OriginalRotation = GetActorRotation();
 }
 
 void ABodyPartSelectionTool::Tick(float DeltaTime)
@@ -56,7 +57,7 @@ void ABodyPartSelectionTool::Tick(float DeltaTime)
 	if (m_RotationZ != m_TargetRotationZ)
 	{
 		m_RotationZ = FMath::FixedTurn(m_RotationZ, m_TargetRotationZ, DeltaTime * RotationSpeed);
-		Root->SetWorldRotation(FRotator(0.f, m_RotationZ, 0.f).Quaternion());
+		Root->SetWorldRotation(FRotator(m_OriginalRotation.Pitch, m_RotationZ, m_OriginalRotation.Roll).Quaternion());
 	}
 }
 
@@ -115,6 +116,6 @@ void ABodyPartSelectionTool::RotateRight()
 void ABodyPartSelectionTool::SetLocationZ(float Value)
 {
 	FVector Location = GetActorLocation();
-	Location.Z = m_PositionZ + Value * 150.0f;
+	Location.Z = m_PositionZ - Value * 150.0f;
 	SetActorLocation(Location);
 }

@@ -99,6 +99,7 @@ public:
 
 	// Calculate the Score
 	void CalculateScore(float &HeadScore, float &ChestScore, float &ArmScore, float &LegScore);
+	void CalculateIndividualScore();
 
 	void SetSelectedHead(int value) { SelectedHead = 0; }
 	void SetSelectedArm(int value) { SelectedArm = 0; }
@@ -126,6 +127,8 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	FString GetNextLevel();
+
+	bool GetInitailised() { return ListOfMaps.Num() > 0; }
 
 
 };

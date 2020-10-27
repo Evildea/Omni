@@ -44,7 +44,7 @@ bool UCustomisationWidget::Initialize()
 
 	// Get the Game Instance.
 	m_GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-	if (!m_GameInstance)
+	if (!m_GameInstance || !m_GameInstance->GetInitailised())
 		return false;
 
 	OnFinaliseInitialisationInBlueprints();	// Go to Blueprints and set the ItemWidget to its Blueprint Derived Class.
@@ -89,6 +89,10 @@ void UCustomisationWidget::PressDone()
 	m_BodyPartSelectionTool->RemoveBodyPartSelectionTool();
 	m_HasPressedDone = true;
 
+	// Perform Check
+	if (!m_GameInstance || !m_GameInstance->GetInitailised())
+		return;
+
 	// Calculate the Final Score
 	float	FinalScoreF,
 			HeadScoreF,
@@ -96,10 +100,8 @@ void UCustomisationWidget::PressDone()
 			ArmsScoreF,
 			LegsScoreF;
 
-	m_GameInstance->CalculateScore(HeadScoreF, ChestScoreF, ArmsScoreF, LegsScoreF);
-
-
 	// Calculate Final Score
+	m_GameInstance->CalculateScore(HeadScoreF, ChestScoreF, ArmsScoreF, LegsScoreF);
 	FinalScoreF = (1.0f / 400.f) * (HeadScoreF + ChestScoreF + ArmsScoreF + LegsScoreF);
 
 	// Calculate Individual Scores
@@ -148,6 +150,7 @@ void UCustomisationWidget::RefreshBodyPartSelectionText()
 
 void UCustomisationWidget::RefreshListOfVisibleBodyParts()
 {
+
 	// Don't do anything if customisation is complete.
 	if (m_HasPressedDone)
 		return;
