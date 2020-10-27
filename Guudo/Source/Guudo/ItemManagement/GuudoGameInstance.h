@@ -46,16 +46,16 @@ struct FMapData
 	TArray<FPickupData> ListOfInventoryLegs;
 
 	UPROPERTY()
-	int32 SilhouetteHead = -1;
+	int SilhouetteHead = -1;
 
 	UPROPERTY()
-	int32 SilhouetteChest = -1;
+	int SilhouetteChest = -1;
 
 	UPROPERTY()
-	int32 SilhouetteArms = -1;
+	int SilhouetteArms = -1;
 
 	UPROPERTY()
-	int32 SilhouetteLegs = -1;
+	int SilhouetteLegs = -1;
 };
 
 
@@ -101,10 +101,10 @@ public:
 	void CalculateScore(float &HeadScore, float &ChestScore, float &ArmScore, float &LegScore);
 	void CalculateIndividualScore();
 
-	void SetSelectedHead(int value) { SelectedHead = 0; }
-	void SetSelectedArm(int value) { SelectedArm = 0; }
-	void SetSelectedChest(int value) { SelectedChest = 0; }
-	void SetSelectedLeg(int value) { SelectedLeg = 0; }
+	void SetSelectedHead(int value) { SelectedHead = value; }
+	void SetSelectedArm(int value) { SelectedArm = value; }
+	void SetSelectedChest(int value) { SelectedChest = value; }
+	void SetSelectedLeg(int value) { SelectedLeg = value; }
 
 	UMaterial* GetSilhouetteHead();
 	UMaterial* GetSilhouetteChest();
