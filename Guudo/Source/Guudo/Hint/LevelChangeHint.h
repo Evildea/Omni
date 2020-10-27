@@ -23,6 +23,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Designer")
 	FName Level;
 
+	UPROPERTY(EditAnywhere, Category = "Designer")
+	bool GoToCustomisationScreen = false;
+
 protected:
 	virtual void OnOverlapBegin() override;
 	virtual void OnOverlapEnd() override;
