@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Customisation\BodyPartSelectionTool.h
 C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Hint\BaseHint.h
 C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Hint\LevelChangeHint.h
@@ -21,3 +22,28 @@ C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\PickupData.h
 C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\Silhouette\SilhouetteWidget.h
 C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\GuudoGameMode.h
 C:\Users\Joshu\Desktop\Omni\Guudo\Source\Guudo\GuudoCharater.h
+=======
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Customisation\BodyPartSelectionTool.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Hint\BaseHint.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Hint\LevelChangeHint.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\ItemManagement\GuudoGameInstance.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Hint\InteractionHint.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Customisation\InventoryWidget.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Customisation\ItemImageWidget.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\GuudoGameModeBase.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Interactables\Ball.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Customisation\ModularGuudo.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Interactables\Pickup.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\GuudoGameMode.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Hint\HintWidget.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\GuudoCharater.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Silhouette\SilhouetteWidget.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Interactables\Door.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Interactables\Physics.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Interactables\PressurePlate.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Interactables\PushPlate.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Interactables\Shakeable.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Interactables\Switch.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\PickupData.h
+D:\Unreal\GitKraken\Omni\Guudo\Source\Guudo\Customisation\CustomisationWidget.h
+>>>>>>> master
