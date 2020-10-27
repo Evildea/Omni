@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-#include "C:/Users/Joshu/Desktop/Omni/Guudo/Intermediate/Build/Win64/GuudoEditor/Development/Engine/SharedPCH.Engine.h"
-=======
-#include "D:/Unreal/GitKraken/Omni/Guudo/Intermediate/Build/Win64/GuudoEditor/Development/Engine/SharedPCH.Engine.h"
->>>>>>> master
+#include "C:/Users/s171971/Documents/Omni/Guudo/Intermediate/Build/Win64/GuudoEditor/Development/Engine/SharedPCH.Engine.h"
