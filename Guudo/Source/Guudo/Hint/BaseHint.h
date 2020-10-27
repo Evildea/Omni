@@ -16,10 +16,10 @@ public:
 	ABaseHint();
 
 protected:	
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, Category = "Designer", meta = (AllowPrivateAccess = "true"))
 	class USceneComponent* Root;
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, Category = "Designer", meta = (AllowPrivateAccess = "true"))
 	class UBoxComponent* Collider;
 
 	UPROPERTY()
