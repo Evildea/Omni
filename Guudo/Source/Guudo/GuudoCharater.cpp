@@ -501,14 +501,6 @@ void AGuudoCharater::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AA
 
 	// If within range of "Level Trigger" permit level transitioning
 	m_LevelChangeHint = Cast<ALevelChangeHint>(OtherActor);
-if (m_LevelChangeHint)
-{
-UE_LOG(LogTemp, Warning, TEXT("TEST"));
-}
-else
-{
-UE_LOG(LogTemp, Warning, TEXT("FAIL"));
-}
 
 	UE_LOG(LogTemp, Warning, TEXT("Enter Zone"));
 }
