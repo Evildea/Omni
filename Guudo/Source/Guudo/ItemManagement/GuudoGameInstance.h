@@ -16,7 +16,7 @@ struct FMapData
 	GENERATED_USTRUCT_BODY()
 
 	UPROPERTY()
-	FString LevelName;
+	FString LevelName = FString(TEXT("None"));
 
 	UPROPERTY()
 	FString NextLevelName;
