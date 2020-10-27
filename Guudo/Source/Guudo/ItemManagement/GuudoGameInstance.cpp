@@ -221,17 +221,19 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	/// Check if any of the Selected Head match the Silhouette Head ////////////////////////////////////
 	if (SelectedHead != -1 && CurrentMap.SilhouetteHead != -1)
 	{
+		bool found = false;
 		if (CurrentMap.ListOfInventoryHeads[SelectedHead].Name == CurrentMap.ListOfHeads[CurrentMap.SilhouetteHead].Name)
 		{
 			HeadScore += 100.0f;
+			found = true;
 			UE_LOG(LogTemp, Warning, TEXT("The head matches the Silhouette!"));
 		}
-		else if (CurrentMap.ListOfInventoryHeads[SelectedHead].GeneralShape == CurrentMap.ListOfHeads[CurrentMap.SilhouetteHead].GeneralShape)
+		else if (!found && CurrentMap.ListOfInventoryHeads[SelectedHead].GeneralShape == CurrentMap.ListOfHeads[CurrentMap.SilhouetteHead].GeneralShape)
 		{
 			HeadScore += CurrentMap.ListOfInventoryHeads[SelectedHead].SimilarScore;
 			UE_LOG(LogTemp, Warning, TEXT("The head matchs the general shape.."));
 		}
-		else
+		else if (!found)
 		{
 			HeadScore += CurrentMap.ListOfInventoryHeads[SelectedHead].WrongScore;
 			UE_LOG(LogTemp, Warning, TEXT("The head is completely wrong..."));
@@ -241,17 +243,19 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	// Check if any of the Selected Chest match the Silhouette Chest //////////////////////////////////
 	if (SelectedChest != -1 && CurrentMap.SilhouetteChest != -1)
 	{
+		bool found = false;
 		if (CurrentMap.ListOfInventoryChests[SelectedChest].Name == CurrentMap.ListOfChests[CurrentMap.SilhouetteChest].Name)
 		{
 			ChestScore += 100.0f;
+			found = true;
 			UE_LOG(LogTemp, Warning, TEXT("The chest matches the Silhouette!"));
 		}
-		else if (CurrentMap.ListOfInventoryChests[SelectedChest].GeneralShape == CurrentMap.ListOfChests[CurrentMap.SilhouetteChest].GeneralShape)
+		else if (!found && CurrentMap.ListOfInventoryChests[SelectedChest].GeneralShape == CurrentMap.ListOfChests[CurrentMap.SilhouetteChest].GeneralShape)
 		{
 			ChestScore += CurrentMap.ListOfInventoryChests[SelectedChest].SimilarScore;
 			UE_LOG(LogTemp, Warning, TEXT("The chest matchs the general shape.."));
 		}
-		else
+		else if (!found)
 		{
 			ChestScore += CurrentMap.ListOfInventoryChests[SelectedChest].WrongScore;
 			UE_LOG(LogTemp, Warning, TEXT("The chest is completely wrong..."));
@@ -261,17 +265,19 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	// Check if any of the Selected Arms match the Silhouette Arms ////////////////////////////////////
 	if (SelectedArm != -1 && CurrentMap.SilhouetteArms != -1)
 	{
+		bool found = false;
 		if (CurrentMap.ListOfInventoryArms[SelectedArm].Name == CurrentMap.ListOfArms[CurrentMap.SilhouetteArms].Name)
 		{
 			ArmScore += 100.0f;
+			found = true;
 			UE_LOG(LogTemp, Warning, TEXT("The arms match the Silhouette!"));
 		}
-		else if (CurrentMap.ListOfInventoryArms[SelectedArm].GeneralShape == CurrentMap.ListOfArms[CurrentMap.SilhouetteArms].GeneralShape)
+		else if (!found && CurrentMap.ListOfInventoryArms[SelectedArm].GeneralShape == CurrentMap.ListOfArms[CurrentMap.SilhouetteArms].GeneralShape)
 		{
 			ArmScore += CurrentMap.ListOfInventoryArms[SelectedArm].SimilarScore;
 			UE_LOG(LogTemp, Warning, TEXT("The arms match the general shape.."));
 		}
-		else
+		else if (!found)
 		{
 			ArmScore += CurrentMap.ListOfInventoryArms[SelectedArm].WrongScore;
 			UE_LOG(LogTemp, Warning, TEXT("The arms are completely wrong..."));
@@ -281,17 +287,19 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	// Check if any of the Selected Legs match the Silhouette Arms ////////////////////////////////////
 	if (SelectedLeg != -1 && CurrentMap.SilhouetteLegs != -1)
 	{
+		bool found = false;
 		if (CurrentMap.ListOfInventoryLegs[SelectedLeg].Name == CurrentMap.ListOfLegs[CurrentMap.SilhouetteLegs].Name)
 		{
 			LegScore += 100.0f;
+			found = true;
 			UE_LOG(LogTemp, Warning, TEXT("The Legs match the Silhouette!"));
 		}
-		else if (CurrentMap.ListOfInventoryLegs[SelectedLeg].GeneralShape == CurrentMap.ListOfLegs[CurrentMap.SilhouetteLegs].GeneralShape)
+		else if (!found && CurrentMap.ListOfInventoryLegs[SelectedLeg].GeneralShape == CurrentMap.ListOfLegs[CurrentMap.SilhouetteLegs].GeneralShape)
 		{
 			LegScore += CurrentMap.ListOfInventoryLegs[SelectedLeg].SimilarScore;
 			UE_LOG(LogTemp, Warning, TEXT("The Legs match the general shape.."));
 		}
-		else
+		else if (!found)
 		{
 			LegScore += CurrentMap.ListOfInventoryLegs[SelectedLeg].WrongScore;
 			UE_LOG(LogTemp, Warning, TEXT("The Legs are completely wrong..."));

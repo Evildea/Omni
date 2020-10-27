@@ -36,6 +36,7 @@ void AModularGuudo::BeginPlay()
 // Called to bind functionality to input
 void AModularGuudo::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
+	AutoPossessPlayer = EAutoReceiveInput::Player0;
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
