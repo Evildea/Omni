@@ -629,6 +629,7 @@ void AGuudoCharater::Tick(float DeltaTime)
 							Result = FMath::Clamp(Result, MinFallDamageWhenSmall, MaxFallDamageWhenSmall);
 
 						Health -= Result;
+						OnTakeDamage();
 						CheckHealth();
 					}
 				}
@@ -653,6 +654,7 @@ void AGuudoCharater::Tick(float DeltaTime)
 			{
 				StartWaterTime = GetWorld()->GetRealTimeSeconds();
 				Health -= 1;
+				OnTakeDamage();
 				CheckHealth();
 			}
 		}
