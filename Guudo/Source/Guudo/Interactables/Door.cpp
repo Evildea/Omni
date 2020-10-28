@@ -10,6 +10,7 @@
 #include "Components/SceneComponent.h"
 #include "../GuudoCharater.h"
 
+
 // Sets default values
 ADoor::ADoor()
 {
@@ -79,10 +80,14 @@ void ADoor::Tick(float DeltaTime)
 	}
 
 	// Set the new View Target
-	APlayerController* Character = UGameplayStatics::GetPlayerController(this, 0);
+	AGuudoCharater* PlayerPawn = Cast<AGuudoCharater>(GetWorld()->GetFirstPlayerController()->GetPawn());
+	APlayerController* PlayerController = UGameplayStatics::GetPlayerController(this, 0);
+
+	PlayerPawn->DisableInput(PlayerController);
+
 	FViewTargetTransitionParams Params;
 	Params.BlendTime = CameraBlendTime;
-	Character->SetViewTarget(this, Params);
+	PlayerController->SetViewTarget(this, Params);
 
 	UE_LOG(LogTemp, Warning, TEXT("Door Activated"));
 	m_isActivated = true;
@@ -97,15 +102,16 @@ void ADoor::SetDoorHeight(float value)
 
 void ADoor::OnFinishOpening()
 {
-	TArray<AActor*> Character;
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AGuudoCharater::StaticClass(), Character);
+	TArray<AActor*> PlayerPawnList;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AGuudoCharater::StaticClass(), PlayerPawnList);
 
-	if (Character.Num() > 0)
+	if (PlayerPawnList.Num() > 0)
 	{
-		APlayerController* Controller = UGameplayStatics::GetPlayerController(this, 0);
+		APlayerController* PlayerController = UGameplayStatics::GetPlayerController(this, 0);
+		PlayerPawnList[0]->EnableInput(PlayerController);
 		FViewTargetTransitionParams Params;
 		Params.BlendTime = CameraBlendTime;
-		Controller->SetViewTarget(Character[0], Params);
+		PlayerController->SetViewTarget(PlayerPawnList[0], Params);
 	}
 }
 

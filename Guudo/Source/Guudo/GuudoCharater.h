@@ -272,6 +272,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnPickupPlayAnimation();
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnTakeDamage();
+
 	// Make Guudo Follow a Path
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnFollowPath(class USplineComponent* Path, float Duration);
