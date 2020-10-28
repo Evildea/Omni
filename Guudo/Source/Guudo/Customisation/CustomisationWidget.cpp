@@ -220,10 +220,21 @@ void UCustomisationWidget::SpawnWidgetsFromInventoryItems()
 	if (!m_GameInstance)
 		return;
 
+	// Check if there is a map first.
+	if (m_GameInstance->GetCurrentMap().LevelName == FString(TEXT("None")))
+		return;
+
 	// Spawn Widgets for Each Body Part
+	if (m_GameInstance->GetCurrentMap().ListOfInventoryHeads.Num() != 0)
 	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryHeads, m_ListOfHeadWidgets, ESelection::Head);	// Spawn the Head Item Widgets
+
+	if (m_GameInstance->GetCurrentMap().ListOfInventoryChests.Num() != 0)
 	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryChests, m_ListOfChestWidgets, ESelection::Chest);	// Spawn the Chest Item Widgets
+
+	if (m_GameInstance->GetCurrentMap().ListOfInventoryArms.Num() != 0)
 	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryArms, m_ListOfArmWidgets, ESelection::Arms);		// Spawn the Arm Item Widgets
+
+	if (m_GameInstance->GetCurrentMap().ListOfInventoryLegs.Num() != 0)
 	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryLegs, m_ListOfLegWidgets, ESelection::Legs);		// Spawn the Leg Item Widgets
 }
 
