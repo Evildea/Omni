@@ -16,7 +16,7 @@ struct FMapData
 	GENERATED_USTRUCT_BODY()
 
 	UPROPERTY()
-	FString LevelName;
+	FString LevelName = FString(TEXT("None"));
 
 	UPROPERTY()
 	FString NextLevelName;
@@ -56,6 +56,18 @@ struct FMapData
 
 	UPROPERTY()
 	int SilhouetteLegs = -1;
+
+	UPROPERTY()
+	bool HaveHead = false;
+
+	UPROPERTY()
+	bool HaveChest = false;
+
+	UPROPERTY()
+	bool HaveArms = false;
+
+	UPROPERTY()
+	bool HaveLegs = false;
 };
 
 
@@ -78,11 +90,6 @@ private:
 	int SelectedChest = -1;
 	int SelectedLeg = -1;
 
-	bool HaveHead = false;
-	bool HaveChest = false;
-	bool HaveArms = false;
-	bool HaveLegs = false;
-
 public:
 	virtual void Init() override;
 
@@ -99,7 +106,7 @@ public:
 
 	// Calculate the Score
 	void CalculateScore(float &HeadScore, float &ChestScore, float &ArmScore, float &LegScore);
-	void CalculateIndividualScore();
+	//void CalculateIndividualScore();
 
 	void SetSelectedHead(int value) { SelectedHead = value; }
 	void SetSelectedArm(int value) { SelectedArm = value; }
@@ -112,16 +119,16 @@ public:
 	UMaterial* GetSilhouetteLeg();
 
 	UFUNCTION(BlueprintCallable)
-	bool GetHaveCorrectHead() { return HaveHead; }
+	bool GetHaveCorrectHead();
 
 	UFUNCTION(BlueprintCallable)
-	bool GetHaveCorrectChest() { return HaveChest; }
+	bool GetHaveCorrectChest();
 
 	UFUNCTION(BlueprintCallable)
-	bool GetHaveCorrectArms() { return HaveArms; }
+	bool GetHaveCorrectArms();
 
 	UFUNCTION(BlueprintCallable)
-	bool GetHaveCorrectLegs() { return HaveLegs; }
+	bool GetHaveCorrectLegs();
 
 	int GetSizeOfInventory();
 

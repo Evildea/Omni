@@ -15,12 +15,6 @@ void UGuudoGameInstance::Init()
 
 void UGuudoGameInstance::GenerateSilhouette(FString CurrentLevelName, FString NextLevelName)
 {
-	// Reset Variables
-	HaveHead = false;
-	HaveChest = false;
-	HaveArms = false;
-	HaveLegs = false;
-
 	// Set the Map
 	bool hasFoundMap = false;
 	for (int32 Index = 0; Index != ListOfMaps.Num(); ++Index)
@@ -132,7 +126,7 @@ void UGuudoGameInstance::AddItemToInventory(FName Pickup)
 			if (Pickup == CurrentMap.ListOfHeads[CurrentMap.SilhouetteHead].Name)
 			{
 				UE_LOG(LogTemp, Warning, TEXT("Picked Up Correct Head!"));
-				HaveHead = true;
+				CurrentMap.HaveHead = true;
 			}
 			CurrentMap.ListOfInventoryHeads.Add(CurrentMap.ListOfHeads[Index]);
 			UE_LOG(LogTemp, Display, TEXT("Added"));
@@ -147,7 +141,7 @@ void UGuudoGameInstance::AddItemToInventory(FName Pickup)
 			if (Pickup == CurrentMap.ListOfChests[CurrentMap.SilhouetteChest].Name)
 			{
 				UE_LOG(LogTemp, Warning, TEXT("Picked Up Correct Chest!"));
-				HaveChest = true;
+				CurrentMap.HaveChest = true;
 			}
 			CurrentMap.ListOfInventoryChests.Add(CurrentMap.ListOfChests[Index]);
 			UE_LOG(LogTemp, Display, TEXT("Added"));
@@ -164,7 +158,7 @@ void UGuudoGameInstance::AddItemToInventory(FName Pickup)
 				if (Pickup == CurrentMap.ListOfArms[CurrentMap.SilhouetteArms].Name)
 				{
 					UE_LOG(LogTemp, Warning, TEXT("Picked Up Correct Arms!"));
-					HaveArms = true;
+					CurrentMap.HaveArms = true;
 				}
 				CurrentMap.ListOfInventoryArms.Add(CurrentMap.ListOfArms[Index]);
 				UE_LOG(LogTemp, Display, TEXT("Added"));
@@ -182,7 +176,7 @@ void UGuudoGameInstance::AddItemToInventory(FName Pickup)
 				if (Pickup == CurrentMap.ListOfLegs[CurrentMap.SilhouetteLegs].Name)
 				{
 					UE_LOG(LogTemp, Warning, TEXT("Picked Up Correct Legs!"));
-					HaveLegs = true;
+					CurrentMap.HaveLegs = true;
 				}
 				CurrentMap.ListOfInventoryLegs.Add(CurrentMap.ListOfLegs[Index]);
 				UE_LOG(LogTemp, Display, TEXT("Added"));
@@ -202,10 +196,6 @@ void UGuudoGameInstance::ResetGameInstance()
 	SelectedArm = -1;
 	SelectedChest = -1;
 	SelectedLeg = -1;
-	HaveHead = false;
-	HaveChest = false;
-	HaveArms = false;
-	HaveLegs = false;
 
 }
 
@@ -221,10 +211,10 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	/// Check if any of the Selected Head match the Silhouette Head ////////////////////////////////////
 	//UE_LOG(LogWarning, Display, TEXT("Index %i, %i"), SelectedHead, CurrentMap.SilhouetteHead);
 
-	if (SelectedHead != -1 && CurrentMap.SilhouetteHead != -1)
+	if (SelectedHead != -1 && CurrentMap.SilhouetteHead != -1 && CurrentMap.ListOfInventoryHeads.Num() != 0 && CurrentMap.ListOfHeads.Num() != 0)
 	{
-		UE_LOG(LogTemp, Display, TEXT("Selected Head: %s"), *CurrentMap.ListOfInventoryHeads[SelectedHead].Name.ToString());
-		UE_LOG(LogTemp, Display, TEXT("Silhouette Head: %s"), *CurrentMap.ListOfHeads[CurrentMap.SilhouetteHead].Name.ToString());
+		//UE_LOG(LogTemp, Display, TEXT("Selected Head: %s"), *CurrentMap.ListOfInventoryHeads[SelectedHead].Name.ToString());
+		//UE_LOG(LogTemp, Display, TEXT("Silhouette Head: %s"), *CurrentMap.ListOfHeads[CurrentMap.SilhouetteHead].Name.ToString());
 
 		if (CurrentMap.ListOfInventoryHeads[SelectedHead].Name == CurrentMap.ListOfHeads[CurrentMap.SilhouetteHead].Name)
 		{
@@ -247,10 +237,10 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	}
 	
 	// Check if any of the Selected Chest match the Silhouette Chest //////////////////////////////////
-	if (SelectedChest != -1 && CurrentMap.SilhouetteChest != -1)
+	if (SelectedChest != -1 && CurrentMap.SilhouetteChest != -1 && CurrentMap.ListOfInventoryChests.Num() != 0 && CurrentMap.ListOfChests.Num() != 0)
 	{
-		UE_LOG(LogTemp, Display, TEXT("Selected Chest: %s"), *CurrentMap.ListOfInventoryChests[SelectedChest].Name.ToString());
-		UE_LOG(LogTemp, Display, TEXT("Silhouette Chest: %s"), *CurrentMap.ListOfChests[CurrentMap.SilhouetteChest].Name.ToString());
+		//UE_LOG(LogTemp, Display, TEXT("Selected Chest: %s"), *CurrentMap.ListOfInventoryChests[SelectedChest].Name.ToString());
+		//UE_LOG(LogTemp, Display, TEXT("Silhouette Chest: %s"), *CurrentMap.ListOfChests[CurrentMap.SilhouetteChest].Name.ToString());
 
 		if (CurrentMap.ListOfInventoryChests[SelectedChest].Name == CurrentMap.ListOfChests[CurrentMap.SilhouetteChest].Name)
 		{
@@ -273,10 +263,10 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	}
 	
 	// Check if any of the Selected Arms match the Silhouette Arms ////////////////////////////////////
-	if (SelectedArm != -1 && CurrentMap.SilhouetteArms != -1)
+	if (SelectedArm != -1 && CurrentMap.SilhouetteArms != -1 && CurrentMap.ListOfInventoryArms.Num() != 0 && CurrentMap.ListOfArms.Num() != 0)
 	{
-		UE_LOG(LogTemp, Display, TEXT("Selected Arms: %s"), *CurrentMap.ListOfInventoryArms[SelectedArm].Name.ToString());
-		UE_LOG(LogTemp, Display, TEXT("Silhouette Arms: %s"), *CurrentMap.ListOfArms[CurrentMap.SilhouetteArms].Name.ToString());
+		//UE_LOG(LogTemp, Display, TEXT("Selected Arms: %s"), *CurrentMap.ListOfInventoryArms[SelectedArm].Name.ToString());
+		//UE_LOG(LogTemp, Display, TEXT("Silhouette Arms: %s"), *CurrentMap.ListOfArms[CurrentMap.SilhouetteArms].Name.ToString());
 
 		if (CurrentMap.ListOfInventoryArms[SelectedArm].Name == CurrentMap.ListOfArms[CurrentMap.SilhouetteArms].Name)
 		{
@@ -299,10 +289,10 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	}
 	
 	// Check if any of the Selected Legs match the Silhouette Arms ////////////////////////////////////
-	if (SelectedLeg != -1 && CurrentMap.SilhouetteLegs != -1)
+	if (SelectedLeg != -1 && CurrentMap.SilhouetteLegs != -1 && CurrentMap.ListOfInventoryLegs.Num() != 0 && CurrentMap.ListOfLegs.Num() != 0)
 	{
-		UE_LOG(LogTemp, Display, TEXT("Selected Legs: %s"), *CurrentMap.ListOfInventoryLegs[SelectedLeg].Name.ToString());
-		UE_LOG(LogTemp, Display, TEXT("Silhouette Legs: %s"), *CurrentMap.ListOfLegs[CurrentMap.SilhouetteLegs].Name.ToString());
+	//	UE_LOG(LogTemp, Display, TEXT("Selected Legs: %s"), *CurrentMap.ListOfInventoryLegs[SelectedLeg].Name.ToString());
+	//	UE_LOG(LogTemp, Display, TEXT("Silhouette Legs: %s"), *CurrentMap.ListOfLegs[CurrentMap.SilhouetteLegs].Name.ToString());
 
 		if (CurrentMap.ListOfInventoryLegs[SelectedLeg].Name == CurrentMap.ListOfLegs[CurrentMap.SilhouetteLegs].Name)
 		{
@@ -377,5 +367,25 @@ int UGuudoGameInstance::GetSizeOfInventory()
 FString UGuudoGameInstance::GetNextLevel()
 {
 	return CurrentMap.NextLevelName;
+}
+
+bool UGuudoGameInstance::GetHaveCorrectHead()
+{
+	return CurrentMap.HaveHead;
+}
+
+bool UGuudoGameInstance::GetHaveCorrectChest()
+{
+	return CurrentMap.HaveChest;
+}
+
+bool UGuudoGameInstance::GetHaveCorrectArms()
+{
+	return CurrentMap.HaveArms;
+}
+
+bool UGuudoGameInstance::GetHaveCorrectLegs()
+{
+	return CurrentMap.HaveLegs;
 }
 
