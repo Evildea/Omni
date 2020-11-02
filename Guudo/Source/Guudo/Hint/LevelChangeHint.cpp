@@ -14,7 +14,6 @@ void ALevelChangeHint::Transition()
 	if (!Level.IsNone())
 	{
 		UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-		GameInstance->GenerateSilhouette(GetWorld()->GetMapName(), Level.ToString());
 		if (!GoToCustomisationScreen)
 			UGameplayStatics::OpenLevel(this, Level);
 		else

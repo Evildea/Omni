@@ -47,6 +47,9 @@ bool UCustomisationWidget::Initialize()
 	if (!m_GameInstance || !m_GameInstance->GetInitailised())
 		return false;
 
+	// Debug Message
+	UE_LOG(LogTemp, Warning, TEXT("The Player has arrived at the Customisation Screen from: %s"), *m_GameInstance->GetCurrentMap().LevelName);
+
 	OnFinaliseInitialisationInBlueprints();	// Go to Blueprints and set the ItemWidget to its Blueprint Derived Class.
 	SpawnWidgetsFromInventoryItems();		// Spawn all Widgets based on the Inventory Items.
 	RefreshListOfVisibleBodyParts();		// Refresh the List of Visible BodyParts.
@@ -158,6 +161,9 @@ void UCustomisationWidget::RefreshListOfVisibleBodyParts()
 	// Remove all the Item Widgets from the Screen.
 	ItemScrollBox->ClearChildren();
 
+	// Debug Message
+	UE_LOG(LogTemp, Warning, TEXT("Refreshing list of visible body parts..."));
+
 	// Show the Correct Item Widgets.
 	switch (GetCurrentBodySelection())
 	{
@@ -185,6 +191,7 @@ void UCustomisationWidget::RefreshListOfVisibleBodyParts()
 			ItemScrollBox->AddChild(Items);
 		break;
 	}
+
 }
 
 void UCustomisationWidget::SpawnWidgetsFromBodyPartList(TArray<FPickupData>& ItemList, TArray<UItemImageWidget*>& WidgetList, ESelection BodyPart)
@@ -224,18 +231,49 @@ void UCustomisationWidget::SpawnWidgetsFromInventoryItems()
 	if (m_GameInstance->GetCurrentMap().LevelName == FString(TEXT("None")))
 		return;
 
+	// Debug Message
+	UE_LOG(LogTemp, Warning, TEXT("Spawning Widgets from Inventory Items..."));
+
 	// Spawn Widgets for Each Body Part
 	if (m_GameInstance->GetCurrentMap().ListOfInventoryHeads.Num() != 0)
-	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryHeads, m_ListOfHeadWidgets, ESelection::Head);	// Spawn the Head Item Widgets
+	{
+		SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryHeads, m_ListOfHeadWidgets, ESelection::Head);	// Spawn the Head Item Widgets
+		UE_LOG(LogTemp, Warning, TEXT("Spawning %i Head Widgets..."), m_GameInstance->GetCurrentMap().ListOfInventoryHeads.Num());
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No Head Widgets were spawned..."));
+	}
 
 	if (m_GameInstance->GetCurrentMap().ListOfInventoryChests.Num() != 0)
-	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryChests, m_ListOfChestWidgets, ESelection::Chest);	// Spawn the Chest Item Widgets
+	{
+		SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryChests, m_ListOfChestWidgets, ESelection::Chest);	// Spawn the Chest Item Widgets
+		UE_LOG(LogTemp, Warning, TEXT("Spawning %i Chest Widgets..."), m_GameInstance->GetCurrentMap().ListOfInventoryChests.Num());
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No Chest Widgets were spawned..."));
+	}
 
 	if (m_GameInstance->GetCurrentMap().ListOfInventoryArms.Num() != 0)
-	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryArms, m_ListOfArmWidgets, ESelection::Arms);		// Spawn the Arm Item Widgets
+	{
+		SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryArms, m_ListOfArmWidgets, ESelection::Arms);		// Spawn the Arm Item Widgets
+		UE_LOG(LogTemp, Warning, TEXT("Spawning %i Arm Widgets..."), m_GameInstance->GetCurrentMap().ListOfInventoryArms.Num());
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No Arm Widgets were spawned..."));
+	}
 
 	if (m_GameInstance->GetCurrentMap().ListOfInventoryLegs.Num() != 0)
-	SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryLegs, m_ListOfLegWidgets, ESelection::Legs);		// Spawn the Leg Item Widgets
+	{
+		SpawnWidgetsFromBodyPartList(m_GameInstance->GetCurrentMap().ListOfInventoryLegs, m_ListOfLegWidgets, ESelection::Legs);		// Spawn the Leg Item Widgets
+		UE_LOG(LogTemp, Warning, TEXT("Spawning %i Leg Widgets..."), m_GameInstance->GetCurrentMap().ListOfInventoryLegs.Num());
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No Leg Widgets were spawned..."));
+	}
 }
 
 UMaterial* UCustomisationWidget::GetHead()
