@@ -12,7 +12,7 @@ void UHintWidget::SetContents(FString c_Title, FString c_Subtitle, UTexture2D* c
 	if (Thumbnail)
 	{
 		Thumbnail->SetBrushFromTexture(c_Thumbnail, false);
-		Thumbnail->SetBrushSize(FVector2D(200.f, 200.f));
+		Thumbnail->SetBrushSize(FVector2D(215, 145.f));
 	}
 	OnConfigured();
 }
