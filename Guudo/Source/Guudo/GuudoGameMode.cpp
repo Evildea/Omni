@@ -9,9 +9,6 @@
 
 AGuudoGameMode::AGuudoGameMode()
 {
-	//Minutes = 1;
-	//Seconds = 0;
-	//TimePassed = 0;
 }
 
 void AGuudoGameMode::BeginPlay()
@@ -27,53 +24,3 @@ void AGuudoGameMode::BeginPlay()
 	Controller->bShowMouseCursor = false;
 
 }
-
-void AGuudoGameMode::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-	
-	// Count how much time has passed
-	//TimePassed += DeltaTime;
-
-	//// If a second has passed
-	//if (TimePassed > 1.0f)
-	//{
-	//	TimePassed -= 1.0f;
-	//	Seconds--;
-
-	//	// Check Seconds aren't negative
-	//	if (Seconds <= 0)
-	//	{
-	//		Minutes--;
-	//		Seconds = 59;
-
-	//		// Check Minutes aren't negative
-	//		if (Minutes < 0)
-	//		{
-	//			Minutes = 0;
-	//			Seconds = 0;
-	//		}
-	//	}
-
-	//}
-
-	//// Go to the next level
-	//if (Seconds == 0 && Minutes == 0)
-	//{
-	//	UE_LOG(LogTemp, Warning, TEXT("Level Change"));
-	//	UGameplayStatics::OpenLevel(GetWorld(), CustomisationLevelName);
-	//}
-}
-
-//FString AGuudoGameMode::GetTimer()
-//{
-//	FString MinutesText = FString::Printf(TEXT("0%i"), Minutes);
-//
-//	FString SecondsText = TEXT("00");
-//	if (Seconds > 9)
-//		SecondsText = FString::Printf(TEXT("%i"), Seconds);
-//	else
-//		SecondsText = FString::Printf(TEXT("0%i"), Seconds);
-//
-//	return FString::Printf(TEXT("%s : %s"), *MinutesText, *SecondsText);
-//}

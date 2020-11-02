@@ -79,16 +79,16 @@ class GUUDO_API UGuudoGameInstance : public UGameInstance
 private:
 	// List of all Map Data
 	UPROPERTY()
-	TArray<FMapData> ListOfMaps;
+	TArray<FMapData> m_ListOfMaps;
 
 	// The Current Map
 	int32 m_CurrentMap = -1;
 	   	  
 	// List of Selected Body Parts
-	int SelectedHead = -1;
-	int SelectedArm = -1;
-	int SelectedChest = -1;
-	int SelectedLeg = -1;
+	int m_SelectedHead = -1;
+	int m_SelectedArm = -1;
+	int m_SelectedChest = -1;
+	int m_SelectedLeg = -1;
 
 public:
 	virtual void Init() override;
@@ -99,19 +99,18 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void AddItemToInventory(FName Pickup);
 
-	FMapData& GetCurrentMap() { return ListOfMaps[m_CurrentMap]; }
+	FMapData& GetCurrentMap() { return m_ListOfMaps[m_CurrentMap]; }
 	   	 
 	UFUNCTION(BlueprintCallable)
 	void ResetGameInstance();
 
 	// Calculate the Score
 	void CalculateScore(float &HeadScore, float &ChestScore, float &ArmScore, float &LegScore);
-	//void CalculateIndividualScore();
 
-	void SetSelectedHead(int value) { SelectedHead = value; }
-	void SetSelectedArm(int value) { SelectedArm = value; }
-	void SetSelectedChest(int value) { SelectedChest = value; }
-	void SetSelectedLeg(int value) { SelectedLeg = value; }
+	void SetSelectedHead(int value) { m_SelectedHead = value; }
+	void SetSelectedArm(int value) { m_SelectedArm = value; }
+	void SetSelectedChest(int value) { m_SelectedChest = value; }
+	void SetSelectedLeg(int value) { m_SelectedLeg = value; }
 
 	UMaterial* GetSilhouetteHead();
 	UMaterial* GetSilhouetteChest();
@@ -135,7 +134,7 @@ public:
 	UFUNCTION(BlueprintPure)
 	FString GetNextLevel();
 
-	bool GetInitailised() { return ListOfMaps.Num() > 0; }
+	bool GetInitailised() { return m_ListOfMaps.Num() > 0; }
 
 
 };
