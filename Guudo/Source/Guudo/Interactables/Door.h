@@ -47,6 +47,7 @@ public:
 	// Object Count
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		int MinObjCountRequired = 0;
+
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		bool isMinObjCountRequired = false;
 
