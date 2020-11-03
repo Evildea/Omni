@@ -19,7 +19,7 @@ struct FMapData
 	FString LevelName = FString(TEXT("None"));
 
 	UPROPERTY()
-	FString NextLevelName;
+	FString NextLevelName = FString(TEXT("None"));
 
 	UPROPERTY()
 	TArray<FPickupData> ListOfHeads;

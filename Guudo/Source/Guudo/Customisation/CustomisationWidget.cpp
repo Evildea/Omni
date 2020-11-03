@@ -45,7 +45,10 @@ bool UCustomisationWidget::Initialize()
 	// Get the Game Instance.
 	m_GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 	if (!m_GameInstance || !m_GameInstance->GetInitailised())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("The Game Instance doesn't exist or isn't initialised yet..."));
 		return false;
+	}
 
 	// Debug Message
 	UE_LOG(LogTemp, Warning, TEXT("The Player has arrived at the Customisation Screen from: %s"), *m_GameInstance->GetCurrentMap().LevelName);
@@ -223,9 +226,12 @@ void UCustomisationWidget::SpawnWidgetsFromBodyPartList(TArray<FPickupData>& Ite
 
 void UCustomisationWidget::SpawnWidgetsFromInventoryItems()
 {
-	// Check if the Game Instance Exists first.
-	if (!m_GameInstance)
+	// Check if the Game Instance Exists and is Initialised first.
+	if (!m_GameInstance || !m_GameInstance->GetInitailised())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("The Game Instance doesn't exist or isn't initialised yet..."));
 		return;
+	}
 
 	// Check if there is a map first.
 	if (m_GameInstance->GetCurrentMap().LevelName == FString(TEXT("None")))

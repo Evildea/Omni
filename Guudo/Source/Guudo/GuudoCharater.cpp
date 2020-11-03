@@ -433,6 +433,18 @@ void AGuudoCharater::OpenInventory()
 	if (Health == 0)
 		return;
 
+	// Don't do anything if the game isn't Initialised.
+	if (!m_GameInstance || !m_GameInstance->GetInitailised())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("The Game Instance doesn't exist or isn't Initialised ..."));
+		return;
+	}
+
+	// Don't do anything if the current level is the Hub
+	FString CurrentLevelName = GetWorld()->GetMapName().Mid(GetWorld()->StreamingLevelsPrefix.Len());
+	if (CurrentLevelName == TEXT("01_Hub"))
+		return;
+
 	// If the Inventory Widget doesn't exist, then create it.
 	if (!InventoryWidget)
 		InventoryWidget = Cast<UInventoryWidget>(CreateWidget<UUserWidget>(GetWorld(), InventoryWidgetClass));
