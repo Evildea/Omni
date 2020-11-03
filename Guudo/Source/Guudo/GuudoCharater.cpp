@@ -23,7 +23,7 @@
 // Sets default values
 AGuudoCharater::AGuudoCharater()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	// Create the Camera Arm
@@ -304,7 +304,7 @@ void AGuudoCharater::Pickup()
 		GetWorldTimerManager().SetTimer(ConsumeTimerHandle, this, &AGuudoCharater::ResetCanPlayEatSound, 1.f, false);
 		m_canPlayEatSound = false;
 	}
-	
+
 	// Play Animation and Shake the Camera
 	OnPickupPlayAnimation();
 	GetWorld()->GetFirstPlayerController()->ClientPlayCameraShake(ConsumeShake);
@@ -413,13 +413,13 @@ void AGuudoCharater::Interact()
 	}
 
 	// Interact with a Level Change Hint ///////////////////////////////////////////////////////////////////////////
-if (m_LevelChangeHint)
-{
-UE_LOG(LogTemp, Warning, TEXT("Transition Level B"));
-}	
+	if (m_LevelChangeHint)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Transition Level B"));
+	}
 
 
-if (m_LevelChangeHint && m_LevelChangeHint->GetCanTransition())
+	if (m_LevelChangeHint && m_LevelChangeHint->GetCanTransition())
 	{
 		m_LevelChangeHint->Transition();
 		UE_LOG(LogTemp, Warning, TEXT("Transition Level"));
@@ -443,6 +443,10 @@ void AGuudoCharater::OpenInventory()
 	// Don't do anything if the current level is the Hub
 	FString CurrentLevelName = GetWorld()->GetMapName().Mid(GetWorld()->StreamingLevelsPrefix.Len());
 	if (CurrentLevelName == TEXT("01_Hub"))
+		return;
+
+	// Don't Open the Inventory if there is nothing in it.
+	if (m_GameInstance->GetSizeOfInventory() == 0)
 		return;
 
 	// If the Inventory Widget doesn't exist, then create it.

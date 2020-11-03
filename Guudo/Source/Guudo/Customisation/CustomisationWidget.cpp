@@ -101,10 +101,10 @@ void UCustomisationWidget::PressDone()
 
 	// Calculate the Final Score
 	float	FinalScoreF,
-			HeadScoreF,
-			ChestScoreF,
-			ArmsScoreF,
-			LegsScoreF;
+		HeadScoreF,
+		ChestScoreF,
+		ArmsScoreF,
+		LegsScoreF;
 
 	// Calculate Final Score
 	m_GameInstance->CalculateScore(HeadScoreF, ChestScoreF, ArmsScoreF, LegsScoreF);
@@ -209,7 +209,7 @@ void UCustomisationWidget::SpawnWidgetsFromBodyPartList(TArray<FPickupData>& Ite
 
 		// Configure the Widget
 		NewItemWidget->SetGameInstance(m_GameInstance);
-		NewItemWidget->SetImageOfWidget(ItemList[index].Silhouette);
+		NewItemWidget->SetImageOfWidget(ItemList[index].Silhouette, ItemList[index].BodyPosition);
 		NewItemWidget->ItemIndex = index;
 
 		// Set the Body Part this Widget Belongs to
