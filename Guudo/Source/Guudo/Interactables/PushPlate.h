@@ -29,7 +29,7 @@ public:
 
 	// Mesh for the Push Plate
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		class UStaticMeshComponent* Mesh;
+		class USkeletalMeshComponent* SkeletalMesh;
 
 	// Spline for target to follow
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -57,6 +57,10 @@ public:
 	// How long before the Player can reuse the activation
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Designer")
 		float DelayBeforeReset = 1.f;
+
+	// Set the Animation speed of the fan
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Designer")
+		float AnimationSpeed = 1.0f;
 
 	// On Overlap
 	UFUNCTION()
