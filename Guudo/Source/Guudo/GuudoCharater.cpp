@@ -445,6 +445,10 @@ void AGuudoCharater::OpenInventory()
 	if (CurrentLevelName == TEXT("01_Hub"))
 		return;
 
+	// Don't Open the Inventory if there is nothing in it.
+	if (m_GameInstance->GetSizeOfInventory() == 0)
+		return;
+
 	// If the Inventory Widget doesn't exist, then create it.
 	if (!InventoryWidget)
 		InventoryWidget = Cast<UInventoryWidget>(CreateWidget<UUserWidget>(GetWorld(), InventoryWidgetClass));

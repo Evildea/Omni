@@ -6,6 +6,7 @@
 #include "Blueprint/UserWidget.h"
 #include "ModularGuudo.h"
 #include "../ItemManagement/GuudoGameInstance.h"
+#include "../PickupData.h"
 #include "ItemImageWidget.generated.h"
 
 /**
@@ -52,8 +53,8 @@ public:
         void SetSelectedBodyPart();
 
     // This sets the image of the Widget. It is implemented inside BluePrints.
-    UFUNCTION(BlueprintImplementableEvent)
-        void SetImageOfWidget(class UMaterial* Image);
+    UFUNCTION(BlueprintCallable)
+        void SetImageOfWidget(class UMaterial* Image, EBodyPart BodyPosition);
 
     // Set the Game Instance.
     UFUNCTION()
