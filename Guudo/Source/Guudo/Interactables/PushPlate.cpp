@@ -3,7 +3,7 @@
 
 #include "PushPlate.h"
 #include "Components/SplineComponent.h"
-#include "Components/StaticMeshComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "Components/SceneComponent.h"
 #include "Components/BoxComponent.h"
 #include "../GuudoCharater.h"
@@ -21,8 +21,8 @@ APushPlate::APushPlate()
 	RootComponent = Root;
 
 	// Set up the Mesh
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
-	Mesh->SetupAttachment(RootComponent);
+	SkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>("SkeletalMesh");
+	SkeletalMesh->SetupAttachment(RootComponent);
 
 	// Setup the Track
 	Path = CreateDefaultSubobject<USplineComponent>("Track");
@@ -40,6 +40,7 @@ APushPlate::APushPlate()
 void APushPlate::BeginPlay()
 {
 	Super::BeginPlay();
+	SkeletalMesh->SetPlayRate(AnimationSpeed);
 	
 }
 
