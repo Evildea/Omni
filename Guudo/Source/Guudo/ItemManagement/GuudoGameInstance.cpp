@@ -116,6 +116,9 @@ void UGuudoGameInstance::GenerateSilhouette(FString CurrentLevelName, FString Ne
 
 void UGuudoGameInstance::AddItemToInventory(FName Pickup)
 {
+	// Don't proceed if not initialised
+	if (!GetInitailised()) return;
+
 	// Debug Message
 	UE_LOG(LogTemp, Display, TEXT("Player has picked up an item..."));
 
@@ -217,6 +220,9 @@ void UGuudoGameInstance::ResetGameInstance()
 
 void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, float & ArmScore, float & LegScore)
 {
+	// Don't proceed if not initialised
+	if (!GetInitailised()) return;
+
 	HeadScore = 0;
 	ChestScore = 0;
 	ArmScore = 0;
