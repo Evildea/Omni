@@ -41,7 +41,7 @@ void UInventoryWidget::ConfigureScrollBox(UScrollBox*& ScrollBox, TArray<FPickup
 
 		// Configure the Widget
 		NewItemWidget->SetGameInstance(m_GameInstance);
-		NewItemWidget->SetImageOfWidget(List[Index].Silhouette, List[Index].BodyPosition);
+		NewItemWidget->SetImageOfWidget(List[Index].Silhouette);
 		NewItemWidget->ItemIndex = Index;
 
 		ScrollBox->AddChild(NewItemWidget);

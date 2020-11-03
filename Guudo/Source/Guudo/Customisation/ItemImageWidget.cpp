@@ -45,31 +45,3 @@ void UItemImageWidget::SetSelectedBodyPart()
 		UE_LOG(LogTemp, Display, TEXT("Legs [%i] selected"), ItemIndex);
 	}
 }
-
-void UItemImageWidget::SetImageOfWidget(UMaterial* Image, EBodyPart BodyPosition)
-{
-	ImageBox->SetBrushFromMaterial(Image);
-	
-	switch (BodyPosition)
-	{
-	case EBodyPart::None:
-		ImageBox->SetBrushSize(FVector2D(150.f, 150.f));
-		break;
-	case EBodyPart::Head:
-		ImageBox->SetBrushSize(FVector2D(150.f, 150.f));
-		break;
-	case EBodyPart::Chest:
-		ImageBox->SetBrushSize(FVector2D(140.f, 150.f));
-		break;
-	case EBodyPart::Arms:
-		ImageBox->SetBrushSize(FVector2D(140.f, 150.f));
-		break;
-	case EBodyPart::Legs:
-		ImageBox->SetBrushSize(FVector2D(80.f, 150.f));
-		break;
-	default:
-		ImageBox->SetBrushSize(FVector2D(150.f, 150.f));
-		break;
-	}
-
-}
