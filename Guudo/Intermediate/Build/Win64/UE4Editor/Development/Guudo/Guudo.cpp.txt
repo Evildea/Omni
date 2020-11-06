@@ -1,2 +1,2 @@
-C:\Users\xiant\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
-C:\Users\xiant\Documents\Omni\Guudo\Source\Guudo\Guudo.h
+C:\Users\Joshu\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Definitions.Guudo.h
+c:\users\joshu\desktop\omni\guudo\source\guudo\Guudo.h
