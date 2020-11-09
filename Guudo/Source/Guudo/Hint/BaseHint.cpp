@@ -9,6 +9,7 @@
 #include "GameFramework/Actor.h"
 #include "HintWidget.h"
 #include "Kismet/GameplayStatics.h"
+#include "Blueprint/WidgetBlueprintLibrary.h"
 
 // Sets default values
 ABaseHint::ABaseHint()
@@ -36,26 +37,11 @@ void ABaseHint::OnOverlapBegin(UPrimitiveComponent* OverLappedComponent, AActor*
 	{
 		if (WidgetToCreate)
 		{
-			if (!WidgetToShow)
-			{
-				WidgetToShow = CreateWidget<UHintWidget>(GetWorld(), WidgetToCreate);
-				WidgetToShow->SetContents(Title, Subtitle, Thumbnail);
-				WidgetToShow->AddToViewport();
-			}
-			else if (!WidgetToShow->IsInViewport())
-			{
-				WidgetToShow->SetContents(Title, Subtitle, Thumbnail);
-				WidgetToShow->AddToViewport();
-			}
-
-			// Call Overlap Event
-			OnOverlapBegin();
-
-			if (EnterSound != nullptr && !HasAudioPlayed)
-			{
-				UGameplayStatics::PlaySoundAtLocation(this, EnterSound, OtherActor->GetActorLocation());
-				HasAudioPlayed = true;
-			}
+			// Only Generate One Widget at a Time
+			TArray<UUserWidget*> ListOfExistingWidgets;
+			UWidgetBlueprintLibrary::GetAllWidgetsOfClass(GetWorld(), ListOfExistingWidgets, UHintWidget::StaticClass(), true);
+			if (ListOfExistingWidgets.Num() == 0)
+				GenerateWidget(OtherActor->GetActorLocation());
 		}
 		else
 		{
@@ -70,3 +56,26 @@ void ABaseHint::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherA
 		OnOverlapEnd();
 }
 
+void ABaseHint::GenerateWidget(FVector SoundLocation)
+{
+	if (!WidgetToShow)
+	{
+		WidgetToShow = CreateWidget<UHintWidget>(GetWorld(), WidgetToCreate);
+		WidgetToShow->SetContents(Title, Subtitle, Thumbnail);
+		WidgetToShow->AddToViewport();
+	}
+	else if (!WidgetToShow->IsInViewport())
+	{
+		WidgetToShow->SetContents(Title, Subtitle, Thumbnail);
+		WidgetToShow->AddToViewport();
+	}
+
+	// Call Overlap Event
+	OnOverlapBegin();
+
+	if (EnterSound != nullptr && !HasAudioPlayed)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, EnterSound, SoundLocation);
+		HasAudioPlayed = true;
+	}
+}
