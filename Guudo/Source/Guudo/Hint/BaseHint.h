@@ -11,6 +11,9 @@ class GUUDO_API ABaseHint : public AActor
 {
 	GENERATED_BODY()
 	
+private:
+	void GenerateWidget(FVector SoundLocation);
+
 public:	
 	// Sets default values for this actor's properties
 	ABaseHint();
