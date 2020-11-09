@@ -43,19 +43,25 @@ void UPhysics::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 		{
 		case EScale::Small:
 			m_Mesh->SetSimulatePhysics(CanPushOverWhenSmall);
+			m_Mesh->SetEnableGravity(CanPushOverWhenSmall);
 			break;
 		case EScale::Normal:
 			m_Mesh->SetSimulatePhysics(CanPushOverWhenNormal);
+			m_Mesh->SetEnableGravity(CanPushOverWhenNormal);
 			break;
 		case EScale::Large:
 			m_Mesh->SetSimulatePhysics(CanPushOverWhenLarge);
+			m_Mesh->SetEnableGravity(CanPushOverWhenLarge);
 			break;
 		default:
 			break;
 		}
 	}
 	else
+	{
 		m_Mesh->SetSimulatePhysics(true);
+		m_Mesh->SetEnableGravity(true);
+	}
 
 }
 
