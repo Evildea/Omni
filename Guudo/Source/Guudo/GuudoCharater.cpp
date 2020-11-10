@@ -411,14 +411,7 @@ void AGuudoCharater::Interact()
 		if (InteractSounds)
 			UGameplayStatics::PlaySoundAtLocation(this, InteractSounds, GetActorLocation());
 	}
-
-	// Interact with a Level Change Hint ///////////////////////////////////////////////////////////////////////////
-	if (m_LevelChangeHint)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Transition Level B"));
-	}
-
-
+	// Interact with a Level Change Hint 
 	if (m_LevelChangeHint && m_LevelChangeHint->GetCanTransition())
 	{
 		m_LevelChangeHint->Transition();
@@ -645,8 +638,11 @@ void AGuudoCharater::Tick(float DeltaTime)
 							Result = FMath::Clamp(Result, MinFallDamageWhenSmall, MaxFallDamageWhenSmall);
 
 						Health -= Result;
-						OnTakeDamage();
-						CheckHealth();
+						if (Result > 0)
+						{
+							OnTakeDamage();
+							CheckHealth();
+						}
 					}
 				}
 
