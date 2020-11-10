@@ -6,6 +6,7 @@
 /NAME:"UE4Editor-Guudo.dll"
 /IGNORE:4221
 /NODEFAULTLIB
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 "C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.obj"
 "C:\Users\s181674\Desktop\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\BodyPartSelectionTool.cpp.obj"
@@ -118,6 +119,8 @@
 "C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Default.rc2.res"
 /OUT:"C:\Users\s191281\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\UE4Editor-Guudo.lib"
 =======
+=======
+>>>>>>> Stashed changes
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\GuudoEditor\Development\Engine\SharedPCH.Engine.h.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\BodyPartSelectionTool.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\CustomisationWidget.cpp.obj"
@@ -138,6 +141,7 @@
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Shakeable.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Switch.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\GuudoGameInstance.cpp.obj"
+"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\MainMenuBase.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\SilhouetteWidget.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Guudo.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\GuudoCharater.cpp.obj"
@@ -159,6 +163,7 @@
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\InventoryWidget.gen.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\ItemImageWidget.gen.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\LevelChangeHint.gen.cpp.obj"
+"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\MainMenuBase.gen.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\ModularGuudo.gen.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\PathHint.gen.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Physics.gen.cpp.obj"
@@ -171,6 +176,9 @@
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Switch.gen.cpp.obj"
 "C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\Default.rc2.res"
 /OUT:"C:\Users\s171971\Documents\Omni\Guudo\Intermediate\Build\Win64\UE4Editor\Development\Guudo\UE4Editor-Guudo.lib"
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 /INCLUDE:IMPLEMENT_MODULE_Guudo
