@@ -71,6 +71,9 @@ void UCustomisationWidget::LeftButtonClick()
 	m_BodyPartSelectionTool->RotateLeft();
 	RefreshBodyPartSelectionText();
 	RefreshListOfVisibleBodyParts();
+
+	// Call Blueprints to let it know that the button has been pressed.
+	OnClickedLeftButton();
 }
 
 void UCustomisationWidget::RightButtonClick()
@@ -83,6 +86,9 @@ void UCustomisationWidget::RightButtonClick()
 	m_BodyPartSelectionTool->RotateRight();
 	RefreshBodyPartSelectionText();
 	RefreshListOfVisibleBodyParts();
+
+	// Call Blueprints to let it know that the button has been pressed.
+	OnClickedRightButton();
 }
 
 ESelection UCustomisationWidget::GetCurrentBodySelection()
@@ -128,6 +134,15 @@ void UCustomisationWidget::PressDone()
 	ArmsScore->SetPercent(ArmsScoreF);
 	LegsScore->SetPercent(LegsScoreF);
 	FinalScore->SetPercent(FinalScoreF);
+
+	// Call the appropriate Blueprint function to play a sound
+	if (FinalScoreF == 1.f)
+		OnPerfectScore();
+	else if (FinalScoreF > 0.f)
+		OnAverageScore();
+	else
+		OnFailScore();
+
 }
 
 void UCustomisationWidget::RefreshBodyPartSelectionText()
