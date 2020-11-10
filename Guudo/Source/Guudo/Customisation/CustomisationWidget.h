@@ -101,6 +101,13 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnFinaliseInitialisationInBlueprints();
 
+	// These functions are called when the Player clicks on the Left or Right Rotate Body Parts buttons.
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnClickedLeftButton();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnClickedRightButton();
+
 	UFUNCTION(BlueprintCallable)
 		class UMaterial* GetHead();
 
