@@ -108,6 +108,16 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnClickedRightButton();
 
+	// These functions are called when the Player gets a specific score
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnPerfectScore();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnAverageScore();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnFailScore();
+
 	UFUNCTION(BlueprintCallable)
 		class UMaterial* GetHead();
 

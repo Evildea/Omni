@@ -134,6 +134,15 @@ void UCustomisationWidget::PressDone()
 	ArmsScore->SetPercent(ArmsScoreF);
 	LegsScore->SetPercent(LegsScoreF);
 	FinalScore->SetPercent(FinalScoreF);
+
+	// Call the appropriate Blueprint function to play a sound
+	if (FinalScoreF == 1.f)
+		OnPerfectScore();
+	else if (FinalScoreF > 0.f)
+		OnAverageScore();
+	else
+		OnFailScore();
+
 }
 
 void UCustomisationWidget::RefreshBodyPartSelectionText()
