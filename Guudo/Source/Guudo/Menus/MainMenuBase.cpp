@@ -81,14 +81,17 @@ void UMainMenuBase::SetBackgroundMusic(USoundBase* BackgroundMusic)
 
 void UMainMenuBase::ClickAndOpenLevel(FName Level)
 {
+	// Start any transition effects
+	OnStartLevelTransition();
+
 	// Start Music Fadeout
 	PlayClickedSound();
-	BackgroundMusicComponent->FadeOut(1.5f, 0.f);
+	BackgroundMusicComponent->FadeOut(.75f, 0.f);
 
 	// Set the Open Level Timer for in 2 seconds
 	OpenLevelTarget = Level;
 	FTimerHandle CountdownTimerHandle;
-	GetWorld()->GetTimerManager().SetTimer(CountdownTimerHandle, this, &UMainMenuBase::OpenLevelTimer, 1.5f, false);
+	GetWorld()->GetTimerManager().SetTimer(CountdownTimerHandle, this, &UMainMenuBase::OpenLevelTimer, .75f, false);
 }
 
 void UMainMenuBase::OpenLevelTimer()

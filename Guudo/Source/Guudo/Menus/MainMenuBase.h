@@ -21,9 +21,6 @@ private:
 	UPROPERTY()
 		USoundBase* ClickedButtonSound;
 
-	//UPROPERTY()
-		//class USoundBase* BackgroundMusic;
-
 	UPROPERTY()
 		class UAudioComponent* BackgroundMusicComponent;
 
@@ -56,6 +53,9 @@ protected:
 
 	UFUNCTION(BlueprintCallable)
 		void SetBackgroundMusic(USoundBase* BackgroundMusic);
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnStartLevelTransition();
 
 	UPROPERTY(EditAnywhere, Meta = (BlueprintProtected = "true"))
 		class UButton* StartGameButton;
