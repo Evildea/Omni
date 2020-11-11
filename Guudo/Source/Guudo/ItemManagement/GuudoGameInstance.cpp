@@ -202,6 +202,16 @@ void UGuudoGameInstance::AddItemToInventory(FName Pickup)
 	}
 }
 
+bool UGuudoGameInstance::GetIsMapComplete(FString Name)
+{
+	for (int32 i = 0; i < m_ListOfMaps.Num(); i++)
+	{
+		if (m_ListOfMaps[i].LevelName == Name)
+			return true;
+	}
+	return false;
+}
+
 void UGuudoGameInstance::ResetLevelProgress()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Level Progress Reset..."));
@@ -247,13 +257,8 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	UE_LOG(LogTemp, Warning, TEXT("Calculating Score..."));
 	
 	/// Check if any of the Selected Head match the Silhouette Head ////////////////////////////////////
-	//UE_LOG(LogWarning, Display, TEXT("Index %i, %i"), SelectedHead, CurrentMap.SilhouetteHead);
-
 	if (m_SelectedHead != -1 && CurrentMap.SilhouetteHead != -1 && CurrentMap.ListOfInventoryHeads.Num() != 0 && CurrentMap.ListOfHeads.Num() != 0)
 	{
-		//UE_LOG(LogTemp, Display, TEXT("Selected Head: %s"), *CurrentMap.ListOfInventoryHeads[SelectedHead].Name.ToString());
-		//UE_LOG(LogTemp, Display, TEXT("Silhouette Head: %s"), *CurrentMap.ListOfHeads[CurrentMap.SilhouetteHead].Name.ToString());
-
 		if (CurrentMap.ListOfInventoryHeads[m_SelectedHead].Name == CurrentMap.ListOfHeads[CurrentMap.SilhouetteHead].Name)
 		{
 			HeadScore += 100.0f;
@@ -277,9 +282,6 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	// Check if any of the Selected Chest match the Silhouette Chest //////////////////////////////////
 	if (m_SelectedChest != -1 && CurrentMap.SilhouetteChest != -1 && CurrentMap.ListOfInventoryChests.Num() != 0 && CurrentMap.ListOfChests.Num() != 0)
 	{
-		//UE_LOG(LogTemp, Display, TEXT("Selected Chest: %s"), *CurrentMap.ListOfInventoryChests[SelectedChest].Name.ToString());
-		//UE_LOG(LogTemp, Display, TEXT("Silhouette Chest: %s"), *CurrentMap.ListOfChests[CurrentMap.SilhouetteChest].Name.ToString());
-
 		if (CurrentMap.ListOfInventoryChests[m_SelectedChest].Name == CurrentMap.ListOfChests[CurrentMap.SilhouetteChest].Name)
 		{
 			ChestScore += 100.0f;
@@ -303,9 +305,6 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	// Check if any of the Selected Arms match the Silhouette Arms ////////////////////////////////////
 	if (m_SelectedArm != -1 && CurrentMap.SilhouetteArms != -1 && CurrentMap.ListOfInventoryArms.Num() != 0 && CurrentMap.ListOfArms.Num() != 0)
 	{
-		//UE_LOG(LogTemp, Display, TEXT("Selected Arms: %s"), *CurrentMap.ListOfInventoryArms[SelectedArm].Name.ToString());
-		//UE_LOG(LogTemp, Display, TEXT("Silhouette Arms: %s"), *CurrentMap.ListOfArms[CurrentMap.SilhouetteArms].Name.ToString());
-
 		if (CurrentMap.ListOfInventoryArms[m_SelectedArm].Name == CurrentMap.ListOfArms[CurrentMap.SilhouetteArms].Name)
 		{
 			ArmScore += 100.0f;
@@ -329,9 +328,6 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	// Check if any of the Selected Legs match the Silhouette Arms ////////////////////////////////////
 	if (m_SelectedLeg != -1 && CurrentMap.SilhouetteLegs != -1 && CurrentMap.ListOfInventoryLegs.Num() != 0 && CurrentMap.ListOfLegs.Num() != 0)
 	{
-	//	UE_LOG(LogTemp, Display, TEXT("Selected Legs: %s"), *CurrentMap.ListOfInventoryLegs[SelectedLeg].Name.ToString());
-	//	UE_LOG(LogTemp, Display, TEXT("Silhouette Legs: %s"), *CurrentMap.ListOfLegs[CurrentMap.SilhouetteLegs].Name.ToString());
-
 		if (CurrentMap.ListOfInventoryLegs[m_SelectedLeg].Name == CurrentMap.ListOfLegs[CurrentMap.SilhouetteLegs].Name)
 		{
 			LegScore += 100.0f;
@@ -350,6 +346,17 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 				UE_LOG(LogTemp, Warning, TEXT("The legs are completely wrong..."));
 			}
 		}
+	}
+
+	// Update the Level Completition Status
+	if (LegScore + ChestScore + ArmScore + LegScore > 200.f)
+	{
+		CurrentMap.IsLevelComplete = true;
+		UE_LOG(LogTemp, Warning, TEXT("Level is complete..."));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Level isn't complete..."));
 	}
 }
 
