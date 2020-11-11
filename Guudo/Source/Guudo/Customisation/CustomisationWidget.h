@@ -43,6 +43,9 @@ public:
 		class UTextBlock* BodySelectionText;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+		class UTextBlock* CompletionStatusText;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 		class UImage* HeadSilouette;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
@@ -117,6 +120,9 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnFailScore();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnDeliverScore();
 
 	UFUNCTION(BlueprintCallable)
 		class UMaterial* GetHead();

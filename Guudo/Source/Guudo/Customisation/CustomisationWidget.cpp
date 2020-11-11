@@ -36,6 +36,7 @@ bool UCustomisationWidget::Initialize()
 	if (!ensure(Rightbutton != nullptr)) return false;
 	if (!ensure(ItemBox != nullptr)) return false;
 	if (!ensure(BodySelectionText != nullptr)) return false;
+	if (!ensure(CompletionStatusText != nullptr)) return false;
 	if (!ensure(ItemScrollBox != nullptr)) return false;
 
 	// Add Events for the relevant buttons.
@@ -142,6 +143,14 @@ void UCustomisationWidget::PressDone()
 		OnAverageScore();
 	else
 		OnFailScore();
+
+	// Update the Completion status and play the animation
+	if (FinalScoreF > .5f)
+		CompletionStatusText->SetText(FText::FromString(TEXT("You've completed the level")));
+	else
+		CompletionStatusText->SetText(FText::FromString(TEXT("You didn't complete the level, come back when you're ready to try again!")));
+	CompletionStatusText->SetVisibility(ESlateVisibility::Visible);
+	OnDeliverScore();
 
 }
 
