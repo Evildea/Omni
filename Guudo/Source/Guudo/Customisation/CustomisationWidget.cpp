@@ -108,10 +108,10 @@ void UCustomisationWidget::PressDone()
 
 	// Calculate the Final Score
 	float	FinalScoreF,
-		HeadScoreF,
-		ChestScoreF,
-		ArmsScoreF,
-		LegsScoreF;
+			HeadScoreF,
+			ChestScoreF,
+			ArmsScoreF,
+			LegsScoreF;
 
 	// Calculate Final Score
 	m_GameInstance->CalculateScore(HeadScoreF, ChestScoreF, ArmsScoreF, LegsScoreF);

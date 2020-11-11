@@ -348,6 +348,12 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 		}
 	}
 
+	// Reset Level Selections
+	m_SelectedHead = -1;
+	m_SelectedArm = -1;
+	m_SelectedChest = -1;
+	m_SelectedLeg = -1;
+
 	// Update the Level Completition Status
 	if (LegScore + ChestScore + ArmScore + LegScore > 200.f)
 	{
