@@ -100,6 +100,9 @@ public:
 	void AddItemToInventory(FName Pickup);
 
 	FMapData& GetCurrentMap() { return m_ListOfMaps[m_CurrentMap]; }
+
+	// Reset the Players current Level Progress (In essence, they lose all the items they picked up)
+	void ResetLevelProgress();
 	   	 
 	UFUNCTION(BlueprintCallable)
 	void ResetGameInstance();

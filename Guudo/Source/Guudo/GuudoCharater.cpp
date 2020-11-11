@@ -149,11 +149,18 @@ void AGuudoCharater::CustomJump()
 void AGuudoCharater::CheckHealth()
 {
 	UE_LOG(LogTemp, Display, TEXT("Health: %i"), Health);
-
 	UGameplayStatics::PlaySoundAtLocation(this, PainSounds, GetActorLocation());
 
+	// The Player dies
 	if (Health <= 0)
 	{
+		// Ensure the Health doesn't go below 0
+		Health = 0;
+
+		// Wipe theur progress
+		m_GameInstance->ResetLevelProgress();
+
+		// Restart the Level in 3 seconds
 		FTimerHandle CountdownTimerHandle;
 		GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AGuudoCharater::RestartLevel, 3.f, false);
 		OnDead();
@@ -281,6 +288,7 @@ void AGuudoCharater::Pickup()
 		// Play consume sound
 		if (ConsumeSounds && m_canPlayEatSound)
 		{
+			UE_LOG(LogTemp, Warning, TEXT("Play Consume Sound..."))
 			UGameplayStatics::SpawnSoundAttached(ConsumeSounds, this->GetRootComponent());
 			FTimerHandle ConsumeTimerHandle;
 			GetWorldTimerManager().SetTimer(ConsumeTimerHandle, this, &AGuudoCharater::ResetCanPlayEatSound, 1.f, false);
@@ -299,6 +307,7 @@ void AGuudoCharater::Pickup()
 	// Otherwise play a fail consume sound
 	else if (FailConsumeSounds && m_canPlayEatSound)
 	{
+		UE_LOG(LogTemp,Warning,TEXT("Play Fail Consume Sound..."))
 		UGameplayStatics::PlaySoundAtLocation(this, FailConsumeSounds, GetActorLocation());
 		FTimerHandle ConsumeTimerHandle;
 		GetWorldTimerManager().SetTimer(ConsumeTimerHandle, this, &AGuudoCharater::ResetCanPlayEatSound, 1.f, false);

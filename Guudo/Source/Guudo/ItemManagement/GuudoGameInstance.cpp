@@ -202,6 +202,22 @@ void UGuudoGameInstance::AddItemToInventory(FName Pickup)
 	}
 }
 
+void UGuudoGameInstance::ResetLevelProgress()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Level Progress Reset..."));
+
+	CurrentMap.HaveArms = false;
+	CurrentMap.HaveChest = false;
+	CurrentMap.HaveHead = false;
+	CurrentMap.HaveLegs = false;
+
+	CurrentMap.ListOfInventoryArms.Empty();
+	CurrentMap.ListOfInventoryChests.Empty();
+	CurrentMap.ListOfInventoryHeads.Empty();
+	CurrentMap.ListOfInventoryLegs.Empty();
+
+}
+
 void UGuudoGameInstance::ResetGameInstance()
 {
 	m_ListOfMaps.Empty();
