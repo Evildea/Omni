@@ -26,6 +26,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Designer")
 	bool GoToCustomisationScreen = false;
 
+	UPROPERTY(EditAnywhere, Category = "Designer")
+	bool ShouldHintDestroyIfLevelIsComplete = false;
+
 protected:
 	virtual void OnOverlapBegin() override;
 	virtual void OnOverlapEnd() override;
