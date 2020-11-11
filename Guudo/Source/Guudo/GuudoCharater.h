@@ -161,6 +161,8 @@ public:
 		class USoundBase* ShrinkSounds;
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		class USoundBase* PainSounds;
+	UPROPERTY(EditAnywhere, Category = "Designer")
+		class USoundBase* OpenInventorySounds;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 		float SmallRunSpeed = 1200.0f;
