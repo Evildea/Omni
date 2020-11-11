@@ -466,6 +466,10 @@ void AGuudoCharater::OpenInventory()
 	{
 		InventoryWidget->AddToViewport();
 		InventoryWidget->RefreshContent();
+
+		// Play the Inventory sound
+		if (OpenInventorySounds)
+			UGameplayStatics::PlaySound2D(this, OpenInventorySounds);
 	}
 
 }
