@@ -15,7 +15,6 @@ class GUUDO_API ALevelChangeHint : public ABaseHint
 	GENERATED_BODY()
 	
 public:
-	ALevelChangeHint();
 
 	bool inline GetCanTransition() { return CanTransitionLevel; }
 	void Transition();
@@ -30,6 +29,7 @@ public:
 	bool ShouldHintDestroyIfLevelIsComplete = false;
 
 protected:
+	virtual void BeginPlay() override;
 	virtual void OnOverlapBegin() override;
 	virtual void OnOverlapEnd() override;
 

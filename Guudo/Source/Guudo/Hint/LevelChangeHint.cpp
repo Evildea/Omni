@@ -6,8 +6,18 @@
 #include "ItemManagement/GuudoGameInstance.h"
 #include "Engine/World.h"
 
-ALevelChangeHint::ALevelChangeHint() : ABaseHint()
-{ }
+void ALevelChangeHint::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// Destroy the Hint if the Level is Complete
+	if (ShouldHintDestroyIfLevelIsComplete)
+	{
+		UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+		if (!GoToCustomisationScreen && GameInstance->GetIsMapComplete(Level.ToString()))
+			Destroy();
+	}
+}
 
 void ALevelChangeHint::Transition()
 {
@@ -26,14 +36,6 @@ void ALevelChangeHint::OnOverlapBegin()
 {
 	CanTransitionLevel = true;
 	UE_LOG(LogTemp, Warning, TEXT("Can Level Transition = true"));
-
-	// Destroy the Hint if the Level is Complete
-	if (ShouldHintDestroyIfLevelIsComplete)
-	{
-		UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-		if (!GoToCustomisationScreen && GameInstance->GetIsMapComplete(Level.ToString()))
-			Destroy();
-	}
 }
 
 void ALevelChangeHint::OnOverlapEnd()
