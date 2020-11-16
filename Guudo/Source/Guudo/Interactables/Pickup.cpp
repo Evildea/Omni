@@ -20,14 +20,6 @@ void UPickup::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// Check if Pickup Exist
-	//UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-	//if (!GameInstance->CheckPickupExists(Name))
-	//{
-	//	GetOwner()->Destroy();
-	//	return;
-	//}
-
 	// Destroy the Pickup if it isn't configured
 	if (Data.BodyPosition == EBodyPart::None || Data.GeneralShape == EShape::None || Data.Silhouette == nullptr || Data.Mesh == nullptr || Data.Name == "None")
 	{
@@ -46,9 +38,11 @@ void UPickup::BeginPlay()
 	}
 
 	// Setup the Mesh
-	UStaticMeshComponent* Mesh = GetOwner()->FindComponentByClass<UStaticMeshComponent>();
-	Mesh->SetRenderCustomDepth(true);
-	Mesh->SetCustomDepthStencilValue(1);
+	// This has to be manually set due to a known bug
+	// https://issues.unrealengine.com/issue/UE-50131
+	//UStaticMeshComponent* Mesh = GetOwner()->FindComponentByClass<UStaticMeshComponent>();
+	//Mesh->SetRenderCustomDepth(true);
+	//Mesh->SetCustomDepthStencilValue(1);
 
 	// Add the Pushable Tag
 	GetOwner()->Tags.Add(FName("Pushable"));
