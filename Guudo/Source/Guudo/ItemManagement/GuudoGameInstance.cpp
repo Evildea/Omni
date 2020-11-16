@@ -206,9 +206,22 @@ bool UGuudoGameInstance::GetIsMapComplete(FString Name)
 {
 	for (int32 i = 0; i < m_ListOfMaps.Num(); i++)
 	{
-		if (m_ListOfMaps[i].LevelName == Name)
+		if (m_ListOfMaps[i].LevelName == Name && m_ListOfMaps[i].IsLevelComplete)
 			return true;
 	}
+	return false;
+}
+
+bool UGuudoGameInstance::GetIsGameComplete()
+{
+	int value = 0;
+	for (int32 i = 0; i < m_ListOfMaps.Num(); i++)
+	{
+		if (m_ListOfMaps[i].IsLevelComplete)
+			value++;
+	}
+	if (value == m_ListOfMaps.Num() - 1)
+		return true;
 	return false;
 }
 
