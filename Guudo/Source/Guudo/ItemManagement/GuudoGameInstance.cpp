@@ -220,7 +220,7 @@ bool UGuudoGameInstance::GetIsGameComplete()
 		if (m_ListOfMaps[i].IsLevelComplete)
 			value++;
 	}
-	if (value == m_ListOfMaps.Num() - 1)
+	if (m_ListOfMaps.Num() > 0 && value == m_ListOfMaps.Num() - 1)
 		return true;
 	return false;
 }
@@ -425,7 +425,10 @@ UMaterial * UGuudoGameInstance::GetSilhouetteLeg()
 
 int UGuudoGameInstance::GetSizeOfInventory()
 {
-	return CurrentMap.ListOfInventoryHeads.Num() + CurrentMap.ListOfInventoryChests.Num() + CurrentMap.ListOfInventoryArms.Num() + CurrentMap.ListOfInventoryLegs.Num();
+	if (m_ListOfMaps.Num() > 0)
+		return CurrentMap.ListOfInventoryHeads.Num() + CurrentMap.ListOfInventoryChests.Num() + CurrentMap.ListOfInventoryArms.Num() + CurrentMap.ListOfInventoryLegs.Num();
+	else
+		return 0;
 }
 
 FString UGuudoGameInstance::GetNextLevel()
