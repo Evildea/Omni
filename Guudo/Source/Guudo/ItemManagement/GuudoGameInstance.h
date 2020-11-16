@@ -108,6 +108,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool GetIsMapComplete(FString Name);
 
+	UFUNCTION(BlueprintCallable)
+	bool GetIsGameComplete();
+
 	// Reset the Players current Level Progress (In essence, they lose all the items they picked up)
 	void ResetLevelProgress();
 	   	 
