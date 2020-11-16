@@ -33,8 +33,8 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-	virtual bool OnOverlapBegin() override;
-	virtual bool OnOverlapEnd() override;
+	virtual void OnOverlapBegin() override;
+	virtual void OnOverlapEnd() override;
 
 private:
 	bool CanTransitionLevel = false;

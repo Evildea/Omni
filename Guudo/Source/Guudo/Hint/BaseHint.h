@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "BaseHint.generated.h"
 
-UCLASS()
+UCLASS(abstract)
 class GUUDO_API ABaseHint : public AActor
 {
 	GENERATED_BODY()
@@ -52,9 +52,9 @@ protected:
 	bool HasAudioPlayed = false;
 
 	// The Function that's called when the Overlap occurs.
-	virtual void OnOverlapBegin() {};
+	virtual bool OnOverlapBegin() PURE_VIRTUAL(ABaseHint::OnOverlapBegin, return true;);
 
 	// The Function that's called when the Overlap ends occurs.
-	virtual void OnOverlapEnd() {};
+	virtual bool OnOverlapEnd() PURE_VIRTUAL(ABaseHint::OnOverlapEnd, return true;);
 
 };

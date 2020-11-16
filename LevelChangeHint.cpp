@@ -32,26 +32,21 @@ void ALevelChangeHint::Transition()
 	}
 }
 
-bool ALevelChangeHint::OnOverlapBegin()
+void ALevelChangeHint::OnOverlapBegin()
 {
 	UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 	if (GameInstance && GameInstance->GetSizeOfInventory() >= MinimumNumberOfItemsRequired)
 	{
 		CanTransitionLevel = true;
 		UE_LOG(LogTemp, Warning, TEXT("Can Level Transition = true"));
-		return true;
 	}
-	return false;
 }
 
-bool ALevelChangeHint::OnOverlapEnd()
+void ALevelChangeHint::OnOverlapEnd()
 {
-	UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 	if (GameInstance && GameInstance->GetSizeOfInventory() >= MinimumNumberOfItemsRequired)
 	{
 		CanTransitionLevel = false;
 		UE_LOG(LogTemp, Warning, TEXT("Can Level Transition = false"));
-		return true;
 	}
-	return false;
 }

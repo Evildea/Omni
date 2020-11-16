@@ -58,24 +58,25 @@ void ABaseHint::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherA
 
 void ABaseHint::GenerateWidget(FVector SoundLocation)
 {
-	if (!WidgetToShow)
+	// Call Overlap Event and if successful than generate the Widget
+	if (OnOverlapBegin())
 	{
-		WidgetToShow = CreateWidget<UHintWidget>(GetWorld(), WidgetToCreate);
-		WidgetToShow->SetContents(Title, Subtitle, Thumbnail);
-		WidgetToShow->AddToViewport();
-	}
-	else if (!WidgetToShow->IsInViewport())
-	{
-		WidgetToShow->SetContents(Title, Subtitle, Thumbnail);
-		WidgetToShow->AddToViewport();
-	}
+		if (!WidgetToShow)
+		{
+			WidgetToShow = CreateWidget<UHintWidget>(GetWorld(), WidgetToCreate);
+			WidgetToShow->SetContents(Title, Subtitle, Thumbnail);
+			WidgetToShow->AddToViewport();
+		}
+		else if (!WidgetToShow->IsInViewport())
+		{
+			WidgetToShow->SetContents(Title, Subtitle, Thumbnail);
+			WidgetToShow->AddToViewport();
+		}
 
-	// Call Overlap Event
-	OnOverlapBegin();
-
-	if (EnterSound != nullptr && !HasAudioPlayed)
-	{
-		UGameplayStatics::PlaySoundAtLocation(this, EnterSound, SoundLocation);
-		HasAudioPlayed = true;
+		if (EnterSound != nullptr && !HasAudioPlayed)
+		{
+			UGameplayStatics::PlaySoundAtLocation(this, EnterSound, SoundLocation);
+			HasAudioPlayed = true;
+		}
 	}
 }
