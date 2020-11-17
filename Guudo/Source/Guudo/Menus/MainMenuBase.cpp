@@ -86,7 +86,8 @@ void UMainMenuBase::ClickAndOpenLevel(FName Level)
 
 	// Start Music Fadeout
 	PlayClickedSound();
-	BackgroundMusicComponent->FadeOut(.75f, 0.f);
+	if (BackgroundMusicComponent != nullptr)
+		BackgroundMusicComponent->FadeOut(.75f, 0.f);
 
 	// Set the Open Level Timer for in 2 seconds
 	OpenLevelTarget = Level;
