@@ -9,14 +9,6 @@
 void ALevelChangeHint::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// Destroy the Hint if the Level is Complete
-	if (ShouldHintDestroyIfLevelIsComplete)
-	{
-		UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-		if (!GoToCustomisationScreen && GameInstance->GetIsMapComplete(Level.ToString()))
-			Destroy();
-	}
 }
 
 void ALevelChangeHint::Transition()
@@ -37,6 +29,9 @@ bool ALevelChangeHint::OnOverlapBegin()
 	UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 	if (GameInstance && GameInstance->GetSizeOfInventory() >= MinimumNumberOfItemsRequired)
 	{
+		if (!CanPlayerTransitionIfLevelIsComplete && GameInstance->GetIsMapComplete(Level.ToString()))
+			return false;
+
 		CanTransitionLevel = true;
 		UE_LOG(LogTemp, Warning, TEXT("Can Level Transition = true"));
 		return true;
@@ -49,6 +44,9 @@ bool ALevelChangeHint::OnOverlapEnd()
 	UGuudoGameInstance* GameInstance = Cast<UGuudoGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 	if (GameInstance && GameInstance->GetSizeOfInventory() >= MinimumNumberOfItemsRequired)
 	{
+		if (!CanPlayerTransitionIfLevelIsComplete && GameInstance->GetIsMapComplete(Level.ToString()))
+			return false;
+
 		CanTransitionLevel = false;
 		UE_LOG(LogTemp, Warning, TEXT("Can Level Transition = false"));
 		return true;

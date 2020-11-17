@@ -207,7 +207,14 @@ bool UGuudoGameInstance::GetIsMapComplete(FString Name)
 	for (int32 i = 0; i < m_ListOfMaps.Num(); i++)
 	{
 		if (m_ListOfMaps[i].LevelName == Name && m_ListOfMaps[i].IsLevelComplete)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Current Level (%s) is complete"), *m_ListOfMaps[i].LevelName);
 			return true;
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Current Level (%s) is incomplete"), *m_ListOfMaps[i].LevelName);
+		}
 	}
 	return false;
 }
@@ -378,6 +385,7 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	}
 	else
 	{
+		CurrentMap.IsLevelComplete = false;
 		UE_LOG(LogTemp, Warning, TEXT("Level isn't complete..."));
 	}
 }
