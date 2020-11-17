@@ -218,9 +218,12 @@ bool UGuudoGameInstance::GetIsGameComplete()
 	for (int32 i = 0; i < m_ListOfMaps.Num(); i++)
 	{
 		if (m_ListOfMaps[i].IsLevelComplete)
+		{
 			value++;
+			UE_LOG(LogTemp, Warning, TEXT("Level Complete: %s"), *m_ListOfMaps[i].LevelName);
+		}
 	}
-	if (m_ListOfMaps.Num() > 0 && value == m_ListOfMaps.Num() - 1)
+	if (m_ListOfMaps.Num() > 0 && value >= 3)
 		return true;
 	return false;
 }
