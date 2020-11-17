@@ -26,7 +26,7 @@ public:
 	bool GoToCustomisationScreen = false;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
-	bool ShouldHintDestroyIfLevelIsComplete = false;
+	bool CanPlayerTransitionIfLevelIsComplete = false;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 	int MinimumNumberOfItemsRequired = 0;
