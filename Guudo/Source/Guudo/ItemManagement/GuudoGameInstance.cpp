@@ -206,9 +206,32 @@ bool UGuudoGameInstance::GetIsMapComplete(FString Name)
 {
 	for (int32 i = 0; i < m_ListOfMaps.Num(); i++)
 	{
-		if (m_ListOfMaps[i].LevelName == Name)
+		if (m_ListOfMaps[i].LevelName == Name && m_ListOfMaps[i].IsLevelComplete)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Current Level (%s) is complete"), *m_ListOfMaps[i].LevelName);
 			return true;
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Current Level (%s) is incomplete"), *m_ListOfMaps[i].LevelName);
+		}
 	}
+	return false;
+}
+
+bool UGuudoGameInstance::GetIsGameComplete()
+{
+	int value = 0;
+	for (int32 i = 0; i < m_ListOfMaps.Num(); i++)
+	{
+		if (m_ListOfMaps[i].IsLevelComplete)
+		{
+			value++;
+			UE_LOG(LogTemp, Warning, TEXT("Level Complete: %s"), *m_ListOfMaps[i].LevelName);
+		}
+	}
+	if (m_ListOfMaps.Num() > 0 && value >= 3)
+		return true;
 	return false;
 }
 
@@ -362,6 +385,7 @@ void UGuudoGameInstance::CalculateScore(float & HeadScore, float & ChestScore, f
 	}
 	else
 	{
+		CurrentMap.IsLevelComplete = false;
 		UE_LOG(LogTemp, Warning, TEXT("Level isn't complete..."));
 	}
 }
@@ -412,7 +436,10 @@ UMaterial * UGuudoGameInstance::GetSilhouetteLeg()
 
 int UGuudoGameInstance::GetSizeOfInventory()
 {
-	return CurrentMap.ListOfInventoryHeads.Num() + CurrentMap.ListOfInventoryChests.Num() + CurrentMap.ListOfInventoryArms.Num() + CurrentMap.ListOfInventoryLegs.Num();
+	if (m_ListOfMaps.Num() > 0)
+		return CurrentMap.ListOfInventoryHeads.Num() + CurrentMap.ListOfInventoryChests.Num() + CurrentMap.ListOfInventoryArms.Num() + CurrentMap.ListOfInventoryLegs.Num();
+	else
+		return 0;
 }
 
 FString UGuudoGameInstance::GetNextLevel()

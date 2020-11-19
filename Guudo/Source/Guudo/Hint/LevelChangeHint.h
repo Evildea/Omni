@@ -19,14 +19,14 @@ public:
 	bool inline GetCanTransition() { return CanTransitionLevel; }
 	void Transition();
 
-	UPROPERTY(EditAnywhere, Category = "Designer")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Designer")
 	FName Level;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 	bool GoToCustomisationScreen = false;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
-	bool ShouldHintDestroyIfLevelIsComplete = false;
+	bool CanPlayerTransitionIfLevelIsComplete = false;
 
 	UPROPERTY(EditAnywhere, Category = "Designer")
 	int MinimumNumberOfItemsRequired = 0;

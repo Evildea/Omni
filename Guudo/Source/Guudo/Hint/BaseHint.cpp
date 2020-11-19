@@ -58,9 +58,14 @@ void ABaseHint::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherA
 
 void ABaseHint::GenerateWidget(FVector SoundLocation)
 {
+	// Debug
+	UE_LOG(LogTemp, Warning, TEXT("Base Hint has called Generate Widget..."));
+
 	// Call Overlap Event and if successful than generate the Widget
 	if (OnOverlapBegin())
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Generating Widget..."));
+
 		if (!WidgetToShow)
 		{
 			WidgetToShow = CreateWidget<UHintWidget>(GetWorld(), WidgetToCreate);
